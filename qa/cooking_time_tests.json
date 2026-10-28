@@ -1,0 +1,51 @@
+{
+  "cooking_time_tests": {
+    "<=15min": {
+      "maxTime": 15,
+      "totalElements": 248,
+      "all_compliant": true
+    },
+    "<=25min": {
+      "maxTime": 25,
+      "totalElements": 809,
+      "all_compliant": true
+    },
+    "<=45min": {
+      "maxTime": 45,
+      "totalElements": 6177,
+      "all_compliant": true
+    },
+    "<=60min": {
+      "maxTime": 60,
+      "totalElements": 7280,
+      "all_compliant": true
+    }
+  },
+  "meal_type_tests": {
+    "BREAKFAST": {
+      "mealType": "BREAKFAST",
+      "totalElements": 582,
+      "compliant": true
+    },
+    "LUNCH": {
+      "mealType": "LUNCH",
+      "totalElements": 4558,
+      "compliant": true
+    },
+    "DINNER": {
+      "mealType": "DINNER",
+      "totalElements": 760,
+      "compliant": true
+    },
+    "SNACK": {
+      "mealType": "SNACK",
+      "totalElements": 1802,
+      "compliant": true
+    },
+    "DESSERT": {
+      "mealType": "DESSERT",
+      "totalElements": 359,
+      "compliant": true
+    }
+  }
+}

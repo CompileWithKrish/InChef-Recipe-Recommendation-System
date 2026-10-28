@@ -1,0 +1,36 @@
+/* ==========================================================================
+   InChef - Responsive & Adaptive Viewport Media Queries
+   ========================================================================== */
+
+/* Mobile Phones (under 640px) */
+@media (max-width: 639px) {
+    :root {
+        --header-height: 64px;
+        --header-padding-x: 16px;
+    }
+
+    .hide-on-mobile {
+        display: none !important;
+    }
+
+    .mobile-full-width {
+        width: 100% !important;
+    }
+}
+
+/* Tablets (640px to 1024px) */
+@media (min-width: 640px) and (max-width: 1023px) {
+    :root {
+        --header-height: 70px;
+        --header-padding-x: 24px;
+    }
+}
+
+/* Desktops and High-DPI screens */
+@media (min-width: 1024px) {
+    :root {
+        --header-height: 76px;
+        --header-padding-x: 40px;
+    }
+}
+

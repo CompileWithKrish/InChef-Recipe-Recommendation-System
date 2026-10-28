@@ -1,0 +1,47 @@
+{
+  "Indian": {
+    "cuisine": "Indian",
+    "total_recipes": 2071,
+    "sample_recipes": [
+      "Lamb With Indian Spices And Chickpea Salad",
+      "Easy Chana Masala",
+      "Sarson Ka Saag: Saag Paneer With Broccoli Rabe And Spinach"
+    ]
+  },
+  "Chinese": {
+    "cuisine": "Chinese",
+    "total_recipes": 772,
+    "sample_recipes": [
+      "Seared Duck With Cherry Red Wine Reduction Sauce",
+      "Chinese Tomato And Egg",
+      "Southeast Asian Slow Cooked Winter Vegetables"
+    ]
+  },
+  "Japanese": {
+    "cuisine": "Japanese",
+    "total_recipes": 386,
+    "sample_recipes": [
+      "Mixed Vegetable Pakoras",
+      "Japanese Steakhouse Shrimp Sauce",
+      "Warm White Bean Salad With Smoked Trout"
+    ]
+  },
+  "Thai": {
+    "cuisine": "Thai",
+    "total_recipes": 66,
+    "sample_recipes": [
+      "Thai Style Noodles With Spinach And Leeks",
+      "Pineapple Chicken Curry",
+      "Thai Veg Papaya Salad Recipe (No Onion No Garlic)"
+    ]
+  },
+  "Vietnamese": {
+    "cuisine": "Vietnamese",
+    "total_recipes": 11,
+    "sample_recipes": [
+      "Chicken B\u00e1nh M\u00ec Recipe - Vietnamese Grilled Chicken Sandwich",
+      "Vietnamese Rice Noodle Salad",
+      "Vietnamese Vegetarian Spring Rolls Recipe With Mushrooms & Vegetables"
+    ]
+  }
+}

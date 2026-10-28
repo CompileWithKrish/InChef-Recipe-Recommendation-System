@@ -1,0 +1,59 @@
+/* ==========================================================================
+   InChef - Reusable Component Styles
+   ========================================================================== */
+
+/* Recipe Cards */
+.recipe-card {
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+    border-radius: 1.25rem;
+    overflow: hidden;
+    background-color: var(--color-surface-container-lowest, #ffffff);
+    border: 1px solid var(--inchef-border, #eae1da);
+}
+
+.recipe-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 24px -6px rgba(0, 69, 56, 0.08), 0 8px 16px -6px rgba(0, 69, 56, 0.04);
+}
+
+/* Dietary & Spice Badges */
+.badge-vegetarian {
+    background-color: #e6f4ea;
+    color: #137333;
+    border: 1px solid #ceead6;
+}
+
+.badge-non-vegetarian {
+    background-color: #fce8e6;
+    color: #c5221f;
+    border: 1px solid #fad2cf;
+}
+
+.badge-vegan {
+    background-color: #e8f0fe;
+    color: #1a73e8;
+    border: 1px solid #d2e3fc;
+}
+
+/* Modal and Overlays */
+.modal-overlay {
+    backdrop-filter: blur(4px);
+    background-color: rgba(31, 27, 23, 0.45);
+}
+
+/* Toast Notifications */
+.inchef-toast {
+    position: fixed;
+    bottom: 2rem;
+    right: 2rem;
+    z-index: 9999;
+    padding: 0.875rem 1.5rem;
+    border-radius: 1rem;
+    box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.15);
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    font-weight: 600;
+    font-size: 0.875rem;
+}
+

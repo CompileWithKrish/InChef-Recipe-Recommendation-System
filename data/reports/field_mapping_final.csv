@@ -1,0 +1,24 @@
+InChef_Target_Field,IndianFoodDataset,DataHive,CulinaryDB,Status
+id,Srno (assigned),Generated / DB Identity,Recipe ID,Active Primary Key
+title,TranslatedRecipeName,recipe_name,Title,"Cleaned, Normalized, Title-Cased"
+description,Synthesized culinary description,Synthesized from meal & dish type,None,Cleaned & Formatted
+cuisine,Cuisine (mapped Indian/Regional),cuisine_type (mapped Asian/Indian),Cuisine,Standardized Indian + Asian Focus
+meal_type,Course (mapped MealType),meal_type / dish_type,None,"Enum: BREAKFAST, LUNCH, DINNER, SNACK, DESSERT, BEVERAGE"
+dietary_type,Diet (mapped DietaryType),diet_labels / health_labels,None,"Enum: VEGETARIAN, VEGAN, NON_VEGETARIAN, EGGETARIAN, GLUTEN_FREE, KETO, DAIRY_FREE"
+difficulty,Derived: Time & Ingredients count,Derived: Prep & Ingredients count,None,"Enum: EASY, MEDIUM, HARD"
+prep_time_minutes,PrepTimeInMins,Default 15 min,None,Positive Integer or NULL
+cook_time_minutes,CookTimeInMins,Default 20 min,None,Positive Integer or NULL
+total_time_minutes,TotalTimeInMins,Default 35 min,None,Positive Integer (Prep + Cook fallback)
+servings,Servings,servings,None,Positive Integer (Default 4)
+calories,NULL,calories / servings,None,Calories per serving integer or NULL
+spice_level,Derived: chilli/masala ingredients,Derived: peppers/chilli ingredients,None,"Enum: MILD, MEDIUM, SPICY, EXTRA_SPICY"
+instructions,TranslatedInstructions,Structured guide from ingredients,None,Step-by-step formatted text
+image_url,NULL / Enriched from DataHive,image_url,None,HTTPS Image asset URL
+source_url,URL,url,None,Original web recipe reference
+source_dataset,'IndianFoodDataset','DataHive','CulinaryDB',Provenance tracking attribute
+source_recipe_id,Srno,URL hash / identifier,Recipe ID,Provenance tracking attribute
+ingredient.name,Parsed from TranslatedIngredients,ingredients[].food,Aliased Ingredient Name,Canonicalized via 161k+ CulinaryDB aliases
+ingredient.category,Categorized via CulinaryDB / rules,Categorized via CulinaryDB / rules,Category,"Standardized category (Vegetables, Spices, Dairy, etc.)"
+recipe_ingredient.quantity,Parsed quantity,ingredients[].quantity,None,Double precision quantity
+recipe_ingredient.unit,Parsed unit,ingredients[].measure,None,Enum: MeasurementUnit
+recipe_ingredient.notes,"Preparation notes (diced, etc.)",Preparation notes,None,Trimmed text notes <= 255 chars

@@ -1,0 +1,595 @@
+/* ==========================================================================
+   InChef Animated Intro (Splash) Screen & Smooth Home Page Transition Styles
+   ========================================================================== */
+
+/* Prevent horizontal shift during scroll lock by keeping scrollbar gutter stable */
+html {
+  scrollbar-gutter: stable;
+}
+
+/* Instant hide and state restoration if already shown in this session */
+html.splash-already-shown #inchef-splash-screen,
+.splash-already-shown #inchef-splash-screen {
+  display: none !important;
+}
+
+html.splash-already-shown body,
+.splash-already-shown body {
+  overflow: auto !important;
+  touch-action: auto !important;
+}
+
+html.splash-already-shown body #global-header,
+html.splash-already-shown body #global-footer,
+html.splash-already-shown body .inchef-global-header,
+html.splash-already-shown body .inchef-global-footer,
+.splash-already-shown body #global-header,
+.splash-already-shown body #global-footer,
+.splash-already-shown body .inchef-global-header,
+.splash-already-shown body .inchef-global-footer {
+  opacity: 1 !important;
+  visibility: visible !important;
+  pointer-events: auto !important;
+  transform: none !important;
+}
+
+html.splash-already-shown body .home-reveal-header,
+html.splash-already-shown body .home-reveal-hero,
+html.splash-already-shown body .home-reveal-card-1,
+html.splash-already-shown body .home-reveal-card-2,
+html.splash-already-shown body .home-reveal-about-header,
+html.splash-already-shown body .home-reveal-about-card-1,
+html.splash-already-shown body .home-reveal-about-card-2,
+html.splash-already-shown body .home-reveal-about-card-3,
+.splash-already-shown body .home-reveal-header,
+.splash-already-shown body .home-reveal-hero,
+.splash-already-shown body .home-reveal-card-1,
+.splash-already-shown body .home-reveal-card-2,
+.splash-already-shown body .home-reveal-about-header,
+.splash-already-shown body .home-reveal-about-card-1,
+.splash-already-shown body .home-reveal-about-card-2,
+.splash-already-shown body .home-reveal-about-card-3 {
+  opacity: 1 !important;
+  transform: none !important;
+  animation: none !important;
+}
+
+/* Lock page scroll during splash without layout shift */
+body.inchef-splash-active {
+  overflow: hidden !important;
+  touch-action: none !important;
+}
+
+/* Ensure header and footer never flash or appear behind the intro splash */
+body.inchef-splash-active #global-header,
+body.inchef-splash-active .inchef-global-header,
+body.inchef-splash-active #global-footer,
+body.inchef-splash-active .inchef-global-footer {
+  opacity: 0 !important;
+  pointer-events: none !important;
+  visibility: hidden !important;
+}
+
+/* ==========================================================================
+   Splash Overlay & Content
+   ========================================================================== */
+
+.inchef-splash-overlay {
+  position: fixed;
+  inset: 0;
+  width: 100vw;
+  height: 100vh;
+  height: 100dvh;
+  background-color: #FDF6EE;
+  z-index: 999999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  user-select: none;
+  -webkit-user-select: none;
+  cursor: pointer;
+  /* Exit animation: starts after hold at 3.20s, fades background over ~0.70s */
+  animation: splashFadeOut 0.70s cubic-bezier(0.65, 0, 0.35, 1) 3.20s forwards;
+  will-change: opacity;
+}
+
+/* Background fade-out keyframes */
+@keyframes splashFadeOut {
+  0% {
+    opacity: 1;
+    pointer-events: auto;
+  }
+  15% {
+    pointer-events: none; /* Allow interaction with emerging Home page */
+  }
+  100% {
+    opacity: 0;
+    pointer-events: none;
+  }
+}
+
+/* Splash content: moves up slightly, scales down by ~10%, and fades out */
+.inchef-splash-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  pointer-events: auto;
+  animation: splashContentExit 0.70s cubic-bezier(0.65, 0, 0.35, 1) 3.20s forwards;
+  will-change: transform, opacity;
+}
+
+@keyframes splashContentExit {
+  0% {
+    transform: translateY(0) scale(1);
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(-24px) scale(0.90);
+    opacity: 0;
+  }
+}
+
+/* Subtle Skip Button */
+.inchef-splash-skip {
+  position: absolute;
+  top: 24px;
+  right: 28px;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 8px 18px;
+  font-family: 'Manrope', -apple-system, BlinkMacSystemFont, sans-serif;
+  font-size: 13px;
+  font-weight: 700;
+  color: #954a00;
+  background: rgba(254, 151, 74, 0.12);
+  border: 1px solid rgba(149, 74, 0, 0.22);
+  border-radius: 9999px;
+  cursor: pointer;
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+  z-index: 100;
+  outline: none;
+}
+
+.inchef-splash-skip:hover {
+  background: rgba(254, 151, 74, 0.22);
+  border-color: rgba(149, 74, 0, 0.45);
+  transform: translateY(-1px);
+}
+
+.inchef-splash-skip:active {
+  transform: translateY(0);
+}
+
+/* Responsive Logo Container */
+.inchef-splash-logo-container {
+  position: relative;
+  width: 40vw;
+  max-width: 240px;
+  min-width: 140px;
+  aspect-ratio: 407 / 378;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  animation: splashLogoPulse 0.40s cubic-bezier(0.34, 1.45, 0.64, 1) 1.70s forwards;
+  transform-origin: 58% 58%;
+}
+
+@media (min-width: 768px) {
+  .inchef-splash-logo-container {
+    width: 20vw;
+    max-width: 300px;
+    min-width: 180px;
+  }
+}
+
+.inchef-splash-svg {
+  width: 100%;
+  height: 100%;
+  overflow: visible;
+  display: block;
+}
+
+/* Pulse on assembly */
+@keyframes splashLogoPulse {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.04); }
+  100% { transform: scale(1); }
+}
+
+/* Layer Base */
+.splash-layer {
+  transform-box: fill-box;
+  will-change: transform, opacity;
+}
+
+/* Piece 1: Small Orange Circle */
+.splash-circle-layer {
+  opacity: 0;
+  transform-origin: 18.2% 39.9%;
+  animation: flyInCircle 0.55s cubic-bezier(0.34, 1.52, 0.64, 1) 0.20s forwards;
+}
+
+@keyframes flyInCircle {
+  0% {
+    opacity: 0;
+    transform: translate(-300px, -35px) scale(0.35) rotate(-45deg);
+  }
+  60% { opacity: 1; }
+  85% { transform: translate(6px, 1px) scale(1.06) rotate(4deg); }
+  100% { opacity: 1; transform: translate(0, 0) scale(1) rotate(0deg); }
+}
+
+/* Piece 2: Orange Triangle */
+.splash-triangle-layer {
+  opacity: 0;
+  transform-origin: 17.2% 59.3%;
+  animation: flyInTriangle 0.55s cubic-bezier(0.34, 1.52, 0.64, 1) 0.45s forwards;
+}
+
+@keyframes flyInTriangle {
+  0% {
+    opacity: 0;
+    transform: translate(-320px, 0px) scale(0.35) rotate(-35deg);
+  }
+  60% { opacity: 1; }
+  85% { transform: translate(6px, 0px) scale(1.06) rotate(3deg); }
+  100% { opacity: 1; transform: translate(0, 0) scale(1) rotate(0deg); }
+}
+
+/* Piece 3: Orange Leaf Shape */
+.splash-leaf-layer {
+  opacity: 0;
+  transform-origin: 19.4% 76.7%;
+  animation: flyInLeaf 0.55s cubic-bezier(0.34, 1.52, 0.64, 1) 0.70s forwards;
+}
+
+@keyframes flyInLeaf {
+  0% {
+    opacity: 0;
+    transform: translate(-300px, 35px) scale(0.35) rotate(-40deg);
+  }
+  60% { opacity: 1; }
+  85% { transform: translate(5px, -1px) scale(1.06) rotate(3deg); }
+  100% { opacity: 1; transform: translate(0, 0) scale(1) rotate(0deg); }
+}
+
+/* Piece 4: Large Green Ring-Shaped "C" */
+.splash-ring-layer {
+  opacity: 0;
+  transform-origin: 58% 58%;
+  animation: ringLockIn 0.70s cubic-bezier(0.16, 1, 0.3, 1) 1.00s forwards;
+}
+
+@keyframes ringLockIn {
+  0% {
+    opacity: 0;
+    transform: scale(0.32) rotate(-22deg);
+  }
+  50% { opacity: 0.95; }
+  85% { transform: scale(1.025) rotate(1.5deg); }
+  100% { opacity: 1; transform: scale(1) rotate(0deg); }
+}
+
+/* 3b. Cooking Effect: Steam Wisps curling upward from top of ring */
+.splash-steam-group {
+  pointer-events: none;
+}
+
+.splash-steam-wisp {
+  fill: none;
+  stroke: rgba(0, 69, 56, 0.32);
+  stroke-width: 1.8px;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke-dasharray: 80;
+  stroke-dashoffset: 80;
+  opacity: 0;
+  transform-origin: center top;
+}
+
+.wisp-1 { animation: steamRise 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94) 1.70s forwards; }
+.wisp-2 { animation: steamRise 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94) 1.76s forwards; }
+.wisp-3 { animation: steamRise 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94) 1.72s forwards; }
+.wisp-4 { animation: steamRise 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94) 1.78s forwards; }
+
+@keyframes steamRise {
+  0% {
+    opacity: 0;
+    stroke-dashoffset: 80;
+    transform: translateY(0) scaleY(0.7) scaleX(0.9);
+  }
+  25% {
+    opacity: 0.75;
+    stroke-dashoffset: 40;
+  }
+  60% {
+    opacity: 0.45;
+    stroke-dashoffset: 0;
+    transform: translateY(-20px) scaleY(1.2) scaleX(1.1);
+  }
+  100% {
+    opacity: 0;
+    stroke-dashoffset: 0;
+    transform: translateY(-38px) scaleY(1.4) scaleX(1.2);
+  }
+}
+
+/* 3b. Cooking Effect: Sparkles twinkling around orange pieces */
+.splash-sparkles-group {
+  pointer-events: none;
+}
+
+.splash-sparkle {
+  opacity: 0;
+  transform-box: fill-box;
+  transform-origin: center center;
+}
+
+.sparkle-1 { animation: sparkleTwinkle 0.75s ease-out 1.70s forwards; }
+.sparkle-2 { animation: sparkleTwinkle 0.80s ease-out 1.75s forwards; }
+.sparkle-3 { animation: sparkleTwinkle 0.78s ease-out 1.72s forwards; }
+.sparkle-4 { animation: sparkleTwinkle 0.80s ease-out 1.76s forwards; }
+.sparkle-5 { animation: sparkleTwinkle 0.76s ease-out 1.74s forwards; }
+
+@keyframes sparkleTwinkle {
+  0% {
+    opacity: 0;
+    transform: scale(0) rotate(0deg);
+  }
+  35% {
+    opacity: 1;
+    transform: scale(1.3) rotate(35deg);
+  }
+  70% {
+    opacity: 0.8;
+    transform: scale(1) rotate(60deg);
+  }
+  100% {
+    opacity: 0;
+    transform: scale(0.2) rotate(90deg);
+  }
+}
+
+/* Wordmark: "InChef" revealing letter by letter */
+.inchef-splash-wordmark {
+  margin-top: clamp(16px, 3.5vw, 26px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1px;
+  font-family: 'Manrope', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  font-size: clamp(30px, 5vw, 44px);
+  font-weight: 800;
+  letter-spacing: -0.025em;
+  color: #004538;
+}
+
+.splash-letter {
+  display: inline-block;
+  opacity: 0;
+  transform: translateY(18px);
+  animation: letterReveal 0.45s cubic-bezier(0.2, 0.8, 0.2, 1) calc(2.00s + var(--i) * 0.07s) forwards;
+}
+
+@keyframes letterReveal {
+  0% {
+    opacity: 0;
+    transform: translateY(18px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ==========================================================================
+   Home Page Staggered Opening Animation
+   Starts while the splash is fading out (at 3.20s)
+   ========================================================================== */
+
+/* While splash is shown, prepare Home page elements for soft staggered entrance */
+body.home-prepare-reveal .home-reveal-header,
+body.home-prepare-reveal .home-reveal-hero,
+body.home-prepare-reveal .home-reveal-card-1,
+body.home-prepare-reveal .home-reveal-card-2,
+body.home-prepare-reveal .home-reveal-about-header,
+body.home-prepare-reveal .home-reveal-about-card-1,
+body.home-prepare-reveal .home-reveal-about-card-2,
+body.home-prepare-reveal .home-reveal-about-card-3 {
+  opacity: 0;
+  transform: translateY(16px);
+  will-change: transform, opacity;
+}
+
+/* Smooth ease-out reveal keyframes */
+@keyframes homeRevealItem {
+  0% {
+    opacity: 0;
+    transform: translateY(16px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Staggered timings starting concurrently at 3.20s (total reveal ~1.2s) */
+/* 1. Header first (0s from reveal start -> 3.20s) */
+body.home-prepare-reveal .home-reveal-header {
+  animation: homeRevealItem 0.50s cubic-bezier(0.16, 1, 0.3, 1) 3.20s both;
+}
+
+/* 2. Hero heading & subtext (0.15s -> 3.35s) */
+body.home-prepare-reveal .home-reveal-hero {
+  animation: homeRevealItem 0.50s cubic-bezier(0.16, 1, 0.3, 1) 3.35s both;
+}
+
+/* 3. Main Action Cards (0.30s, 0.40s -> 3.50s, 3.60s) */
+body.home-prepare-reveal .home-reveal-card-1 {
+  animation: homeRevealItem 0.50s cubic-bezier(0.16, 1, 0.3, 1) 3.50s both;
+}
+body.home-prepare-reveal .home-reveal-card-2 {
+  animation: homeRevealItem 0.50s cubic-bezier(0.16, 1, 0.3, 1) 3.60s both;
+}
+
+/* 4. About InChef Section & Cards (0.55s onward, 0.10s apart -> 3.75s, 3.85s, 3.95s, 4.05s) */
+body.home-prepare-reveal .home-reveal-about-header {
+  animation: homeRevealItem 0.50s cubic-bezier(0.16, 1, 0.3, 1) 3.75s both;
+}
+body.home-prepare-reveal .home-reveal-about-card-1 {
+  animation: homeRevealItem 0.50s cubic-bezier(0.16, 1, 0.3, 1) 3.85s both;
+}
+body.home-prepare-reveal .home-reveal-about-card-2 {
+  animation: homeRevealItem 0.50s cubic-bezier(0.16, 1, 0.3, 1) 3.95s both;
+}
+body.home-prepare-reveal .home-reveal-about-card-3 {
+  animation: homeRevealItem 0.50s cubic-bezier(0.16, 1, 0.3, 1) 4.05s both;
+}
+
+/* 5. Footer last (4.15s) */
+body.home-prepare-reveal #global-footer,
+body.home-prepare-reveal .inchef-global-footer {
+  animation: homeRevealItem 0.50s cubic-bezier(0.16, 1, 0.3, 1) 4.15s both;
+}
+
+/* ==========================================================================
+   Skip Trigger: Rapid 0.3s Fade-Out & Accelerated Reveal
+   ========================================================================== */
+
+.inchef-splash-overlay.splash-skipping {
+  animation: splashQuickFade 0.30s cubic-bezier(0.65, 0, 0.35, 1) forwards !important;
+}
+
+.inchef-splash-overlay.splash-skipping .inchef-splash-content {
+  animation: splashContentQuickExit 0.30s cubic-bezier(0.65, 0, 0.35, 1) forwards !important;
+}
+
+@keyframes splashQuickFade {
+  0% {
+    opacity: 1;
+    pointer-events: none;
+  }
+  100% {
+    opacity: 0;
+    pointer-events: none;
+  }
+}
+
+@keyframes splashContentQuickExit {
+  0% {
+    transform: translateY(0) scale(1);
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(-16px) scale(0.92);
+    opacity: 0;
+  }
+}
+
+/* Accelerated Home page reveal on user skip */
+@keyframes homeSkipRevealItem {
+  0% {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+body.home-skip-revealing .home-reveal-header {
+  animation: homeSkipRevealItem 0.22s cubic-bezier(0.16, 1, 0.3, 1) 0.00s both !important;
+}
+body.home-skip-revealing .home-reveal-hero {
+  animation: homeSkipRevealItem 0.22s cubic-bezier(0.16, 1, 0.3, 1) 0.04s both !important;
+}
+body.home-skip-revealing .home-reveal-card-1 {
+  animation: homeSkipRevealItem 0.22s cubic-bezier(0.16, 1, 0.3, 1) 0.08s both !important;
+}
+body.home-skip-revealing .home-reveal-card-2 {
+  animation: homeSkipRevealItem 0.22s cubic-bezier(0.16, 1, 0.3, 1) 0.12s both !important;
+}
+body.home-skip-revealing .home-reveal-about-header {
+  animation: homeSkipRevealItem 0.22s cubic-bezier(0.16, 1, 0.3, 1) 0.16s both !important;
+}
+body.home-skip-revealing .home-reveal-about-card-1 {
+  animation: homeSkipRevealItem 0.22s cubic-bezier(0.16, 1, 0.3, 1) 0.20s both !important;
+}
+body.home-skip-revealing .home-reveal-about-card-2 {
+  animation: homeSkipRevealItem 0.22s cubic-bezier(0.16, 1, 0.3, 1) 0.24s both !important;
+}
+body.home-skip-revealing .home-reveal-about-card-3 {
+  animation: homeSkipRevealItem 0.22s cubic-bezier(0.16, 1, 0.3, 1) 0.28s both !important;
+}
+body.home-skip-revealing #global-footer,
+body.home-skip-revealing .inchef-global-footer {
+  animation: homeSkipRevealItem 0.22s cubic-bezier(0.16, 1, 0.3, 1) 0.32s both !important;
+}
+
+/* ==========================================================================
+   Prefers-Reduced-Motion Support (0.3s Simple Cross-Fade)
+   ========================================================================== */
+
+@media (prefers-reduced-motion: reduce) {
+  .inchef-splash-overlay {
+    animation: splashReducedFadeOut 0.30s ease-out 1.50s forwards !important;
+  }
+
+  .inchef-splash-content {
+    animation: none !important;
+    transform: none !important;
+    opacity: 1 !important;
+  }
+
+  .splash-circle-layer,
+  .splash-triangle-layer,
+  .splash-leaf-layer,
+  .splash-ring-layer,
+  .inchef-splash-logo-container {
+    animation: none !important;
+    transform: none !important;
+    opacity: 1 !important;
+  }
+
+  .splash-steam-group,
+  .splash-sparkles-group {
+    display: none !important;
+  }
+
+  .splash-letter {
+    animation: none !important;
+    transform: none !important;
+    opacity: 1 !important;
+  }
+
+  /* Home page 0.3s simple opacity cross-fade (no movement) */
+  body.home-prepare-reveal .home-reveal-header,
+  body.home-prepare-reveal .home-reveal-hero,
+  body.home-prepare-reveal .home-reveal-card-1,
+  body.home-prepare-reveal .home-reveal-card-2,
+  body.home-prepare-reveal .home-reveal-about-header,
+  body.home-prepare-reveal .home-reveal-about-card-1,
+  body.home-prepare-reveal .home-reveal-about-card-2,
+  body.home-prepare-reveal .home-reveal-about-card-3,
+  body.home-prepare-reveal #global-footer,
+  body.home-prepare-reveal .inchef-global-footer {
+    animation: homeReducedFade 0.30s ease-out 1.50s both !important;
+    transform: none !important;
+  }
+
+  @keyframes homeReducedFade {
+    0% { opacity: 0; }
+    100% { opacity: 1; }
+  }
+
+  @keyframes splashReducedFadeOut {
+    0% { opacity: 1; }
+    100% { opacity: 0; }
+  }
+}

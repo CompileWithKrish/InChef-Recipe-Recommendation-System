@@ -1,0 +1,324 @@
+{
+  "Chicken + Tomato + Onion + Garlic": {
+    "ingredients": [
+      "Chicken",
+      "Tomato",
+      "Onion",
+      "Garlic"
+    ],
+    "status_code": 200,
+    "count": 10,
+    "valid_scores": true,
+    "top_3": [
+      {
+        "id": 5694,
+        "title": "Spring Roll Wrapper Cups",
+        "cuisine": "South East Asian",
+        "matchScore": 97,
+        "matchedIngredients": [
+          "Spring  Onion"
+        ],
+        "missingIngredients": [],
+        "scoreBreakdown": {
+          "ingredientScore": 60.0,
+          "dietaryScore": 15.0,
+          "cuisineScore": 7.0,
+          "cookingTimeScore": 10.0,
+          "categoryScore": 5.0,
+          "totalScore": 97.0
+        },
+        "reason": "Perfect match! You have all 1 required ingredients."
+      },
+      {
+        "id": 5742,
+        "title": "Tangy Tomato Chutney",
+        "cuisine": "Indian",
+        "matchScore": 77,
+        "matchedIngredients": [
+          "Tomato",
+          "Garlic",
+          "Onion",
+          "Tomato Paste"
+        ],
+        "missingIngredients": [
+          "Olive Oil",
+          "Sugar"
+        ],
+        "scoreBreakdown": {
+          "ingredientScore": 40.0,
+          "dietaryScore": 15.0,
+          "cuisineScore": 7.0,
+          "cookingTimeScore": 10.0,
+          "categoryScore": 5.0,
+          "totalScore": 77.0
+        },
+        "reason": "Matched 4 of 6 ingredients (67%) with 2 missing."
+      },
+      {
+        "id": 5133,
+        "title": "Slow Cooker Sweet Teriyaki Chicken",
+        "cuisine": "Japanese",
+        "matchScore": 73,
+        "matchedIngredients": [
+          "Garlic",
+          "Onion",
+          "Chicken Breast"
+        ],
+        "missingIngredients": [
+          "Soy Sauce",
+          "Sugar"
+        ],
+        "scoreBreakdown": {
+          "ingredientScore": 36.0,
+          "dietaryScore": 15.0,
+          "cuisineScore": 7.0,
+          "cookingTimeScore": 10.0,
+          "categoryScore": 5.0,
+          "totalScore": 73.0
+        },
+        "reason": "Matched 3 of 5 ingredients (60%) with 2 missing."
+      }
+    ]
+  },
+  "Paneer + Tomato + Onion + Butter": {
+    "ingredients": [
+      "Paneer",
+      "Tomato",
+      "Onion",
+      "Butter"
+    ],
+    "status_code": 200,
+    "count": 10,
+    "valid_scores": true,
+    "top_3": [
+      {
+        "id": 5694,
+        "title": "Spring Roll Wrapper Cups",
+        "cuisine": "South East Asian",
+        "matchScore": 97,
+        "matchedIngredients": [
+          "Spring  Onion"
+        ],
+        "missingIngredients": [],
+        "scoreBreakdown": {
+          "ingredientScore": 60.0,
+          "dietaryScore": 15.0,
+          "cuisineScore": 7.0,
+          "cookingTimeScore": 10.0,
+          "categoryScore": 5.0,
+          "totalScore": 97.0
+        },
+        "reason": "Perfect match! You have all 1 required ingredients."
+      },
+      {
+        "id": 1747,
+        "title": "Homemade Ghee",
+        "cuisine": "Indian",
+        "matchScore": 97,
+        "matchedIngredients": [
+          "Butter"
+        ],
+        "missingIngredients": [],
+        "scoreBreakdown": {
+          "ingredientScore": 60.0,
+          "dietaryScore": 15.0,
+          "cuisineScore": 7.0,
+          "cookingTimeScore": 10.0,
+          "categoryScore": 5.0,
+          "totalScore": 97.0
+        },
+        "reason": "Perfect match! You have all 1 required ingredients."
+      },
+      {
+        "id": 5742,
+        "title": "Tangy Tomato Chutney",
+        "cuisine": "Indian",
+        "matchScore": 67,
+        "matchedIngredients": [
+          "Tomato",
+          "Onion",
+          "Tomato Paste"
+        ],
+        "missingIngredients": [
+          "Garlic",
+          "Olive Oil",
+          "Sugar"
+        ],
+        "scoreBreakdown": {
+          "ingredientScore": 30.0,
+          "dietaryScore": 15.0,
+          "cuisineScore": 7.0,
+          "cookingTimeScore": 10.0,
+          "categoryScore": 5.0,
+          "totalScore": 67.0
+        },
+        "reason": "Matched 3 of 6 ingredients (50%) with 3 missing."
+      }
+    ]
+  },
+  "Potato + Cumin Seeds + Green Chilli": {
+    "ingredients": [
+      "Potato",
+      "Cumin Seeds",
+      "Green Chilli"
+    ],
+    "status_code": 200,
+    "count": 10,
+    "valid_scores": true,
+    "top_3": [
+      {
+        "id": 299,
+        "title": "Bihari Shakarkand Bhujia Recipe - Spicy Sweet Potato Sabzi",
+        "cuisine": "North Indian",
+        "matchScore": 67,
+        "matchedIngredients": [
+          "Cumin Seeds",
+          "Green Chilli",
+          "Potato Sweet"
+        ],
+        "missingIngredients": [
+          "1-1 2 Tablespoon Mustard Oil",
+          "Salt",
+          "Turmeric"
+        ],
+        "scoreBreakdown": {
+          "ingredientScore": 30.0,
+          "dietaryScore": 15.0,
+          "cuisineScore": 7.0,
+          "cookingTimeScore": 10.0,
+          "categoryScore": 5.0,
+          "totalScore": 67.0
+        },
+        "reason": "Matched 3 of 6 ingredients (50%) with 3 missing. Quick to make in 20 mins."
+      },
+      {
+        "id": 572,
+        "title": "Bihari Aloo Bhujiya",
+        "cuisine": "Bihari",
+        "matchScore": 67,
+        "matchedIngredients": [
+          "Cumin Seeds",
+          "Green Chilli",
+          "Potato"
+        ],
+        "missingIngredients": [
+          "1-1 2 Tablespoon Mustard Oil",
+          "Salt",
+          "Turmeric"
+        ],
+        "scoreBreakdown": {
+          "ingredientScore": 30.0,
+          "dietaryScore": 15.0,
+          "cuisineScore": 7.0,
+          "cookingTimeScore": 10.0,
+          "categoryScore": 5.0,
+          "totalScore": 67.0
+        },
+        "reason": "Matched 3 of 6 ingredients (50%) with 3 missing. Quick to make in 30 mins."
+      },
+      {
+        "id": 2048,
+        "title": "Jeera Aloo Sabzi (Recipe In Hindi)",
+        "cuisine": "North Indian",
+        "matchScore": 63,
+        "matchedIngredients": [
+          "Cumin Seeds",
+          "Green Chilli",
+          "Potato"
+        ],
+        "missingIngredients": [
+          "Cooking Oil",
+          "Curry Leaves",
+          "Salt",
+          "Turmeric"
+        ],
+        "scoreBreakdown": {
+          "ingredientScore": 25.7,
+          "dietaryScore": 15.0,
+          "cuisineScore": 7.0,
+          "cookingTimeScore": 10.0,
+          "categoryScore": 5.0,
+          "totalScore": 62.7
+        },
+        "reason": "Matched 3 of 7 ingredients (43%) with 4 missing."
+      }
+    ]
+  },
+  "Rice + Chicken + Onion": {
+    "ingredients": [
+      "Rice",
+      "Chicken",
+      "Onion"
+    ],
+    "status_code": 200,
+    "count": 10,
+    "valid_scores": true,
+    "top_3": [
+      {
+        "id": 5694,
+        "title": "Spring Roll Wrapper Cups",
+        "cuisine": "South East Asian",
+        "matchScore": 97,
+        "matchedIngredients": [
+          "Spring  Onion"
+        ],
+        "missingIngredients": [],
+        "scoreBreakdown": {
+          "ingredientScore": 60.0,
+          "dietaryScore": 15.0,
+          "cuisineScore": 7.0,
+          "cookingTimeScore": 10.0,
+          "categoryScore": 5.0,
+          "totalScore": 97.0
+        },
+        "reason": "Perfect match! You have all 1 required ingredients."
+      },
+      {
+        "id": 6027,
+        "title": "Chicken Soup Noodle Bowl",
+        "cuisine": "Asian",
+        "matchScore": 82,
+        "matchedIngredients": [
+          "Low Sodium Chicken Broth",
+          "Ounce Chicken Breast",
+          "Rice Noodle"
+        ],
+        "missingIngredients": [
+          "Sugar Snap Pea"
+        ],
+        "scoreBreakdown": {
+          "ingredientScore": 45.0,
+          "dietaryScore": 15.0,
+          "cuisineScore": 7.0,
+          "cookingTimeScore": 10.0,
+          "categoryScore": 5.0,
+          "totalScore": 82.0
+        },
+        "reason": "Matched 3 of 4 ingredients (75%) with 1 missing."
+      },
+      {
+        "id": 887,
+        "title": "Vietnamese Rice Pocket Recipe With Caramelised Onions & Chillies",
+        "cuisine": "Vietnamese",
+        "matchScore": 67,
+        "matchedIngredients": [
+          "Onion",
+          "Rice"
+        ],
+        "missingIngredients": [
+          "Red Chilly",
+          "Sunflower Oil"
+        ],
+        "scoreBreakdown": {
+          "ingredientScore": 30.0,
+          "dietaryScore": 15.0,
+          "cuisineScore": 7.0,
+          "cookingTimeScore": 10.0,
+          "categoryScore": 5.0,
+          "totalScore": 67.0
+        },
+        "reason": "Matched 2 of 4 ingredients (50%) with 2 missing. Quick to make in 30 mins."
+      }
+    ]
+  }
+}

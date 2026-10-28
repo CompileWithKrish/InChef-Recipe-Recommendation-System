@@ -1,0 +1,387 @@
+<!DOCTYPE html>
+<html class="light" lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="referrer" content="no-referrer">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <title>InChef - Cook What You Have, Love What You Eat</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Caveat:wght@600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet">
+    <script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#004538",
+                        "primary-dark": "#0f3d32",
+                        "primary-container": "#1f5d4e",
+                        "on-primary": "#ffffff",
+                        "secondary": "#954a00",
+                        "secondary-container": "#fe974a",
+                        "on-secondary": "#ffffff",
+                        "surface": "#fff8f4",
+                        "surface-container-lowest": "#ffffff",
+                        "surface-container-low": "#fbf2eb",
+                        "surface-container": "#f5ece6",
+                        "surface-container-high": "#efe7e0",
+                        "surface-variant": "#eae1da",
+                        "on-surface": "#1f1b17",
+                        "on-surface-variant": "#5a544e",
+                        "outline": "#707975",
+                        "outline-variant": "#bfc9c4",
+                    },
+                    fontFamily: {
+                        sans: ["Manrope", "sans-serif"],
+                        handwriting: ["Caveat", "cursive"],
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        .material-symbols-outlined {
+            font-family: 'Material Symbols Outlined';
+            font-weight: normal;
+            font-style: normal;
+            font-size: 24px;
+            line-height: 1;
+            display: inline-block;
+            white-space: nowrap;
+            -webkit-font-smoothing: antialiased;
+        }
+    </style>
+</head>
+<body class="bg-surface text-on-surface font-sans min-h-screen flex flex-col selection:bg-primary selection:text-white">
+    <!-- Top Navigation Bar -->
+    <header id="global-header" data-active="home"></header>
+
+    <!-- Main Container -->
+    <main class="flex-grow">
+        <!-- HERO SECTION -->
+        <section class="relative overflow-hidden min-h-[500px] lg:min-h-[560px] flex items-center bg-cover bg-no-repeat" id="home" 
+                 style="background-image: url('/images/hero_countertop_kitchen.jpg'); background-position: right center;">
+            <!-- Soft directional gradient overlay matching reference screenshot -->
+            <div class="absolute inset-0 pointer-events-none" 
+                 style="background: linear-gradient(90deg, rgba(255, 255, 255, 0.96) 0%, rgba(255, 255, 255, 0.90) 36%, rgba(255, 255, 255, 0.52) 62%, rgba(255, 255, 255, 0.10) 85%, rgba(255, 255, 255, 0) 100%);"></div>
+            
+            <div class="relative z-10 w-full max-w-[1400px] mx-auto px-6 lg:px-12 py-12 lg:py-16">
+                <div class="max-w-2xl">
+                    <h1 class="text-4xl sm:text-5xl lg:text-[54px] font-extrabold text-[#004538] leading-[1.14] tracking-tight mb-4">
+                        Cook What You Have,<br>Love What You Eat
+                    </h1>
+                    <p class="text-sm sm:text-base lg:text-[17px] text-[#4b5563] max-w-xl mb-8 leading-relaxed font-normal">
+                        InChef recommends delicious Indian recipes based on your available ingredients and food preferences. Or search directly for your favorite recipe!
+                    </p>
+                    
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 max-w-xl">
+                        <!-- Workflow B CTA: I Have Ingredients -->
+                        <div class="bg-white rounded-2xl p-5 flex flex-col justify-between items-start text-left shadow-[0_10px_30px_rgba(0,0,0,0.06)] border border-gray-100/90 transition-all duration-300 hover:shadow-xl hover:-translate-y-0.5">
+                            <div class="flex items-center gap-3.5 mb-3 w-full">
+                                <div class="w-12 h-12 rounded-full bg-[#dcf2e8] text-[#004538] flex items-center justify-center flex-shrink-0">
+                                    <span class="material-symbols-outlined text-[24px]">shopping_basket</span>
+                                </div>
+                                <div>
+                                    <h2 class="text-[15px] sm:text-base font-bold text-gray-900 leading-tight">I Have Ingredients</h2>
+                                    <p class="text-xs text-gray-500 mt-0.5">Enter what's in your kitchen.</p>
+                                </div>
+                            </div>
+                            <a class="inline-flex items-center justify-center gap-1.5 text-xs sm:text-[13px] font-bold text-white bg-[#004538] hover:bg-[#00362c] px-5 py-2.5 rounded-full shadow-sm hover:shadow transition-all w-full" href="/recommendations.html">
+                                Find Recipes <span class="material-symbols-outlined text-[16px]">arrow_forward</span>
+                            </a>
+                        </div>
+                        
+                        <!-- Workflow A CTA: I Want to Make... -->
+                        <div class="bg-white rounded-2xl p-5 flex flex-col justify-between items-start text-left shadow-[0_10px_30px_rgba(0,0,0,0.06)] border border-gray-100/90 transition-all duration-300 hover:shadow-xl hover:-translate-y-0.5">
+                            <div class="flex items-center gap-3.5 mb-3 w-full">
+                                <div class="w-12 h-12 rounded-full bg-[#fde8d7] text-[#954a00] flex items-center justify-center flex-shrink-0">
+                                    <span class="material-symbols-outlined text-[24px]">restaurant</span>
+                                </div>
+                                <div>
+                                    <h2 class="text-[15px] sm:text-base font-bold text-gray-900 leading-tight">I Want to Make…</h2>
+                                    <p class="text-xs text-gray-500 mt-0.5">Tell us what you crave.</p>
+                                </div>
+                            </div>
+                            <a class="inline-flex items-center justify-center gap-1.5 text-xs sm:text-[13px] font-bold text-white bg-[#954a00] hover:bg-[#7e3e00] px-5 py-2.5 rounded-full shadow-sm hover:shadow transition-all w-full" href="/discover.html">
+                                Find My Dish <span class="material-symbols-outlined text-[16px]">arrow_forward</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- FEATURE HIGHLIGHTS (5 Pastel Feature Cards) -->
+        <section class="py-6 lg:py-8">
+            <div class="max-w-[1400px] mx-auto px-6 lg:px-12">
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-4">
+                    <!-- Card 1: Soft Mint -->
+                    <a href="/discover.html" class="bg-[#e8f5ed] rounded-2xl p-6 flex flex-col transition-transform hover:-translate-y-1 duration-200">
+                        <div class="w-11 h-11 rounded-xl bg-white/80 text-emerald-700 flex items-center justify-center mb-4 shadow-xs">
+                            <span class="material-symbols-outlined text-[24px]">soup_kitchen</span>
+                        </div>
+                        <h3 class="text-base font-bold text-emerald-900 mb-1.5">Discover Recipes</h3>
+                        <p class="text-xs text-emerald-800/80 leading-relaxed">Search by recipe name or explore dishes across India.</p>
+                    </a>
+                    <!-- Card 2: Soft Peach -->
+                    <a href="/profile.html" class="bg-[#fef0e6] rounded-2xl p-6 flex flex-col transition-transform hover:-translate-y-1 duration-200">
+                        <div class="w-11 h-11 rounded-xl bg-white/80 text-amber-800 flex items-center justify-center mb-4 shadow-xs">
+                            <span class="material-symbols-outlined text-[24px]">person</span>
+                        </div>
+                        <h3 class="text-base font-bold text-amber-950 mb-1.5">Personalized for You</h3>
+                        <p class="text-xs text-amber-900/80 leading-relaxed">Get suggestions tailored to your dietary preferences.</p>
+                    </a>
+                    <!-- Card 3: Soft Sky Blue -->
+                    <a href="/my_kitchen.html" class="bg-[#e6f4fe] rounded-2xl p-6 flex flex-col transition-transform hover:-translate-y-1 duration-200">
+                        <div class="w-11 h-11 rounded-xl bg-white/80 text-sky-700 flex items-center justify-center mb-4 shadow-xs">
+                            <span class="material-symbols-outlined text-[24px]">kitchen</span>
+                        </div>
+                        <h3 class="text-base font-bold text-sky-950 mb-1.5">Use Your Pantry</h3>
+                        <p class="text-xs text-sky-900/80 leading-relaxed">Add ingredients from your kitchen and find recipes you can make.</p>
+                    </a>
+                    <!-- Card 4: Soft Lavender -->
+                    <a href="/favorites.html" class="bg-[#f1ecfa] rounded-2xl p-6 flex flex-col transition-transform hover:-translate-y-1 duration-200">
+                        <div class="w-11 h-11 rounded-xl bg-white/80 text-purple-700 flex items-center justify-center mb-4 shadow-xs">
+                            <span class="material-symbols-outlined text-[24px]">favorite</span>
+                        </div>
+                        <h3 class="text-base font-bold text-purple-950 mb-1.5">Save Your Favorites</h3>
+                        <p class="text-xs text-purple-900/80 leading-relaxed">Keep track of recipes you love and cook them anytime.</p>
+                    </a>
+                    <!-- Card 5: Soft Sage -->
+                    <a href="/recommendations.html" class="bg-[#e9f5ee] rounded-2xl p-6 flex flex-col transition-transform hover:-translate-y-1 duration-200">
+                        <div class="w-11 h-11 rounded-xl bg-white/80 text-teal-700 flex items-center justify-center mb-4 shadow-xs">
+                            <span class="material-symbols-outlined text-[24px]">schedule</span>
+                        </div>
+                        <h3 class="text-base font-bold text-teal-950 mb-1.5">Smart Match</h3>
+                        <p class="text-xs text-teal-900/80 leading-relaxed">Filter recipes by cooking time and ingredients on hand.</p>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- HOW IT WORKS (Connected 4 Circular Steps) -->
+        <section class="py-14 bg-[#f3f9f6]/70 border-y border-emerald-950/5 my-8">
+            <div class="max-w-[1400px] mx-auto px-6 lg:px-12 text-center">
+                <h2 class="text-2xl sm:text-3xl font-extrabold text-primary mb-2">How It Works</h2>
+                <p class="text-sm text-on-surface-variant mb-12">Get your next meal in just a few simple steps.</p>
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 relative items-start">
+                    <!-- Step 1 -->
+                    <div class="flex flex-col items-center text-center relative group">
+                        <div class="w-20 h-20 rounded-full bg-[#d7efe3] text-primary flex items-center justify-center mb-5 shadow-sm group-hover:scale-105 transition-transform">
+                            <span class="material-symbols-outlined text-[34px]">nutrition</span>
+                        </div>
+                        <h3 class="text-base font-bold text-on-surface mb-1.5">1. Add Ingredients</h3>
+                        <p class="text-xs text-on-surface-variant max-w-[210px] leading-relaxed">
+                            Enter what you have in your kitchen or search for a dish.
+                        </p>
+                        <div class="hidden lg:block absolute -right-6 top-10 text-on-surface-variant/40">
+                            <span class="material-symbols-outlined text-[24px]">arrow_forward</span>
+                        </div>
+                    </div>
+                    <!-- Step 2 -->
+                    <div class="flex flex-col items-center text-center relative group">
+                        <div class="w-20 h-20 rounded-full bg-[#fde9cf] text-secondary flex items-center justify-center mb-5 shadow-sm group-hover:scale-105 transition-transform">
+                            <span class="material-symbols-outlined text-[34px]">tune</span>
+                        </div>
+                        <h3 class="text-base font-bold text-on-surface mb-1.5">2. Set Preferences</h3>
+                        <p class="text-xs text-on-surface-variant max-w-[210px] leading-relaxed">
+                            Choose your diet, cuisine, and max cooking time.
+                        </p>
+                        <div class="hidden lg:block absolute -right-6 top-10 text-on-surface-variant/40">
+                            <span class="material-symbols-outlined text-[24px]">arrow_forward</span>
+                        </div>
+                    </div>
+                    <!-- Step 3 -->
+                    <div class="flex flex-col items-center text-center relative group">
+                        <div class="w-20 h-20 rounded-full bg-[#ebdcf8] text-purple-700 flex items-center justify-center mb-5 shadow-sm group-hover:scale-105 transition-transform">
+                            <span class="material-symbols-outlined text-[34px]">search_check</span>
+                        </div>
+                        <h3 class="text-base font-bold text-on-surface mb-1.5">3. Get Suggestions</h3>
+                        <p class="text-xs text-on-surface-variant max-w-[210px] leading-relaxed">
+                            We match recipes with genuine ingredient overlap.
+                        </p>
+                        <div class="hidden lg:block absolute -right-6 top-10 text-on-surface-variant/40">
+                            <span class="material-symbols-outlined text-[24px]">arrow_forward</span>
+                        </div>
+                    </div>
+                    <!-- Step 4 -->
+                    <div class="flex flex-col items-center text-center group">
+                        <div class="w-20 h-20 rounded-full bg-[#fcdbd6] text-rose-700 flex items-center justify-center mb-5 shadow-sm group-hover:scale-105 transition-transform">
+                            <span class="material-symbols-outlined text-[34px]">soup_kitchen</span>
+                        </div>
+                        <h3 class="text-base font-bold text-on-surface mb-1.5">4. Cook & Enjoy</h3>
+                        <p class="text-xs text-on-surface-variant max-w-[210px] leading-relaxed">
+                            Follow simple cooking instructions and savor your meal!
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- QUICK RECIPE SEARCH -->
+        <section class="py-12">
+            <div class="max-w-4xl mx-auto px-6 text-center">
+                <h2 class="text-3xl font-extrabold text-primary mb-2">Looking for Something Specific?</h2>
+                <p class="text-sm text-on-surface-variant mb-7">Search for a recipe by name and find it instantly.</p>
+                <!-- Search Bar -->
+                <form id="home-search-form" class="relative bg-white rounded-full shadow-[0_8px_30px_rgba(42,38,34,0.08)] border border-[#ede3dc] p-2 flex items-center mb-5">
+                    <span class="material-symbols-outlined text-on-surface-variant/70 ml-4 mr-2">search</span>
+                    <input id="home-search-input" class="w-full bg-transparent border-none focus:ring-0 text-sm md:text-base text-on-surface placeholder:text-on-surface-variant/60 font-medium py-2 focus:outline-none" 
+                           placeholder="Search for a recipe, e.g. Chicken Biryani, Paneer Butter Masala..." type="text">
+                    <button type="submit" class="bg-primary hover:bg-primary-dark text-white font-bold text-sm px-7 py-3 rounded-full transition-all flex items-center gap-1.5 shadow-sm">
+                        Search
+                    </button>
+                </form>
+                <!-- Quick Popular Search Pills -->
+                <div class="flex flex-wrap items-center justify-center gap-2.5 text-xs">
+                    <span class="text-on-surface-variant font-medium mr-1">Popular searches:</span>
+                    <button class="popular-tag bg-white hover:bg-surface-container-high border border-[#e5dcd4] text-on-surface font-semibold px-3.5 py-1.5 rounded-full transition-colors shadow-2xs" data-dish="Chicken Biryani">Chicken Biryani</button>
+                    <button class="popular-tag bg-white hover:bg-surface-container-high border border-[#e5dcd4] text-on-surface font-semibold px-3.5 py-1.5 rounded-full transition-colors shadow-2xs" data-dish="Paneer Butter Masala">Paneer Butter Masala</button>
+                    <button class="popular-tag bg-white hover:bg-surface-container-high border border-[#e5dcd4] text-on-surface font-semibold px-3.5 py-1.5 rounded-full transition-colors shadow-2xs" data-dish="Masala Dosa">Masala Dosa</button>
+                    <button class="popular-tag bg-white hover:bg-surface-container-high border border-[#e5dcd4] text-on-surface font-semibold px-3.5 py-1.5 rounded-full transition-colors shadow-2xs" data-dish="Dal Makhani">Dal Makhani</button>
+                    <button class="popular-tag bg-white hover:bg-surface-container-high border border-[#e5dcd4] text-on-surface font-semibold px-3.5 py-1.5 rounded-full transition-colors shadow-2xs" data-dish="Chole Bhature">Chole Bhature</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- POPULAR INDIAN RECIPES -->
+        <section class="py-14 bg-surface-container-low/40" id="recipes">
+            <div class="max-w-[1400px] mx-auto px-6 lg:px-12">
+                <div class="flex flex-col md:flex-row md:items-end justify-between mb-8">
+                    <div>
+                        <h2 class="text-3xl font-extrabold text-primary mb-1.5">Popular Indian Recipes</h2>
+                        <p class="text-sm text-on-surface-variant">Explore dishes from our authentic collection of over 6,800 recipes.</p>
+                    </div>
+                    <a class="hidden md:inline-flex items-center gap-1 text-sm font-bold text-primary hover:text-primary-dark transition-colors" href="/discover.html">
+                        View All Recipes <span class="material-symbols-outlined text-[18px]">arrow_forward</span>
+                    </a>
+                </div>
+                <!-- 4 Recipe Cards in 1 Row -->
+                <div id="popular-recipes-grid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+                    <!-- Populated dynamically via InChefAPI -->
+                    <div class="col-span-full text-center py-8 text-on-surface-variant">Loading popular dishes...</div>
+                </div>
+                <!-- Mobile View All Button -->
+                <div class="mt-8 text-center md:hidden">
+                    <a class="inline-flex items-center gap-1 text-sm font-bold text-primary" href="/discover.html">
+                        View All Recipes <span class="material-symbols-outlined text-[18px]">arrow_forward</span>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- FINAL CTA -->
+        <section class="py-14 bg-[#efe7e0]/60">
+            <div class="max-w-3xl mx-auto px-6 text-center">
+                <h2 class="text-3xl font-extrabold text-primary mb-2">Ready to Cook?</h2>
+                <p class="text-sm sm:text-base text-on-surface-variant mb-6">Add what's in your kitchen and discover your next authentic meal.</p>
+                <a class="inline-flex items-center gap-2 bg-primary hover:bg-primary-dark text-white font-bold text-sm px-8 py-3.5 rounded-full shadow-md hover:shadow-lg transition-all" href="/my_kitchen.html">
+                    Open My Kitchen <span class="material-symbols-outlined text-[18px]">arrow_forward</span>
+                </a>
+            </div>
+        </section>
+    </main>
+
+    <footer id="global-footer"></footer>
+
+    <script src="/js/api.js"></script>
+    <script src="/js/header.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', async () => {
+            // Search Form
+            const form = document.getElementById('home-search-form');
+            const input = document.getElementById('home-search-input');
+            if (form) {
+                form.addEventListener('submit', (e) => {
+                    e.preventDefault();
+                    const q = input.value.trim();
+                    if (q) {
+                        window.location.href = `/discover.html?query=${encodeURIComponent(q)}`;
+                    } else {
+                        window.location.href = '/discover.html';
+                    }
+                });
+            }
+
+            // Popular pills
+            document.querySelectorAll('.popular-tag').forEach(tag => {
+                tag.addEventListener('click', () => {
+                    const dish = tag.getAttribute('data-dish');
+                    window.location.href = `/discover.html?query=${encodeURIComponent(dish)}`;
+                });
+            });
+
+            // Load 4 real popular recipes
+            function escapeHtml(str) {
+                if (!str) return '';
+                return String(str).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;').replace(/'/g, '&#039;');
+            }
+
+            const grid = document.getElementById('popular-recipes-grid');
+            try {
+                // Load requested iconic Indian recipes: Chole (Chickpea Curry), Butter Chicken, Chicken Biryani, Masala Dosa (with Dal Makhani fallback)
+                const candidateIds = [125, 3529, 3364, 335, 951];
+                const recipeResponses = await Promise.all(candidateIds.map(id => InChefAPI.getRecipe(id).catch(() => null)));
+                
+                let recipes = recipeResponses
+                    .filter(res => res && res.data)
+                    .map(res => res.data)
+                    .slice(0, 4); // strictly four
+
+                // Fallback to catalog search if less than 4 retrieved
+                if (recipes.length < 4) {
+                    const fallbackRes = await InChefAPI.searchRecipes('', { size: 4 });
+                    if (fallbackRes && fallbackRes.data && fallbackRes.data.content) {
+                        const existingIds = new Set(recipes.map(r => r.id));
+                        for (const fb of fallbackRes.data.content) {
+                            if (!existingIds.has(fb.id) && recipes.length < 4) {
+                                recipes.push(fb);
+                            }
+                        }
+                    }
+                }
+                const neutralPlaceholder = '/images/neutral_recipe_placeholder.svg';
+                if (recipes.length > 0) {
+                    grid.innerHTML = recipes.map(r => {
+                        const isVeg = (r.dietaryType || '').toLowerCase().includes('veg') && !(r.dietaryType || '').toLowerCase().includes('non');
+                        const dietBadge = isVeg 
+                            ? `<span class="inline-flex items-center gap-1 bg-white/95 backdrop-blur-xs px-2.5 py-1 rounded-full text-[11px] font-bold text-emerald-700 shadow-xs"><span class="w-2 h-2 rounded-full bg-emerald-600"></span> Vegetarian</span>`
+                            : `<span class="inline-flex items-center gap-1 bg-white/95 backdrop-blur-xs px-2.5 py-1 rounded-full text-[11px] font-bold text-red-700 shadow-xs"><span class="w-2 h-2 rounded-full bg-red-600"></span> Non-Veg</span>`;
+                        
+                        const imgSrc = (r.imageUrl && r.imageUrl.trim()) ? r.imageUrl.trim() : neutralPlaceholder;
+                        const safeTitle = escapeHtml(r.title || 'Untitled Recipe');
+
+                        return `
+                            <div class="bg-white rounded-2xl overflow-hidden border border-[#ede3dc] shadow-[0_4px_20px_rgba(42,38,34,0.05)] hover:shadow-xl transition-all duration-300 flex flex-col group">
+                                <div class="relative h-48 overflow-hidden bg-surface-container">
+                                    <img alt="${safeTitle}" loading="lazy" referrerpolicy="no-referrer" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" 
+                                         src="${imgSrc}" onerror="if (!this.dataset.proxyTried && ${r.id}) { this.dataset.proxyTried='true'; this.src='/api/v1/recipes/${r.id}/image/content'; } else { this.onerror=null; this.src='${neutralPlaceholder}'; }">
+                                    <div class="absolute top-3 right-3">
+                                        ${dietBadge}
+                                    </div>
+                                </div>
+                                <div class="p-5 flex flex-col flex-grow">
+                                    <div class="text-[11px] font-semibold text-secondary uppercase tracking-wider mb-1">${escapeHtml(r.cuisine || 'Indian')}</div>
+                                    <h3 class="text-base font-bold text-on-surface mb-2 line-clamp-1" title="${safeTitle}">${safeTitle}</h3>
+                                    <div class="flex items-center gap-4 text-xs text-on-surface-variant mb-5">
+                                        <span class="flex items-center gap-1"><span class="material-symbols-outlined text-[16px]">schedule</span> ${r.cookTimeMinutes || 30} min</span>
+                                        <span class="flex items-center gap-1"><span class="material-symbols-outlined text-[16px]">dinner_dining</span> ${escapeHtml(r.mealType || 'Main Course')}</span>
+                                    </div>
+                                    <a href="/recipe_details.html?id=${r.id}" class="mt-auto w-full py-2.5 rounded-full border border-primary text-primary hover:bg-primary hover:text-white font-bold text-xs transition-colors flex items-center justify-center gap-1">
+                                        View Recipe <span class="material-symbols-outlined text-[14px]">arrow_forward</span>
+                                    </a>
+                                </div>
+                            </div>
+                        `;
+                    }).join('');
+                } else {
+                    grid.innerHTML = '<div class="col-span-full text-center py-6">No recipes found.</div>';
+                }
+            } catch (e) {
+                console.error('Failed to load popular recipes', e);
+            }
+        });
+    </script>
+</body>
+</html>

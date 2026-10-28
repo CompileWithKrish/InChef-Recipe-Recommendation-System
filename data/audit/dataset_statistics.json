@@ -1,0 +1,373 @@
+{
+  "indian_food_dataset": {
+    "total_records": 6871,
+    "duplicate_records": 0,
+    "duplicate_recipe_names": 136,
+    "columns": {
+      "Srno": {
+        "dtype": "int64",
+        "missing_count": 0,
+        "missing_pct": 0.0
+      },
+      "RecipeName": {
+        "dtype": "object",
+        "missing_count": 0,
+        "missing_pct": 0.0
+      },
+      "TranslatedRecipeName": {
+        "dtype": "object",
+        "missing_count": 0,
+        "missing_pct": 0.0
+      },
+      "Ingredients": {
+        "dtype": "object",
+        "missing_count": 6,
+        "missing_pct": 0.09
+      },
+      "TranslatedIngredients": {
+        "dtype": "object",
+        "missing_count": 6,
+        "missing_pct": 0.09
+      },
+      "PrepTimeInMins": {
+        "dtype": "int64",
+        "missing_count": 0,
+        "missing_pct": 0.0
+      },
+      "CookTimeInMins": {
+        "dtype": "int64",
+        "missing_count": 0,
+        "missing_pct": 0.0
+      },
+      "TotalTimeInMins": {
+        "dtype": "int64",
+        "missing_count": 0,
+        "missing_pct": 0.0
+      },
+      "Servings": {
+        "dtype": "int64",
+        "missing_count": 0,
+        "missing_pct": 0.0
+      },
+      "Cuisine": {
+        "dtype": "object",
+        "missing_count": 0,
+        "missing_pct": 0.0
+      },
+      "Course": {
+        "dtype": "object",
+        "missing_count": 0,
+        "missing_pct": 0.0
+      },
+      "Diet": {
+        "dtype": "object",
+        "missing_count": 0,
+        "missing_pct": 0.0
+      },
+      "Instructions": {
+        "dtype": "object",
+        "missing_count": 0,
+        "missing_pct": 0.0
+      },
+      "TranslatedInstructions": {
+        "dtype": "object",
+        "missing_count": 0,
+        "missing_pct": 0.0
+      },
+      "URL": {
+        "dtype": "object",
+        "missing_count": 0,
+        "missing_pct": 0.0
+      }
+    },
+    "metrics": {
+      "has_ingredients": 6865,
+      "has_instructions": 6871,
+      "has_prep_time": 6744,
+      "has_cook_time": 6636,
+      "has_total_time": 6868,
+      "has_servings": 6871,
+      "has_url": 6871,
+      "has_image": 0,
+      "has_nutrition": 0
+    },
+    "top_cuisines": {
+      "Indian": 1157,
+      "Continental": 1021,
+      "North Indian Recipes": 938,
+      "South Indian Recipes": 682,
+      "Italian Recipes": 236,
+      "Bengali Recipes": 175,
+      "Maharashtrian Recipes": 173,
+      "Kerala Recipes": 163,
+      "Tamil Nadu": 156,
+      "Karnataka": 149,
+      "Fusion": 135,
+      "Rajasthani": 123,
+      "Mexican": 119,
+      "Andhra": 118,
+      "Gujarati Recipes\ufeff": 115,
+      "Goan Recipes": 99,
+      "Punjabi": 84,
+      "Chettinad": 74,
+      "Asian": 72,
+      "Thai": 66
+    },
+    "top_courses": {
+      "Lunch": 1765,
+      "Side Dish": 992,
+      "Snack": 876,
+      "Dinner": 782,
+      "Dessert": 659,
+      "Appetizer": 639,
+      "Main Course": 315,
+      "South Indian Breakfast": 260,
+      "World Breakfast": 260,
+      "North Indian Breakfast": 123,
+      "Indian Breakfast": 101,
+      "Vegetarian": 47,
+      "One Pot Dish": 33,
+      "High Protein Vegetarian": 7,
+      "Brunch": 4,
+      "Vegan": 3,
+      "Non Vegeterian": 2,
+      "Eggetarian": 1,
+      "No Onion No Garlic (Sattvic)": 1,
+      "Sugar Free Diet": 1
+    },
+    "top_diets": {
+      "Vegetarian": 4712,
+      "High Protein Vegetarian": 705,
+      "Non Vegeterian": 427,
+      "Eggetarian": 344,
+      "Diabetic Friendly": 260,
+      "High Protein Non Vegetarian": 225,
+      "No Onion No Garlic (Sattvic)": 73,
+      "Vegan": 61,
+      "Gluten Free": 50,
+      "Sugar Free Diet": 14
+    }
+  },
+  "culinary_db": {
+    "recipe_details": {
+      "total_records": 45772,
+      "unique_titles": 44444,
+      "cuisines": {
+        "USA": 16118,
+        "Italy": 7504,
+        "Indian Subcontinent": 4058,
+        "Mexico": 3138,
+        "France": 2703,
+        "Canada": 1112,
+        "Caribbean": 1103,
+        "British Isles": 1075,
+        "Middle East": 993,
+        "China": 941,
+        "Greece": 934,
+        "Spain": 816,
+        "Thailand": 667,
+        "Africa": 651,
+        "South East Asia": 611
+      }
+    },
+    "ingredients": {
+      "total_records": 930,
+      "unique_entities": 930,
+      "unique_names": 929,
+      "categories": {
+        "Fruit": 136,
+        "Fish": 119,
+        "Vegetable": 73,
+        "Dish": 68,
+        "Plant": 64,
+        "Herb": 51,
+        "Meat": 49,
+        "Dairy": 45,
+        "Beverage Alcoholic": 45,
+        "Essential Oil": 42,
+        "Seafood": 35,
+        "Bakery": 30,
+        "Additive": 28,
+        "Spice": 26,
+        "Nuts & Seed": 25,
+        "Legume": 23,
+        "Cereal": 23,
+        "Beverage": 21,
+        "Fungus": 12,
+        "Flower": 9,
+        "Maize": 6
+      }
+    },
+    "compound_ingredients": {
+      "total_records": 103,
+      "compound_names": [
+        "Garam Masala",
+        "Ginger Garlic Paste",
+        "Coriander Cumin Seed Powder",
+        "Chaat Masala",
+        "Sambar Powder",
+        "Chole Masala",
+        "Rasam Powder",
+        "Tandoori Masala",
+        "Curry Powder",
+        "Panch Pharon Seed",
+        "Chicken Masala Powder",
+        "Goda Masala",
+        "Jal Jeera Powder",
+        "Ginger Garlic Coriander Leaves",
+        "Pulao Masala",
+        "Dabeli Masala",
+        "Cake Mix",
+        "Half Half",
+        "Ale",
+        "Vermicelli",
+        "Self Rising Flour",
+        "Mayonnaise",
+        "Salt-Pepper",
+        "Croissant",
+        "Puff Pastry"
+      ]
+    },
+    "aliases": {
+      "total_records": 456279,
+      "unique_recipes": 45749,
+      "unique_original_ingredients": 161208,
+      "unique_aliased_ingredients": 878
+    }
+  },
+  "datahive_recipes": {
+    "total_records": 39447,
+    "unique_recipe_names": 38103,
+    "duplicate_recipe_names": 1344,
+    "columns": {
+      "recipe_name": {
+        "dtype": "object",
+        "missing_count": 0,
+        "missing_pct": 0.0
+      },
+      "source": {
+        "dtype": "object",
+        "missing_count": 0,
+        "missing_pct": 0.0
+      },
+      "url": {
+        "dtype": "object",
+        "missing_count": 0,
+        "missing_pct": 0.0
+      },
+      "servings": {
+        "dtype": "float64",
+        "missing_count": 0,
+        "missing_pct": 0.0
+      },
+      "calories": {
+        "dtype": "float64",
+        "missing_count": 0,
+        "missing_pct": 0.0
+      },
+      "total_weight_g": {
+        "dtype": "float64",
+        "missing_count": 0,
+        "missing_pct": 0.0
+      },
+      "image_url": {
+        "dtype": "object",
+        "missing_count": 277,
+        "missing_pct": 0.7
+      },
+      "diet_labels": {
+        "dtype": "object",
+        "missing_count": 0,
+        "missing_pct": 0.0
+      },
+      "health_labels": {
+        "dtype": "object",
+        "missing_count": 0,
+        "missing_pct": 0.0
+      },
+      "cautions": {
+        "dtype": "object",
+        "missing_count": 0,
+        "missing_pct": 0.0
+      },
+      "cuisine_type": {
+        "dtype": "object",
+        "missing_count": 0,
+        "missing_pct": 0.0
+      },
+      "meal_type": {
+        "dtype": "object",
+        "missing_count": 0,
+        "missing_pct": 0.0
+      },
+      "dish_type": {
+        "dtype": "object",
+        "missing_count": 0,
+        "missing_pct": 0.0
+      },
+      "ingredient_lines": {
+        "dtype": "object",
+        "missing_count": 0,
+        "missing_pct": 0.0
+      },
+      "ingredients": {
+        "dtype": "object",
+        "missing_count": 0,
+        "missing_pct": 0.0
+      },
+      "total_nutrients": {
+        "dtype": "object",
+        "missing_count": 0,
+        "missing_pct": 0.0
+      },
+      "daily_values": {
+        "dtype": "object",
+        "missing_count": 0,
+        "missing_pct": 0.0
+      },
+      "digest": {
+        "dtype": "object",
+        "missing_count": 0,
+        "missing_pct": 0.0
+      }
+    },
+    "metrics": {
+      "has_image": 39170,
+      "has_url": 39447,
+      "has_servings": 39447,
+      "has_calories": 39447,
+      "has_diet_labels": 33649,
+      "has_health_labels": 39234,
+      "has_cautions": 32795,
+      "has_cuisine_type": 39447,
+      "has_meal_type": 39447,
+      "has_dish_type": 39425,
+      "has_ingredients": 39447,
+      "has_ingredient_lines": 39447,
+      "has_total_nutrients": 39447
+    },
+    "cuisines_distribution": {
+      "american": 16879,
+      "italian": 4480,
+      "mediterranean": 3785,
+      "french": 3111,
+      "british": 1667,
+      "mexican": 1657,
+      "world": 1310,
+      "south american": 1195,
+      "indian": 915,
+      "chinese": 786,
+      "nordic": 772,
+      "middle eastern": 737,
+      "south east asian": 702,
+      "asian": 598,
+      "central europe": 456,
+      "japanese": 394,
+      "eastern europe": 292,
+      "caribbean": 265,
+      "greek": 236,
+      "korean": 84,
+      "kosher": 44
+    }
+  }
+}

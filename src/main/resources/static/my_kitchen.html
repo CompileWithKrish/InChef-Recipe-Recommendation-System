@@ -1,0 +1,538 @@
+<!DOCTYPE html>
+<html class="light" lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <title>InChef - My Kitchen Pantry</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Caveat:wght@600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet">
+    <script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#004538",
+                        "primary-dark": "#0f3d32",
+                        "primary-container": "#1f5d4e",
+                        "on-primary": "#ffffff",
+                        "secondary": "#954a00",
+                        "secondary-container": "#fe974a",
+                        "on-secondary": "#ffffff",
+                        "surface": "#fff8f4",
+                        "surface-container-lowest": "#ffffff",
+                        "surface-container-low": "#fbf2eb",
+                        "surface-container": "#f5ece6",
+                        "surface-container-high": "#efe7e0",
+                        "surface-variant": "#eae1da",
+                        "on-surface": "#1f1b17",
+                        "on-surface-variant": "#5a544e",
+                        "outline": "#707975",
+                        "outline-variant": "#bfc9c4",
+                    },
+                    fontFamily: {
+                        sans: ["Manrope", "sans-serif"],
+                        handwriting: ["Caveat", "cursive"],
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        .material-symbols-outlined {
+            font-family: 'Material Symbols Outlined';
+            font-weight: normal;
+            font-style: normal;
+            font-size: 24px;
+            line-height: 1;
+            display: inline-block;
+            white-space: nowrap;
+            -webkit-font-smoothing: antialiased;
+        }
+    </style>
+</head>
+<body class="bg-surface text-on-surface font-sans min-h-screen flex flex-col selection:bg-primary selection:text-white">
+    <!-- Top Navigation Bar -->
+    <header id="global-header" data-active="kitchen"></header>
+
+    <!-- Toast Notification -->
+    <div id="toastNotification" class="fixed top-24 right-8 z-50 transition-all duration-300 transform translate-y-[-10px] opacity-0 pointer-events-none flex items-center gap-3 px-5 py-3.5 bg-white rounded-xl shadow-xl border border-primary/20">
+        <div class="w-7 h-7 rounded-full bg-[#dcf2e8] flex items-center justify-center text-primary">
+            <span class="material-symbols-outlined text-[18px]">check_circle</span>
+        </div>
+        <div class="flex flex-col pr-2">
+            <span class="font-bold text-xs text-on-surface" id="toast-title">Pantry Updated</span>
+            <span class="text-xs text-on-surface-variant" id="toast-message">Ingredient added to your kitchen.</span>
+        </div>
+    </div>
+
+    <!-- Main Canvas -->
+    <main class="flex-grow w-full max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-12 py-8 space-y-8">
+        <!-- 1. Welcoming Introduction Bar -->
+        <div class="flex flex-col md:flex-row md:items-center justify-between gap-6 pb-2">
+            <div class="flex items-start gap-4">
+                <div class="w-14 h-14 rounded-2xl bg-[#dcf2e8] flex items-center justify-center text-primary shadow-xs flex-shrink-0">
+                    <span class="material-symbols-outlined text-[32px]">skillet</span>
+                </div>
+                <div class="space-y-1">
+                    <div class="flex items-center gap-3">
+                        <h1 class="text-3xl md:text-4xl font-extrabold text-primary tracking-tight">My Kitchen</h1>
+                        <span class="inline-flex items-center px-3 py-1 rounded-full text-xs font-bold bg-primary/10 text-primary">
+                            Pantry Active
+                        </span>
+                    </div>
+                    <p class="text-sm md:text-base text-on-surface-variant">
+                        Your pantry ingredients, saved for instant authentic Indian recipe matching.
+                    </p>
+                </div>
+            </div>
+            <!-- Right Summary Panel & Recommend CTA -->
+            <div class="flex flex-wrap items-center gap-4">
+                <div class="flex items-center gap-2.5 bg-surface-container-low px-4 py-2.5 rounded-2xl shadow-xs border border-outline-variant/40">
+                    <span class="w-2.5 h-2.5 rounded-full bg-primary animate-pulse"></span>
+                    <span class="text-xs font-bold text-on-surface">Pantry:</span>
+                    <span class="px-2.5 py-0.5 rounded-full text-xs font-extrabold bg-primary text-white" id="totalCountPill">0 items</span>
+                </div>
+                <button id="find-recipes-from-pantry-btn" class="px-5 py-2.5 bg-secondary hover:bg-[#803d00] text-white font-bold text-xs sm:text-sm rounded-xl transition-all shadow-sm flex items-center gap-1.5">
+                    <span class="material-symbols-outlined text-[18px]">auto_awesome</span>
+                    Find Matching Recipes
+                </button>
+            </div>
+        </div>
+
+        <!-- 2. "Add Ingredients" Card -->
+        <section class="bg-surface-container-lowest rounded-2xl p-6 md:p-8 shadow-xs border border-primary/10 relative">
+            <div class="max-w-3xl space-y-2 mb-6">
+                <h2 class="text-xl md:text-2xl font-bold text-on-surface">What ingredients do you have?</h2>
+                <p class="text-xs sm:text-sm text-on-surface-variant">
+                    Add spices, vegetables, dairy, and grains in your kitchen pantry to get genuine recipe suggestions.
+                </p>
+            </div>
+
+            <!-- Search Input & Interactive Typeahead Dropdown -->
+            <div class="relative max-w-4xl">
+                <div class="flex flex-col sm:flex-row items-stretch gap-3">
+                    <div class="relative flex-grow flex items-center">
+                        <span class="material-symbols-outlined absolute left-4 text-outline text-[22px] pointer-events-none">search</span>
+                        <input id="ingredientSearchInput" class="w-full pl-12 pr-10 py-3.5 bg-surface-container-low rounded-xl text-on-surface text-sm placeholder:text-outline focus:outline-none focus:bg-white focus:ring-2 focus:ring-primary/20 border border-outline-variant/60 transition-all" 
+                               placeholder="Search ingredients, e.g. Ginger, Garam Masala, Cumin, Paneer..." type="text">
+                        <button id="clear-search-btn" class="absolute right-3.5 text-outline hover:text-on-surface transition-colors">
+                            <span class="material-symbols-outlined text-[20px]">cancel</span>
+                        </button>
+                    </div>
+                    <div class="flex items-center gap-2">
+                        <div class="relative w-24">
+                            <input id="pantryQuantityInput" type="number" step="any" min="0.1" value="1" 
+                                   class="w-full px-3 py-3.5 bg-surface-container-low rounded-xl text-on-surface text-sm font-semibold text-center focus:outline-none focus:bg-white focus:ring-2 focus:ring-primary/20 border border-outline-variant/60 transition-all" 
+                                   placeholder="Qty">
+                        </div>
+                        <div class="relative">
+                            <select id="pantryUnitSelect" class="py-3.5 pl-3 pr-8 bg-surface-container-low rounded-xl text-on-surface text-sm font-semibold focus:outline-none focus:bg-white focus:ring-2 focus:ring-primary/20 border border-outline-variant/60 transition-all">
+                                <option value="PIECES" selected>Pieces</option>
+                                <option value="GRAMS">Grams (g)</option>
+                                <option value="KILOGRAMS">Kilograms (kg)</option>
+                                <option value="CUPS">Cups</option>
+                                <option value="TABLESPOONS">Tablespoons (tbsp)</option>
+                                <option value="TEASPOONS">Teaspoons (tsp)</option>
+                                <option value="MILLILITERS">Milliliters (ml)</option>
+                                <option value="LITERS">Liters (l)</option>
+                                <option value="PINCH">Pinch</option>
+                            </select>
+                        </div>
+                    </div>
+                    <button id="add-ingredient-btn" class="px-6 py-3.5 bg-primary hover:bg-primary-dark text-white rounded-xl font-bold text-sm flex items-center justify-center gap-2 shadow-sm transition-all flex-shrink-0">
+                        <span class="material-symbols-outlined text-[20px]">add</span>
+                        <span>Add Ingredient</span>
+                    </button>
+                </div>
+
+                <!-- Suggestions Dropdown -->
+                <div id="suggestions-dropdown" class="hidden absolute left-0 right-0 top-full mt-2 z-30 bg-white rounded-xl shadow-xl border border-primary/10 overflow-hidden max-h-72 overflow-y-auto">
+                    <div class="px-4 py-2 bg-surface-container-low flex justify-between items-center text-xs">
+                        <span class="font-bold text-on-surface-variant uppercase tracking-wider">Suggested from Indian Recipe Index</span>
+                        <span class="text-outline">Click to add</span>
+                    </div>
+                    <ul id="suggestions-list" class="divide-y divide-surface-container-low"></ul>
+                </div>
+            </div>
+
+            <!-- Quick Add Staples -->
+            <div class="mt-6 pt-5 border-t border-surface-container-high">
+                <div class="flex items-center gap-2 mb-3">
+                    <span class="material-symbols-outlined text-[18px] text-secondary">bolt</span>
+                    <span class="text-xs font-bold text-on-surface-variant uppercase tracking-wider">Quick Add Indian Kitchen Staples:</span>
+                </div>
+                <div class="flex flex-wrap items-center gap-2" id="quick-staples-container">
+                    <button class="quick-staple-btn inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full bg-surface-container-low hover:bg-[#dcf2e8] hover:text-primary text-on-surface text-xs font-semibold transition-colors border border-outline-variant/40" data-name="Turmeric" data-cat="Spices">
+                        <span class="material-symbols-outlined text-[15px] text-secondary">add</span> Turmeric (Haldi)
+                    </button>
+                    <button class="quick-staple-btn inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full bg-surface-container-low hover:bg-[#dcf2e8] hover:text-primary text-on-surface text-xs font-semibold transition-colors border border-outline-variant/40" data-name="Ginger" data-cat="Aromatics">
+                        <span class="material-symbols-outlined text-[15px] text-secondary">add</span> Ginger (Adrak)
+                    </button>
+                    <button class="quick-staple-btn inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full bg-surface-container-low hover:bg-[#dcf2e8] hover:text-primary text-on-surface text-xs font-semibold transition-colors border border-outline-variant/40" data-name="Garlic" data-cat="Aromatics">
+                        <span class="material-symbols-outlined text-[15px] text-secondary">add</span> Garlic (Lahsun)
+                    </button>
+                    <button class="quick-staple-btn inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full bg-surface-container-low hover:bg-[#dcf2e8] hover:text-primary text-on-surface text-xs font-semibold transition-colors border border-outline-variant/40" data-name="Cumin Seeds" data-cat="Spices">
+                        <span class="material-symbols-outlined text-[15px] text-secondary">add</span> Cumin Seeds (Jeera)
+                    </button>
+                    <button class="quick-staple-btn inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full bg-surface-container-low hover:bg-[#dcf2e8] hover:text-primary text-on-surface text-xs font-semibold transition-colors border border-outline-variant/40" data-name="Ghee" data-cat="Dairy">
+                        <span class="material-symbols-outlined text-[15px] text-secondary">add</span> Desi Ghee
+                    </button>
+                    <button class="quick-staple-btn inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full bg-surface-container-low hover:bg-[#dcf2e8] hover:text-primary text-on-surface text-xs font-semibold transition-colors border border-outline-variant/40" data-name="Mustard Seeds" data-cat="Spices">
+                        <span class="material-symbols-outlined text-[15px] text-secondary">add</span> Mustard Seeds (Rai)
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <!-- 3. "Your Pantry" Section -->
+        <section class="space-y-6">
+            <div class="flex flex-col md:flex-row md:items-end justify-between gap-4">
+                <div>
+                    <div class="flex items-center gap-3 mb-1">
+                        <h2 class="text-2xl sm:text-3xl font-extrabold text-primary">Your Pantry</h2>
+                        <span class="px-3 py-1 bg-surface-container text-primary rounded-full text-xs font-bold" id="pantry-header-badge">
+                            0 ingredients in kitchen
+                        </span>
+                    </div>
+                    <p class="text-xs sm:text-sm text-on-surface-variant">
+                        Manage items currently in your kitchen.
+                    </p>
+                </div>
+                <button id="clear-pantry-btn" class="inline-flex items-center gap-1.5 text-red-700 hover:text-red-900 font-bold text-xs sm:text-sm transition-colors self-start md:self-auto py-1">
+                    <span class="material-symbols-outlined text-[18px]">delete_sweep</span>
+                    Clear All Ingredients
+                </button>
+            </div>
+
+            <!-- Filter Controls -->
+            <div class="bg-surface-container-lowest p-4 rounded-2xl shadow-xs border border-primary/10 flex flex-col lg:flex-row lg:items-center justify-between gap-4">
+                <!-- Filter Tabs -->
+                <div class="flex flex-wrap items-center gap-2" id="category-filter-tabs">
+                    <button class="cat-tab px-4 py-2 rounded-xl bg-primary text-white text-xs font-bold shadow-xs transition-all" data-cat="all">
+                        All Items
+                    </button>
+                    <button class="cat-tab px-4 py-2 rounded-xl bg-surface-container-low text-on-surface hover:bg-surface-container text-xs font-semibold transition-all" data-cat="Vegetables">
+                        Vegetables
+                    </button>
+                    <button class="cat-tab px-4 py-2 rounded-xl bg-surface-container-low text-on-surface hover:bg-surface-container text-xs font-semibold transition-all" data-cat="Spices">
+                        Spices &amp; Herbs
+                    </button>
+                    <button class="cat-tab px-4 py-2 rounded-xl bg-surface-container-low text-on-surface hover:bg-surface-container text-xs font-semibold transition-all" data-cat="Dairy">
+                        Dairy
+                    </button>
+                    <button class="cat-tab px-4 py-2 rounded-xl bg-surface-container-low text-on-surface hover:bg-surface-container text-xs font-semibold transition-all" data-cat="Grains">
+                        Grains &amp; Flours
+                    </button>
+                </div>
+                <!-- Search within pantry -->
+                <div class="relative w-full lg:w-72">
+                    <span class="material-symbols-outlined absolute left-3.5 top-1/2 -translate-y-1/2 text-outline text-[18px] pointer-events-none">filter_list</span>
+                    <input id="pantryFilterInput" class="w-full pl-9 pr-4 py-2 bg-surface-container-low rounded-xl text-on-surface text-xs font-semibold placeholder:text-outline focus:outline-none border border-outline-variant/40" placeholder="Filter current items..." type="text">
+                </div>
+            </div>
+
+            <!-- Pantry Tiles Grid -->
+            <div id="pantry-grid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+                <!-- Dynamically loaded -->
+            </div>
+
+            <!-- Empty State -->
+            <div id="pantry-empty" class="hidden text-center py-16 bg-surface-container-lowest rounded-3xl border border-primary/10 space-y-4">
+                <div class="w-16 h-16 rounded-full bg-surface-container flex items-center justify-center mx-auto text-primary">
+                    <span class="material-symbols-outlined text-[36px]">kitchen</span>
+                </div>
+                <h3 class="text-xl font-bold text-primary">Your kitchen pantry is empty</h3>
+                <p class="text-sm text-on-surface-variant max-w-sm mx-auto">
+                    Add ingredients from your kitchen to get accurate recipe suggestions matching what you have on hand.
+                </p>
+            </div>
+        </section>
+    </main>
+
+    <footer id="global-footer"></footer>
+
+    <script src="/js/api.js"></script>
+    <script src="/js/header.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', async () => {
+            const searchInput = document.getElementById('ingredientSearchInput');
+            const clearSearchBtn = document.getElementById('clear-search-btn');
+            const addBtn = document.getElementById('add-ingredient-btn');
+            const dropdown = document.getElementById('suggestions-dropdown');
+            const suggestionsList = document.getElementById('suggestions-list');
+            const pantryGrid = document.getElementById('pantry-grid');
+            const pantryEmpty = document.getElementById('pantry-empty');
+            const totalCountPill = document.getElementById('totalCountPill');
+            const headerBadge = document.getElementById('pantry-header-badge');
+            const clearAllBtn = document.getElementById('clear-pantry-btn');
+            const pantryFilterInput = document.getElementById('pantryFilterInput');
+            const findRecipesBtn = document.getElementById('find-recipes-from-pantry-btn');
+            const catTabs = document.querySelectorAll('.cat-tab');
+
+            let allPantryItems = [];
+            let activeCategory = 'all';
+
+            function showToast(title, msg) {
+                const toast = document.getElementById('toastNotification');
+                document.getElementById('toast-title').textContent = title;
+                document.getElementById('toast-message').textContent = msg;
+                toast.classList.remove('opacity-0', 'translate-y-[-10px]', 'pointer-events-none');
+                setTimeout(() => {
+                    toast.classList.add('opacity-0', 'translate-y-[-10px]', 'pointer-events-none');
+                }, 3000);
+            }
+
+            async function loadPantry() {
+                try {
+                    const res = await InChefAPI.getPantry();
+                    allPantryItems = (res && res.data) ? res.data : [];
+                    renderPantry();
+                } catch (err) {
+                    if (err.status === 401 || err.status === 403) {
+                        window.location.href = `/auth.html?mode=login&returnUrl=/my_kitchen.html`;
+                        return;
+                    }
+                    console.error('Failed to load pantry', err);
+                }
+            }
+
+            function renderPantry() {
+                const count = allPantryItems.length;
+                totalCountPill.textContent = `${count} items`;
+                headerBadge.textContent = `${count} ingredients in kitchen`;
+
+                const filterText = pantryFilterInput.value.trim().toLowerCase();
+                const filtered = allPantryItems.filter(item => {
+                    const name = (item.ingredientName || '').toLowerCase();
+                    const cat = (item.category || '').toLowerCase();
+                    const matchesSearch = !filterText || name.includes(filterText) || cat.includes(filterText);
+                    const matchesCat = activeCategory === 'all' || cat.includes(activeCategory.toLowerCase());
+                    return matchesSearch && matchesCat;
+                });
+
+                if (filtered.length === 0) {
+                    pantryGrid.innerHTML = '';
+                    if (count === 0) {
+                        pantryEmpty.classList.remove('hidden');
+                    }
+                    return;
+                }
+
+                pantryEmpty.classList.add('hidden');
+                pantryGrid.innerHTML = filtered.map(item => {
+                    const icon = getCategoryIcon(item.category);
+                    return `
+                        <div class="group bg-white hover:bg-surface-container-low/60 rounded-2xl p-5 shadow-xs border border-primary/10 transition-all flex items-start justify-between relative hover:shadow-md">
+                            <div class="flex items-start gap-3.5">
+                                <div class="w-12 h-12 rounded-xl bg-[#dcf2e8] flex items-center justify-center text-primary flex-shrink-0">
+                                    <span class="material-symbols-outlined text-[24px]">${icon}</span>
+                                </div>
+                                <div>
+                                    <h3 class="text-sm sm:text-base leading-tight text-on-surface font-bold group-hover:text-primary transition-colors">${item.ingredientName}</h3>
+                                    <p class="text-xs text-on-surface-variant font-normal mt-0.5">${formatQuantityUnit(item.quantity, item.unit)}</p>
+                                    <span class="inline-block mt-2 px-2.5 py-0.5 rounded-full text-[10px] font-bold bg-surface-container text-on-surface-variant">${item.category || 'General'}</span>
+                                </div>
+                            </div>
+                            <button class="remove-pantry-btn w-8 h-8 rounded-full hover:bg-red-50 text-outline hover:text-red-700 flex items-center justify-center transition-colors" 
+                                    data-id="${item.ingredientId}" title="Remove ${item.ingredientName}">
+                                <span class="material-symbols-outlined text-[18px]">close</span>
+                            </button>
+                        </div>
+                    `;
+                }).join('');
+
+                // Wire removal
+                pantryGrid.querySelectorAll('.remove-pantry-btn').forEach(btn => {
+                    btn.addEventListener('click', async () => {
+                        const ingId = btn.getAttribute('data-id');
+                        try {
+                            await InChefAPI.removePantryItem(ingId);
+                            showToast('Item Removed', 'Ingredient removed from your kitchen.');
+                            await loadPantry();
+                        } catch (err) {
+                            alert('Failed to remove item: ' + err.message);
+                        }
+                    });
+                });
+            }
+
+            function formatQuantityUnit(qty, unit) {
+                if (!qty && !unit) return 'In stock';
+                const u = (unit || 'PIECES').toUpperCase();
+                const q = qty || 1;
+                switch (u) {
+                    case 'GRAMS': return `${q} g`;
+                    case 'KILOGRAMS': return `${q} kg`;
+                    case 'MILLILITERS': return `${q} ml`;
+                    case 'LITERS': return `${q} L`;
+                    case 'CUPS': return q === 1 ? '1 cup' : `${q} cups`;
+                    case 'TABLESPOONS': return q === 1 ? '1 tbsp' : `${q} tbsp`;
+                    case 'TEASPOONS': return q === 1 ? '1 tsp' : `${q} tsp`;
+                    case 'PINCH': return q === 1 ? '1 pinch' : `${q} pinches`;
+                    case 'PIECES':
+                    default:
+                        return q === 1 ? '1 piece' : `${q} pieces`;
+                }
+            }
+
+            function getCategoryIcon(cat) {
+                const c = (cat || '').toLowerCase();
+                if (c.includes('veg')) return 'nutrition';
+                if (c.includes('spice') || c.includes('herb')) return 'eco';
+                if (c.includes('dairy')) return 'egg_alt';
+                if (c.includes('grain') || c.includes('flour') || c.includes('rice')) return 'grain';
+                if (c.includes('meat') || c.includes('poultry') || c.includes('chicken')) return 'set_meal';
+                return 'kitchen';
+            }
+
+            async function addIngredientToPantry(name, category = 'General', customQty = null, customUnit = null) {
+                if (!name || !name.trim()) return;
+
+                const qtyInput = document.getElementById('pantryQuantityInput');
+                const unitSelect = document.getElementById('pantryUnitSelect');
+
+                let qty = customQty !== null ? customQty : (qtyInput ? parseFloat(qtyInput.value) : 1);
+                if (isNaN(qty) || qty <= 0) qty = 1;
+
+                let unit = customUnit || (unitSelect ? unitSelect.value : 'PIECES');
+                if (!unit || unit.toLowerCase() === 'item') unit = 'PIECES';
+
+                try {
+                    await InChefAPI.addPantryItem({
+                        ingredientName: name.trim(),
+                        category: category,
+                        quantity: qty,
+                        unit: unit
+                    });
+                    showToast('Pantry Updated', `Added ${formatQuantityUnit(qty, unit)} of ${name.trim()} to your kitchen.`);
+                    searchInput.value = '';
+                    if (qtyInput) qtyInput.value = '1';
+                    dropdown.classList.add('hidden');
+                    await loadPantry();
+                } catch (err) {
+                    alert('Could not add ingredient: ' + (err.message || 'Error occurred'));
+                }
+            }
+
+            addBtn.addEventListener('click', () => {
+                addIngredientToPantry(searchInput.value);
+            });
+
+            searchInput.addEventListener('keydown', (e) => {
+                if (e.key === 'Enter') {
+                    e.preventDefault();
+                    addIngredientToPantry(searchInput.value);
+                }
+            });
+
+            clearSearchBtn.addEventListener('click', () => {
+                searchInput.value = '';
+                dropdown.classList.add('hidden');
+            });
+
+            // Typeahead search
+            let debounceTimer = null;
+            searchInput.addEventListener('input', () => {
+                clearTimeout(debounceTimer);
+                const q = searchInput.value.trim();
+                if (q.length < 2) {
+                    dropdown.classList.add('hidden');
+                    return;
+                }
+
+                debounceTimer = setTimeout(async () => {
+                    try {
+                        const res = await InChefAPI.autocompleteIngredients(q, 8);
+                        const items = (res && res.data) ? res.data : [];
+                        if (items.length > 0) {
+                            suggestionsList.innerHTML = items.map(it => `
+                                <li class="flex items-center justify-between px-4 py-2.5 hover:bg-surface-container-low transition-colors cursor-pointer group select-ing" data-name="${it.name}" data-cat="${it.category || 'General'}">
+                                    <div class="flex items-center gap-3">
+                                        <div class="w-7 h-7 rounded-lg bg-surface-container flex items-center justify-center text-primary font-bold text-xs">
+                                            ${it.name.substring(0, 2).toUpperCase()}
+                                        </div>
+                                        <div>
+                                            <div class="text-xs font-bold text-on-surface group-hover:text-primary">${it.name}</div>
+                                            <div class="text-[11px] text-on-surface-variant">${it.category || 'Indian Ingredient'}</div>
+                                        </div>
+                                    </div>
+                                    <button type="button" class="px-2.5 py-1 rounded-lg bg-[#dcf2e8] text-primary font-bold text-xs">
+                                        + Add
+                                    </button>
+                                </li>
+                            `).join('');
+                            dropdown.classList.remove('hidden');
+
+                            suggestionsList.querySelectorAll('.select-ing').forEach(el => {
+                                el.addEventListener('click', () => {
+                                    const n = el.getAttribute('data-name');
+                                    const c = el.getAttribute('data-cat');
+                                    addIngredientToPantry(n, c);
+                                });
+                            });
+                        } else {
+                            dropdown.classList.add('hidden');
+                        }
+                    } catch (e) {
+                        dropdown.classList.add('hidden');
+                    }
+                }, 250);
+            });
+
+            // Quick staples buttons
+            document.querySelectorAll('.quick-staple-btn').forEach(btn => {
+                btn.addEventListener('click', () => {
+                    const name = btn.getAttribute('data-name');
+                    const cat = btn.getAttribute('data-cat');
+                    addIngredientToPantry(name, cat);
+                });
+            });
+
+            // Clear all
+            clearAllBtn.addEventListener('click', async () => {
+                if (confirm('Are you sure you want to clear your pantry?')) {
+                    try {
+                        await InChefAPI.clearPantry();
+                        showToast('Pantry Cleared', 'All ingredients removed.');
+                        await loadPantry();
+                    } catch (err) {
+                        alert('Could not clear pantry: ' + err.message);
+                    }
+                }
+            });
+
+            // Category tabs
+            catTabs.forEach(tab => {
+                tab.addEventListener('click', () => {
+                    activeCategory = tab.getAttribute('data-cat');
+                    catTabs.forEach(t => {
+                        if (t === tab) {
+                            t.className = 'cat-tab px-4 py-2 rounded-xl bg-primary text-white text-xs font-bold shadow-xs transition-all';
+                        } else {
+                            t.className = 'cat-tab px-4 py-2 rounded-xl bg-surface-container-low text-on-surface hover:bg-surface-container text-xs font-semibold transition-all';
+                        }
+                    });
+                    renderPantry();
+                });
+            });
+
+            pantryFilterInput.addEventListener('input', renderPantry);
+
+            // Find matching recipes from pantry button
+            findRecipesBtn.addEventListener('click', () => {
+                const names = allPantryItems.map(it => it.ingredientName).filter(Boolean);
+                if (names.length === 0) {
+                    alert('Your pantry is empty. Add ingredients first!');
+                    return;
+                }
+                window.location.href = `/recommendations.html?ingredients=${encodeURIComponent(names.join(','))}`;
+            });
+
+            // Initial load
+            await loadPantry();
+        });
+    </script>
+</body>
+</html>

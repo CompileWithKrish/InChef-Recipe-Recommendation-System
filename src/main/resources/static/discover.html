@@ -1,0 +1,444 @@
+<!DOCTYPE html>
+<html class="light" lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="referrer" content="no-referrer">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <title>InChef - Discover Authentic Indian Recipes</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Caveat:wght@600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet">
+    <script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#004538",
+                        "primary-dark": "#0f3d32",
+                        "primary-container": "#1f5d4e",
+                        "on-primary": "#ffffff",
+                        "secondary": "#954a00",
+                        "secondary-container": "#fe974a",
+                        "on-secondary": "#ffffff",
+                        "surface": "#fff8f4",
+                        "surface-container-lowest": "#ffffff",
+                        "surface-container-low": "#fbf2eb",
+                        "surface-container": "#f5ece6",
+                        "surface-container-high": "#efe7e0",
+                        "surface-variant": "#eae1da",
+                        "on-surface": "#1f1b17",
+                        "on-surface-variant": "#5a544e",
+                        "outline": "#707975",
+                        "outline-variant": "#bfc9c4",
+                    },
+                    fontFamily: {
+                        sans: ["Manrope", "sans-serif"],
+                        handwriting: ["Caveat", "cursive"],
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        .material-symbols-outlined {
+            font-family: 'Material Symbols Outlined';
+            font-weight: normal;
+            font-style: normal;
+            font-size: 24px;
+            line-height: 1;
+            display: inline-block;
+            white-space: nowrap;
+            -webkit-font-smoothing: antialiased;
+        }
+    </style>
+</head>
+<body class="bg-surface text-on-surface font-sans min-h-screen flex flex-col selection:bg-primary selection:text-white">
+    <!-- Top Navigation Bar -->
+    <header id="global-header" data-active="discover"></header>
+
+    <!-- Main Content -->
+    <main class="flex-grow w-full max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-12 py-8 space-y-8">
+        <!-- Hero Search Section -->
+        <section class="text-center max-w-3xl mx-auto space-y-4">
+            <h1 class="text-3xl sm:text-4xl lg:text-[44px] font-extrabold text-primary tracking-tight">
+                Discover Authentic Recipes
+            </h1>
+            <p class="text-sm sm:text-base text-on-surface-variant max-w-xl mx-auto">
+                Search directly for your favorite Indian dishes by name or explore our extensive recipe collection.
+            </p>
+
+            <!-- Search Bar -->
+            <form id="search-form" class="pt-2 max-w-2xl mx-auto w-full">
+                <div class="relative flex items-center bg-surface-container-lowest rounded-2xl shadow-md p-2 transition-all focus-within:shadow-lg border border-primary/10">
+                    <span class="material-symbols-outlined text-outline ml-3 mr-2">search</span>
+                    <input id="recipe-search-input" class="w-full bg-transparent border-0 focus:ring-0 text-on-surface placeholder:text-outline font-medium text-sm sm:text-base py-2 px-1 focus:outline-none" 
+                           placeholder="Search recipes, e.g. Chicken Biryani, Masala Dosa, Paneer..." type="text">
+                    <button type="button" id="clear-search-btn" class="p-2 text-outline hover:text-on-surface transition-colors rounded-full" title="Clear">
+                        <span class="material-symbols-outlined text-lg">close</span>
+                    </button>
+                    <button type="submit" class="flex items-center gap-2 bg-primary hover:bg-primary-dark text-white px-6 py-3 rounded-xl font-bold text-sm transition-all shadow-sm shrink-0">
+                        <span>Search</span>
+                        <span class="material-symbols-outlined text-sm">arrow_forward</span>
+                    </button>
+                </div>
+            </form>
+
+            <div class="mt-3 flex items-center justify-center gap-2 text-xs sm:text-sm text-on-surface-variant">
+                <span>Have ingredients in your kitchen?</span>
+                <a class="inline-flex items-center gap-1 text-secondary font-bold hover:underline" href="/recommendations.html">
+                    Find recipes by ingredients <span class="material-symbols-outlined text-base">arrow_right_alt</span>
+                </a>
+            </div>
+        </section>
+
+        <!-- Filters & Taxonomy Row -->
+        <section class="space-y-4 bg-surface-container-lowest p-5 rounded-2xl border border-primary/10 shadow-xs">
+            <div class="flex flex-col lg:flex-row lg:items-center justify-between gap-4">
+                <!-- Quick Dietary Badges -->
+                <div class="flex items-center gap-2 overflow-x-auto pb-1" id="diet-filters">
+                    <button class="diet-btn px-4 py-2 rounded-xl text-xs sm:text-sm font-bold transition-all bg-primary text-white shadow-xs" data-diet="all">
+                        All Diets
+                    </button>
+                    <button class="diet-btn px-4 py-2 rounded-xl text-xs sm:text-sm font-semibold transition-all bg-surface-container text-on-surface hover:bg-surface-variant" data-diet="Vegetarian">
+                        Vegetarian
+                    </button>
+                    <button class="diet-btn px-4 py-2 rounded-xl text-xs sm:text-sm font-semibold transition-all bg-surface-container text-on-surface hover:bg-surface-variant" data-diet="Non-Vegetarian">
+                        Non-Vegetarian
+                    </button>
+                    <button class="diet-btn px-4 py-2 rounded-xl text-xs sm:text-sm font-semibold transition-all bg-surface-container text-on-surface hover:bg-surface-variant" data-diet="Vegan">
+                        Vegan
+                    </button>
+                </div>
+
+                <!-- Cuisine Select & Time Filter -->
+                <div class="flex flex-wrap items-center gap-3">
+                    <select id="cuisine-select" class="px-3.5 py-2 rounded-xl bg-surface-container-low border border-outline-variant/60 text-xs sm:text-sm font-semibold text-on-surface focus:outline-none focus:border-primary">
+                        <option value="all">All Cuisines</option>
+                        <option value="North Indian">North Indian</option>
+                        <option value="South Indian">South Indian</option>
+                        <option value="Punjabi">Punjabi</option>
+                        <option value="Mughlai">Mughlai</option>
+                        <option value="Bengali">Bengali</option>
+                        <option value="Gujarati">Gujarati</option>
+                        <option value="Maharashtrian">Maharashtrian</option>
+                        <option value="Hyderabadi">Hyderabadi</option>
+                        <option value="Goan">Goan</option>
+                        <option value="Kerala">Kerala</option>
+                        <option value="Tamil Nadu">Tamil Nadu</option>
+                        <option value="Rajasthani">Rajasthani</option>
+                        <option value="Kashmiri">Kashmiri</option>
+                    </select>
+
+                    <select id="time-select" class="px-3.5 py-2 rounded-xl bg-surface-container-low border border-outline-variant/60 text-xs sm:text-sm font-semibold text-on-surface focus:outline-none focus:border-primary">
+                        <option value="">Any Time</option>
+                        <option value="15">≤ 15 mins</option>
+                        <option value="30">≤ 30 mins</option>
+                        <option value="45">≤ 45 mins</option>
+                        <option value="60">≤ 60 mins</option>
+                    </select>
+                </div>
+            </div>
+
+            <!-- Results Summary -->
+            <div class="flex items-center justify-between pt-2 border-t border-outline-variant/30 text-xs text-on-surface-variant">
+                <div>
+                    Found <span id="results-count" class="font-bold text-primary">0</span> recipes
+                </div>
+                <div id="active-filter-tags" class="flex items-center gap-1.5 flex-wrap"></div>
+            </div>
+        </section>
+
+        <!-- Recipe Results Grid -->
+        <section>
+            <div id="recipes-grid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+                <!-- Dynamically rendered -->
+            </div>
+
+            <!-- Empty State -->
+            <div id="empty-state" class="hidden text-center py-16 bg-surface-container-lowest rounded-3xl border border-primary/10 space-y-4">
+                <div class="w-16 h-16 rounded-full bg-surface-container flex items-center justify-center mx-auto text-primary">
+                    <span class="material-symbols-outlined text-[36px]">search_off</span>
+                </div>
+                <h3 class="text-xl font-bold text-primary">No recipes found</h3>
+                <p class="text-sm text-on-surface-variant max-w-sm mx-auto">
+                    We couldn't find any dishes matching your query and filters. Try adjusting your search term or filters.
+                </p>
+                <button id="reset-search-btn" class="px-6 py-2.5 rounded-full bg-primary text-white font-bold text-xs">
+                    Reset Filters
+                </button>
+            </div>
+
+            <!-- Pagination -->
+            <div id="pagination-bar" class="hidden flex items-center justify-center gap-3 pt-8 pb-4">
+                <button id="prev-page-btn" class="px-4 py-2 rounded-xl bg-surface-container-lowest border border-outline-variant/60 text-xs font-bold text-on-surface hover:bg-surface-container disabled:opacity-40">
+                    Previous
+                </button>
+                <span id="page-indicator" class="text-xs font-bold text-on-surface-variant">Page 1 of 1</span>
+                <button id="next-page-btn" class="px-4 py-2 rounded-xl bg-surface-container-lowest border border-outline-variant/60 text-xs font-bold text-on-surface hover:bg-surface-container disabled:opacity-40">
+                    Next
+                </button>
+            </div>
+        </section>
+    </main>
+
+    <footer id="global-footer"></footer>
+
+    <script src="/js/api.js"></script>
+    <script src="/js/header.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const searchForm = document.getElementById('search-form');
+            const searchInput = document.getElementById('recipe-search-input');
+            const clearBtn = document.getElementById('clear-search-btn');
+            const cuisineSelect = document.getElementById('cuisine-select');
+            const timeSelect = document.getElementById('time-select');
+            const dietButtons = document.querySelectorAll('.diet-btn');
+            const resultsCount = document.getElementById('results-count');
+            const grid = document.getElementById('recipes-grid');
+            const emptyState = document.getElementById('empty-state');
+            const paginationBar = document.getElementById('pagination-bar');
+            const prevPageBtn = document.getElementById('prev-page-btn');
+            const nextPageBtn = document.getElementById('next-page-btn');
+            const pageIndicator = document.getElementById('page-indicator');
+            const resetBtn = document.getElementById('reset-search-btn');
+
+            let currentDiet = 'all';
+            let currentPage = 0;
+            const pageSize = 16;
+            let totalPages = 1;
+
+            // Read URL params
+            const urlParams = new URLSearchParams(window.location.search);
+            const initialQuery = urlParams.get('query') || '';
+            const initialDiet = urlParams.get('dietaryType') || 'all';
+            const initialCuisine = urlParams.get('cuisine') || 'all';
+            const initialTime = urlParams.get('maxTime') || '';
+
+            if (initialQuery) searchInput.value = initialQuery;
+            if (initialCuisine) cuisineSelect.value = initialCuisine;
+            if (initialTime) timeSelect.value = initialTime;
+            if (initialDiet) {
+                currentDiet = initialDiet;
+                updateDietButtonUI();
+            }
+
+            function updateDietButtonUI() {
+                dietButtons.forEach(btn => {
+                    const diet = btn.getAttribute('data-diet');
+                    if (diet.toLowerCase() === currentDiet.toLowerCase()) {
+                        btn.className = 'diet-btn px-4 py-2 rounded-xl text-xs sm:text-sm font-bold transition-all bg-primary text-white shadow-xs';
+                    } else {
+                        btn.className = 'diet-btn px-4 py-2 rounded-xl text-xs sm:text-sm font-semibold transition-all bg-surface-container text-on-surface hover:bg-surface-variant';
+                    }
+                });
+            }
+
+            dietButtons.forEach(btn => {
+                btn.addEventListener('click', () => {
+                    currentDiet = btn.getAttribute('data-diet');
+                    updateDietButtonUI();
+                    currentPage = 0;
+                    fetchRecipes();
+                });
+            });
+
+            cuisineSelect.addEventListener('change', () => {
+                currentPage = 0;
+                fetchRecipes();
+            });
+
+            timeSelect.addEventListener('change', () => {
+                currentPage = 0;
+                fetchRecipes();
+            });
+
+            searchForm.addEventListener('submit', (e) => {
+                e.preventDefault();
+                currentPage = 0;
+                fetchRecipes();
+            });
+
+            clearBtn.addEventListener('click', () => {
+                searchInput.value = '';
+                currentPage = 0;
+                fetchRecipes();
+            });
+
+            resetBtn.addEventListener('click', () => {
+                searchInput.value = '';
+                currentDiet = 'all';
+                cuisineSelect.value = 'all';
+                timeSelect.value = '';
+                updateDietButtonUI();
+                currentPage = 0;
+                fetchRecipes();
+            });
+
+            prevPageBtn.addEventListener('click', () => {
+                if (currentPage > 0) {
+                    currentPage--;
+                    fetchRecipes();
+                    window.scrollTo({ top: 200, behavior: 'smooth' });
+                }
+            });
+
+            nextPageBtn.addEventListener('click', () => {
+                if (currentPage < totalPages - 1) {
+                    currentPage++;
+                    fetchRecipes();
+                    window.scrollTo({ top: 200, behavior: 'smooth' });
+                }
+            });
+
+            async function fetchRecipes() {
+                grid.innerHTML = '<div class="col-span-full text-center py-12 text-on-surface-variant">Searching authentic Indian recipes...</div>';
+                emptyState.classList.add('hidden');
+                paginationBar.classList.add('hidden');
+
+                const query = searchInput.value.trim();
+                const cuisine = cuisineSelect.value;
+                const maxTime = timeSelect.value;
+
+                try {
+                    const res = await InChefAPI.searchRecipes(query, {
+                        cuisine: cuisine !== 'all' ? cuisine : null,
+                        dietaryType: currentDiet !== 'all' ? currentDiet : null,
+                        maxTime: maxTime ? parseInt(maxTime) : null,
+                        page: currentPage,
+                        size: pageSize,
+                        sort: 'id,asc'
+                    });
+
+                    const pageData = res.data || {};
+                    const recipes = pageData.content || [];
+                    const totalElements = pageData.totalElements || 0;
+                    totalPages = pageData.totalPages || 1;
+
+                    resultsCount.textContent = totalElements.toLocaleString();
+
+                    if (recipes.length === 0) {
+                        grid.innerHTML = '';
+                        emptyState.classList.remove('hidden');
+                        return;
+                    }
+
+                    renderRecipeCards(recipes);
+
+                    if (totalPages > 1) {
+                        paginationBar.classList.remove('hidden');
+                        pageIndicator.textContent = `Page ${currentPage + 1} of ${totalPages}`;
+                        prevPageBtn.disabled = currentPage === 0;
+                        nextPageBtn.disabled = currentPage >= totalPages - 1;
+                    }
+                } catch (err) {
+                    console.error('Fetch error:', err);
+                    grid.innerHTML = `<div class="col-span-full text-center py-8 text-red-600 font-semibold">Failed to load recipes: ${err.message}</div>`;
+                }
+            }
+
+            function escapeHtml(str) {
+                if (!str) return '';
+                return String(str).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;').replace(/'/g, '&#039;');
+            }
+
+            function renderRecipeCards(recipes) {
+                const neutralPlaceholder = '/images/neutral_recipe_placeholder.svg';
+                grid.innerHTML = recipes.map(r => {
+                    const isVeg = (r.dietaryType || '').toLowerCase().includes('veg') && !(r.dietaryType || '').toLowerCase().includes('non');
+                    const dietBadge = isVeg 
+                        ? `<span class="inline-flex items-center gap-1 bg-white/95 backdrop-blur-xs px-2 py-0.5 rounded-full text-[11px] font-bold text-emerald-700 shadow-xs"><span class="w-2 h-2 rounded-full bg-emerald-600"></span> Veg</span>`
+                        : `<span class="inline-flex items-center gap-1 bg-white/95 backdrop-blur-xs px-2 py-0.5 rounded-full text-[11px] font-bold text-red-700 shadow-xs"><span class="w-2 h-2 rounded-full bg-red-600"></span> Non-Veg</span>`;
+                    
+                    const imgSrc = (r.imageUrl && r.imageUrl.trim()) ? r.imageUrl.trim() : neutralPlaceholder;
+                    const safeTitle = escapeHtml(r.title || 'Untitled Recipe');
+                    const isFav = r.isFavorite;
+
+                    return `
+                        <div class="bg-white rounded-2xl overflow-hidden border border-[#ede3dc] shadow-[0_4px_20px_rgba(42,38,34,0.05)] hover:shadow-xl transition-all duration-300 flex flex-col group relative">
+                            <div class="relative h-44 overflow-hidden bg-surface-container">
+                                <a href="/recipe_details.html?id=${r.id}" class="block w-full h-full">
+                                    <img alt="${safeTitle}" loading="lazy" referrerpolicy="no-referrer" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" 
+                                         src="${imgSrc}" onerror="if (!this.dataset.proxyTried && ${r.id}) { this.dataset.proxyTried='true'; this.src='/api/v1/recipes/${r.id}/image/content'; } else { this.onerror=null; this.src='${neutralPlaceholder}'; }">
+                                </a>
+                                <div class="absolute top-2.5 left-2.5">
+                                    ${dietBadge}
+                                </div>
+                                <button type="button" class="favorite-toggle-btn absolute top-2.5 right-2.5 w-8 h-8 rounded-full bg-white/90 backdrop-blur-xs flex items-center justify-center text-secondary hover:scale-110 transition-transform shadow-xs"
+                                        data-recipe-id="${r.id}" data-is-fav="${isFav ? 'true' : 'false'}" title="${isFav ? 'Remove from favorites' : 'Save to favorites'}">
+                                    <span class="material-symbols-outlined text-[18px]" style="font-variation-settings: 'FILL' ${isFav ? 1 : 0};">
+                                        favorite
+                                    </span>
+                                </button>
+                            </div>
+                            <div class="p-4 flex flex-col flex-grow">
+                                <div class="text-[11px] font-semibold text-secondary uppercase tracking-wider mb-1">${r.cuisine || 'Indian'}</div>
+                                <h3 class="text-sm sm:text-base font-bold text-on-surface mb-2 line-clamp-1 hover:text-primary transition-colors">
+                                    <a href="/recipe_details.html?id=${r.id}">${r.title}</a>
+                                </h3>
+                                <div class="flex items-center gap-3 text-xs text-on-surface-variant mb-4 mt-auto">
+                                    <span class="flex items-center gap-1"><span class="material-symbols-outlined text-[15px]">schedule</span> ${r.cookTimeMinutes || 30}m</span>
+                                    <span class="flex items-center gap-1"><span class="material-symbols-outlined text-[15px]">dinner_dining</span> ${r.mealType || 'Main'}</span>
+                                    ${r.calories ? `<span class="flex items-center gap-1"><span class="material-symbols-outlined text-[15px]">bolt</span> ${r.calories} kcal</span>` : ''}
+                                </div>
+                                <a href="/recipe_details.html?id=${r.id}" class="w-full py-2 rounded-full border border-primary text-primary hover:bg-primary hover:text-white font-bold text-xs transition-colors flex items-center justify-center gap-1">
+                                    View Details <span class="material-symbols-outlined text-[14px]">arrow_forward</span>
+                                </a>
+                            </div>
+                        </div>
+                    `;
+                }).join('');
+
+                // Wire favorite buttons
+                document.querySelectorAll('.favorite-toggle-btn').forEach(btn => {
+                    btn.addEventListener('click', async (e) => {
+                        e.preventDefault();
+                        e.stopPropagation();
+                        const rId = btn.getAttribute('data-recipe-id');
+                        try {
+                            const newFavState = await InChefAPI.toggleFavorite(rId);
+                            btn.setAttribute('data-is-fav', newFavState ? 'true' : 'false');
+                            const icon = btn.querySelector('.material-symbols-outlined');
+                            icon.style.fontVariationSettings = `'FILL' ${newFavState ? 1 : 0}`;
+                            btn.title = newFavState ? 'Remove from favorites' : 'Save to favorites';
+                        } catch (err) {
+                            if (err.status === 401 || err.status === 403) {
+                                window.location.href = `/auth.html?mode=login&returnUrl=${encodeURIComponent(window.location.href)}`;
+                            } else {
+                                alert('Could not update favorite: ' + err.message);
+                            }
+                        }
+                    });
+                });
+            }
+
+            async function loadDynamicCuisines() {
+                try {
+                    const res = await InChefAPI.getCuisines();
+                    if (res && res.data && res.data.length > 0) {
+                        const currentVal = cuisineSelect.value;
+                        cuisineSelect.innerHTML = '<option value="all">All Cuisines</option>';
+                        res.data.forEach(c => {
+                            const opt = document.createElement('option');
+                            opt.value = c;
+                            opt.textContent = c;
+                            cuisineSelect.appendChild(opt);
+                        });
+                        if (currentVal && currentVal !== 'all') {
+                            cuisineSelect.value = currentVal;
+                        } else if (initialCuisine && initialCuisine !== 'all') {
+                            cuisineSelect.value = initialCuisine;
+                        }
+                    }
+                } catch (err) {
+                    console.warn('Could not load dynamic cuisines:', err);
+                }
+            }
+
+            // Initial fetch & dynamic filters
+            loadDynamicCuisines();
+            fetchRecipes();
+        });
+    </script>
+</body>
+</html>

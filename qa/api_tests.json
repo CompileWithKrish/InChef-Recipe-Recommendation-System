@@ -1,0 +1,114 @@
+[
+  {
+    "method": "GET",
+    "path": "/api/v1/recipes?query=Chicken",
+    "status_code": 200,
+    "expected_status": 200,
+    "latency_ms": 145.1,
+    "passed": true
+  },
+  {
+    "method": "GET",
+    "path": "/api/v1/recipes/1",
+    "status_code": 200,
+    "expected_status": 200,
+    "latency_ms": 10.1,
+    "passed": true
+  },
+  {
+    "method": "GET",
+    "path": "/api/v1/ingredients?query=Tomato",
+    "status_code": 200,
+    "expected_status": 200,
+    "latency_ms": 20.4,
+    "passed": true
+  },
+  {
+    "method": "GET",
+    "path": "/api/v1/ingredients/1",
+    "status_code": 200,
+    "expected_status": 200,
+    "latency_ms": 8.0,
+    "passed": true
+  },
+  {
+    "method": "POST",
+    "path": "/api/v1/recommendations/by-ingredients",
+    "status_code": 200,
+    "expected_status": 200,
+    "latency_ms": 822.7,
+    "passed": true
+  },
+  {
+    "method": "POST",
+    "path": "/api/v1/recommendations/by-dish",
+    "status_code": 200,
+    "expected_status": 200,
+    "latency_ms": 123.8,
+    "passed": true
+  },
+  {
+    "method": "GET",
+    "path": "/api/v1/users",
+    "status_code": 200,
+    "expected_status": 200,
+    "latency_ms": 10.9,
+    "passed": true
+  },
+  {
+    "method": "GET",
+    "path": "/api/v1/users/1",
+    "status_code": 200,
+    "expected_status": 200,
+    "latency_ms": 9.7,
+    "passed": true
+  },
+  {
+    "method": "GET",
+    "path": "/api/v1/users/1/preferences",
+    "status_code": 200,
+    "expected_status": 200,
+    "latency_ms": 15.1,
+    "passed": true
+  },
+  {
+    "method": "GET",
+    "path": "/api/v1/users/1/pantry",
+    "status_code": 200,
+    "expected_status": 200,
+    "latency_ms": 18.4,
+    "passed": true
+  },
+  {
+    "method": "GET",
+    "path": "/api/v1/users/1/favorites",
+    "status_code": 200,
+    "expected_status": 200,
+    "latency_ms": 21.2,
+    "passed": true
+  },
+  {
+    "method": "GET",
+    "path": "/api/v1/users/1/favorites/1/check",
+    "status_code": 200,
+    "expected_status": 200,
+    "latency_ms": 11.0,
+    "passed": true
+  },
+  {
+    "method": "SOAP POST",
+    "path": "/ws (GetSystemReportRequest)",
+    "status_code": 200,
+    "expected_status": 200,
+    "latency_ms": 2579.1,
+    "passed": true
+  },
+  {
+    "method": "SOAP POST",
+    "path": "/ws (GetRecipePopularityReportRequest)",
+    "status_code": 200,
+    "expected_status": 200,
+    "latency_ms": 13.9,
+    "passed": true
+  }
+]

@@ -1,0 +1,30 @@
+{
+  "dietary_tests": [
+    {
+      "requested_diet": "VEGETARIAN",
+      "ingredients": [
+        "Chicken",
+        "Tomato",
+        "Onion"
+      ],
+      "returned_count": 10,
+      "all_compliant": true,
+      "sample_titles": [
+        "Spring Roll Wrapper Cups",
+        "Tangy Tomato Chutney",
+        "Peanut Butter Chicken"
+      ]
+    },
+    {
+      "user_id": 3,
+      "expected_diet": "VEGAN",
+      "all_compliant": true,
+      "sample_titles": [
+        "Spring Roll Wrapper Cups",
+        "Vegetable Lentil Curry",
+        "Crispy Aloo Tikki"
+      ]
+    }
+  ],
+  "allergy_tests": []
+}

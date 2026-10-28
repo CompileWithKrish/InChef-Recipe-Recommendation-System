@@ -1,0 +1,51 @@
+{
+  "pantry_flow": {},
+  "favorite_flow": {},
+  "recipe_details": {
+    "1": {
+      "id": 1,
+      "title": "Classic Margherita Pizza",
+      "cuisine": "Italian",
+      "ingredients_count": 6,
+      "has_instructions": true,
+      "source_url": null,
+      "calories": 650
+    },
+    "2": {
+      "id": 2,
+      "title": "Creamy Garlic Butter Pasta",
+      "cuisine": "Italian",
+      "ingredients_count": 6,
+      "has_instructions": true,
+      "source_url": null,
+      "calories": 520
+    },
+    "100": {
+      "id": 100,
+      "title": "Pudina Mushroom And Soya Biryani",
+      "cuisine": "Indian",
+      "ingredients_count": 21,
+      "has_instructions": true,
+      "source_url": "http://www.archanaskitchen.com/minty-mushroom-and-soya-biryani-recipe",
+      "calories": null
+    },
+    "500": {
+      "id": 500,
+      "title": "Soya Chunks Masala In Coconut Milk",
+      "cuisine": "South Indian",
+      "ingredients_count": 14,
+      "has_instructions": true,
+      "source_url": "https://www.archanaskitchen.com/soya-chunks-masala-in-coconut-milk-recipe",
+      "calories": null
+    },
+    "1000": {
+      "id": 1000,
+      "title": "Ringan Methi Nu Shaak Recipe - Gujarati Style Eggplant & Fenugreek Leaves Sabzi",
+      "cuisine": "Gujarati",
+      "ingredients_count": 12,
+      "has_instructions": true,
+      "source_url": "https://www.archanaskitchen.com/ringan-methi-nu-shaak-recipe-gujarati-style-eggplant-and-fenugreek-leaves-sabzi",
+      "calories": null
+    }
+  }
+}

@@ -1,0 +1,32 @@
+[
+  {
+    "Srno": 306,
+    "RecipeName": "Pear And Walnut Salad Recipe",
+    "Reason": "Missing both TranslatedIngredients and Ingredients"
+  },
+  {
+    "Srno": 1413,
+    "RecipeName": "Spinach and Cottage Cheese Eggless Ravioli Recipe",
+    "Reason": "Missing both TranslatedIngredients and Ingredients"
+  },
+  {
+    "Srno": 2072,
+    "RecipeName": "Thai Jasmine Sticky Rice Recipe",
+    "Reason": "Missing both TranslatedIngredients and Ingredients"
+  },
+  {
+    "Srno": 2098,
+    "RecipeName": "Classic Pavakkai Stir Fry Recipe (Bitter Gourd Fry)",
+    "Reason": "Missing both TranslatedIngredients and Ingredients"
+  },
+  {
+    "Srno": 7894,
+    "RecipeName": "Urulaikizhangu Puli Thokku Recipe (South Indian Style Potatoes with Tamarind)",
+    "Reason": "Missing both TranslatedIngredients and Ingredients"
+  },
+  {
+    "Srno": 8388,
+    "RecipeName": "Mashed Peas Recipe",
+    "Reason": "Missing both TranslatedIngredients and Ingredients"
+  }
+]

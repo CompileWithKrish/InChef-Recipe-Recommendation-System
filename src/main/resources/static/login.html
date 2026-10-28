@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="refresh" content="0; url=/auth.html?mode=login">
+    <title>InChef - Sign In</title>
+    <script>
+        const query = window.location.search;
+        const target = '/auth.html' + (query ? (query.includes('mode=') ? query : query + '&mode=login') : '?mode=login');
+        window.location.replace(target);
+    </script>
+</head>
+<body style="font-family: sans-serif; display: flex; align-items: center; justify-content: center; height: 100vh; margin: 0; background: #fff8f4; color: #004538;">
+    <p>Redirecting to <a href="/auth.html?mode=login" style="color: #004538; font-weight: bold;">Sign In</a>...</p>
+</body>
+</html>
+

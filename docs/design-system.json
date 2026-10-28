@@ -1,0 +1,137 @@
+{
+  "name": "assets/c4b4b3db4e474d0e966c20e6ebad11c4",
+  "designSystem": {
+    "displayName": "InChef",
+    "styleGuidelines": "## Brand & Style\nThe design system is built for a premium, productivity-focused culinary experience. The brand personality is grounded, intelligent, and serene\u2014moving away from the frantic energy of typical recipe apps toward a calm, organized kitchen companion. \n\nThe aesthetic follows a **refined modern minimalism** approach, utilizing generous whitespace and a \"warm-gallery\" feel. It prioritizes clarity and utility, ensuring that the interface never competes with the photography of the food itself. Visual interest is generated through precise typography and a sophisticated organic palette rather than decorative flourishes.\n\n## Layout & Spacing\nThe system follows a strict 8px linear scale. Layouts should prioritize a sense of \"breathing room\" to maintain the minimalist aesthetic.\n\n- **Grid Model:** Use a 12-column fluid grid for desktop and a 4-column grid for mobile.\n- **Section Spacing:** Use 80px (10 units) between major vertical sections on desktop to maintain a premium, airy feel.\n- **Component Padding:** Internal card padding should be a consistent 24px (3 units) to ensure content feels framed rather than cramped.\n\n## Elevation & Depth\nDepth is created through a combination of **tonal layering** and **soft ambient shadows**. \n\n- **Level 0 (Background):** Warm Ivory surface.\n- **Level 1 (Cards):** Pure White surface with a 1px border in Warm Grey (#E5E1DA) and a soft, highly diffused shadow (0px 4px 20px rgba(42, 38, 34, 0.05)).\n- **Level 2 (Interactive/Hover):** Increase shadow spread and slightly darken the border to create a \"lifted\" effect.\n- **Depth Principle:** No heavy shadows or harsh blacks. All depth cues must feel natural, as if soft light is hitting a physical paper card.\n\n## Components\n- **Buttons:** Primary buttons are solid Deep Emerald with white text. Secondary/CTA buttons (like \"Start Cooking\") use Warm Amber. Ghost buttons use Deep Emerald text with no background.\n- **Cards:** White background, 1px warm-grey border, 18px corner radius. Image content should fill the top half of the card with no internal margin, while text content resides in a padded 24px area below.\n- **Input Fields:** 12px radius, 1px border. On focus, the border transitions to Deep Emerald with a 2px stroke.\n- **Chips/Badges:** Small, 12px radius, using a subtle tint of the primary color (Deep Emerald at 10% opacity) for categorization, and Warm Amber for high-priority alerts like \"Missing Ingredient.\"\n- **Lists:** Ingredient lists should feature a custom checkbox using a Deep Emerald fill when active. High horizontal padding (16px) between the icon and text to aid legibility at a distance.\n- **Progress Indicators:** Simple, thin 4px bars using Deep Emerald to track recipe steps, avoiding complex circular loaders.",
+    "theme": {
+      "colorMode": "LIGHT",
+      "font": "MANROPE",
+      "roundness": "ROUND_EIGHT",
+      "customColor": "#1f5d4e",
+      "headlineFont": "MANROPE",
+      "bodyFont": "MANROPE",
+      "labelFont": "MANROPE",
+      "namedColors": {
+        "secondary_container": "#fe974a",
+        "primary_container": "#1f5d4e",
+        "primary_fixed_dim": "#96d3c0",
+        "on_surface_variant": "#404945",
+        "on_background": "#1f1b17",
+        "secondary_fixed": "#ffdcc6",
+        "secondary": "#954a00",
+        "primary": "#004538",
+        "secondary_fixed_dim": "#ffb786",
+        "surface_container": "#f5ece6",
+        "on_surface": "#1f1b17",
+        "on_primary_fixed_variant": "#0d5042",
+        "inverse_primary": "#96d3c0",
+        "outline": "#707975",
+        "surface": "#fff8f4",
+        "on_secondary_fixed_variant": "#723600",
+        "surface_tint": "#2c6859",
+        "surface_container_highest": "#eae1da",
+        "tertiary_fixed_dim": "#c9c6c0",
+        "error": "#ba1a1a",
+        "primary_fixed": "#b1efdb",
+        "surface_container_high": "#efe7e0",
+        "on_secondary_container": "#6d3400",
+        "on_primary_container": "#97d4c0",
+        "tertiary_container": "#55534e",
+        "outline_variant": "#bfc9c4",
+        "tertiary": "#3d3c38",
+        "error_container": "#ffdad6",
+        "on_tertiary_container": "#cac7c0",
+        "surface_dim": "#e1d8d2",
+        "background": "#fff8f4",
+        "on_secondary_fixed": "#311400",
+        "surface_container_low": "#fbf2eb",
+        "on_tertiary": "#ffffff",
+        "on_secondary": "#ffffff",
+        "inverse_surface": "#34302b",
+        "tertiary_fixed": "#e6e2db",
+        "on_tertiary_fixed": "#1c1c18",
+        "surface_variant": "#eae1da",
+        "on_primary": "#ffffff",
+        "surface_bright": "#fff8f4",
+        "on_primary_fixed": "#002019",
+        "inverse_on_surface": "#f8efe8",
+        "on_tertiary_fixed_variant": "#484742",
+        "on_error": "#ffffff",
+        "on_error_container": "#93000a",
+        "surface_container_lowest": "#ffffff"
+      },
+      "designMd": "---\nname: InChef\ncolors:\n  surface: '#fff8f4'\n  surface-dim: '#e1d8d2'\n  surface-bright: '#fff8f4'\n  surface-container-lowest: '#ffffff'\n  surface-container-low: '#fbf2eb'\n  surface-container: '#f5ece6'\n  surface-container-high: '#efe7e0'\n  surface-container-highest: '#eae1da'\n  on-surface: '#1f1b17'\n  on-surface-variant: '#404945'\n  inverse-surface: '#34302b'\n  inverse-on-surface: '#f8efe8'\n  outline: '#707975'\n  outline-variant: '#bfc9c4'\n  surface-tint: '#2c6859'\n  primary: '#004538'\n  on-primary: '#ffffff'\n  primary-container: '#1f5d4e'\n  on-primary-container: '#97d4c0'\n  inverse-primary: '#96d3c0'\n  secondary: '#954a00'\n  on-secondary: '#ffffff'\n  secondary-container: '#fe974a'\n  on-secondary-container: '#6d3400'\n  tertiary: '#3d3c38'\n  on-tertiary: '#ffffff'\n  tertiary-container: '#55534e'\n  on-tertiary-container: '#cac7c0'\n  error: '#ba1a1a'\n  on-error: '#ffffff'\n  error-container: '#ffdad6'\n  on-error-container: '#93000a'\n  primary-fixed: '#b1efdb'\n  primary-fixed-dim: '#96d3c0'\n  on-primary-fixed: '#002019'\n  on-primary-fixed-variant: '#0d5042'\n  secondary-fixed: '#ffdcc6'\n  secondary-fixed-dim: '#ffb786'\n  on-secondary-fixed: '#311400'\n  on-secondary-fixed-variant: '#723600'\n  tertiary-fixed: '#e6e2db'\n  tertiary-fixed-dim: '#c9c6c0'\n  on-tertiary-fixed: '#1c1c18'\n  on-tertiary-fixed-variant: '#484742'\n  background: '#fff8f4'\n  on-background: '#1f1b17'\n  surface-variant: '#eae1da'\ntypography:\n  display-lg:\n    fontFamily: Manrope\n    fontSize: 48px\n    fontWeight: '800'\n    lineHeight: 56px\n    letterSpacing: -0.02em\n  headline-lg:\n    fontFamily: Manrope\n    fontSize: 32px\n    fontWeight: '700'\n    lineHeight: 40px\n    letterSpacing: -0.01em\n  headline-lg-mobile:\n    fontFamily: Manrope\n    fontSize: 28px\n    fontWeight: '700'\n    lineHeight: 36px\n  headline-md:\n    fontFamily: Manrope\n    fontSize: 24px\n    fontWeight: '600'\n    lineHeight: 32px\n  body-lg:\n    fontFamily: Manrope\n    fontSize: 18px\n    fontWeight: '400'\n    lineHeight: 28px\n  body-md:\n    fontFamily: Manrope\n    fontSize: 16px\n    fontWeight: '400'\n    lineHeight: 24px\n  label-md:\n    fontFamily: Manrope\n    fontSize: 14px\n    fontWeight: '600'\n    lineHeight: 20px\n    letterSpacing: 0.01em\n  label-sm:\n    fontFamily: Manrope\n    fontSize: 12px\n    fontWeight: '700'\n    lineHeight: 16px\n    letterSpacing: 0.05em\nrounded:\n  sm: 0.25rem\n  DEFAULT: 0.5rem\n  md: 0.75rem\n  lg: 1rem\n  xl: 1.5rem\n  full: 9999px\nspacing:\n  unit: 8px\n  container-max: 1200px\n  gutter: 24px\n  margin-mobile: 16px\n  margin-desktop: 40px\n---\n\n## Brand & Style\nThe design system is built for a premium, productivity-focused culinary experience. The brand personality is grounded, intelligent, and serene\u2014moving away from the frantic energy of typical recipe apps toward a calm, organized kitchen companion. \n\nThe aesthetic follows a **refined modern minimalism** approach, utilizing generous whitespace and a \"warm-gallery\" feel. It prioritizes clarity and utility, ensuring that the interface never competes with the photography of the food itself. Visual interest is generated through precise typography and a sophisticated organic palette rather than decorative flourishes.\n\n## Colors\nThis design system utilizes a high-contrast, warm-tonal palette to evoke a sense of professional reliability and culinary warmth.\n\n- **Primary (Deep Emerald):** Used for structural brand elements, headers, and navigation states. It provides a serious, premium foundation.\n- **Secondary (Warm Amber):** Reserved strictly for high-priority calls to action, badges, and notification anchors. \n- **Background (Warm Ivory):** The primary canvas color. It reduces eye strain compared to pure white and adds a bespoke, editorial feel.\n- **Neutral (Dark Charcoal):** Used for all primary text and iconography to ensure maximum legibility and a modern finish.\n- **Surface (Pure White):** Specifically for cards and input containers to lift them off the ivory background.\n- **Border (Warm Grey):** #E5E1DA is used for subtle structural definition.\n\n## Typography\nManrope is the sole typeface for this design system, chosen for its geometric precision and modern, approachable warmth. \n\n- **Headlines:** Use tighter letter-spacing and heavier weights to create an authoritative, \"book-like\" hierarchy.\n- **Body:** Standardized at 16px for optimal readability in recipe instructions. Use 18px for ingredient lists to ensure clarity while cooking.\n- **Labels:** Uppercase styling should be used sparingly, primarily for small metadata badges (e.g., \"VEGAN\", \"15 MIN\") to increase scannability without adding visual bulk.\n\n## Layout & Spacing\nThe system follows a strict 8px linear scale. Layouts should prioritize a sense of \"breathing room\" to maintain the minimalist aesthetic.\n\n- **Grid Model:** Use a 12-column fluid grid for desktop and a 4-column grid for mobile.\n- **Section Spacing:** Use 80px (10 units) between major vertical sections on desktop to maintain a premium, airy feel.\n- **Component Padding:** Internal card padding should be a consistent 24px (3 units) to ensure content feels framed rather than cramped.\n\n## Elevation & Depth\nDepth is created through a combination of **tonal layering** and **soft ambient shadows**. \n\n- **Level 0 (Background):** Warm Ivory surface.\n- **Level 1 (Cards):** Pure White surface with a 1px border in Warm Grey (#E5E1DA) and a soft, highly diffused shadow (0px 4px 20px rgba(42, 38, 34, 0.05)).\n- **Level 2 (Interactive/Hover):** Increase shadow spread and slightly darken the border to create a \"lifted\" effect.\n- **Depth Principle:** No heavy shadows or harsh blacks. All depth cues must feel natural, as if soft light is hitting a physical paper card.\n\n## Shapes\nThe shape language is friendly yet structured. \n\n- **Standard Elements:** Buttons, input fields, and small cards use a 12px radius.\n- **Large Containers:** Recipe cards and modal overlays use an 18px radius (`rounded-xl` equivalent) to soften the overall interface.\n- **Interactive States:** Maintain consistent radii across states; do not \"morph\" shapes on interaction.\n\n## Components\n- **Buttons:** Primary buttons are solid Deep Emerald with white text. Secondary/CTA buttons (like \"Start Cooking\") use Warm Amber. Ghost buttons use Deep Emerald text with no background.\n- **Cards:** White background, 1px warm-grey border, 18px corner radius. Image content should fill the top half of the card with no internal margin, while text content resides in a padded 24px area below.\n- **Input Fields:** 12px radius, 1px border. On focus, the border transitions to Deep Emerald with a 2px stroke.\n- **Chips/Badges:** Small, 12px radius, using a subtle tint of the primary color (Deep Emerald at 10% opacity) for categorization, and Warm Amber for high-priority alerts like \"Missing Ingredient.\"\n- **Lists:** Ingredient lists should feature a custom checkbox using a Deep Emerald fill when active. High horizontal padding (16px) between the icon and text to aid legibility at a distance.\n- **Progress Indicators:** Simple, thin 4px bars using Deep Emerald to track recipe steps, avoiding complex circular loaders.",
+      "colorVariant": "FIDELITY",
+      "overridePrimaryColor": "#1f5d4e",
+      "overrideSecondaryColor": "#e8863a",
+      "overrideTertiaryColor": "#fbf7f0",
+      "overrideNeutralColor": "#2a2622",
+      "spacingScale": 2,
+      "typography": {
+        "body-lg": {
+          "fontFamily": "Manrope",
+          "fontSize": "18px",
+          "fontWeight": "400",
+          "lineHeight": "28px"
+        },
+        "headline-lg": {
+          "fontFamily": "Manrope",
+          "fontSize": "32px",
+          "fontWeight": "700",
+          "lineHeight": "40px",
+          "letterSpacing": "-0.01em"
+        },
+        "headline-md": {
+          "fontFamily": "Manrope",
+          "fontSize": "24px",
+          "fontWeight": "600",
+          "lineHeight": "32px"
+        },
+        "label-md": {
+          "fontFamily": "Manrope",
+          "fontSize": "14px",
+          "fontWeight": "600",
+          "lineHeight": "20px",
+          "letterSpacing": "0.01em"
+        },
+        "label-sm": {
+          "fontFamily": "Manrope",
+          "fontSize": "12px",
+          "fontWeight": "700",
+          "lineHeight": "16px",
+          "letterSpacing": "0.05em"
+        },
+        "headline-lg-mobile": {
+          "fontFamily": "Manrope",
+          "fontSize": "28px",
+          "fontWeight": "700",
+          "lineHeight": "36px"
+        },
+        "body-md": {
+          "fontFamily": "Manrope",
+          "fontSize": "16px",
+          "fontWeight": "400",
+          "lineHeight": "24px"
+        },
+        "display-lg": {
+          "fontFamily": "Manrope",
+          "fontSize": "48px",
+          "fontWeight": "800",
+          "lineHeight": "56px",
+          "letterSpacing": "-0.02em"
+        }
+      },
+      "spacing": {
+        "margin-mobile": "16px",
+        "margin-desktop": "40px",
+        "container-max": "1200px",
+        "gutter": "24px",
+        "unit": "8px"
+      },
+      "headlineFontFamily": "Manrope",
+      "bodyFontFamily": "Manrope",
+      "labelFontFamily": "Manrope"
+    }
+  },
+  "version": "1"
+}

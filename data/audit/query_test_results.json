@@ -1,0 +1,244 @@
+{
+  "direct_searches": {
+    "Chicken Biryani": {
+      "total_elements": 10,
+      "top_matches": [
+        "Awadhi Chicken Biryani",
+        "Thalapakattu Chicken Biryani",
+        "Lucknowi Murgh Biryani Recipe - Awadhi Style Chicken Biryani"
+      ]
+    },
+    "Paneer Butter Masala": {
+      "total_elements": 4,
+      "top_matches": [
+        "Paneer Butter Masala (Recipe In Hindi)",
+        "Paneer Butter Masala Biryani Recipe - Layered Paneer Butter Masala Biryani",
+        "Layered Paneer Butter Masala Biryani"
+      ]
+    },
+    "Masala Dosa": {
+      "total_elements": 11,
+      "top_matches": [
+        "Onion Tomato Podi Masala Dosa",
+        "Cheesy Mushroom Masala Dosa",
+        "Paneer Masala Dosa Recipe-Paneer Bhurji Dosa"
+      ]
+    },
+    "Butter Chicken": {
+      "total_elements": 9,
+      "top_matches": [
+        "Floyd Cardozs Butter Chicken (Chicken Tikka Makhani)",
+        "Butter Chicken (Murgh Makhani)",
+        "Delicious One Pot Butter Chicken Khichdi"
+      ]
+    },
+    "Fried Rice": {
+      "total_elements": 104,
+      "top_matches": [
+        "Egg-Fried Rice Recipes",
+        "Fragrant Chilli Crab-Fried Rice With Crispy Leeks",
+        "Vegetable & Tofu Fried Rice"
+      ]
+    },
+    "Pad Thai": {
+      "total_elements": 19,
+      "top_matches": [
+        "Healthy Pad Thai With Peanuts And Coriander Recipes",
+        "No Chicken Vegan Pad Thai",
+        "Summer Shrimp Pad Thai-Inspired Noodles"
+      ]
+    },
+    "Chicken Teriyaki": {
+      "total_elements": 6,
+      "top_matches": [
+        "Chicken Teriyaki",
+        "Chicken Teriyaki Meatballs With Edamame",
+        "Three Ingredient Chicken Teriyaki"
+      ]
+    }
+  },
+  "ingredient_recommendations": {
+    "Chicken + Tomato + Onion + Garlic": {
+      "total_returned": 10,
+      "top_3": [
+        {
+          "title": "Spring Roll Wrapper Cups",
+          "cuisine": "South East Asian",
+          "matchScore": 97,
+          "matchedCount": 1,
+          "missingCount": 0,
+          "reason": "Perfect match! You have all 1 required ingredients."
+        },
+        {
+          "title": "Tangy Tomato Chutney",
+          "cuisine": "Indian",
+          "matchScore": 77,
+          "matchedCount": 4,
+          "missingCount": 2,
+          "reason": "Matched 4 of 6 ingredients (67%) with 2 missing."
+        },
+        {
+          "title": "Slow Cooker Sweet Teriyaki Chicken",
+          "cuisine": "Japanese",
+          "matchScore": 73,
+          "matchedCount": 3,
+          "missingCount": 2,
+          "reason": "Matched 3 of 5 ingredients (60%) with 2 missing."
+        }
+      ]
+    },
+    "Paneer + Tomato + Onion + Butter": {
+      "total_returned": 10,
+      "top_3": [
+        {
+          "title": "Spring Roll Wrapper Cups",
+          "cuisine": "South East Asian",
+          "matchScore": 97,
+          "matchedCount": 1,
+          "missingCount": 0,
+          "reason": "Perfect match! You have all 1 required ingredients."
+        },
+        {
+          "title": "Homemade Ghee",
+          "cuisine": "Indian",
+          "matchScore": 97,
+          "matchedCount": 1,
+          "missingCount": 0,
+          "reason": "Perfect match! You have all 1 required ingredients."
+        },
+        {
+          "title": "Tangy Tomato Chutney",
+          "cuisine": "Indian",
+          "matchScore": 67,
+          "matchedCount": 3,
+          "missingCount": 3,
+          "reason": "Matched 3 of 6 ingredients (50%) with 3 missing."
+        }
+      ]
+    },
+    "Rice + Chicken + Onion + Spices": {
+      "total_returned": 10,
+      "top_3": [
+        {
+          "title": "Spring Roll Wrapper Cups",
+          "cuisine": "South East Asian",
+          "matchScore": 97,
+          "matchedCount": 1,
+          "missingCount": 0,
+          "reason": "Perfect match! You have all 1 required ingredients."
+        },
+        {
+          "title": "Chicken Soup Noodle Bowl",
+          "cuisine": "Asian",
+          "matchScore": 82,
+          "matchedCount": 3,
+          "missingCount": 1,
+          "reason": "Matched 3 of 4 ingredients (75%) with 1 missing."
+        },
+        {
+          "title": "Vietnamese Rice Pocket Recipe With Caramelised Onions & Chillies",
+          "cuisine": "Vietnamese",
+          "matchScore": 67,
+          "matchedCount": 2,
+          "missingCount": 2,
+          "reason": "Matched 2 of 4 ingredients (50%) with 2 missing. Quick to make in 30 mins."
+        }
+      ]
+    },
+    "Potato + Cumin + Chilli": {
+      "total_returned": 10,
+      "top_3": [
+        {
+          "title": "Bihari Shakarkand Bhujia Recipe - Spicy Sweet Potato Sabzi",
+          "cuisine": "North Indian",
+          "matchScore": 67,
+          "matchedCount": 3,
+          "missingCount": 3,
+          "reason": "Matched 3 of 6 ingredients (50%) with 3 missing. Quick to make in 20 mins."
+        },
+        {
+          "title": "Bihari Aloo Bhujiya",
+          "cuisine": "Bihari",
+          "matchScore": 67,
+          "matchedCount": 3,
+          "missingCount": 3,
+          "reason": "Matched 3 of 6 ingredients (50%) with 3 missing. Quick to make in 30 mins."
+        },
+        {
+          "title": "Jeera Aloo Sabzi (Recipe In Hindi)",
+          "cuisine": "North Indian",
+          "matchScore": 63,
+          "matchedCount": 3,
+          "missingCount": 4,
+          "reason": "Matched 3 of 7 ingredients (43%) with 4 missing."
+        }
+      ]
+    }
+  },
+  "edge_cases": {
+    "1. Single ingredient": {
+      "count": 10,
+      "top_title": "Spicy Grilled Potatoes",
+      "top_cuisine": "Japanese",
+      "top_diet": "VEGETARIAN",
+      "top_time": 35,
+      "top_score": 57
+    },
+    "2. Aliased ingredient (dhania, scallion, hari mirch, dahi)": {
+      "count": 10,
+      "top_title": "Mint Chutney Raita",
+      "top_cuisine": "Indian",
+      "top_diet": "VEGETARIAN",
+      "top_time": 35,
+      "top_score": 52
+    },
+    "3. Plural ingredient variants (onions, tomatoes, potatoes)": {
+      "count": 10,
+      "top_title": "Spring Roll Wrapper Cups",
+      "top_cuisine": "South East Asian",
+      "top_diet": "VEGAN",
+      "top_time": 35,
+      "top_score": 97
+    },
+    "4. Dietary restriction: VEGETARIAN": {
+      "count": 10,
+      "top_title": "Kirai Sambar (Recipe In Hindi)",
+      "top_cuisine": "South Indian",
+      "top_diet": "VEGETARIAN",
+      "top_time": 50,
+      "top_score": 57
+    },
+    "5. Cuisine filter: Indian": {
+      "count": 10,
+      "top_title": "Spring Roll Wrapper Cups",
+      "top_cuisine": "South East Asian",
+      "top_diet": "VEGAN",
+      "top_time": 35,
+      "top_score": 92
+    },
+    "6. Cuisine filter: Chinese": {
+      "count": 10,
+      "top_title": "Chicken Soup Noodle Bowl",
+      "top_cuisine": "Asian",
+      "top_diet": "GLUTEN_FREE",
+      "top_time": 35,
+      "top_score": 77
+    },
+    "7. Cooking time filter (<= 25 mins)": {
+      "count": 10,
+      "top_title": "Spring Roll Wrapper Cups",
+      "top_cuisine": "South East Asian",
+      "top_diet": "VEGAN",
+      "top_time": 35,
+      "top_score": 95
+    },
+    "8. User pantry inclusion (User 1 - Rahul)": {
+      "count": 10,
+      "top_title": "Spring Roll Wrapper Cups",
+      "top_cuisine": "South East Asian",
+      "top_diet": "VEGAN",
+      "top_time": 35,
+      "top_score": 92
+    }
+  }
+}

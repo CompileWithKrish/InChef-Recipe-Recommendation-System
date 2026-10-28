@@ -1,0 +1,24 @@
+# Auto-detect text files and normalize line endings
+* text=auto
+
+# Source code
+*.java text diff=java
+*.xml text
+*.properties text
+*.sql text
+*.html text
+*.css text
+*.js text
+*.json text
+*.md text
+*.py text
+
+# Binary files
+*.png binary
+*.jpg binary
+*.jpeg binary
+*.gif binary
+*.ico binary
+*.jar binary
+*.xlsx binary
+

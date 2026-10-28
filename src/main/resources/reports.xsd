@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+           xmlns:tns="http://inchef.com/soap/reports"
+           targetNamespace="http://inchef.com/soap/reports"
+           elementFormDefault="qualified">
+
+    <!-- System Report Request & Response -->
+    <xs:element name="GetSystemReportRequest">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="filterStartDate" type="xs:string" minOccurs="0"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:element name="GetSystemReportResponse">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="totalUsers" type="xs:long"/>
+                <xs:element name="totalRecipes" type="xs:long"/>
+                <xs:element name="totalIngredients" type="xs:long"/>
+                <xs:element name="totalRecommendations" type="xs:long"/>
+                <xs:element name="cuisineStats" type="tns:CuisineStat" minOccurs="0" maxOccurs="unbounded"/>
+                <xs:element name="topFavoritedRecipes" type="tns:RecipePopularityStat" minOccurs="0" maxOccurs="unbounded"/>
+                <xs:element name="generatedAt" type="xs:string"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <!-- Recipe Popularity Report Request & Response -->
+    <xs:element name="GetRecipePopularityReportRequest">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="recipeId" type="xs:long"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:element name="GetRecipePopularityReportResponse">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="recipeId" type="xs:long"/>
+                <xs:element name="recipeTitle" type="xs:string"/>
+                <xs:element name="cuisine" type="xs:string"/>
+                <xs:element name="favoriteCount" type="xs:long"/>
+                <xs:element name="ingredientCount" type="xs:int"/>
+                <xs:element name="isPublished" type="xs:boolean"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:complexType name="CuisineStat">
+        <xs:sequence>
+            <xs:element name="cuisine" type="xs:string"/>
+            <xs:element name="recipeCount" type="xs:long"/>
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="RecipePopularityStat">
+        <xs:sequence>
+            <xs:element name="recipeId" type="xs:long"/>
+            <xs:element name="title" type="xs:string"/>
+            <xs:element name="cuisine" type="xs:string"/>
+            <xs:element name="favoriteCount" type="xs:long"/>
+        </xs:sequence>
+    </xs:complexType>
+
+</xs:schema>

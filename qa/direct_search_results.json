@@ -1,0 +1,134 @@
+{
+  "Chicken Biryani": {
+    "query": "Chicken Biryani",
+    "status_code": 200,
+    "total_elements": 10,
+    "top_matches": [
+      "Awadhi Chicken Biryani",
+      "Thalapakattu Chicken Biryani",
+      "Lucknowi Murgh Biryani Recipe - Awadhi Style Chicken Biryani",
+      "Calcutta Style Chicken Biryani",
+      "Ambur Chicken Biryani Recipes"
+    ],
+    "first_id": 7482
+  },
+  "Paneer Butter Masala": {
+    "query": "Paneer Butter Masala",
+    "status_code": 200,
+    "total_elements": 4,
+    "top_matches": [
+      "Paneer Butter Masala (Recipe In Hindi)",
+      "Paneer Butter Masala Biryani Recipe - Layered Paneer Butter Masala Biryani",
+      "Layered Paneer Butter Masala Biryani",
+      "Paneer Butter Masala"
+    ],
+    "first_id": 3326
+  },
+  "Masala Dosa": {
+    "query": "Masala Dosa",
+    "status_code": 200,
+    "total_elements": 11,
+    "top_matches": [
+      "Onion Tomato Podi Masala Dosa",
+      "Cheesy Mushroom Masala Dosa",
+      "Paneer Masala Dosa Recipe-Paneer Bhurji Dosa",
+      "Masala Dosa Recipe With Red Chutney - Masala Dosa With Red Chutney",
+      "Kollu Masala Dosa Recipe - High Protein Horse Gram Dosa"
+    ],
+    "first_id": 3433
+  },
+  "Butter Chicken": {
+    "query": "Butter Chicken",
+    "status_code": 200,
+    "total_elements": 9,
+    "top_matches": [
+      "Floyd Cardozs Butter Chicken (Chicken Tikka Makhani)",
+      "Butter Chicken (Murgh Makhani)",
+      "Delicious One Pot Butter Chicken Khichdi",
+      "Butter Chicken Recipe - The Classic Indian Chicken Gravy",
+      "Peanut Butter Chicken"
+    ],
+    "first_id": 7007
+  },
+  "Fried Rice": {
+    "query": "Fried Rice",
+    "status_code": 200,
+    "total_elements": 104,
+    "top_matches": [
+      "Egg-Fried Rice Recipes",
+      "Fragrant Chilli Crab-Fried Rice With Crispy Leeks",
+      "Vegetable & Tofu Fried Rice",
+      "Cauliflower Fried Rice Fritters Recipes",
+      "Gochujang Fried Rice"
+    ],
+    "first_id": 7962
+  },
+  "Pad Thai": {
+    "query": "Pad Thai",
+    "status_code": 200,
+    "total_elements": 19,
+    "top_matches": [
+      "Healthy Pad Thai With Peanuts And Coriander Recipes",
+      "No Chicken Vegan Pad Thai",
+      "Summer Shrimp Pad Thai-Inspired Noodles",
+      "Beef With Broccoli Pad Thai",
+      "Chicken Pad Thai Recipes"
+    ],
+    "first_id": 6813
+  },
+  "Chicken Teriyaki": {
+    "query": "Chicken Teriyaki",
+    "status_code": 200,
+    "total_elements": 6,
+    "top_matches": [
+      "Chicken Teriyaki",
+      "Chicken Teriyaki Meatballs With Edamame",
+      "Three Ingredient Chicken Teriyaki",
+      "Super Easy Grilled Chicken Teriyaki",
+      "Imis Chicken Teriyaki Sauce"
+    ],
+    "first_id": 6794
+  },
+  "variations": {
+    "chicken biryani": {
+      "raw_query": "chicken biryani",
+      "status_code": 200,
+      "total_elements": 10,
+      "top_matches": [
+        "Awadhi Chicken Biryani",
+        "Thalapakattu Chicken Biryani",
+        "Lucknowi Murgh Biryani Recipe - Awadhi Style Chicken Biryani"
+      ]
+    },
+    "Chicken Biryani": {
+      "raw_query": "Chicken Biryani",
+      "status_code": 200,
+      "total_elements": 10,
+      "top_matches": [
+        "Awadhi Chicken Biryani",
+        "Thalapakattu Chicken Biryani",
+        "Lucknowi Murgh Biryani Recipe - Awadhi Style Chicken Biryani"
+      ]
+    },
+    " CHICKEN BIRYANI ": {
+      "raw_query": " CHICKEN BIRYANI ",
+      "status_code": 200,
+      "total_elements": 10,
+      "top_matches": [
+        "Awadhi Chicken Biryani",
+        "Thalapakattu Chicken Biryani",
+        "Lucknowi Murgh Biryani Recipe - Awadhi Style Chicken Biryani"
+      ]
+    },
+    "Chicken-Biryani": {
+      "raw_query": "Chicken-Biryani",
+      "status_code": 200,
+      "total_elements": 10,
+      "top_matches": [
+        "Awadhi Chicken Biryani",
+        "Thalapakattu Chicken Biryani",
+        "Lucknowi Murgh Biryani Recipe - Awadhi Style Chicken Biryani"
+      ]
+    }
+  }
+}

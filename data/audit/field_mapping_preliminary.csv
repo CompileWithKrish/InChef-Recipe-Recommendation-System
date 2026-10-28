@@ -1,0 +1,23 @@
+InChef_Target_Field,IndianFoodDataset,DataHive,CulinaryDB,Transformation_Rule
+id,Srno (or auto-gen),Row Index / URL hash,Recipe ID,Auto-increment primary key in InChef
+title,TranslatedRecipeName,recipe_name,Title,"Trim, Title Case, clean HTML and quotes"
+description,Generated summary from title + course,Dish/Meal description or generated,None,Rich synthesized or native description
+cuisine,Cuisine (normalized Indian/regional),cuisine_type (filtered Asian/Indian),Cuisine,"Standardized Cuisine mapping (Indian, Chinese, Japanese, Thai, etc.)"
+meal_type,Course (mapped to MealType),meal_type (mapped to MealType),None,"Map to BREAKFAST, LUNCH, DINNER, SNACK, DESSERT, BEVERAGE"
+dietary_type,Diet (mapped to DietaryType),diet_labels / health_labels,None,"Map to VEGETARIAN, VEGAN, NON_VEGETARIAN, EGGETARIAN, GLUTEN_FREE, KETO, DAIRY_FREE"
+difficulty,Derived from TotalTimeInMins & ingredients count,Derived from total ingredients & prep,None,"EASY (<30m, <8 ing), HARD (>60m, >15 ing), else MEDIUM"
+prep_time_minutes,PrepTimeInMins,NULL (unless structured),None,Direct integer minutes or NULL
+cook_time_minutes,CookTimeInMins,NULL (unless structured),None,Direct integer minutes or NULL
+total_time_minutes,TotalTimeInMins,NULL,None,"Prep + Cook if total is missing, else source total"
+servings,Servings,servings,None,Direct integer or default 4 if unparseable
+calories,NULL,calories / servings (per serving) or total,None,Mapped from DataHive calories or calories per serving
+spice_level,"Derived from spice ingredients (chilli, etc.)",Derived from ingredients or MILD,None,"MILD, MEDIUM, SPICY, EXTRA_SPICY"
+instructions,TranslatedInstructions,ingredient_lines (or structured guide),None,Formatted numbered steps or paragraph text
+image_url,NULL (or fallback),image_url,None,Valid HTTP/HTTPS image URL or NULL
+source_url,URL,url,Source URL,Original recipe link for attribution & provenance
+source_dataset,'IndianFoodDataset','DataHive','CulinaryDB',Provenance tracking
+source_recipe_id,Srno,URL hash / ID,Recipe ID,Source tracking identifier
+ingredient.name,TranslatedIngredients parsed,ingredients[].food,Aliased Ingredient Name,Canonicalized via CulinaryDB aliases + singularization
+recipe_ingredient.quantity,Parsed quantity,ingredients[].quantity,None,Numeric double or 1.0 default
+recipe_ingredient.unit,Parsed unit,ingredients[].measure,None,Mapped to MeasurementUnit enum
+recipe_ingredient.notes,Parsed preparation note (e.g. chopped),ingredients[].text - food,None,Preparation details text

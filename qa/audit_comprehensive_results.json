@@ -1,0 +1,579 @@
+{
+  "section1_direct_search": {
+    "search_Chicken Biryani": {
+      "status_code": 200,
+      "total_matches": 10,
+      "top_result": "Awadhi Chicken Biryani",
+      "sample_results": [
+        "Awadhi Chicken Biryani",
+        "Thalapakattu Chicken Biryani Recipe",
+        "Lucknowi Murgh Biryani Recipe - Awadhi Style Chicken Biryani"
+      ]
+    },
+    "search_Paneer Butter Masala": {
+      "status_code": 200,
+      "total_matches": 5,
+      "top_result": "Paneer Butter Masala Recipe",
+      "sample_results": [
+        "Paneer Butter Masala Recipe",
+        "Paneer Butter Masala (Recipe In Hindi)",
+        "Paneer Butter Masala Biryani Recipe - Layered Paneer Butter Masala Biryani Recipe"
+      ]
+    },
+    "search_Masala Dosa": {
+      "status_code": 200,
+      "total_matches": 13,
+      "top_result": "Schezwan Masala Dosa Recipe Using Classic Idli Dosa Batter",
+      "sample_results": [
+        "Schezwan Masala Dosa Recipe Using Classic Idli Dosa Batter",
+        "Mushroom Corn Masala Dosa Recipe Using Ragi Idli Dosa Batter",
+        "Onion Tomato Podi Masala Dosa Recipe"
+      ]
+    },
+    "search_paneer": {
+      "status_code": 200,
+      "total_matches": 273,
+      "top_result": "Broccoli, Paneer & Peanut Sandwich Recipe",
+      "sample_results": [
+        "Broccoli, Paneer & Peanut Sandwich Recipe",
+        "Nawabi Kofta Curry Recipe",
+        "Indo Chinese Paneer Lollipop Recipe"
+      ]
+    },
+    "case_insensitivity": {
+      "lower_count": 10,
+      "upper_count": 10,
+      "mixed_count": 10,
+      "consistent": true
+    },
+    "non_existent_dish": {
+      "status_code": 200,
+      "total_matches": 0
+    },
+    "empty_and_all_query": {
+      "empty_status": 200,
+      "empty_matches": 10092,
+      "all_status": 200,
+      "all_matches": 10092
+    },
+    "special_characters": {
+      "status_code": 200,
+      "total_matches": 0
+    },
+    "pagination_and_sorting": {
+      "p0_ids": [
+        9812,
+        8390
+      ],
+      "p1_ids": [
+        7482,
+        2946
+      ],
+      "pages_disjoint": true,
+      "times_asc": [
+        10,
+        10,
+        25,
+        25,
+        25
+      ],
+      "times_desc": [
+        550,
+        220,
+        170,
+        150,
+        120
+      ]
+    }
+  },
+  "section2_ingredient_retrieval": {
+    "normalization_and_dedup": {
+      "status_code": 200,
+      "matched_ingredients": [
+        "Spring Onion"
+      ],
+      "unique_matched_count": 1,
+      "has_duplicates": false
+    },
+    "alias_handling": [
+      {
+        "input": [
+          "dahi"
+        ],
+        "expected": "yogurt",
+        "status": 200,
+        "matched_expected": true,
+        "sample_matched": [
+          "Yogurt",
+          "Yogurt",
+          "Lowfat Yogurt"
+        ]
+      },
+      {
+        "input": [
+          "curd"
+        ],
+        "expected": "yogurt",
+        "status": 200,
+        "matched_expected": true,
+        "sample_matched": [
+          "Yogurt",
+          "Yogurt",
+          "Lowfat Yogurt"
+        ]
+      },
+      {
+        "input": [
+          "hari mirch"
+        ],
+        "expected": "green chilli",
+        "status": 200,
+        "matched_expected": true,
+        "sample_matched": [
+          "Green",
+          "Green Chilli",
+          "Chilli"
+        ]
+      },
+      {
+        "input": [
+          "green chili"
+        ],
+        "expected": "green chilli",
+        "status": 200,
+        "matched_expected": true,
+        "sample_matched": [
+          "Green",
+          "Green Chilli",
+          "Chilli"
+        ]
+      },
+      {
+        "input": [
+          "dhania"
+        ],
+        "expected": "coriander",
+        "status": 200,
+        "matched_expected": true,
+        "sample_matched": [
+          "Coriander",
+          "Coriander",
+          "Coriander Leave"
+        ]
+      },
+      {
+        "input": [
+          "cilantro"
+        ],
+        "expected": "coriander",
+        "status": 200,
+        "matched_expected": true,
+        "sample_matched": [
+          "Coriander",
+          "Coriander",
+          "Coriander Leave"
+        ]
+      },
+      {
+        "input": [
+          "scallion"
+        ],
+        "expected": "green onion",
+        "status": 200,
+        "matched_expected": true,
+        "sample_matched": [
+          "Spring Onion",
+          "Onion",
+          "Green Onion"
+        ]
+      },
+      {
+        "input": [
+          "spring onion"
+        ],
+        "expected": "green onion",
+        "status": 200,
+        "matched_expected": true,
+        "sample_matched": [
+          "Spring Onion",
+          "Onion",
+          "Green Onion"
+        ]
+      },
+      {
+        "input": [
+          "jeera"
+        ],
+        "expected": "cumin",
+        "status": 200,
+        "matched_expected": true,
+        "sample_matched": [
+          "Cumin Seed",
+          "Cumin Seed",
+          "Cumin Powder"
+        ]
+      },
+      {
+        "input": [
+          "haldi"
+        ],
+        "expected": "turmeric",
+        "status": 200,
+        "matched_expected": true,
+        "sample_matched": [
+          "Turmeric",
+          "Turmeric",
+          "Turmeric Root"
+        ]
+      },
+      {
+        "input": [
+          "adrak"
+        ],
+        "expected": "ginger",
+        "status": 200,
+        "matched_expected": true,
+        "sample_matched": [
+          "Ginger",
+          "Ginger",
+          "Ginger"
+        ]
+      },
+      {
+        "input": [
+          "lahsun"
+        ],
+        "expected": "garlic",
+        "status": 200,
+        "matched_expected": true,
+        "sample_matched": [
+          "Garlic",
+          "Garlic Salt",
+          "Garlic"
+        ]
+      },
+      {
+        "input": [
+          "pyaaz"
+        ],
+        "expected": "onion",
+        "status": 200,
+        "matched_expected": true,
+        "sample_matched": [
+          "Spring Onion",
+          "Onion",
+          "Green Onion"
+        ]
+      },
+      {
+        "input": [
+          "tamatar"
+        ],
+        "expected": "tomato",
+        "status": 200,
+        "matched_expected": true,
+        "sample_matched": [
+          "Tomato",
+          "Paste Tomato",
+          "Tomato"
+        ]
+      },
+      {
+        "input": [
+          "shimla mirch"
+        ],
+        "expected": "bell pepper",
+        "status": 200,
+        "matched_expected": true,
+        "sample_matched": [
+          "Red Bell Pepper",
+          "Yellow Bell Pepper",
+          "Green Bell Pepper"
+        ]
+      }
+    ],
+    "unknown_ingredients": {
+      "status_code": 200,
+      "returned_count": 0
+    },
+    "false_positive_prevention": [
+      {
+        "input": "pea",
+        "forbidden": "peanut",
+        "false_positive_found": false,
+        "total_evaluated": 20
+      },
+      {
+        "input": "peas",
+        "forbidden": "peanut",
+        "false_positive_found": false,
+        "total_evaluated": 20
+      },
+      {
+        "input": "egg",
+        "forbidden": "eggplant",
+        "false_positive_found": false,
+        "total_evaluated": 20
+      },
+      {
+        "input": "eggs",
+        "forbidden": "eggplant",
+        "false_positive_found": false,
+        "total_evaluated": 20
+      },
+      {
+        "input": "ice",
+        "forbidden": "rice",
+        "false_positive_found": false,
+        "total_evaluated": 20
+      },
+      {
+        "input": "corn",
+        "forbidden": "peppercorn",
+        "false_positive_found": false,
+        "total_evaluated": 20
+      }
+    ]
+  },
+  "section3_threshold_audit": {
+    "available_4_ingredient_recipes": [
+      {
+        "id": 9,
+        "title": "Fluffy Golden Buttermilk Pancakes",
+        "ing_count": 4
+      },
+      {
+        "id": 43,
+        "title": "Kesar Chai Recipe - A Delicious Saffron Flavored Indian Tea",
+        "ing_count": 4
+      },
+      {
+        "id": 51,
+        "title": "Rajasthani very roti recipe",
+        "ing_count": 4
+      },
+      {
+        "id": 161,
+        "title": "Raw Mango Murabba Recipe - Cinnamon Spiced Mango Jam",
+        "ing_count": 4
+      },
+      {
+        "id": 211,
+        "title": "Udupi Style Red Parboiled Rice Sevai Recipe (Red Rice Vermicelli)",
+        "ing_count": 4
+      }
+    ],
+    "target_recipe_id": 9,
+    "target_recipe_title": "Fluffy Golden Buttermilk Pancakes",
+    "case_4_of_4_100pct": {
+      "eligible": true,
+      "match_pct": 100.0,
+      "score": 100
+    },
+    "case_3_of_4_75pct": {
+      "eligible": true,
+      "match_pct": 75.0,
+      "score": 85
+    },
+    "case_2_of_4_50pct": {
+      "eligible": false,
+      "excluded_as_expected": true
+    },
+    "general_threshold_compliance": {
+      "status_code": 200,
+      "total_returned": 3,
+      "violations_below_75pct": 0,
+      "min_pct_observed": 75.0
+    }
+  },
+  "section4_ranking_and_filters": {
+    "scoring_breakdown_audit": {
+      "ingredientScore": 60.0,
+      "dietaryScore": 15.0,
+      "cuisineScore": 10.0,
+      "cookingTimeScore": 10.0,
+      "categoryScore": 5.0,
+      "skillScore": 0.0,
+      "totalScore": 100.0,
+      "matchScore": 100,
+      "reason": "Perfect match! You have all 1 required ingredients.",
+      "sum_matches_total": true
+    },
+    "deterministic_ordering": {
+      "is_sorted": true,
+      "count": 20
+    },
+    "dietary_filter_tests": {
+      "VEGETARIAN": {
+        "status_code": 200,
+        "count": 10,
+        "violations": [],
+        "compliant": true
+      },
+      "NON_VEGETARIAN": {
+        "status_code": 200,
+        "count": 10,
+        "violations": [],
+        "compliant": true
+      },
+      "VEGAN": {
+        "status_code": 200,
+        "count": 10,
+        "violations": [],
+        "compliant": true
+      }
+    },
+    "cuisine_filter_tests": {
+      "North Indian": {
+        "status_code": 200,
+        "count": 10,
+        "cuisines_observed": [
+          "North Indian Recipes"
+        ]
+      },
+      "North Indian Recipes": {
+        "status_code": 200,
+        "count": 10,
+        "cuisines_observed": [
+          "North Indian Recipes"
+        ]
+      },
+      "South Indian": {
+        "status_code": 200,
+        "count": 10,
+        "cuisines_observed": [
+          "South Indian Recipes"
+        ]
+      },
+      "All": {
+        "status_code": 200,
+        "count": 10,
+        "cuisines_observed": [
+          "Chinese",
+          "Japanese",
+          "South East Asian",
+          "Indian",
+          "Continental"
+        ]
+      }
+    },
+    "time_filter_tests": {
+      "max_20": {
+        "status_code": 200,
+        "count": 10,
+        "max_time_observed": 20,
+        "violations": [],
+        "compliant": true
+      },
+      "max_30": {
+        "status_code": 200,
+        "count": 10,
+        "max_time_observed": 30,
+        "violations": [],
+        "compliant": true
+      },
+      "max_45": {
+        "status_code": 200,
+        "count": 10,
+        "max_time_observed": 40,
+        "violations": [],
+        "compliant": true
+      }
+    },
+    "user1_preferences_in_db": {
+      "id": 1,
+      "allergies": "Peanuts",
+      "dietary_type": "VEGETARIAN",
+      "max_cooking_time": 45,
+      "preferred_cuisines": "Italian,Mexican",
+      "preferred_spice_level": "MEDIUM",
+      "updated_at": "2026-10-04 18:40:36.524088",
+      "user_id": 1,
+      "cooking_skill_level": null
+    }
+  },
+  "section5_pantry_and_security": {
+    "anonymous_pantry_access": {
+      "status_code": 401,
+      "is_unauthorized": true
+    },
+    "users_in_db": [
+      {
+        "id": 1,
+        "name": "Alex Johnson",
+        "email": "alex@inchef.com"
+      },
+      {
+        "id": 2,
+        "name": "Sophia Chen",
+        "email": "sophia@inchef.com"
+      },
+      {
+        "id": 3,
+        "name": "Marcus Rivera",
+        "email": "marcus@inchef.com"
+      },
+      {
+        "id": 6,
+        "name": "Krishnandu Das",
+        "email": "fosed44373@herclan.com"
+      },
+      {
+        "id": 7,
+        "name": "Test Owner",
+        "email": "testowner2@inchef.com"
+      },
+      {
+        "id": 8,
+        "name": "Test Owner 3",
+        "email": "testowner3@inchef.com"
+      },
+      {
+        "id": 9,
+        "name": "Test Owner 4",
+        "email": "testowner4@inchef.com"
+      },
+      {
+        "id": 10,
+        "name": "Audit Chef",
+        "email": "audit_chef_1792602334@inchef.com"
+      },
+      {
+        "id": 11,
+        "name": "Audit Chef",
+        "email": "audit_chef_1792602571@inchef.com"
+      }
+    ],
+    "audit_user_auth": {
+      "login_status": 200,
+      "user_id": 12
+    },
+    "pantry_retrieval": {
+      "status_code": 200,
+      "items_count": 3,
+      "items": [
+        "Onion (3.0 PIECES)",
+        "Basmati Rice (2.0 CUPS)",
+        "Chicken (500.0 GRAMS)"
+      ]
+    },
+    "pantry_recommendation": {
+      "status_code": 200,
+      "recs_count": 5,
+      "sample_recs": [
+        "Spring Roll Wrapper Cups",
+        "Spicy and Creamy Achari Mushroom Open Toast Recipe",
+        "Chicken Fried Rice"
+      ],
+      "sample_matched": [
+        "Spring Onion"
+      ]
+    },
+    "cross_user_access": {
+      "target_user_id": 1,
+      "calling_user_id": 12,
+      "status_code": 403,
+      "is_forbidden": true
+    }
+  }
+}

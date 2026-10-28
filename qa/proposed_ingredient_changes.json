@@ -1,0 +1,4799 @@
+[
+  {
+    "source_id": 38,
+    "source_name": "0 25 Cup Curd",
+    "target_id": 38,
+    "target_name": "Curd",
+    "action": "RENAME",
+    "affected_recipes": 1,
+    "affected_pantries": 0
+  },
+  {
+    "source_id": 39,
+    "source_name": "0 25 Cup Gram Flour",
+    "target_id": 1608,
+    "target_name": "Gram Flour",
+    "action": "MERGE",
+    "affected_recipes": 1,
+    "affected_pantries": 0
+  },
+  {
+    "source_id": 40,
+    "source_name": "0 25 Cup Homemade Tomato Puree",
+    "target_id": 1776,
+    "target_name": "Homemade Tomato Puree",
+    "action": "MERGE",
+    "affected_recipes": 1,
+    "affected_pantries": 0
+  },
+  {
+    "source_id": 41,
+    "source_name": "0 25 Cup Mint Leave",
+    "target_id": 5032,
+    "target_name": "Mint Leave",
+    "action": "MERGE",
+    "affected_recipes": 1,
+    "affected_pantries": 0
+  },
+  {
+    "source_id": 42,
+    "source_name": "0 5 Inch Cinnamon Stick",
+    "target_id": 5043,
+    "target_name": "Cinnamon Stick",
+    "action": "MERGE",
+    "affected_recipes": 1,
+    "affected_pantries": 0
+  },
+  {
+    "source_id": 43,
+    "source_name": "0 Clove",
+    "target_id": 1227,
+    "target_name": "Clove",
+    "action": "MERGE",
+    "affected_recipes": 3,
+    "affected_pantries": 0
+  },
+  {
+    "source_id": 53,
+    "source_name": "1 4 Cup Sugar",
+    "target_id": 3715,
+    "target_name": "Sugar",
+    "action": "MERGE",
+    "affected_recipes": 1,
+    "affected_pantries": 0
+  },
+  {
+    "source_id": 55,
+    "source_name": "1 Clove Laung",
+    "target_id": 55,
+    "target_name": "Laung",
+    "action": "RENAME",
+    "affected_recipes": 8,
+    "affected_pantries": 0
+  },
+  {
+    "source_id": 56,
+    "source_name": "1 Cottage Cheese",
+    "target_id": 5282,
+    "target_name": "Cottage Cheese",
+    "action": "MERGE",
+    "affected_recipes": 1,
+    "affected_pantries": 0
+  },
+  {
+    "source_id": 57,
+    "source_name": "1 Teaspoon Asafoetida",
+    "target_id": 802,
+    "target_name": "Asafoetida",
+    "action": "MERGE",
+    "affected_recipes": 1,
+    "affected_pantries": 0
+  },
+  {
+    "source_id": 58,
+    "source_name": "1 Teaspoon Red Chilli Powder",
+    "target_id": 3305,
+    "target_name": "Red Chilli Powder",
+    "action": "MERGE",
+    "affected_recipes": 2,
+    "affected_pantries": 0
+  },
+  {
+    "source_id": 59,
+    "source_name": "1 Tsp Oil",
+    "target_id": 5031,
+    "target_name": "Oil",
+    "action": "MERGE",
+    "affected_recipes": 1,
+    "affected_pantries": 0
+  },
+  {
+    "source_id": 60,
+    "source_name": "1 Tsp Turmeric Powder",
+    "target_id": 5023,
+    "target_name": "Turmeric Powder",
+    "action": "MERGE",
+    "affected_recipes": 2,
+    "affected_pantries": 0
+  },
+  {
+    "source_id": 413,
+    "source_name": "1-2 Cup Hot Water",
+    "target_id": 5148,
+    "target_name": "Hot Water",
+    "action": "MERGE",
+    "affected_recipes": 0,
+    "affected_pantries": 0
+  },
+  {
+    "source_id": 414,
+    "source_name": "1-2 Dry Red Chilli",
+    "target_id": 414,
+    "target_name": "Dry Red Chilli",
+    "action": "RENAME",
+    "affected_recipes": 0,
+    "affected_pantries": 0
+  },
+  {
+    "source_id": 415,
+    "source_name": "1-2 Dry Red Chilly",
+    "target_id": 415,
+    "target_name": "Dry Red Chilly",
+    "action": "RENAME",
+    "affected_recipes": 0,
+    "affected_pantries": 0
+  },
+  {
+    "source_id": 416,
+    "source_name": "1-2 Green Chilly - Chopped",
+    "target_id": 416,
+    "target_name": "Green Chilly - Chopped",
+    "action": "RENAME",
+    "affected_recipes": 0,
+    "affected_pantries": 0
+  },
+  {
+    "source_id": 417,
+    "source_name": "1-2 Green Chilly - Finely Chopped",
+    "target_id": 417,
+    "target_name": "Green Chilly - Finely Chopped",
+    "action": "RENAME",
+    "affected_recipes": 0,
+    "affected_pantries": 0
+  },
+  {
+    "source_id": 418,
+    "source_name": "1-2 Green Chilly - Slit",
+    "target_id": 418,
+    "target_name": "Green Chilly - Slit",
+    "action": "RENAME",
+    "affected_recipes": 0,
+    "affected_pantries": 0
+  },
+  {
+    "source_id": 419,
+    "source_name": "1-2 Green Chilly - Slit Lengthwise",
+    "target_id": 419,
+    "target_name": "Green Chilly - Slit Lengthwise",
+    "action": "RENAME",
+    "affected_recipes": 0,
+    "affected_pantries": 0
+  },
+  {
+    "source_id": 420,
+    "source_name": "1-2 Tablespoon Chocolate Chip",
+    "target_id": 5142,
+    "target_name": "Chocolate Chip",
+    "action": "MERGE",
+    "affected_recipes": 0,
+    "affected_pantries": 0
+  },
+  {
+    "source_id": 421,
+    "source_name": "1-2 Tablespoon Ghee",
+    "target_id": 1566,
+    "target_name": "Ghee",
+    "action": "MERGE",
+    "affected_recipes": 0,
+    "affected_pantries": 0
+  },
+  {
+    "source_id": 422,
+    "source_name": "1-2 Tablespoon Pistachio - Coarsely Powdered",
+    "target_id": 422,
+    "target_name": "Pistachio - Coarsely Powdered",
+    "action": "RENAME",
+    "affected_recipes": 0,
+    "affected_pantries": 0
+  },
+  {
+    "source_id": 423,
+    "source_name": "1-2 Tablespoon Sunflower Oil",
+    "target_id": 3728,
+    "target_name": "Sunflower Oil",
+    "action": "MERGE",
+    "affected_recipes": 0,
+    "affected_pantries": 0
+  },
+  {
+    "source_id": 424,
+    "source_name": "1-2 Teaspoon Malt Vinegar",
+    "target_id": 424,
+    "target_name": "Malt Vinegar",
+    "action": "RENAME",
+    "affected_recipes": 0,
+    "affected_pantries": 0
+  },
+  {
+    "source_id": 425,
+    "source_name": "1-2 Teaspoon Mango Pickle - Optional",
+    "target_id": 425,
+    "target_name": "Mango Pickle - Optional",
+    "action": "RENAME",
+    "affected_recipes": 0,
+    "affected_pantries": 0
+  },
+  {
+    "source_id": 426,
+    "source_name": "1-2 Teaspoon Red Chilli Powder",
+    "target_id": 3305,
+    "target_name": "Red Chilli Powder",
+    "action": "MERGE",
+    "affected_recipes": 0,
+    "affected_pantries": 0
+  },
+  {
+    "source_id": 427,
+    "source_name": "1-2 Teaspoon Red Wine",
+    "target_id": 5492,
+    "target_name": "Red Wine",
+    "action": "MERGE",
+    "affected_recipes": 0,
+    "affected_pantries": 0
+  },
+  {
+    "source_id": 428,
+    "source_name": "1-2 Teaspoon Sugar",
+    "target_id": 3715,
+    "target_name": "Sugar",
+    "action": "MERGE",
+    "affected_recipes": 0,
+    "affected_pantries": 0
+  },
+  {
+    "source_id": 435,
+    "source_name": "10 Clove Laung",
+    "target_id": 435,
+    "target_name": "Laung",
+    "action": "RENAME",
+    "affected_recipes": 3,
+    "affected_pantries": 0
+  },
+  {
+    "source_id": 436,
+    "source_name": "10 Kilogram",
+    "target_id": 436,
+    "target_name": "Kilogram",
+    "action": "RENAME",
+    "affected_recipes": 1,
+    "affected_pantries": 0
+  },
+  {
+    "source_id": 438,
+    "source_name": "10-12 Cup Water",
+    "target_id": 3915,
+    "target_name": "Water",
+    "action": "MERGE",
+    "affected_recipes": 0,
+    "affected_pantries": 0
+  },
+  {
+    "source_id": 439,
+    "source_name": "10-12 Curry Leave",
+    "target_id": 5028,
+    "target_name": "Curry Leave",
+    "action": "MERGE",
+    "affected_recipes": 0,
+    "affected_pantries": 0
+  },
+  {
+    "source_id": 440,
+    "source_name": "10-12 Curry Leave - Torn",
+    "target_id": 440,
+    "target_name": "Curry Leave - Torn",
+    "action": "RENAME",
+    "affected_recipes": 0,
+    "affected_pantries": 0
+  },
+  {
+    "source_id": 441,
+    "source_name": "10-15 Curry Leave",
+    "target_id": 5028,
+    "target_name": "Curry Leave",
+    "action": "MERGE",
+    "affected_recipes": 0,
+    "affected_pantries": 0
+  },
+  {
+    "source_id": 442,
+    "source_name": "10-15 Mint Leave",
+    "target_id": 5032,
+    "target_name": "Mint Leave",
+    "action": "MERGE",
+    "affected_recipes": 0,
+    "affected_pantries": 0
+  },
+  {
+    "source_id": 443,
+    "source_name": "10-15 Whole Black Pepper",
+    "target_id": 3951,
+    "target_name": "Whole Black Pepper",
+    "action": "MERGE",
+    "affected_recipes": 0,
+    "affected_pantries": 0
+  },
+  {
+    "source_id": 444,
+    "source_name": "10-15 Whole Black Peppercorn",
+    "target_id": 3953,
+    "target_name": "Whole Black Peppercorn",
+    "action": "MERGE",
+    "affected_recipes": 0,
+    "affected_pantries": 0
+  },
+  {
+    "source_id": 445,
+    "source_name": "12-14 Whole Black Peppercorn",
+    "target_id": 3953,
+    "target_name": "Whole Black Peppercorn",
+    "action": "MERGE",
+    "affected_recipes": 0,
+    "affected_pantries": 0
+  },
+  {
+    "source_id": 446,
+    "source_name": "13-15 Betel Leave Paan - Vetrilai",
+    "target_id": 446,
+    "target_name": "Betel Leave Paan - Vetrilai",
+    "action": "RENAME",
+    "affected_recipes": 0,
+    "affected_pantries": 0
+  },
+  {
+    "source_id": 447,
+    "source_name": "15-20 Cashew Nut",
+    "target_id": 1058,
+    "target_name": "Cashew Nut",
+    "action": "MERGE",
+    "affected_recipes": 0,
+    "affected_pantries": 0
+  },
+  {
+    "source_id": 448,
+    "source_name": "15-20 Raisin",
+    "target_id": 3259,
+    "target_name": "Raisin",
+    "action": "MERGE",
+    "affected_recipes": 0,
+    "affected_pantries": 0
+  },
+  {
+    "source_id": 449,
+    "source_name": "15-20 Soy Chunk Nugget - Soaked In Warm Water For 20 Minute",
+    "target_id": 449,
+    "target_name": "Soy Chunk Nugget - Soaked In Warm Water For 20 Minute",
+    "action": "RENAME",
+    "affected_recipes": 0,
+    "affected_pantries": 0
+  },
+  {
+    "source_id": 454,
+    "source_name": "2 Clove Laung",
+    "target_id": 454,
+    "target_name": "Laung",
+    "action": "RENAME",
+    "affected_recipes": 172,
+    "affected_pantries": 0
+  },
+  {
+    "source_id": 455,
+    "source_name": "2 Clove Laung -",
+    "target_id": 455,
+    "target_name": "Laung",
+    "action": "RENAME",
+    "affected_recipes": 0,
+    "affected_pantries": 0
+  },
+  {
+    "source_id": 456,
+    "source_name": "2 Clove Laung - 2 Clove",
+    "target_id": 456,
+    "target_name": "Laung - 2 Clove",
+    "action": "RENAME",
+    "affected_recipes": 0,
+    "affected_pantries": 0
+  },
+  {
+    "source_id": 457,
+    "source_name": "2 Clove Laung - Finely Chopped",
+    "target_id": 457,
+    "target_name": "Laung - Finely Chopped",
+    "action": "RENAME",
+    "affected_recipes": 0,
+    "affected_pantries": 0
+  },
+  {
+    "source_id": 458,
+    "source_name": "2 Clove Laung - Garlic",
+    "target_id": 458,
+    "target_name": "Laung - Garlic",
+    "action": "RENAME",
+    "affected_recipes": 0,
+    "affected_pantries": 0
+  },
+  {
+    "source_id": 459,
+    "source_name": "2 Clove Laung - Pounded",
+    "target_id": 459,
+    "target_name": "Laung - Pounded",
+    "action": "RENAME",
+    "affected_recipes": 0,
+    "affected_pantries": 0
+  },
+  {
+    "source_id": 460,
+    "source_name": "2 Greek Yogurt",
+    "target_id": 460,
+    "target_name": "Greek Yogurt",
+    "action": "RENAME",
+    "affected_recipes": 1,
+    "affected_pantries": 0
+  },
+  {
+    "source_id": 461,
+    "source_name": "2 Large Tablespoon Sesame",
+    "target_id": 461,
+    "target_name": "Large Tablespoon Sesame",
+    "action": "RENAME",
+    "affected_recipes": 1,
+    "affected_pantries": 0
+  },
+  {
+    "source_id": 462,
+    "source_name": "2 Milk",
+    "target_id": 31,
+    "target_name": "Milk",
+    "action": "MERGE",
+    "affected_recipes": 3,
+    "affected_pantries": 0
+  },
+  {
+    "source_id": 463,
+    "source_name": "2 Tablespoon Mint Leave",
+    "target_id": 5032,
+    "target_name": "Mint Leave",
+    "action": "MERGE",
+    "affected_recipes": 1,
+    "affected_pantries": 0
+  },
+  {
+    "source_id": 464,
+    "source_name": "2 Tablespoon Sunflower Oil",
+    "target_id": 3728,
+    "target_name": "Sunflower Oil",
+    "action": "MERGE",
+    "affected_recipes": 1,
+    "affected_pantries": 0
+  },
+  {
+    "source_id": 465,
+    "source_name": "2 Tbsp Mint",
+    "target_id": 2108,
+    "target_name": "Mint",
+    "action": "MERGE",
+    "affected_recipes": 1,
+    "affected_pantries": 0
+  },
+  {
+    "source_id": 466,
+    "source_name": "2 To 3 Clove Laung",
+    "target_id": 466,
+    "target_name": "To 3 Clove Laung",
+    "action": "RENAME",
+    "affected_recipes": 4,
+    "affected_pantries": 0
+  },
+  {
+    "source_id": 467,
+    "source_name": "2 Tsp Cumin Seed",
+    "target_id": 1327,
+    "target_name": "Cumin Seed",
+    "action": "MERGE",
+    "affected_recipes": 1,
+    "affected_pantries": 0
+  },
+  {
+    "source_id": 522,
+    "source_name": "2-2 Green Chilly - Crushed",
+    "target_id": 522,
+    "target_name": "Green Chilly - Crushed",
+    "action": "RENAME",
+    "affected_recipes": 0,
+    "affected_pantries": 0
+  },
+  {
+    "source_id": 523,
+    "source_name": "2-2 Jackfruit Ripe Kathal - Ripe",
+    "target_id": 523,
+    "target_name": "Jackfruit Ripe Kathal - Ripe",
+    "action": "RENAME",
+    "affected_recipes": 0,
+    "affected_pantries": 0
+  },
+  {
+    "source_id": 524,
+    "source_name": "2-2 Whole Wheat Flour",
+    "target_id": 5049,
+    "target_name": "Whole Wheat Flour",
+    "action": "MERGE",
+    "affected_recipes": 0,
+    "affected_pantries": 0
+  },
+  {
+    "source_id": 527,
+    "source_name": "2-3 Cardamom Elaichi Pod Seed",
+    "target_id": 527,
+    "target_name": "Cardamom Elaichi Pod Seed",
+    "action": "RENAME",
+    "affected_recipes": 0,
+    "affected_pantries": 0
+  },
+  {
+    "source_id": 528,
+    "source_name": "2-3 Clove Laung",
+    "target_id": 528,
+    "target_name": "Laung",
+    "action": "RENAME",
+    "affected_recipes": 0,
+    "affected_pantries": 0
+  },
+  {
+    "source_id": 529,
+    "source_name": "2-3 Cup Almond Milk Badam Milk",
+    "target_id": 529,
+    "target_name": "Almond Milk Badam Milk",
+    "action": "RENAME",
+    "affected_recipes": 0,
+    "affected_pantries": 0
+  },
+  {
+    "source_id": 530,
+    "source_name": "2-3 Cup Spinach - Roughly Chopped",
+    "target_id": 530,
+    "target_name": "Spinach - Roughly Chopped",
+    "action": "RENAME",
+    "affected_recipes": 0,
+    "affected_pantries": 0
+  },
+  {
+    "source_id": 531,
+    "source_name": "2-3 Cup Sunflower Oil - For Frying",
+    "target_id": 531,
+    "target_name": "Sunflower Oil - For Frying",
+    "action": "RENAME",
+    "affected_recipes": 0,
+    "affected_pantries": 0
+  },
+  {
+    "source_id": 532,
+    "source_name": "2-3 Curry Leave - Finely Chopped",
+    "target_id": 532,
+    "target_name": "Curry Leave - Finely Chopped",
+    "action": "RENAME",
+    "affected_recipes": 0,
+    "affected_pantries": 0
+  },
+  {
+    "source_id": 533,
+    "source_name": "2-3 Drop Rose Water",
+    "target_id": 3383,
+    "target_name": "Rose Water",
+    "action": "MERGE",
+    "affected_recipes": 0,
+    "affected_pantries": 0
+  },
+  {
+    "source_id": 534,
+    "source_name": "2-3 Dry Red Chilli",
+    "target_id": 534,
+    "target_name": "Dry Red Chilli",
+    "action": "RENAME",
+    "affected_recipes": 0,
+    "affected_pantries": 0
+  },
+  {
+    "source_id": 535,
+    "source_name": "2-3 Dry Red Chilli - Soaked In Water And Chopped",
+    "target_id": 535,
+    "target_name": "Dry Red Chilli - Soaked In Water And Chopped",
+    "action": "RENAME",
+    "affected_recipes": 0,
+    "affected_pantries": 0
+  },
+  {
+    "source_id": 536,
+    "source_name": "2-3 Dry Red Chilly",
+    "target_id": 536,
+    "target_name": "Dry Red Chilly",
+    "action": "RENAME",
+    "affected_recipes": 0,
+    "affected_pantries": 0
+  },
+  {
+    "source_id": 537,
+    "source_name": "2-3 Dry Red Chilly - Broken Or 1-2 Green Chilly",
+    "target_id": 537,
+    "target_name": "Dry Red Chilly - Broken Or 1-2 Green Chilly",
+    "action": "RENAME",
+    "affected_recipes": 0,
+    "affected_pantries": 0
+  },
+  {
+    "source_id": 538,
+    "source_name": "2-3 Dry Red Chilly - For Tempering",
+    "target_id": 538,
+    "target_name": "Dry Red Chilly - For Tempering",
+    "action": "RENAME",
+    "affected_recipes": 0,
+    "affected_pantries": 0
+  },
+  {
+    "source_id": 539,
+    "source_name": "2-3 Dry Red Chily",
+    "target_id": 539,
+    "target_name": "Dry Red Chily",
+    "action": "RENAME",
+    "affected_recipes": 0,
+    "affected_pantries": 0
+  },
+  {
+    "source_id": 540,
+    "source_name": "2-3 Fresh Red Chilli",
+    "target_id": 540,
+    "target_name": "Fresh Red Chilli",
+    "action": "RENAME",
+    "affected_recipes": 0,
+    "affected_pantries": 0
+  },
+  {
+    "source_id": 541,
+    "source_name": "2-3 Garlic - Finely Chopped",
+    "target_id": 541,
+    "target_name": "Garlic - Finely Chopped",
+    "action": "RENAME",
+    "affected_recipes": 0,
+    "affected_pantries": 0
+  },
+  {
+    "source_id": 542,
+    "source_name": "2-3 Green Bell Pepper Capsicum - Chopped Into Medium Size Piece",
+    "target_id": 542,
+    "target_name": "Green Bell Pepper Capsicum - Chopped Into Medium Size Piece",
+    "action": "RENAME",
+    "affected_recipes": 0,
+    "affected_pantries": 0
+  },
+  {
+    "source_id": 543,
+    "source_name": "2-3 Green Chilli",
+    "target_id": 1635,
+    "target_name": "Green Chilli",
+    "action": "MERGE",
+    "affected_recipes": 0,
+    "affected_pantries": 0
+  },
+  {
+    "source_id": 544,
+    "source_name": "2-3 Green Chilli - Chopped",
+    "target_id": 544,
+    "target_name": "Green Chilli - Chopped",
+    "action": "RENAME",
+    "affected_recipes": 0,
+    "affected_pantries": 0
+  },
+  {
+    "source_id": 545,
+    "source_name": "2-3 Green Chilly",
+    "target_id": 5027,
+    "target_name": "Green Chilly",
+    "action": "MERGE",
+    "affected_recipes": 0,
+    "affected_pantries": 0
+  },
+  {
+    "source_id": 546,
+    "source_name": "2-3 Green Chilly - Chopped",
+    "target_id": 546,
+    "target_name": "Green Chilly - Chopped",
+    "action": "RENAME",
+    "affected_recipes": 0,
+    "affected_pantries": 0
+  },
+  {
+    "source_id": 547,
+    "source_name": "2-3 Green Chilly - Deseeded And Slit Length-Wise",
+    "target_id": 547,
+    "target_name": "Green Chilly - Deseeded And Slit Length-Wise",
+    "action": "RENAME",
+    "affected_recipes": 0,
+    "affected_pantries": 0
+  },
+  {
+    "source_id": 548,
+    "source_name": "2-3 Green Chilly - Finely Chopped",
+    "target_id": 548,
+    "target_name": "Green Chilly - Finely Chopped",
+    "action": "RENAME",
+    "affected_recipes": 0,
+    "affected_pantries": 0
+  },
+  {
+    "source_id": 549,
+    "source_name": "2-3 Kashmiri Dry Red Chilly",
+    "target_id": 549,
+    "target_name": "Kashmiri Dry Red Chilly",
+    "action": "RENAME",
+    "affected_recipes": 0,
+    "affected_pantries": 0
+  },
+  {
+    "source_id": 550,
+    "source_name": "2-3 Sprig Curry Leave",
+    "target_id": 550,
+    "target_name": "Sprig Curry Leave",
+    "action": "RENAME",
+    "affected_recipes": 0,
+    "affected_pantries": 0
+  },
+  {
+    "source_id": 551,
+    "source_name": "2-3 Tablespoon All Purpose Flour Maida",
+    "target_id": 551,
+    "target_name": "All Purpose Flour Maida",
+    "action": "RENAME",
+    "affected_recipes": 0,
+    "affected_pantries": 0
+  },
+  {
+    "source_id": 552,
+    "source_name": "2-3 Tablespoon Anardana Powder Pomegranate Seed Powder - Seed",
+    "target_id": 552,
+    "target_name": "Anardana Powder Pomegranate Seed Powder - Seed",
+    "action": "RENAME",
+    "affected_recipes": 0,
+    "affected_pantries": 0
+  },
+  {
+    "source_id": 553,
+    "source_name": "2-3 Tablespoon Coconut Milk",
+    "target_id": 1240,
+    "target_name": "Coconut Milk",
+    "action": "MERGE",
+    "affected_recipes": 0,
+    "affected_pantries": 0
+  },
+  {
+    "source_id": 554,
+    "source_name": "2-3 Tablespoon Coriander Dhania Leave - Chopped",
+    "target_id": 554,
+    "target_name": "Coriander Dhania Leave - Chopped",
+    "action": "RENAME",
+    "affected_recipes": 0,
+    "affected_pantries": 0
+  },
+  {
+    "source_id": 555,
+    "source_name": "2-3 Tablespoon Cumin Seed Jeera",
+    "target_id": 555,
+    "target_name": "Cumin Seed Jeera",
+    "action": "RENAME",
+    "affected_recipes": 0,
+    "affected_pantries": 0
+  },
+  {
+    "source_id": 556,
+    "source_name": "2-3 Tablespoon Dry Coconut Kopra - Grated",
+    "target_id": 556,
+    "target_name": "Dry Coconut Kopra - Grated",
+    "action": "RENAME",
+    "affected_recipes": 0,
+    "affected_pantries": 0
+  },
+  {
+    "source_id": 557,
+    "source_name": "2-3 Tablespoon Extra Virgin Olive Oil",
+    "target_id": 5037,
+    "target_name": "Extra Virgin Olive Oil",
+    "action": "MERGE",
+    "affected_recipes": 0,
+    "affected_pantries": 0
+  },
+  {
+    "source_id": 558,
+    "source_name": "2-3 Tablespoon Fresh Coconut - Grated",
+    "target_id": 558,
+    "target_name": "Fresh Coconut - Grated",
+    "action": "RENAME",
+    "affected_recipes": 0,
+    "affected_pantries": 0
+  },
+  {
+    "source_id": 559,
+    "source_name": "2-3 Tablespoon Groundnut Powder - Roasted",
+    "target_id": 559,
+    "target_name": "Groundnut Powder - Roasted",
+    "action": "RENAME",
+    "affected_recipes": 0,
+    "affected_pantries": 0
+  },
+  {
+    "source_id": 560,
+    "source_name": "2-3 Tablespoon Mustard Oil",
+    "target_id": 2153,
+    "target_name": "Mustard Oil",
+    "action": "MERGE",
+    "affected_recipes": 0,
+    "affected_pantries": 0
+  },
+  {
+    "source_id": 561,
+    "source_name": "2-3 Tablespoon Sunflower Oil",
+    "target_id": 3728,
+    "target_name": "Sunflower Oil",
+    "action": "MERGE",
+    "affected_recipes": 0,
+    "affected_pantries": 0
+  },
+  {
+    "source_id": 562,
+    "source_name": "2-3 Tablespoon Vangi Bath Powder",
+    "target_id": 3879,
+    "target_name": "Vangi Bath Powder",
+    "action": "MERGE",
+    "affected_recipes": 0,
+    "affected_pantries": 0
+  },
+  {
+    "source_id": 563,
+    "source_name": "2-3 Teaspoon Arhar Dal Split Toor Dal",
+    "target_id": 563,
+    "target_name": "Arhar Dal Split Toor Dal",
+    "action": "RENAME",
+    "affected_recipes": 0,
+    "affected_pantries": 0
+  },
+  {
+    "source_id": 564,
+    "source_name": "2-3 Teaspoon Chana Dal Bengal Gram Dal",
+    "target_id": 564,
+    "target_name": "Chana Dal Bengal Gram Dal",
+    "action": "RENAME",
+    "affected_recipes": 0,
+    "affected_pantries": 0
+  },
+  {
+    "source_id": 565,
+    "source_name": "2-3 Teaspoon Coriander Dhania Leave - Finely Chopped For Garnish",
+    "target_id": 565,
+    "target_name": "Coriander Dhania Leave - Finely Chopped For Garnish",
+    "action": "RENAME",
+    "affected_recipes": 0,
+    "affected_pantries": 0
+  },
+  {
+    "source_id": 566,
+    "source_name": "2-3 Teaspoon Coriander Dhania Seed",
+    "target_id": 566,
+    "target_name": "Coriander Dhania Seed",
+    "action": "RENAME",
+    "affected_recipes": 0,
+    "affected_pantries": 0
+  },
+  {
+    "source_id": 567,
+    "source_name": "2-3 Teaspoon Ghee - Or Extra Virgin Coconut Oil",
+    "target_id": 567,
+    "target_name": "Ghee - Or Extra Virgin Coconut Oil",
+    "action": "RENAME",
+    "affected_recipes": 0,
+    "affected_pantries": 0
+  },
+  {
+    "source_id": 568,
+    "source_name": "2-3 Teaspoon Green Chilli Paste - Or Red Chilli Powder",
+    "target_id": 568,
+    "target_name": "Green Chilli Paste - Or Red Chilli Powder",
+    "action": "RENAME",
+    "affected_recipes": 0,
+    "affected_pantries": 0
+  },
+  {
+    "source_id": 569,
+    "source_name": "2-3 Teaspoon Horse Gram Dal Kollu Kulith",
+    "target_id": 569,
+    "target_name": "Horse Gram Dal Kollu Kulith",
+    "action": "RENAME",
+    "affected_recipes": 0,
+    "affected_pantries": 0
+  },
+  {
+    "source_id": 570,
+    "source_name": "2-3 Teaspoon Jaggery - Grated",
+    "target_id": 570,
+    "target_name": "Jaggery - Grated",
+    "action": "RENAME",
+    "affected_recipes": 0,
+    "affected_pantries": 0
+  },
+  {
+    "source_id": 571,
+    "source_name": "2-3 Tsp Chana Dal",
+    "target_id": 1086,
+    "target_name": "Chana Dal",
+    "action": "MERGE",
+    "affected_recipes": 0,
+    "affected_pantries": 0
+  },
+  {
+    "source_id": 572,
+    "source_name": "2-4 Curry Leave",
+    "target_id": 5028,
+    "target_name": "Curry Leave",
+    "action": "MERGE",
+    "affected_recipes": 0,
+    "affected_pantries": 0
+  },
+  {
+    "source_id": 573,
+    "source_name": "2-4 Tablespoon Condensed Milk - Optional",
+    "target_id": 573,
+    "target_name": "Condensed Milk - Optional",
+    "action": "RENAME",
+    "affected_recipes": 0,
+    "affected_pantries": 0
+  },
+  {
+    "source_id": 574,
+    "source_name": "2-5 Teaspoon Raisin - Optional",
+    "target_id": 574,
+    "target_name": "Raisin - Optional",
+    "action": "RENAME",
+    "affected_recipes": 0,
+    "affected_pantries": 0
+  },
+  {
+    "source_id": 578,
+    "source_name": "3 4 Cup Lukewarm Water",
+    "target_id": 2032,
+    "target_name": "Lukewarm Water",
+    "action": "MERGE",
+    "affected_recipes": 1,
+    "affected_pantries": 0
+  },
+  {
+    "source_id": 579,
+    "source_name": "3 Clove",
+    "target_id": 1227,
+    "target_name": "Clove",
+    "action": "MERGE",
+    "affected_recipes": 3,
+    "affected_pantries": 0
+  },
+  {
+    "source_id": 580,
+    "source_name": "3 Clove Laung",
+    "target_id": 580,
+    "target_name": "Laung",
+    "action": "RENAME",
+    "affected_recipes": 94,
+    "affected_pantries": 0
+  },
+  {
+    "source_id": 581,
+    "source_name": "3 Clove Laung - 3 Clove",
+    "target_id": 581,
+    "target_name": "Laung - 3 Clove",
+    "action": "RENAME",
+    "affected_recipes": 0,
+    "affected_pantries": 0
+  },
+  {
+    "source_id": 582,
+    "source_name": "3 To 4 Clove Laung",
+    "target_id": 582,
+    "target_name": "To 4 Clove Laung",
+    "action": "RENAME",
+    "affected_recipes": 1,
+    "affected_pantries": 0
+  },
+  {
+    "source_id": 591,
+    "source_name": "3-4 Cardamom Elaichi Pod Seed - Powdered",
+    "target_id": 591,
+    "target_name": "Cardamom Elaichi Pod Seed - Powdered",
+    "action": "RENAME",
+    "affected_recipes": 0,
+    "affected_pantries": 0
+  },
+  {
+    "source_id": 592,
+    "source_name": "3-4 Clove Garlic",
+    "target_id": 2,
+    "target_name": "Garlic",
+    "action": "MERGE",
+    "affected_recipes": 0,
+    "affected_pantries": 0
+  },
+  {
+    "source_id": 593,
+    "source_name": "3-4 Clove Garlic - Chopped",
+    "target_id": 593,
+    "target_name": "Garlic - Chopped",
+    "action": "RENAME",
+    "affected_recipes": 0,
+    "affected_pantries": 0
+  },
+  {
+    "source_id": 594,
+    "source_name": "3-4 Clove Garlic - Grated",
+    "target_id": 594,
+    "target_name": "Garlic - Grated",
+    "action": "RENAME",
+    "affected_recipes": 0,
+    "affected_pantries": 0
+  },
+  {
+    "source_id": 595,
+    "source_name": "3-4 Clove Garlic - Pound",
+    "target_id": 595,
+    "target_name": "Garlic - Pound",
+    "action": "RENAME",
+    "affected_recipes": 0,
+    "affected_pantries": 0
+  },
+  {
+    "source_id": 596,
+    "source_name": "3-4 Clove Laung",
+    "target_id": 596,
+    "target_name": "Laung",
+    "action": "RENAME",
+    "affected_recipes": 0,
+    "affected_pantries": 0
+  },
+  {
+    "source_id": 597,
+    "source_name": "3-4 Curry Leave",
+    "target_id": 5028,
+    "target_name": "Curry Leave",
+    "action": "MERGE",
+    "affected_recipes": 0,
+    "affected_pantries": 0
+  },
+  {
+    "source_id": 598,
+    "source_name": "3-4 Curry Leave - Finely Chopped",
+    "target_id": 598,
+    "target_name": "Curry Leave - Finely Chopped",
+    "action": "RENAME",
+    "affected_recipes": 0,
+    "affected_pantries": 0
+  },
+  {
+    "source_id": 599,
+    "source_name": "3-4 Curry Leave - Torn",
+    "target_id": 599,
+    "target_name": "Curry Leave - Torn",
+    "action": "RENAME",
+    "affected_recipes": 0,
+    "affected_pantries": 0
+  },
+  {
+    "source_id": 600,
+    "source_name": "3-4 Drop Orange Essence",
+    "target_id": 600,
+    "target_name": "Orange Essence",
+    "action": "RENAME",
+    "affected_recipes": 0,
+    "affected_pantries": 0
+  },
+  {
+    "source_id": 601,
+    "source_name": "3-4 Dry Red Chilli",
+    "target_id": 601,
+    "target_name": "Dry Red Chilli",
+    "action": "RENAME",
+    "affected_recipes": 0,
+    "affected_pantries": 0
+  },
+  {
+    "source_id": 602,
+    "source_name": "3-4 Fresh Red Chilli -",
+    "target_id": 602,
+    "target_name": "Fresh Red Chilli",
+    "action": "RENAME",
+    "affected_recipes": 0,
+    "affected_pantries": 0
+  },
+  {
+    "source_id": 603,
+    "source_name": "3-4 Green Chilli",
+    "target_id": 1635,
+    "target_name": "Green Chilli",
+    "action": "MERGE",
+    "affected_recipes": 0,
+    "affected_pantries": 0
+  },
+  {
+    "source_id": 604,
+    "source_name": "3-4 Green Chilli - Roughly Chopped",
+    "target_id": 604,
+    "target_name": "Green Chilli - Roughly Chopped",
+    "action": "RENAME",
+    "affected_recipes": 0,
+    "affected_pantries": 0
+  },
+  {
+    "source_id": 605,
+    "source_name": "3-4 Green Chilly",
+    "target_id": 5027,
+    "target_name": "Green Chilly",
+    "action": "MERGE",
+    "affected_recipes": 0,
+    "affected_pantries": 0
+  },
+  {
+    "source_id": 606,
+    "source_name": "3-4 Green Chilly - Chopped",
+    "target_id": 606,
+    "target_name": "Green Chilly - Chopped",
+    "action": "RENAME",
+    "affected_recipes": 0,
+    "affected_pantries": 0
+  },
+  {
+    "source_id": 607,
+    "source_name": "3-4 Green Chilly - Finely Chopped",
+    "target_id": 607,
+    "target_name": "Green Chilly - Finely Chopped",
+    "action": "RENAME",
+    "affected_recipes": 0,
+    "affected_pantries": 0
+  },
+  {
+    "source_id": 608,
+    "source_name": "3-4 Iceberg Lettuce - Shredded",
+    "target_id": 608,
+    "target_name": "Iceberg Lettuce - Shredded",
+    "action": "RENAME",
+    "affected_recipes": 0,
+    "affected_pantries": 0
+  },
+  {
+    "source_id": 609,
+    "source_name": "3-4 Mango Ripe - Small And Sour Variety",
+    "target_id": 609,
+    "target_name": "Mango Ripe - Small And Sour Variety",
+    "action": "RENAME",
+    "affected_recipes": 0,
+    "affected_pantries": 0
+  },
+  {
+    "source_id": 610,
+    "source_name": "3-4 Saffron",
+    "target_id": 3410,
+    "target_name": "Saffron",
+    "action": "MERGE",
+    "affected_recipes": 0,
+    "affected_pantries": 0
+  },
+  {
+    "source_id": 611,
+    "source_name": "3-4 Saffron Strand",
+    "target_id": 3411,
+    "target_name": "Saffron Strand",
+    "action": "MERGE",
+    "affected_recipes": 0,
+    "affected_pantries": 0
+  },
+  {
+    "source_id": 612,
+    "source_name": "3-4 Shallot - Chopped",
+    "target_id": 612,
+    "target_name": "Shallot - Chopped",
+    "action": "RENAME",
+    "affected_recipes": 0,
+    "affected_pantries": 0
+  },
+  {
+    "source_id": 613,
+    "source_name": "3-4 Tablespoon Condensed Milk",
+    "target_id": 1258,
+    "target_name": "Condensed Milk",
+    "action": "MERGE",
+    "affected_recipes": 0,
+    "affected_pantries": 0
+  },
+  {
+    "source_id": 614,
+    "source_name": "3-4 Tablespoon Extra Virgin Olive Oil",
+    "target_id": 5037,
+    "target_name": "Extra Virgin Olive Oil",
+    "action": "MERGE",
+    "affected_recipes": 0,
+    "affected_pantries": 0
+  },
+  {
+    "source_id": 615,
+    "source_name": "3-4 Tablespoon Ghee",
+    "target_id": 1566,
+    "target_name": "Ghee",
+    "action": "MERGE",
+    "affected_recipes": 0,
+    "affected_pantries": 0
+  },
+  {
+    "source_id": 616,
+    "source_name": "3-4 Tablespoon Lemon Juice",
+    "target_id": 1972,
+    "target_name": "Lemon Juice",
+    "action": "MERGE",
+    "affected_recipes": 0,
+    "affected_pantries": 0
+  },
+  {
+    "source_id": 617,
+    "source_name": "3-4 Tablespoon Red Chilli Sauce",
+    "target_id": 3306,
+    "target_name": "Red Chilli Sauce",
+    "action": "MERGE",
+    "affected_recipes": 0,
+    "affected_pantries": 0
+  },
+  {
+    "source_id": 618,
+    "source_name": "3-4 Tablespoon Rice Flour",
+    "target_id": 5046,
+    "target_name": "Rice Flour",
+    "action": "MERGE",
+    "affected_recipes": 0,
+    "affected_pantries": 0
+  },
+  {
+    "source_id": 619,
+    "source_name": "3-4 Tablespoon Salt",
+    "target_id": 3422,
+    "target_name": "Salt",
+    "action": "MERGE",
+    "affected_recipes": 0,
+    "affected_pantries": 0
+  },
+  {
+    "source_id": 620,
+    "source_name": "3-4 Teaspoon Fresh Coconut - Grated",
+    "target_id": 620,
+    "target_name": "Fresh Coconut - Grated",
+    "action": "RENAME",
+    "affected_recipes": 0,
+    "affected_pantries": 0
+  },
+  {
+    "source_id": 621,
+    "source_name": "3-4 Whole Black Peppercorn",
+    "target_id": 3953,
+    "target_name": "Whole Black Peppercorn",
+    "action": "MERGE",
+    "affected_recipes": 0,
+    "affected_pantries": 0
+  },
+  {
+    "source_id": 622,
+    "source_name": "3-4 Whole Black Peppercorn - Coarsely Powdered",
+    "target_id": 622,
+    "target_name": "Whole Black Peppercorn - Coarsely Powdered",
+    "action": "RENAME",
+    "affected_recipes": 0,
+    "affected_pantries": 0
+  },
+  {
+    "source_id": 625,
+    "source_name": "4 Clove Laung",
+    "target_id": 625,
+    "target_name": "Laung",
+    "action": "RENAME",
+    "affected_recipes": 74,
+    "affected_pantries": 0
+  },
+  {
+    "source_id": 626,
+    "source_name": "4 Clove Laung - 4 Clove",
+    "target_id": 626,
+    "target_name": "Laung - 4 Clove",
+    "action": "RENAME",
+    "affected_recipes": 0,
+    "affected_pantries": 0
+  },
+  {
+    "source_id": 627,
+    "source_name": "4 Clove Laung - Chopped",
+    "target_id": 627,
+    "target_name": "Laung - Chopped",
+    "action": "RENAME",
+    "affected_recipes": 0,
+    "affected_pantries": 0
+  },
+  {
+    "source_id": 628,
+    "source_name": "4 Clove Laung - Finely Chopped",
+    "target_id": 628,
+    "target_name": "Laung - Finely Chopped",
+    "action": "RENAME",
+    "affected_recipes": 0,
+    "affected_pantries": 0
+  },
+  {
+    "source_id": 629,
+    "source_name": "4 Clove Laung - Garlic",
+    "target_id": 629,
+    "target_name": "Laung - Garlic",
+    "action": "RENAME",
+    "affected_recipes": 0,
+    "affected_pantries": 0
+  },
+  {
+    "source_id": 630,
+    "source_name": "4 Teaspoon Black Salt Or Rock Salt",
+    "target_id": 923,
+    "target_name": "Black Salt Or Rock Salt",
+    "action": "MERGE",
+    "affected_recipes": 1,
+    "affected_pantries": 0
+  },
+  {
+    "source_id": 631,
+    "source_name": "4 Teaspoon Turmeric Powder",
+    "target_id": 5023,
+    "target_name": "Turmeric Powder",
+    "action": "MERGE",
+    "affected_recipes": 1,
+    "affected_pantries": 0
+  },
+  {
+    "source_id": 632,
+    "source_name": "4 Tsp Asafoetida",
+    "target_id": 802,
+    "target_name": "Asafoetida",
+    "action": "MERGE",
+    "affected_recipes": 1,
+    "affected_pantries": 0
+  },
+  {
+    "source_id": 634,
+    "source_name": "4-5 Badam Almond - Powdered",
+    "target_id": 634,
+    "target_name": "Badam Almond - Powdered",
+    "action": "RENAME",
+    "affected_recipes": 0,
+    "affected_pantries": 0
+  },
+  {
+    "source_id": 635,
+    "source_name": "4-5 Black Pepper Powder",
+    "target_id": 919,
+    "target_name": "Black Pepper Powder",
+    "action": "MERGE",
+    "affected_recipes": 0,
+    "affected_pantries": 0
+  },
+  {
+    "source_id": 636,
+    "source_name": "4-5 Cardamom Elaichi Pod Seed",
+    "target_id": 636,
+    "target_name": "Cardamom Elaichi Pod Seed",
+    "action": "RENAME",
+    "affected_recipes": 0,
+    "affected_pantries": 0
+  },
+  {
+    "source_id": 637,
+    "source_name": "4-5 Cardamom Elaichi Pod Seed - Green",
+    "target_id": 637,
+    "target_name": "Cardamom Elaichi Pod Seed - Green",
+    "action": "RENAME",
+    "affected_recipes": 0,
+    "affected_pantries": 0
+  },
+  {
+    "source_id": 638,
+    "source_name": "4-5 Cashew Nut - Chopped",
+    "target_id": 638,
+    "target_name": "Cashew Nut - Chopped",
+    "action": "RENAME",
+    "affected_recipes": 0,
+    "affected_pantries": 0
+  },
+  {
+    "source_id": 639,
+    "source_name": "4-5 Cashew Nut - Toasted",
+    "target_id": 639,
+    "target_name": "Cashew Nut - Toasted",
+    "action": "RENAME",
+    "affected_recipes": 0,
+    "affected_pantries": 0
+  },
+  {
+    "source_id": 640,
+    "source_name": "4-5 Clove Laung",
+    "target_id": 640,
+    "target_name": "Laung",
+    "action": "RENAME",
+    "affected_recipes": 0,
+    "affected_pantries": 0
+  },
+  {
+    "source_id": 641,
+    "source_name": "4-5 Date",
+    "target_id": 1386,
+    "target_name": "Date",
+    "action": "MERGE",
+    "affected_recipes": 0,
+    "affected_pantries": 0
+  },
+  {
+    "source_id": 642,
+    "source_name": "4-5 Dry Red Chilli",
+    "target_id": 642,
+    "target_name": "Dry Red Chilli",
+    "action": "RENAME",
+    "affected_recipes": 0,
+    "affected_pantries": 0
+  },
+  {
+    "source_id": 643,
+    "source_name": "4-5 Dry Red Chilly",
+    "target_id": 643,
+    "target_name": "Dry Red Chilly",
+    "action": "RENAME",
+    "affected_recipes": 0,
+    "affected_pantries": 0
+  },
+  {
+    "source_id": 644,
+    "source_name": "4-5 Dry Red Chily",
+    "target_id": 644,
+    "target_name": "Dry Red Chily",
+    "action": "RENAME",
+    "affected_recipes": 0,
+    "affected_pantries": 0
+  },
+  {
+    "source_id": 645,
+    "source_name": "4-5 Fresh Red Chilli - Dry",
+    "target_id": 645,
+    "target_name": "Fresh Red Chilli - Dry",
+    "action": "RENAME",
+    "affected_recipes": 0,
+    "affected_pantries": 0
+  },
+  {
+    "source_id": 646,
+    "source_name": "4-5 Garlic - Pod",
+    "target_id": 646,
+    "target_name": "Garlic - Pod",
+    "action": "RENAME",
+    "affected_recipes": 0,
+    "affected_pantries": 0
+  },
+  {
+    "source_id": 647,
+    "source_name": "4-5 Green Chilly - Finely Chopped",
+    "target_id": 647,
+    "target_name": "Green Chilly - Finely Chopped",
+    "action": "RENAME",
+    "affected_recipes": 0,
+    "affected_pantries": 0
+  },
+  {
+    "source_id": 648,
+    "source_name": "4-5 Raisin",
+    "target_id": 3259,
+    "target_name": "Raisin",
+    "action": "MERGE",
+    "affected_recipes": 0,
+    "affected_pantries": 0
+  },
+  {
+    "source_id": 649,
+    "source_name": "4-5 Red Chilly",
+    "target_id": 3308,
+    "target_name": "Red Chilly",
+    "action": "MERGE",
+    "affected_recipes": 0,
+    "affected_pantries": 0
+  },
+  {
+    "source_id": 650,
+    "source_name": "4-5 Saffron Strand",
+    "target_id": 3411,
+    "target_name": "Saffron Strand",
+    "action": "MERGE",
+    "affected_recipes": 0,
+    "affected_pantries": 0
+  },
+  {
+    "source_id": 651,
+    "source_name": "4-5 Shallot",
+    "target_id": 3535,
+    "target_name": "Shallot",
+    "action": "MERGE",
+    "affected_recipes": 0,
+    "affected_pantries": 0
+  },
+  {
+    "source_id": 652,
+    "source_name": "4-5 Shallot - Chopped",
+    "target_id": 652,
+    "target_name": "Shallot - Chopped",
+    "action": "RENAME",
+    "affected_recipes": 0,
+    "affected_pantries": 0
+  },
+  {
+    "source_id": 653,
+    "source_name": "4-5 Teaspoon Broken Wheat Dalia Godumai Rava",
+    "target_id": 653,
+    "target_name": "Broken Wheat Dalia Godumai Rava",
+    "action": "RENAME",
+    "affected_recipes": 0,
+    "affected_pantries": 0
+  },
+  {
+    "source_id": 654,
+    "source_name": "4-5 Thai Basil Leave",
+    "target_id": 3802,
+    "target_name": "Thai Basil Leave",
+    "action": "MERGE",
+    "affected_recipes": 0,
+    "affected_pantries": 0
+  },
+  {
+    "source_id": 655,
+    "source_name": "4-5 Whole Egg",
+    "target_id": 3955,
+    "target_name": "Whole Egg",
+    "action": "MERGE",
+    "affected_recipes": 0,
+    "affected_pantries": 0
+  },
+  {
+    "source_id": 656,
+    "source_name": "4-6 Mixed Dry Fruit - I Used Raisin And Cashew",
+    "target_id": 656,
+    "target_name": "Mixed Dry Fruit - I Used Raisin And Cashew",
+    "action": "RENAME",
+    "affected_recipes": 0,
+    "affected_pantries": 0
+  },
+  {
+    "source_id": 659,
+    "source_name": "5 Clove",
+    "target_id": 1227,
+    "target_name": "Clove",
+    "action": "MERGE",
+    "affected_recipes": 1,
+    "affected_pantries": 0
+  },
+  {
+    "source_id": 660,
+    "source_name": "5 Clove Laung",
+    "target_id": 660,
+    "target_name": "Laung",
+    "action": "RENAME",
+    "affected_recipes": 20,
+    "affected_pantries": 0
+  },
+  {
+    "source_id": 661,
+    "source_name": "5 Clove Laung - Pounded",
+    "target_id": 661,
+    "target_name": "Laung - Pounded",
+    "action": "RENAME",
+    "affected_recipes": 0,
+    "affected_pantries": 0
+  },
+  {
+    "source_id": 662,
+    "source_name": "5 Clove Laung - Roughly Pounded",
+    "target_id": 662,
+    "target_name": "Laung - Roughly Pounded",
+    "action": "RENAME",
+    "affected_recipes": 0,
+    "affected_pantries": 0
+  },
+  {
+    "source_id": 664,
+    "source_name": "5-6 Bimbla Bilimbi",
+    "target_id": 664,
+    "target_name": "Bimbla Bilimbi",
+    "action": "RENAME",
+    "affected_recipes": 0,
+    "affected_pantries": 0
+  },
+  {
+    "source_id": 665,
+    "source_name": "5-6 Cashew Nut - Roughly Chopped",
+    "target_id": 665,
+    "target_name": "Cashew Nut - Roughly Chopped",
+    "action": "RENAME",
+    "affected_recipes": 0,
+    "affected_pantries": 0
+  },
+  {
+    "source_id": 666,
+    "source_name": "5-6 Cashew Nut - Slit Optional",
+    "target_id": 666,
+    "target_name": "Cashew Nut - Slit Optional",
+    "action": "RENAME",
+    "affected_recipes": 0,
+    "affected_pantries": 0
+  },
+  {
+    "source_id": 667,
+    "source_name": "5-6 Clove Garlic - Finely Chopped",
+    "target_id": 667,
+    "target_name": "Garlic - Finely Chopped",
+    "action": "RENAME",
+    "affected_recipes": 0,
+    "affected_pantries": 0
+  },
+  {
+    "source_id": 668,
+    "source_name": "5-6 Cumin Seed Jeera",
+    "target_id": 668,
+    "target_name": "Cumin Seed Jeera",
+    "action": "RENAME",
+    "affected_recipes": 0,
+    "affected_pantries": 0
+  },
+  {
+    "source_id": 669,
+    "source_name": "5-6 Curry Leave",
+    "target_id": 5028,
+    "target_name": "Curry Leave",
+    "action": "MERGE",
+    "affected_recipes": 0,
+    "affected_pantries": 0
+  },
+  {
+    "source_id": 670,
+    "source_name": "5-6 Curry Leave - Finely Chopped",
+    "target_id": 670,
+    "target_name": "Curry Leave - Finely Chopped",
+    "action": "RENAME",
+    "affected_recipes": 0,
+    "affected_pantries": 0
+  },
+  {
+    "source_id": 671,
+    "source_name": "5-6 Curry Leave - Torn With Hand",
+    "target_id": 671,
+    "target_name": "Curry Leave - Torn With Hand",
+    "action": "RENAME",
+    "affected_recipes": 0,
+    "affected_pantries": 0
+  },
+  {
+    "source_id": 672,
+    "source_name": "5-6 Dried Fig - Chopped",
+    "target_id": 672,
+    "target_name": "Dried Fig - Chopped",
+    "action": "RENAME",
+    "affected_recipes": 0,
+    "affected_pantries": 0
+  },
+  {
+    "source_id": 673,
+    "source_name": "5-6 Fish Fillet - Surmai Or Pomphret Variety",
+    "target_id": 673,
+    "target_name": "Fish Fillet - Surmai Or Pomphret Variety",
+    "action": "RENAME",
+    "affected_recipes": 0,
+    "affected_pantries": 0
+  },
+  {
+    "source_id": 674,
+    "source_name": "5-6 Lima Bean - Cut Into 1 Inch Length",
+    "target_id": 674,
+    "target_name": "Lima Bean - Cut Into 1 Inch Length",
+    "action": "RENAME",
+    "affected_recipes": 0,
+    "affected_pantries": 0
+  },
+  {
+    "source_id": 675,
+    "source_name": "5-6 Mint Leave",
+    "target_id": 5032,
+    "target_name": "Mint Leave",
+    "action": "MERGE",
+    "affected_recipes": 0,
+    "affected_pantries": 0
+  },
+  {
+    "source_id": 676,
+    "source_name": "5-6 Raw Peanut Moongphali",
+    "target_id": 676,
+    "target_name": "Raw Peanut Moongphali",
+    "action": "RENAME",
+    "affected_recipes": 0,
+    "affected_pantries": 0
+  },
+  {
+    "source_id": 677,
+    "source_name": "5-6 Roasted Peanut Moongphali - Crushed",
+    "target_id": 677,
+    "target_name": "Roasted Peanut Moongphali - Crushed",
+    "action": "RENAME",
+    "affected_recipes": 0,
+    "affected_pantries": 0
+  },
+  {
+    "source_id": 678,
+    "source_name": "5-6 Saffron Strand - Soaked In 2 Tablespoon Of Warm Milk",
+    "target_id": 678,
+    "target_name": "Saffron Strand - Soaked In 2 Tablespoon Of Warm Milk",
+    "action": "RENAME",
+    "affected_recipes": 0,
+    "affected_pantries": 0
+  },
+  {
+    "source_id": 679,
+    "source_name": "5-6 Tablespoon Gram Flour Besan",
+    "target_id": 679,
+    "target_name": "Gram Flour Besan",
+    "action": "RENAME",
+    "affected_recipes": 0,
+    "affected_pantries": 0
+  },
+  {
+    "source_id": 680,
+    "source_name": "5-6 Tablespoon Sunflower Oil",
+    "target_id": 3728,
+    "target_name": "Sunflower Oil",
+    "action": "MERGE",
+    "affected_recipes": 0,
+    "affected_pantries": 0
+  },
+  {
+    "source_id": 681,
+    "source_name": "5-6 Whole Black Peppercorn",
+    "target_id": 3953,
+    "target_name": "Whole Black Peppercorn",
+    "action": "MERGE",
+    "affected_recipes": 0,
+    "affected_pantries": 0
+  },
+  {
+    "source_id": 682,
+    "source_name": "5-7 Cashew Nut",
+    "target_id": 1058,
+    "target_name": "Cashew Nut",
+    "action": "MERGE",
+    "affected_recipes": 0,
+    "affected_pantries": 0
+  },
+  {
+    "source_id": 683,
+    "source_name": "5-7 Cashew Nut - Halved",
+    "target_id": 683,
+    "target_name": "Cashew Nut - Halved",
+    "action": "RENAME",
+    "affected_recipes": 0,
+    "affected_pantries": 0
+  },
+  {
+    "source_id": 684,
+    "source_name": "5-7 Curry Leave",
+    "target_id": 5028,
+    "target_name": "Curry Leave",
+    "action": "MERGE",
+    "affected_recipes": 0,
+    "affected_pantries": 0
+  },
+  {
+    "source_id": 685,
+    "source_name": "5-8 Curry Leave",
+    "target_id": 5028,
+    "target_name": "Curry Leave",
+    "action": "MERGE",
+    "affected_recipes": 0,
+    "affected_pantries": 0
+  },
+  {
+    "source_id": 687,
+    "source_name": "6 Clove Laung",
+    "target_id": 687,
+    "target_name": "Laung",
+    "action": "RENAME",
+    "affected_recipes": 11,
+    "affected_pantries": 0
+  },
+  {
+    "source_id": 688,
+    "source_name": "6 Clove Laung - Crush Into Coarse Powder",
+    "target_id": 688,
+    "target_name": "Laung - Crush Into Coarse Powder",
+    "action": "RENAME",
+    "affected_recipes": 0,
+    "affected_pantries": 0
+  },
+  {
+    "source_id": 689,
+    "source_name": "6-7 Button Mushroom - Chopped",
+    "target_id": 689,
+    "target_name": "Button Mushroom - Chopped",
+    "action": "RENAME",
+    "affected_recipes": 0,
+    "affected_pantries": 0
+  },
+  {
+    "source_id": 690,
+    "source_name": "6-7 Dry Red Chilly",
+    "target_id": 690,
+    "target_name": "Dry Red Chilly",
+    "action": "RENAME",
+    "affected_recipes": 0,
+    "affected_pantries": 0
+  },
+  {
+    "source_id": 691,
+    "source_name": "6-7 Green Chilly - Finely Chopped",
+    "target_id": 691,
+    "target_name": "Green Chilly - Finely Chopped",
+    "action": "RENAME",
+    "affected_recipes": 0,
+    "affected_pantries": 0
+  },
+  {
+    "source_id": 692,
+    "source_name": "6-7 Whole Black Pepper",
+    "target_id": 3951,
+    "target_name": "Whole Black Pepper",
+    "action": "MERGE",
+    "affected_recipes": 0,
+    "affected_pantries": 0
+  },
+  {
+    "source_id": 693,
+    "source_name": "6-7 Whole Black Peppercorn",
+    "target_id": 3953,
+    "target_name": "Whole Black Peppercorn",
+    "action": "MERGE",
+    "affected_recipes": 0,
+    "affected_pantries": 0
+  },
+  {
+    "source_id": 695,
+    "source_name": "6-8 Cashew Nut - Toasted",
+    "target_id": 695,
+    "target_name": "Cashew Nut - Toasted",
+    "action": "RENAME",
+    "affected_recipes": 0,
+    "affected_pantries": 0
+  },
+  {
+    "source_id": 696,
+    "source_name": "6-8 Clove Garlic - Minced",
+    "target_id": 696,
+    "target_name": "Garlic - Minced",
+    "action": "RENAME",
+    "affected_recipes": 0,
+    "affected_pantries": 0
+  },
+  {
+    "source_id": 697,
+    "source_name": "6-8 Dry Red Chilly",
+    "target_id": 697,
+    "target_name": "Dry Red Chilly",
+    "action": "RENAME",
+    "affected_recipes": 0,
+    "affected_pantries": 0
+  },
+  {
+    "source_id": 698,
+    "source_name": "6-8 Green Bean French Bean - Finely Sliced",
+    "target_id": 698,
+    "target_name": "Green Bean French Bean - Finely Sliced",
+    "action": "RENAME",
+    "affected_recipes": 0,
+    "affected_pantries": 0
+  },
+  {
+    "source_id": 699,
+    "source_name": "6-8 Saffron Strand",
+    "target_id": 3411,
+    "target_name": "Saffron Strand",
+    "action": "MERGE",
+    "affected_recipes": 0,
+    "affected_pantries": 0
+  },
+  {
+    "source_id": 700,
+    "source_name": "7 Clove",
+    "target_id": 1227,
+    "target_name": "Clove",
+    "action": "MERGE",
+    "affected_recipes": 1,
+    "affected_pantries": 0
+  },
+  {
+    "source_id": 702,
+    "source_name": "7-8 Curry Leave",
+    "target_id": 5028,
+    "target_name": "Curry Leave",
+    "action": "MERGE",
+    "affected_recipes": 0,
+    "affected_pantries": 0
+  },
+  {
+    "source_id": 703,
+    "source_name": "7-8 Curry Leave - Pat Dried And Finely Chopped",
+    "target_id": 703,
+    "target_name": "Curry Leave - Pat Dried And Finely Chopped",
+    "action": "RENAME",
+    "affected_recipes": 0,
+    "affected_pantries": 0
+  },
+  {
+    "source_id": 704,
+    "source_name": "7-8 Garlic",
+    "target_id": 2,
+    "target_name": "Garlic",
+    "action": "MERGE",
+    "affected_recipes": 0,
+    "affected_pantries": 0
+  },
+  {
+    "source_id": 705,
+    "source_name": "7-8 Pistachio - Crushed",
+    "target_id": 705,
+    "target_name": "Pistachio - Crushed",
+    "action": "RENAME",
+    "affected_recipes": 0,
+    "affected_pantries": 0
+  },
+  {
+    "source_id": 706,
+    "source_name": "7-8 Tofu - Cube",
+    "target_id": 706,
+    "target_name": "Tofu - Cube",
+    "action": "RENAME",
+    "affected_recipes": 0,
+    "affected_pantries": 0
+  },
+  {
+    "source_id": 707,
+    "source_name": "7-8 Whole Black Peppercorn - Freshly Powdered",
+    "target_id": 707,
+    "target_name": "Whole Black Peppercorn - Freshly Powdered",
+    "action": "RENAME",
+    "affected_recipes": 0,
+    "affected_pantries": 0
+  },
+  {
+    "source_id": 708,
+    "source_name": "8 Clove Laung",
+    "target_id": 708,
+    "target_name": "Laung",
+    "action": "RENAME",
+    "affected_recipes": 2,
+    "affected_pantries": 0
+  },
+  {
+    "source_id": 709,
+    "source_name": "8-10 Brinjal",
+    "target_id": 973,
+    "target_name": "Brinjal",
+    "action": "MERGE",
+    "affected_recipes": 0,
+    "affected_pantries": 0
+  },
+  {
+    "source_id": 710,
+    "source_name": "8-10 Brinjal Baingan Eggplant",
+    "target_id": 710,
+    "target_name": "Brinjal Baingan Eggplant",
+    "action": "RENAME",
+    "affected_recipes": 0,
+    "affected_pantries": 0
+  },
+  {
+    "source_id": 711,
+    "source_name": "8-10 Cashew Nut - Optional",
+    "target_id": 711,
+    "target_name": "Cashew Nut - Optional",
+    "action": "RENAME",
+    "affected_recipes": 0,
+    "affected_pantries": 0
+  },
+  {
+    "source_id": 712,
+    "source_name": "8-10 Curry Leave",
+    "target_id": 5028,
+    "target_name": "Curry Leave",
+    "action": "MERGE",
+    "affected_recipes": 0,
+    "affected_pantries": 0
+  },
+  {
+    "source_id": 713,
+    "source_name": "8-10 Dry Red Chilly",
+    "target_id": 713,
+    "target_name": "Dry Red Chilly",
+    "action": "RENAME",
+    "affected_recipes": 0,
+    "affected_pantries": 0
+  },
+  {
+    "source_id": 714,
+    "source_name": "8-10 Mixed Nut - Almond Cashew",
+    "target_id": 714,
+    "target_name": "Mixed Nut - Almond Cashew",
+    "action": "RENAME",
+    "affected_recipes": 0,
+    "affected_pantries": 0
+  },
+  {
+    "source_id": 715,
+    "source_name": "8-10 Nacho - Coarsely Crushed",
+    "target_id": 715,
+    "target_name": "Nacho - Coarsely Crushed",
+    "action": "RENAME",
+    "affected_recipes": 0,
+    "affected_pantries": 0
+  },
+  {
+    "source_id": 716,
+    "source_name": "8-10 Whole Black Peppercorn",
+    "target_id": 3953,
+    "target_name": "Whole Black Peppercorn",
+    "action": "MERGE",
+    "affected_recipes": 0,
+    "affected_pantries": 0
+  },
+  {
+    "source_id": 717,
+    "source_name": "8-10 Whole Wheat Brown Bread - White Or Brown",
+    "target_id": 717,
+    "target_name": "Whole Wheat Brown Bread - White Or Brown",
+    "action": "RENAME",
+    "affected_recipes": 0,
+    "affected_pantries": 0
+  },
+  {
+    "source_id": 718,
+    "source_name": "9-10 Clove Laung",
+    "target_id": 718,
+    "target_name": "Laung",
+    "action": "RENAME",
+    "affected_recipes": 0,
+    "affected_pantries": 0
+  },
+  {
+    "source_id": 719,
+    "source_name": "9-10 Teaspoon Sugar",
+    "target_id": 3715,
+    "target_name": "Sugar",
+    "action": "MERGE",
+    "affected_recipes": 0,
+    "affected_pantries": 0
+  },
+  {
+    "source_id": 939,
+    "source_name": "Bottle Beer",
+    "target_id": 872,
+    "target_name": "Beer",
+    "action": "MERGE",
+    "affected_recipes": 1,
+    "affected_pantries": 0
+  },
+  {
+    "source_id": 940,
+    "source_name": "Bottle Chili Sauce",
+    "target_id": 940,
+    "target_name": "Chili Sauce",
+    "action": "RENAME",
+    "affected_recipes": 1,
+    "affected_pantries": 0
+  },
+  {
+    "source_id": 941,
+    "source_name": "Bottle Clam Juice",
+    "target_id": 1222,
+    "target_name": "Clam Juice",
+    "action": "MERGE",
+    "affected_recipes": 1,
+    "affected_pantries": 0
+  },
+  {
+    "source_id": 942,
+    "source_name": "Bottle Gourd",
+    "target_id": 1602,
+    "target_name": "Gourd",
+    "action": "MERGE",
+    "affected_recipes": 60,
+    "affected_pantries": 0
+  },
+  {
+    "source_id": 943,
+    "source_name": "Bottle Lauki",
+    "target_id": 943,
+    "target_name": "Lauki",
+    "action": "RENAME",
+    "affected_recipes": 1,
+    "affected_pantries": 0
+  },
+  {
+    "source_id": 944,
+    "source_name": "Bottle Orange",
+    "target_id": 2256,
+    "target_name": "Orange",
+    "action": "MERGE",
+    "affected_recipes": 1,
+    "affected_pantries": 0
+  },
+  {
+    "source_id": 945,
+    "source_name": "Bottle Soy",
+    "target_id": 3616,
+    "target_name": "Soy",
+    "action": "MERGE",
+    "affected_recipes": 1,
+    "affected_pantries": 0
+  },
+  {
+    "source_id": 946,
+    "source_name": "Bottle Vegetable Oil",
+    "target_id": 946,
+    "target_name": "Vegetable Oil",
+    "action": "RENAME",
+    "affected_recipes": 1,
+    "affected_pantries": 0
+  },
+  {
+    "source_id": 947,
+    "source_name": "Bottle Vinaigrette",
+    "target_id": 947,
+    "target_name": "Vinaigrette",
+    "action": "RENAME",
+    "affected_recipes": 1,
+    "affected_pantries": 0
+  },
+  {
+    "source_id": 1015,
+    "source_name": "Can Chickpea",
+    "target_id": 1140,
+    "target_name": "Chickpea",
+    "action": "MERGE",
+    "affected_recipes": 4,
+    "affected_pantries": 0
+  },
+  {
+    "source_id": 1016,
+    "source_name": "Can Pumpkin",
+    "target_id": 3206,
+    "target_name": "Pumpkin",
+    "action": "MERGE",
+    "affected_recipes": 1,
+    "affected_pantries": 0
+  },
+  {
+    "source_id": 1228,
+    "source_name": "Clove Powder",
+    "target_id": 3191,
+    "target_name": "Powder",
+    "action": "MERGE",
+    "affected_recipes": 5,
+    "affected_pantries": 0
+  },
+  {
+    "source_id": 1330,
+    "source_name": "Cup Cheese",
+    "target_id": 1101,
+    "target_name": "Cheese",
+    "action": "MERGE",
+    "affected_recipes": 1,
+    "affected_pantries": 0
+  },
+  {
+    "source_id": 1331,
+    "source_name": "Cup Water",
+    "target_id": 3915,
+    "target_name": "Water",
+    "action": "MERGE",
+    "affected_recipes": 1,
+    "affected_pantries": 0
+  },
+  {
+    "source_id": 1362,
+    "source_name": "Dash Asafetida",
+    "target_id": 801,
+    "target_name": "Asafetida",
+    "action": "MERGE",
+    "affected_recipes": 1,
+    "affected_pantries": 0
+  },
+  {
+    "source_id": 1363,
+    "source_name": "Dash Bitter",
+    "target_id": 907,
+    "target_name": "Bitter",
+    "action": "MERGE",
+    "affected_recipes": 1,
+    "affected_pantries": 0
+  },
+  {
+    "source_id": 1364,
+    "source_name": "Dash Cardamom",
+    "target_id": 1044,
+    "target_name": "Cardamom",
+    "action": "MERGE",
+    "affected_recipes": 1,
+    "affected_pantries": 0
+  },
+  {
+    "source_id": 1365,
+    "source_name": "Dash Chilli Powder",
+    "target_id": 1179,
+    "target_name": "Chilli Powder",
+    "action": "MERGE",
+    "affected_recipes": 1,
+    "affected_pantries": 0
+  },
+  {
+    "source_id": 1366,
+    "source_name": "Dash Cinnamon",
+    "target_id": 1217,
+    "target_name": "Cinnamon",
+    "action": "MERGE",
+    "affected_recipes": 1,
+    "affected_pantries": 0
+  },
+  {
+    "source_id": 1367,
+    "source_name": "Dash Fish Sauce",
+    "target_id": 1507,
+    "target_name": "Fish Sauce",
+    "action": "MERGE",
+    "affected_recipes": 2,
+    "affected_pantries": 0
+  },
+  {
+    "source_id": 1368,
+    "source_name": "Dash Garlic Powder",
+    "target_id": 5044,
+    "target_name": "Garlic Powder",
+    "action": "MERGE",
+    "affected_recipes": 1,
+    "affected_pantries": 0
+  },
+  {
+    "source_id": 1369,
+    "source_name": "Dash Ginger",
+    "target_id": 12,
+    "target_name": "Ginger",
+    "action": "MERGE",
+    "affected_recipes": 1,
+    "affected_pantries": 0
+  },
+  {
+    "source_id": 1370,
+    "source_name": "Dash Liquid Smoke",
+    "target_id": 2003,
+    "target_name": "Liquid Smoke",
+    "action": "MERGE",
+    "affected_recipes": 1,
+    "affected_pantries": 0
+  },
+  {
+    "source_id": 1371,
+    "source_name": "Dash Milk",
+    "target_id": 31,
+    "target_name": "Milk",
+    "action": "MERGE",
+    "affected_recipes": 1,
+    "affected_pantries": 0
+  },
+  {
+    "source_id": 1372,
+    "source_name": "Dash Mirin",
+    "target_id": 2113,
+    "target_name": "Mirin",
+    "action": "MERGE",
+    "affected_recipes": 2,
+    "affected_pantries": 0
+  },
+  {
+    "source_id": 1373,
+    "source_name": "Dash Oil",
+    "target_id": 5031,
+    "target_name": "Oil",
+    "action": "MERGE",
+    "affected_recipes": 1,
+    "affected_pantries": 0
+  },
+  {
+    "source_id": 1374,
+    "source_name": "Dash Olive Oil",
+    "target_id": 6,
+    "target_name": "Olive Oil",
+    "action": "MERGE",
+    "affected_recipes": 1,
+    "affected_pantries": 0
+  },
+  {
+    "source_id": 1375,
+    "source_name": "Dash Onion",
+    "target_id": 3,
+    "target_name": "Onion",
+    "action": "MERGE",
+    "affected_recipes": 1,
+    "affected_pantries": 0
+  },
+  {
+    "source_id": 1376,
+    "source_name": "Dash Onion Powder",
+    "target_id": 5045,
+    "target_name": "Onion Powder",
+    "action": "MERGE",
+    "affected_recipes": 1,
+    "affected_pantries": 0
+  },
+  {
+    "source_id": 1377,
+    "source_name": "Dash Pepper Sauce",
+    "target_id": 2826,
+    "target_name": "Pepper Sauce",
+    "action": "MERGE",
+    "affected_recipes": 2,
+    "affected_pantries": 0
+  },
+  {
+    "source_id": 1378,
+    "source_name": "Dash Red Chili Flake",
+    "target_id": 5646,
+    "target_name": "Red Chili Flake",
+    "action": "MERGE",
+    "affected_recipes": 1,
+    "affected_pantries": 0
+  },
+  {
+    "source_id": 1379,
+    "source_name": "Dash Red Chili Sauce",
+    "target_id": 3298,
+    "target_name": "Red Chili Sauce",
+    "action": "MERGE",
+    "affected_recipes": 1,
+    "affected_pantries": 0
+  },
+  {
+    "source_id": 1380,
+    "source_name": "Dash Red Pepper Flake",
+    "target_id": 3319,
+    "target_name": "Red Pepper Flake",
+    "action": "MERGE",
+    "affected_recipes": 5,
+    "affected_pantries": 0
+  },
+  {
+    "source_id": 1381,
+    "source_name": "Dash Season",
+    "target_id": 3455,
+    "target_name": "Season",
+    "action": "MERGE",
+    "affected_recipes": 1,
+    "affected_pantries": 0
+  },
+  {
+    "source_id": 1382,
+    "source_name": "Dash Seasoning",
+    "target_id": 3457,
+    "target_name": "Seasoning",
+    "action": "MERGE",
+    "affected_recipes": 1,
+    "affected_pantries": 0
+  },
+  {
+    "source_id": 1383,
+    "source_name": "Dash Sesame Oil",
+    "target_id": 14,
+    "target_name": "Sesame Oil",
+    "action": "MERGE",
+    "affected_recipes": 4,
+    "affected_pantries": 0
+  },
+  {
+    "source_id": 1384,
+    "source_name": "Dash Soy Sauce",
+    "target_id": 11,
+    "target_name": "Soy Sauce",
+    "action": "MERGE",
+    "affected_recipes": 1,
+    "affected_pantries": 0
+  },
+  {
+    "source_id": 1411,
+    "source_name": "Drop Almond Extract",
+    "target_id": 749,
+    "target_name": "Almond Extract",
+    "action": "MERGE",
+    "affected_recipes": 1,
+    "affected_pantries": 0
+  },
+  {
+    "source_id": 1412,
+    "source_name": "Drop Fish Sauce",
+    "target_id": 1507,
+    "target_name": "Fish Sauce",
+    "action": "MERGE",
+    "affected_recipes": 1,
+    "affected_pantries": 0
+  },
+  {
+    "source_id": 1413,
+    "source_name": "Drop Food Coloring",
+    "target_id": 1531,
+    "target_name": "Food Coloring",
+    "action": "MERGE",
+    "affected_recipes": 3,
+    "affected_pantries": 0
+  },
+  {
+    "source_id": 1414,
+    "source_name": "Drop Food Colouring",
+    "target_id": 1414,
+    "target_name": "Food Colouring",
+    "action": "RENAME",
+    "affected_recipes": 1,
+    "affected_pantries": 0
+  },
+  {
+    "source_id": 1415,
+    "source_name": "Drop Hot Sauce",
+    "target_id": 1794,
+    "target_name": "Hot Sauce",
+    "action": "MERGE",
+    "affected_recipes": 1,
+    "affected_pantries": 0
+  },
+  {
+    "source_id": 1416,
+    "source_name": "Drop Lemon Juice",
+    "target_id": 1972,
+    "target_name": "Lemon Juice",
+    "action": "MERGE",
+    "affected_recipes": 1,
+    "affected_pantries": 0
+  },
+  {
+    "source_id": 1417,
+    "source_name": "Drop Oil",
+    "target_id": 5031,
+    "target_name": "Oil",
+    "action": "MERGE",
+    "affected_recipes": 4,
+    "affected_pantries": 0
+  },
+  {
+    "source_id": 1418,
+    "source_name": "Drop Sesame Oil",
+    "target_id": 14,
+    "target_name": "Sesame Oil",
+    "action": "MERGE",
+    "affected_recipes": 3,
+    "affected_pantries": 0
+  },
+  {
+    "source_id": 1419,
+    "source_name": "Drop Sriracha",
+    "target_id": 3672,
+    "target_name": "Sriracha",
+    "action": "MERGE",
+    "affected_recipes": 1,
+    "affected_pantries": 0
+  },
+  {
+    "source_id": 1420,
+    "source_name": "Drop Stevia",
+    "target_id": 3689,
+    "target_name": "Stevia",
+    "action": "MERGE",
+    "affected_recipes": 3,
+    "affected_pantries": 0
+  },
+  {
+    "source_id": 1421,
+    "source_name": "Drop Vanilla Essence",
+    "target_id": 1421,
+    "target_name": "Vanilla Essence",
+    "action": "RENAME",
+    "affected_recipes": 1,
+    "affected_pantries": 0
+  },
+  {
+    "source_id": 1422,
+    "source_name": "Drop Vanilla Extract",
+    "target_id": 5054,
+    "target_name": "Vanilla Extract",
+    "action": "MERGE",
+    "affected_recipes": 4,
+    "affected_pantries": 0
+  },
+  {
+    "source_id": 1423,
+    "source_name": "Drop Water",
+    "target_id": 3915,
+    "target_name": "Water",
+    "action": "MERGE",
+    "affected_recipes": 1,
+    "affected_pantries": 0
+  },
+  {
+    "source_id": 1606,
+    "source_name": "Gram Chana Masala Powder",
+    "target_id": 1088,
+    "target_name": "Chana Masala Powder",
+    "action": "MERGE",
+    "affected_recipes": 1,
+    "affected_pantries": 0
+  },
+  {
+    "source_id": 1607,
+    "source_name": "Gram Dal",
+    "target_id": 1350,
+    "target_name": "Dal",
+    "action": "MERGE",
+    "affected_recipes": 36,
+    "affected_pantries": 0
+  },
+  {
+    "source_id": 1608,
+    "source_name": "Gram Flour",
+    "target_id": 30,
+    "target_name": "Flour",
+    "action": "MERGE",
+    "affected_recipes": 352,
+    "affected_pantries": 0
+  },
+  {
+    "source_id": 1609,
+    "source_name": "Gram Lentil",
+    "target_id": 5187,
+    "target_name": "Lentil",
+    "action": "MERGE",
+    "affected_recipes": 3,
+    "affected_pantries": 0
+  },
+  {
+    "source_id": 1698,
+    "source_name": "Handful Alfalfa Sprout",
+    "target_id": 741,
+    "target_name": "Alfalfa Sprout",
+    "action": "MERGE",
+    "affected_recipes": 1,
+    "affected_pantries": 0
+  },
+  {
+    "source_id": 1699,
+    "source_name": "Handful Almond",
+    "target_id": 747,
+    "target_name": "Almond",
+    "action": "MERGE",
+    "affected_recipes": 1,
+    "affected_pantries": 0
+  },
+  {
+    "source_id": 1700,
+    "source_name": "Handful Arugula",
+    "target_id": 793,
+    "target_name": "Arugula",
+    "action": "MERGE",
+    "affected_recipes": 1,
+    "affected_pantries": 0
+  },
+  {
+    "source_id": 1701,
+    "source_name": "Handful Basil",
+    "target_id": 5,
+    "target_name": "Basil",
+    "action": "MERGE",
+    "affected_recipes": 3,
+    "affected_pantries": 0
+  },
+  {
+    "source_id": 1702,
+    "source_name": "Handful Bean Sprout",
+    "target_id": 863,
+    "target_name": "Bean Sprout",
+    "action": "MERGE",
+    "affected_recipes": 4,
+    "affected_pantries": 0
+  },
+  {
+    "source_id": 1703,
+    "source_name": "Handful Black Olive",
+    "target_id": 5158,
+    "target_name": "Black Olive",
+    "action": "MERGE",
+    "affected_recipes": 1,
+    "affected_pantries": 0
+  },
+  {
+    "source_id": 1704,
+    "source_name": "Handful Blueberry",
+    "target_id": 930,
+    "target_name": "Blueberry",
+    "action": "MERGE",
+    "affected_recipes": 1,
+    "affected_pantries": 0
+  },
+  {
+    "source_id": 1705,
+    "source_name": "Handful Bok Choy",
+    "target_id": 932,
+    "target_name": "Bok Choy",
+    "action": "MERGE",
+    "affected_recipes": 1,
+    "affected_pantries": 0
+  },
+  {
+    "source_id": 1706,
+    "source_name": "Handful Broad Bean",
+    "target_id": 980,
+    "target_name": "Broad Bean",
+    "action": "MERGE",
+    "affected_recipes": 1,
+    "affected_pantries": 0
+  },
+  {
+    "source_id": 1707,
+    "source_name": "Handful Broccoli",
+    "target_id": 27,
+    "target_name": "Broccoli",
+    "action": "MERGE",
+    "affected_recipes": 1,
+    "affected_pantries": 0
+  },
+  {
+    "source_id": 1708,
+    "source_name": "Handful Cashew",
+    "target_id": 1054,
+    "target_name": "Cashew",
+    "action": "MERGE",
+    "affected_recipes": 3,
+    "affected_pantries": 0
+  },
+  {
+    "source_id": 1709,
+    "source_name": "Handful Cherry Or Grape Tomato",
+    "target_id": 1111,
+    "target_name": "Cherry Or Grape Tomato",
+    "action": "MERGE",
+    "affected_recipes": 1,
+    "affected_pantries": 0
+  },
+  {
+    "source_id": 1710,
+    "source_name": "Handful Cilantro",
+    "target_id": 20,
+    "target_name": "Cilantro",
+    "action": "MERGE",
+    "affected_recipes": 13,
+    "affected_pantries": 0
+  },
+  {
+    "source_id": 1711,
+    "source_name": "Handful Coconut",
+    "target_id": 1235,
+    "target_name": "Coconut",
+    "action": "MERGE",
+    "affected_recipes": 1,
+    "affected_pantries": 0
+  },
+  {
+    "source_id": 1712,
+    "source_name": "Handful Coriander",
+    "target_id": 1266,
+    "target_name": "Coriander",
+    "action": "MERGE",
+    "affected_recipes": 11,
+    "affected_pantries": 0
+  },
+  {
+    "source_id": 1713,
+    "source_name": "Handful Coriander Leave",
+    "target_id": 5033,
+    "target_name": "Coriander Leave",
+    "action": "MERGE",
+    "affected_recipes": 7,
+    "affected_pantries": 0
+  },
+  {
+    "source_id": 1714,
+    "source_name": "Handful Curry Leave",
+    "target_id": 5028,
+    "target_name": "Curry Leave",
+    "action": "MERGE",
+    "affected_recipes": 3,
+    "affected_pantries": 0
+  },
+  {
+    "source_id": 1715,
+    "source_name": "Handful Dill",
+    "target_id": 1401,
+    "target_name": "Dill",
+    "action": "MERGE",
+    "affected_recipes": 1,
+    "affected_pantries": 0
+  },
+  {
+    "source_id": 1716,
+    "source_name": "Handful Frozen Pea",
+    "target_id": 1548,
+    "target_name": "Frozen Pea",
+    "action": "MERGE",
+    "affected_recipes": 2,
+    "affected_pantries": 0
+  },
+  {
+    "source_id": 1717,
+    "source_name": "Handful Green Bean",
+    "target_id": 1627,
+    "target_name": "Green Bean",
+    "action": "MERGE",
+    "affected_recipes": 4,
+    "affected_pantries": 0
+  },
+  {
+    "source_id": 1718,
+    "source_name": "Handful Green Onion",
+    "target_id": 1648,
+    "target_name": "Green Onion",
+    "action": "MERGE",
+    "affected_recipes": 2,
+    "affected_pantries": 0
+  },
+  {
+    "source_id": 1719,
+    "source_name": "Handful Green Pea",
+    "target_id": 1651,
+    "target_name": "Green Pea",
+    "action": "MERGE",
+    "affected_recipes": 1,
+    "affected_pantries": 0
+  },
+  {
+    "source_id": 1720,
+    "source_name": "Handful Mint",
+    "target_id": 2108,
+    "target_name": "Mint",
+    "action": "MERGE",
+    "affected_recipes": 3,
+    "affected_pantries": 0
+  },
+  {
+    "source_id": 1721,
+    "source_name": "Handful Mixed Nut",
+    "target_id": 5228,
+    "target_name": "Mixed Nut",
+    "action": "MERGE",
+    "affected_recipes": 1,
+    "affected_pantries": 0
+  },
+  {
+    "source_id": 1722,
+    "source_name": "Handful Mushroom",
+    "target_id": 2148,
+    "target_name": "Mushroom",
+    "action": "MERGE",
+    "affected_recipes": 2,
+    "affected_pantries": 0
+  },
+  {
+    "source_id": 1723,
+    "source_name": "Handful Nut",
+    "target_id": 2194,
+    "target_name": "Nut",
+    "action": "MERGE",
+    "affected_recipes": 1,
+    "affected_pantries": 0
+  },
+  {
+    "source_id": 1724,
+    "source_name": "Handful Okra",
+    "target_id": 2232,
+    "target_name": "Okra",
+    "action": "MERGE",
+    "affected_recipes": 1,
+    "affected_pantries": 0
+  },
+  {
+    "source_id": 1725,
+    "source_name": "Handful Parsley",
+    "target_id": 2775,
+    "target_name": "Parsley",
+    "action": "MERGE",
+    "affected_recipes": 6,
+    "affected_pantries": 0
+  },
+  {
+    "source_id": 1726,
+    "source_name": "Handful Pea",
+    "target_id": 2786,
+    "target_name": "Pea",
+    "action": "MERGE",
+    "affected_recipes": 1,
+    "affected_pantries": 0
+  },
+  {
+    "source_id": 1727,
+    "source_name": "Handful Peanut",
+    "target_id": 2793,
+    "target_name": "Peanut",
+    "action": "MERGE",
+    "affected_recipes": 4,
+    "affected_pantries": 0
+  },
+  {
+    "source_id": 1728,
+    "source_name": "Handful Pine Nut",
+    "target_id": 2850,
+    "target_name": "Pine Nut",
+    "action": "MERGE",
+    "affected_recipes": 1,
+    "affected_pantries": 0
+  },
+  {
+    "source_id": 1729,
+    "source_name": "Handful Pumpkin Seed",
+    "target_id": 3210,
+    "target_name": "Pumpkin Seed",
+    "action": "MERGE",
+    "affected_recipes": 1,
+    "affected_pantries": 0
+  },
+  {
+    "source_id": 1730,
+    "source_name": "Handful Red Bell Pepper",
+    "target_id": 3291,
+    "target_name": "Red Bell Pepper",
+    "action": "MERGE",
+    "affected_recipes": 1,
+    "affected_pantries": 0
+  },
+  {
+    "source_id": 1731,
+    "source_name": "Handful Red Cabbage",
+    "target_id": 3293,
+    "target_name": "Red Cabbage",
+    "action": "MERGE",
+    "affected_recipes": 1,
+    "affected_pantries": 0
+  },
+  {
+    "source_id": 1732,
+    "source_name": "Handful Rice Flour",
+    "target_id": 5046,
+    "target_name": "Rice Flour",
+    "action": "MERGE",
+    "affected_recipes": 1,
+    "affected_pantries": 0
+  },
+  {
+    "source_id": 1733,
+    "source_name": "Handful Rice Noodle",
+    "target_id": 3346,
+    "target_name": "Rice Noodle",
+    "action": "MERGE",
+    "affected_recipes": 1,
+    "affected_pantries": 0
+  },
+  {
+    "source_id": 1734,
+    "source_name": "Handful Rocket",
+    "target_id": 3365,
+    "target_name": "Rocket",
+    "action": "MERGE",
+    "affected_recipes": 1,
+    "affected_pantries": 0
+  },
+  {
+    "source_id": 1735,
+    "source_name": "Handful Salad Green",
+    "target_id": 1735,
+    "target_name": "Salad Green",
+    "action": "RENAME",
+    "affected_recipes": 1,
+    "affected_pantries": 0
+  },
+  {
+    "source_id": 1736,
+    "source_name": "Handful Salad Leave",
+    "target_id": 5292,
+    "target_name": "Salad Leave",
+    "action": "MERGE",
+    "affected_recipes": 2,
+    "affected_pantries": 0
+  },
+  {
+    "source_id": 1737,
+    "source_name": "Handful Salted Peanut",
+    "target_id": 3426,
+    "target_name": "Salted Peanut",
+    "action": "MERGE",
+    "affected_recipes": 1,
+    "affected_pantries": 0
+  },
+  {
+    "source_id": 1738,
+    "source_name": "Handful Sesame Seed",
+    "target_id": 5034,
+    "target_name": "Sesame Seed",
+    "action": "MERGE",
+    "affected_recipes": 2,
+    "affected_pantries": 0
+  },
+  {
+    "source_id": 1739,
+    "source_name": "Handful Shallot",
+    "target_id": 3535,
+    "target_name": "Shallot",
+    "action": "MERGE",
+    "affected_recipes": 1,
+    "affected_pantries": 0
+  },
+  {
+    "source_id": 1740,
+    "source_name": "Handful Shiso",
+    "target_id": 3548,
+    "target_name": "Shiso",
+    "action": "MERGE",
+    "affected_recipes": 1,
+    "affected_pantries": 0
+  },
+  {
+    "source_id": 1741,
+    "source_name": "Handful Snow Pea",
+    "target_id": 3604,
+    "target_name": "Snow Pea",
+    "action": "MERGE",
+    "affected_recipes": 4,
+    "affected_pantries": 0
+  },
+  {
+    "source_id": 1742,
+    "source_name": "Handful Snowpea",
+    "target_id": 1742,
+    "target_name": "Snowpea",
+    "action": "RENAME",
+    "affected_recipes": 1,
+    "affected_pantries": 0
+  },
+  {
+    "source_id": 1743,
+    "source_name": "Handful Spinach",
+    "target_id": 3640,
+    "target_name": "Spinach",
+    "action": "MERGE",
+    "affected_recipes": 6,
+    "affected_pantries": 0
+  },
+  {
+    "source_id": 1744,
+    "source_name": "Handful Sprout",
+    "target_id": 3664,
+    "target_name": "Sprout",
+    "action": "MERGE",
+    "affected_recipes": 3,
+    "affected_pantries": 0
+  },
+  {
+    "source_id": 1745,
+    "source_name": "Handful Sugar Snap Pea",
+    "target_id": 3716,
+    "target_name": "Sugar Snap Pea",
+    "action": "MERGE",
+    "affected_recipes": 1,
+    "affected_pantries": 0
+  },
+  {
+    "source_id": 1746,
+    "source_name": "Handful Sunflower Seed",
+    "target_id": 5192,
+    "target_name": "Sunflower Seed",
+    "action": "MERGE",
+    "affected_recipes": 1,
+    "affected_pantries": 0
+  },
+  {
+    "source_id": 1747,
+    "source_name": "Handful Swiss Chard",
+    "target_id": 3746,
+    "target_name": "Swiss Chard",
+    "action": "MERGE",
+    "affected_recipes": 1,
+    "affected_pantries": 0
+  },
+  {
+    "source_id": 1748,
+    "source_name": "Handful Thai Basil",
+    "target_id": 3801,
+    "target_name": "Thai Basil",
+    "action": "MERGE",
+    "affected_recipes": 3,
+    "affected_pantries": 0
+  },
+  {
+    "source_id": 1749,
+    "source_name": "Handful Walnut",
+    "target_id": 3911,
+    "target_name": "Walnut",
+    "action": "MERGE",
+    "affected_recipes": 2,
+    "affected_pantries": 0
+  },
+  {
+    "source_id": 1750,
+    "source_name": "Handful Yellow Bell Pepper",
+    "target_id": 3994,
+    "target_name": "Yellow Bell Pepper",
+    "action": "MERGE",
+    "affected_recipes": 1,
+    "affected_pantries": 0
+  },
+  {
+    "source_id": 1835,
+    "source_name": "Jam  Strawberry",
+    "target_id": 1835,
+    "target_name": "Jam Strawberry",
+    "action": "RENAME",
+    "affected_recipes": 2,
+    "affected_pantries": 0
+  },
+  {
+    "source_id": 2141,
+    "source_name": "Mozzarella  Cheese",
+    "target_id": 5066,
+    "target_name": "Mozzarella Cheese",
+    "action": "MERGE",
+    "affected_recipes": 3,
+    "affected_pantries": 0
+  },
+  {
+    "source_id": 2770,
+    "source_name": "Parmesan  Cheese",
+    "target_id": 5065,
+    "target_name": "Parmesan Cheese",
+    "action": "MERGE",
+    "affected_recipes": 8,
+    "affected_pantries": 0
+  },
+  {
+    "source_id": 2781,
+    "source_name": "Paste  Tomato",
+    "target_id": 2781,
+    "target_name": "Paste Tomato",
+    "action": "RENAME",
+    "affected_recipes": 55,
+    "affected_pantries": 0
+  },
+  {
+    "source_id": 2844,
+    "source_name": "Piece Ginger",
+    "target_id": 12,
+    "target_name": "Ginger",
+    "action": "MERGE",
+    "affected_recipes": 17,
+    "affected_pantries": 0
+  },
+  {
+    "source_id": 2845,
+    "source_name": "Piece Of Ginger",
+    "target_id": 2221,
+    "target_name": "Of Ginger",
+    "action": "MERGE",
+    "affected_recipes": 14,
+    "affected_pantries": 0
+  },
+  {
+    "source_id": 3438,
+    "source_name": "Sauce  Soybean",
+    "target_id": 3438,
+    "target_name": "Sauce Soybean",
+    "action": "RENAME",
+    "affected_recipes": 88,
+    "affected_pantries": 0
+  },
+  {
+    "source_id": 3572,
+    "source_name": "Slice Ginger",
+    "target_id": 12,
+    "target_name": "Ginger",
+    "action": "MERGE",
+    "affected_recipes": 1,
+    "affected_pantries": 0
+  },
+  {
+    "source_id": 3659,
+    "source_name": "Spring  Onion",
+    "target_id": 3659,
+    "target_name": "Spring Onion",
+    "action": "RENAME",
+    "affected_recipes": 8,
+    "affected_pantries": 0
+  },
+  {
+    "source_id": 3753,
+    "source_name": "Tablespoon Badam",
+    "target_id": 820,
+    "target_name": "Badam",
+    "action": "MERGE",
+    "affected_recipes": 1,
+    "affected_pantries": 0
+  },
+  {
+    "source_id": 3754,
+    "source_name": "Tablespoon Cumin Powder",
+    "target_id": 1326,
+    "target_name": "Cumin Powder",
+    "action": "MERGE",
+    "affected_recipes": 1,
+    "affected_pantries": 0
+  },
+  {
+    "source_id": 3755,
+    "source_name": "Tablespoon Date",
+    "target_id": 1386,
+    "target_name": "Date",
+    "action": "MERGE",
+    "affected_recipes": 1,
+    "affected_pantries": 0
+  },
+  {
+    "source_id": 3788,
+    "source_name": "Teaspoon Cashew Nut",
+    "target_id": 1058,
+    "target_name": "Cashew Nut",
+    "action": "MERGE",
+    "affected_recipes": 1,
+    "affected_pantries": 0
+  },
+  {
+    "source_id": 3789,
+    "source_name": "Teaspoon Celery",
+    "target_id": 1071,
+    "target_name": "Celery",
+    "action": "MERGE",
+    "affected_recipes": 1,
+    "affected_pantries": 0
+  },
+  {
+    "source_id": 3790,
+    "source_name": "Teaspoon Raisin",
+    "target_id": 3259,
+    "target_name": "Raisin",
+    "action": "MERGE",
+    "affected_recipes": 1,
+    "affected_pantries": 0
+  },
+  {
+    "source_id": 3791,
+    "source_name": "Teaspoon Turmeric Powder",
+    "target_id": 5023,
+    "target_name": "Turmeric Powder",
+    "action": "MERGE",
+    "affected_recipes": 1,
+    "affected_pantries": 0
+  },
+  {
+    "source_id": 5029,
+    "source_name": "Inch Ginger",
+    "target_id": 12,
+    "target_name": "Ginger",
+    "action": "MERGE",
+    "affected_recipes": 1161,
+    "affected_pantries": 0
+  },
+  {
+    "source_id": 5047,
+    "source_name": "2 Clove",
+    "target_id": 1227,
+    "target_name": "Clove",
+    "action": "MERGE",
+    "affected_recipes": 2,
+    "affected_pantries": 0
+  },
+  {
+    "source_id": 5048,
+    "source_name": "Inch Cinnamon",
+    "target_id": 1217,
+    "target_name": "Cinnamon",
+    "action": "MERGE",
+    "affected_recipes": 40,
+    "affected_pantries": 0
+  },
+  {
+    "source_id": 5052,
+    "source_name": "Inch Cinnamon Stick",
+    "target_id": 5043,
+    "target_name": "Cinnamon Stick",
+    "action": "MERGE",
+    "affected_recipes": 429,
+    "affected_pantries": 0
+  },
+  {
+    "source_id": 5083,
+    "source_name": "1 Tablespoon Coconut Oil",
+    "target_id": 1241,
+    "target_name": "Coconut Oil",
+    "action": "MERGE",
+    "affected_recipes": 1,
+    "affected_pantries": 0
+  },
+  {
+    "source_id": 5100,
+    "source_name": "2 5 Teaspoon Raisin Optional",
+    "target_id": 5100,
+    "target_name": "Raisin Optional",
+    "action": "RENAME",
+    "affected_recipes": 1,
+    "affected_pantries": 0
+  },
+  {
+    "source_id": 5143,
+    "source_name": "3 4 Tablespoon Butter Ricotta Cheese Or Cream Cheese Or Soft Paneer",
+    "target_id": 5143,
+    "target_name": "Butter Ricotta Cheese Or Cream Cheese Or Soft Paneer",
+    "action": "RENAME",
+    "affected_recipes": 1,
+    "affected_pantries": 0
+  },
+  {
+    "source_id": 5163,
+    "source_name": "7 8 Tablespoon Cocoa Powder",
+    "target_id": 1234,
+    "target_name": "Cocoa Powder",
+    "action": "MERGE",
+    "affected_recipes": 1,
+    "affected_pantries": 0
+  },
+  {
+    "source_id": 5164,
+    "source_name": "3 4 Cup Malabar Spinach Leave As Well As Stalk Chopped Into Big Piece",
+    "target_id": 5164,
+    "target_name": "Malabar Spinach Leave As Well As Stalk Chopped Into Big Piece",
+    "action": "RENAME",
+    "affected_recipes": 1,
+    "affected_pantries": 0
+  },
+  {
+    "source_id": 5172,
+    "source_name": "2 3 Clove Laung",
+    "target_id": 5172,
+    "target_name": "Laung",
+    "action": "RENAME",
+    "affected_recipes": 3,
+    "affected_pantries": 0
+  },
+  {
+    "source_id": 5193,
+    "source_name": "2 3 Tablespoon Extra Virgin Olive Oil",
+    "target_id": 5037,
+    "target_name": "Extra Virgin Olive Oil",
+    "action": "MERGE",
+    "affected_recipes": 1,
+    "affected_pantries": 0
+  },
+  {
+    "source_id": 5231,
+    "source_name": "2 3 Tablespoon Anardana Powder Pomegranate Seed Powder Seed",
+    "target_id": 5231,
+    "target_name": "Anardana Powder Pomegranate Seed Powder Seed",
+    "action": "RENAME",
+    "affected_recipes": 1,
+    "affected_pantries": 0
+  },
+  {
+    "source_id": 5240,
+    "source_name": "1 Onion",
+    "target_id": 3,
+    "target_name": "Onion",
+    "action": "MERGE",
+    "affected_recipes": 1,
+    "affected_pantries": 0
+  },
+  {
+    "source_id": 5248,
+    "source_name": "9 10 Teaspoon Sugar",
+    "target_id": 3715,
+    "target_name": "Sugar",
+    "action": "MERGE",
+    "affected_recipes": 1,
+    "affected_pantries": 0
+  },
+  {
+    "source_id": 5253,
+    "source_name": "1 2 Tablespoon Dried Oregano",
+    "target_id": 5253,
+    "target_name": "Dried Oregano",
+    "action": "RENAME",
+    "affected_recipes": 1,
+    "affected_pantries": 0
+  },
+  {
+    "source_id": 5254,
+    "source_name": "1 2 Teaspoon Spring Onion Green Chopped",
+    "target_id": 5254,
+    "target_name": "Spring Onion Green Chopped",
+    "action": "RENAME",
+    "affected_recipes": 1,
+    "affected_pantries": 0
+  },
+  {
+    "source_id": 5260,
+    "source_name": "3 4 Tablespoon Tofu Grated",
+    "target_id": 5260,
+    "target_name": "Tofu Grated",
+    "action": "RENAME",
+    "affected_recipes": 1,
+    "affected_pantries": 0
+  },
+  {
+    "source_id": 5262,
+    "source_name": "2 3 Tablespoon Rice Flour",
+    "target_id": 5046,
+    "target_name": "Rice Flour",
+    "action": "MERGE",
+    "affected_recipes": 1,
+    "affected_pantries": 0
+  },
+  {
+    "source_id": 5265,
+    "source_name": "3 4 Tablespoon Salt",
+    "target_id": 3422,
+    "target_name": "Salt",
+    "action": "MERGE",
+    "affected_recipes": 1,
+    "affected_pantries": 0
+  },
+  {
+    "source_id": 5266,
+    "source_name": "5 6 Tablespoon Sunflower Oil",
+    "target_id": 3728,
+    "target_name": "Sunflower Oil",
+    "action": "MERGE",
+    "affected_recipes": 1,
+    "affected_pantries": 0
+  },
+  {
+    "source_id": 5287,
+    "source_name": "1 2 Teaspoon Malt Vinegar",
+    "target_id": 5287,
+    "target_name": "Malt Vinegar",
+    "action": "RENAME",
+    "affected_recipes": 1,
+    "affected_pantries": 0
+  },
+  {
+    "source_id": 5289,
+    "source_name": "2 3 Clove Garlic Chopped",
+    "target_id": 5289,
+    "target_name": "Garlic Chopped",
+    "action": "RENAME",
+    "affected_recipes": 2,
+    "affected_pantries": 0
+  },
+  {
+    "source_id": 5295,
+    "source_name": "2 3 Tablespoon Mustard Oil",
+    "target_id": 2153,
+    "target_name": "Mustard Oil",
+    "action": "MERGE",
+    "affected_recipes": 1,
+    "affected_pantries": 0
+  },
+  {
+    "source_id": 5306,
+    "source_name": "1 2 Tablespoon Pickled Jalapeno Sliced",
+    "target_id": 5306,
+    "target_name": "Pickled Jalapeno Sliced",
+    "action": "RENAME",
+    "affected_recipes": 1,
+    "affected_pantries": 0
+  },
+  {
+    "source_id": 5311,
+    "source_name": "1 3 Cup Sugar",
+    "target_id": 3715,
+    "target_name": "Sugar",
+    "action": "MERGE",
+    "affected_recipes": 1,
+    "affected_pantries": 0
+  },
+  {
+    "source_id": 5323,
+    "source_name": "3 4 Tablespoon Rice Flour",
+    "target_id": 5046,
+    "target_name": "Rice Flour",
+    "action": "MERGE",
+    "affected_recipes": 1,
+    "affected_pantries": 0
+  },
+  {
+    "source_id": 5326,
+    "source_name": "4 5 Clove Laung",
+    "target_id": 5326,
+    "target_name": "Laung",
+    "action": "RENAME",
+    "affected_recipes": 1,
+    "affected_pantries": 0
+  },
+  {
+    "source_id": 5328,
+    "source_name": "2 3 Tablespoon Groundnut Powder Roasted",
+    "target_id": 5328,
+    "target_name": "Groundnut Powder Roasted",
+    "action": "RENAME",
+    "affected_recipes": 1,
+    "affected_pantries": 0
+  },
+  {
+    "source_id": 5342,
+    "source_name": "2 4 Tablespoon Condensed Milk Optional",
+    "target_id": 5342,
+    "target_name": "Condensed Milk Optional",
+    "action": "RENAME",
+    "affected_recipes": 1,
+    "affected_pantries": 0
+  },
+  {
+    "source_id": 5355,
+    "source_name": "6 Clove Laung Crush Into Coarse Powder",
+    "target_id": 5355,
+    "target_name": "Laung Crush Into Coarse Powder",
+    "action": "RENAME",
+    "affected_recipes": 1,
+    "affected_pantries": 0
+  },
+  {
+    "source_id": 5357,
+    "source_name": "Inch Lentil Sugar",
+    "target_id": 1983,
+    "target_name": "Lentil Sugar",
+    "action": "MERGE",
+    "affected_recipes": 17,
+    "affected_pantries": 0
+  },
+  {
+    "source_id": 5362,
+    "source_name": "Inch Tamarind",
+    "target_id": 3762,
+    "target_name": "Tamarind",
+    "action": "MERGE",
+    "affected_recipes": 4,
+    "affected_pantries": 0
+  },
+  {
+    "source_id": 5364,
+    "source_name": "2 3 Tablespoon Cumin Seed Jeera",
+    "target_id": 5364,
+    "target_name": "Cumin Seed Jeera",
+    "action": "RENAME",
+    "affected_recipes": 1,
+    "affected_pantries": 0
+  },
+  {
+    "source_id": 5384,
+    "source_name": "4 5 Tablespoon Extra Virgin Olive Oil",
+    "target_id": 5037,
+    "target_name": "Extra Virgin Olive Oil",
+    "action": "MERGE",
+    "affected_recipes": 2,
+    "affected_pantries": 0
+  },
+  {
+    "source_id": 5386,
+    "source_name": "4 5 Clove Garlic Minced",
+    "target_id": 5386,
+    "target_name": "Garlic Minced",
+    "action": "RENAME",
+    "affected_recipes": 1,
+    "affected_pantries": 0
+  },
+  {
+    "source_id": 5387,
+    "source_name": "1 2 Teaspoon Whole Black Peppercorn Crushed",
+    "target_id": 5387,
+    "target_name": "Whole Black Peppercorn Crushed",
+    "action": "RENAME",
+    "affected_recipes": 1,
+    "affected_pantries": 0
+  },
+  {
+    "source_id": 5388,
+    "source_name": "3 4 Tablespoon Whole Wheat Bread Crumb",
+    "target_id": 3959,
+    "target_name": "Whole Wheat Bread Crumb",
+    "action": "MERGE",
+    "affected_recipes": 1,
+    "affected_pantries": 0
+  },
+  {
+    "source_id": 5389,
+    "source_name": "1 2 Tablespoon Pistachio Coarsely Powdered",
+    "target_id": 5389,
+    "target_name": "Pistachio Coarsely Powdered",
+    "action": "RENAME",
+    "affected_recipes": 1,
+    "affected_pantries": 0
+  },
+  {
+    "source_id": 5395,
+    "source_name": "1 Teaspoon Coriander Powder",
+    "target_id": 1268,
+    "target_name": "Coriander Powder",
+    "action": "MERGE",
+    "affected_recipes": 1,
+    "affected_pantries": 0
+  },
+  {
+    "source_id": 5399,
+    "source_name": "4 Clove Laung Finely Chopped",
+    "target_id": 5399,
+    "target_name": "Laung Finely Chopped",
+    "action": "RENAME",
+    "affected_recipes": 1,
+    "affected_pantries": 0
+  },
+  {
+    "source_id": 5403,
+    "source_name": "Can Condensed Milk",
+    "target_id": 1258,
+    "target_name": "Condensed Milk",
+    "action": "MERGE",
+    "affected_recipes": 1,
+    "affected_pantries": 0
+  },
+  {
+    "source_id": 5406,
+    "source_name": "2 3 Tablespoon Sunflower Oil",
+    "target_id": 3728,
+    "target_name": "Sunflower Oil",
+    "action": "MERGE",
+    "affected_recipes": 4,
+    "affected_pantries": 0
+  },
+  {
+    "source_id": 5410,
+    "source_name": "5 6 Tablespoon Gram Flour Besan",
+    "target_id": 5410,
+    "target_name": "Gram Flour Besan",
+    "action": "RENAME",
+    "affected_recipes": 1,
+    "affected_pantries": 0
+  },
+  {
+    "source_id": 5412,
+    "source_name": "2 3 Tsp Chana Dal",
+    "target_id": 1086,
+    "target_name": "Chana Dal",
+    "action": "MERGE",
+    "affected_recipes": 1,
+    "affected_pantries": 0
+  },
+  {
+    "source_id": 5420,
+    "source_name": "1 2 Tablespoon Butter Or Olive Oil For Brushing The Rotis",
+    "target_id": 5420,
+    "target_name": "Butter Or Olive Oil For Brushing The Rotis",
+    "action": "RENAME",
+    "affected_recipes": 1,
+    "affected_pantries": 0
+  },
+  {
+    "source_id": 5421,
+    "source_name": "2 3 Clove Garlic Minced",
+    "target_id": 5421,
+    "target_name": "Garlic Minced",
+    "action": "RENAME",
+    "affected_recipes": 4,
+    "affected_pantries": 0
+  },
+  {
+    "source_id": 5422,
+    "source_name": "2 3 Tablespoon Sugar",
+    "target_id": 3715,
+    "target_name": "Sugar",
+    "action": "MERGE",
+    "affected_recipes": 2,
+    "affected_pantries": 0
+  },
+  {
+    "source_id": 5423,
+    "source_name": "2 3 Drop Rose Water",
+    "target_id": 3383,
+    "target_name": "Rose Water",
+    "action": "MERGE",
+    "affected_recipes": 1,
+    "affected_pantries": 0
+  },
+  {
+    "source_id": 5425,
+    "source_name": "4 5 Cup Water",
+    "target_id": 3915,
+    "target_name": "Water",
+    "action": "MERGE",
+    "affected_recipes": 1,
+    "affected_pantries": 0
+  },
+  {
+    "source_id": 5427,
+    "source_name": "2 Clove Laung 2 Clove",
+    "target_id": 5427,
+    "target_name": "Laung 2 Clove",
+    "action": "RENAME",
+    "affected_recipes": 2,
+    "affected_pantries": 0
+  },
+  {
+    "source_id": 5428,
+    "source_name": "4 Clove Laung Garlic",
+    "target_id": 5428,
+    "target_name": "Laung Garlic",
+    "action": "RENAME",
+    "affected_recipes": 7,
+    "affected_pantries": 0
+  },
+  {
+    "source_id": 5440,
+    "source_name": "5 6 Cup Vegetable Stock",
+    "target_id": 3895,
+    "target_name": "Vegetable Stock",
+    "action": "MERGE",
+    "affected_recipes": 1,
+    "affected_pantries": 0
+  },
+  {
+    "source_id": 5442,
+    "source_name": "2 3 Tablespoon Sour Cream",
+    "target_id": 5141,
+    "target_name": "Sour Cream",
+    "action": "MERGE",
+    "affected_recipes": 1,
+    "affected_pantries": 0
+  },
+  {
+    "source_id": 5452,
+    "source_name": "2 3 Teaspoon Chocolate Chip",
+    "target_id": 5142,
+    "target_name": "Chocolate Chip",
+    "action": "MERGE",
+    "affected_recipes": 1,
+    "affected_pantries": 0
+  },
+  {
+    "source_id": 5453,
+    "source_name": "4 Clove Laung Chopped",
+    "target_id": 5453,
+    "target_name": "Laung Chopped",
+    "action": "RENAME",
+    "affected_recipes": 5,
+    "affected_pantries": 0
+  },
+  {
+    "source_id": 5457,
+    "source_name": "0 5 Teaspoon Lemon Juice",
+    "target_id": 1972,
+    "target_name": "Lemon Juice",
+    "action": "MERGE",
+    "affected_recipes": 1,
+    "affected_pantries": 0
+  },
+  {
+    "source_id": 5461,
+    "source_name": "Can Bamboo Shot",
+    "target_id": 838,
+    "target_name": "Bamboo Shot",
+    "action": "MERGE",
+    "affected_recipes": 1,
+    "affected_pantries": 0
+  },
+  {
+    "source_id": 5468,
+    "source_name": "3 4 Tablespoon Hung Curd Greek Yogurt",
+    "target_id": 5468,
+    "target_name": "Hung Curd Greek Yogurt",
+    "action": "RENAME",
+    "affected_recipes": 1,
+    "affected_pantries": 0
+  },
+  {
+    "source_id": 5504,
+    "source_name": "Inch Ginger Powder",
+    "target_id": 1573,
+    "target_name": "Ginger Powder",
+    "action": "MERGE",
+    "affected_recipes": 2,
+    "affected_pantries": 0
+  },
+  {
+    "source_id": 5508,
+    "source_name": "Inch Garlic",
+    "target_id": 2,
+    "target_name": "Garlic",
+    "action": "MERGE",
+    "affected_recipes": 2,
+    "affected_pantries": 0
+  },
+  {
+    "source_id": 5522,
+    "source_name": "Inch Galangal",
+    "target_id": 1556,
+    "target_name": "Galangal",
+    "action": "MERGE",
+    "affected_recipes": 6,
+    "affected_pantries": 0
+  },
+  {
+    "source_id": 5523,
+    "source_name": "Inch Turmeric Root",
+    "target_id": 3862,
+    "target_name": "Turmeric Root",
+    "action": "MERGE",
+    "affected_recipes": 4,
+    "affected_pantries": 0
+  },
+  {
+    "source_id": 5530,
+    "source_name": "2 3 Tablespoon Ghee Melted Or Butter",
+    "target_id": 5530,
+    "target_name": "Ghee Melted Or Butter",
+    "action": "RENAME",
+    "affected_recipes": 1,
+    "affected_pantries": 0
+  },
+  {
+    "source_id": 5531,
+    "source_name": "1 2 Tablespoon Ghee Or Butter To Coat The Pan Optional Or You Can Use An Oil Spray",
+    "target_id": 5531,
+    "target_name": "Ghee Or Butter To Coat The Pan Optional Or You Can Use An Oil Spray",
+    "action": "RENAME",
+    "affected_recipes": 1,
+    "affected_pantries": 0
+  },
+  {
+    "source_id": 5534,
+    "source_name": "2 3 Tablespoon Hot Water",
+    "target_id": 5148,
+    "target_name": "Hot Water",
+    "action": "MERGE",
+    "affected_recipes": 1,
+    "affected_pantries": 0
+  },
+  {
+    "source_id": 5543,
+    "source_name": "1 2 Teaspoon Sugar",
+    "target_id": 3715,
+    "target_name": "Sugar",
+    "action": "MERGE",
+    "affected_recipes": 1,
+    "affected_pantries": 0
+  },
+  {
+    "source_id": 5552,
+    "source_name": "6 8 Clove Garlic Minced",
+    "target_id": 5552,
+    "target_name": "Garlic Minced",
+    "action": "RENAME",
+    "affected_recipes": 1,
+    "affected_pantries": 0
+  },
+  {
+    "source_id": 5570,
+    "source_name": "Inch Cinnamon Powder",
+    "target_id": 1218,
+    "target_name": "Cinnamon Powder",
+    "action": "MERGE",
+    "affected_recipes": 4,
+    "affected_pantries": 0
+  },
+  {
+    "source_id": 5574,
+    "source_name": "2 3 Cup Almond Milk Badam Milk",
+    "target_id": 5574,
+    "target_name": "Almond Milk Badam Milk",
+    "action": "RENAME",
+    "affected_recipes": 1,
+    "affected_pantries": 0
+  },
+  {
+    "source_id": 5576,
+    "source_name": "1 2 Teaspoon Red Chilli Powder",
+    "target_id": 3305,
+    "target_name": "Red Chilli Powder",
+    "action": "MERGE",
+    "affected_recipes": 1,
+    "affected_pantries": 0
+  },
+  {
+    "source_id": 5587,
+    "source_name": "3 4 Tablespoon Sour Cream",
+    "target_id": 5141,
+    "target_name": "Sour Cream",
+    "action": "MERGE",
+    "affected_recipes": 1,
+    "affected_pantries": 0
+  },
+  {
+    "source_id": 5592,
+    "source_name": "5 6 Clove Garlic Finely Chopped",
+    "target_id": 5592,
+    "target_name": "Garlic Finely Chopped",
+    "action": "RENAME",
+    "affected_recipes": 1,
+    "affected_pantries": 0
+  },
+  {
+    "source_id": 5603,
+    "source_name": "2 3 Tablespoon Coconut Milk",
+    "target_id": 1240,
+    "target_name": "Coconut Milk",
+    "action": "MERGE",
+    "affected_recipes": 1,
+    "affected_pantries": 0
+  },
+  {
+    "source_id": 5607,
+    "source_name": "3 4 Tablespoon Ghee",
+    "target_id": 1566,
+    "target_name": "Ghee",
+    "action": "MERGE",
+    "affected_recipes": 1,
+    "affected_pantries": 0
+  },
+  {
+    "source_id": 5608,
+    "source_name": "4 Clove Laung 4 Clove",
+    "target_id": 5608,
+    "target_name": "Laung 4 Clove",
+    "action": "RENAME",
+    "affected_recipes": 1,
+    "affected_pantries": 0
+  },
+  {
+    "source_id": 5618,
+    "source_name": "3 Green Chilly Sliced",
+    "target_id": 5618,
+    "target_name": "Green Chilly Sliced",
+    "action": "RENAME",
+    "affected_recipes": 1,
+    "affected_pantries": 0
+  },
+  {
+    "source_id": 5622,
+    "source_name": "3 4 Clove Garlic Pound",
+    "target_id": 5622,
+    "target_name": "Garlic Pound",
+    "action": "RENAME",
+    "affected_recipes": 1,
+    "affected_pantries": 0
+  },
+  {
+    "source_id": 5631,
+    "source_name": "2 Clove Laung Crushed",
+    "target_id": 5631,
+    "target_name": "Laung Crushed",
+    "action": "RENAME",
+    "affected_recipes": 1,
+    "affected_pantries": 0
+  },
+  {
+    "source_id": 5641,
+    "source_name": "2 3 Teaspoon Green Chilli Paste Or Red Chilli Powder",
+    "target_id": 5641,
+    "target_name": "Green Chilli Paste Or Red Chilli Powder",
+    "action": "RENAME",
+    "affected_recipes": 1,
+    "affected_pantries": 0
+  },
+  {
+    "source_id": 5643,
+    "source_name": "5 Clove Laung Pounded",
+    "target_id": 5643,
+    "target_name": "Laung Pounded",
+    "action": "RENAME",
+    "affected_recipes": 1,
+    "affected_pantries": 0
+  },
+  {
+    "source_id": 5664,
+    "source_name": "2 3 Teaspoon Coriander Dhania Leave Finely Chopped For Garnish",
+    "target_id": 5664,
+    "target_name": "Coriander Dhania Leave Finely Chopped For Garnish",
+    "action": "RENAME",
+    "affected_recipes": 1,
+    "affected_pantries": 0
+  },
+  {
+    "source_id": 5706,
+    "source_name": "2 3 Tablespoon Butter Or Ghee Melted",
+    "target_id": 5706,
+    "target_name": "Butter Or Ghee Melted",
+    "action": "RENAME",
+    "affected_recipes": 1,
+    "affected_pantries": 0
+  },
+  {
+    "source_id": 5709,
+    "source_name": "2 Teaspoon Fennel",
+    "target_id": 1470,
+    "target_name": "Fennel",
+    "action": "MERGE",
+    "affected_recipes": 1,
+    "affected_pantries": 0
+  },
+  {
+    "source_id": 5711,
+    "source_name": "1 Tablespoon Lemon Juice",
+    "target_id": 1972,
+    "target_name": "Lemon Juice",
+    "action": "MERGE",
+    "affected_recipes": 1,
+    "affected_pantries": 0
+  },
+  {
+    "source_id": 5712,
+    "source_name": "3 4 Tablespoon Condensed Milk",
+    "target_id": 1258,
+    "target_name": "Condensed Milk",
+    "action": "MERGE",
+    "affected_recipes": 1,
+    "affected_pantries": 0
+  },
+  {
+    "source_id": 5718,
+    "source_name": "2 3 Tablespoon Coriander Dhania Leave Chopped",
+    "target_id": 5718,
+    "target_name": "Coriander Dhania Leave Chopped",
+    "action": "RENAME",
+    "affected_recipes": 1,
+    "affected_pantries": 0
+  },
+  {
+    "source_id": 5729,
+    "source_name": "2 3 Teaspoon Ghee Or Extra Virgin Coconut Oil",
+    "target_id": 5729,
+    "target_name": "Ghee Or Extra Virgin Coconut Oil",
+    "action": "RENAME",
+    "affected_recipes": 1,
+    "affected_pantries": 0
+  },
+  {
+    "source_id": 5736,
+    "source_name": "3 4 Clove Garlic Peeled",
+    "target_id": 5736,
+    "target_name": "Garlic Peeled",
+    "action": "RENAME",
+    "affected_recipes": 1,
+    "affected_pantries": 0
+  },
+  {
+    "source_id": 5746,
+    "source_name": "3 4 Clove Garlic Cut Into Small Piece",
+    "target_id": 5746,
+    "target_name": "Garlic Cut Into Small Piece",
+    "action": "RENAME",
+    "affected_recipes": 1,
+    "affected_pantries": 0
+  },
+  {
+    "source_id": 5755,
+    "source_name": "3 4 Tablespoon Honey",
+    "target_id": 1778,
+    "target_name": "Honey",
+    "action": "MERGE",
+    "affected_recipes": 1,
+    "affected_pantries": 0
+  },
+  {
+    "source_id": 5756,
+    "source_name": "3 4 Tablespoon Cocoa Powder",
+    "target_id": 1234,
+    "target_name": "Cocoa Powder",
+    "action": "MERGE",
+    "affected_recipes": 1,
+    "affected_pantries": 0
+  },
+  {
+    "source_id": 5757,
+    "source_name": "10 12 Tablespoon Instant Oat Oatmeal",
+    "target_id": 5757,
+    "target_name": "Instant Oat Oatmeal",
+    "action": "RENAME",
+    "affected_recipes": 1,
+    "affected_pantries": 0
+  },
+  {
+    "source_id": 5758,
+    "source_name": "1 2 Tablespoon Milk For Binding",
+    "target_id": 5758,
+    "target_name": "Milk For Binding",
+    "action": "RENAME",
+    "affected_recipes": 1,
+    "affected_pantries": 0
+  },
+  {
+    "source_id": 5760,
+    "source_name": "1 Sprig Of Curry Leave",
+    "target_id": 5760,
+    "target_name": "Sprig Of Curry Leave",
+    "action": "RENAME",
+    "affected_recipes": 1,
+    "affected_pantries": 0
+  },
+  {
+    "source_id": 5778,
+    "source_name": "1 2 Cup Maple Syrup",
+    "target_id": 5349,
+    "target_name": "Maple Syrup",
+    "action": "MERGE",
+    "affected_recipes": 1,
+    "affected_pantries": 0
+  },
+  {
+    "source_id": 5779,
+    "source_name": "4 5 Clove Garlic",
+    "target_id": 2,
+    "target_name": "Garlic",
+    "action": "MERGE",
+    "affected_recipes": 2,
+    "affected_pantries": 0
+  },
+  {
+    "source_id": 5794,
+    "source_name": "1 2 Tablespoon Chana Dal Bengal Gram Dal",
+    "target_id": 5794,
+    "target_name": "Chana Dal Bengal Gram Dal",
+    "action": "RENAME",
+    "affected_recipes": 1,
+    "affected_pantries": 0
+  },
+  {
+    "source_id": 5800,
+    "source_name": "4 5 Cup Idli Dosa Batter",
+    "target_id": 1806,
+    "target_name": "Idli Dosa Batter",
+    "action": "MERGE",
+    "affected_recipes": 1,
+    "affected_pantries": 0
+  },
+  {
+    "source_id": 5801,
+    "source_name": "1 2 Teaspoon Dried Basil Leave",
+    "target_id": 5801,
+    "target_name": "Dried Basil Leave",
+    "action": "RENAME",
+    "affected_recipes": 1,
+    "affected_pantries": 0
+  },
+  {
+    "source_id": 5802,
+    "source_name": "4 5 Teaspoon Extra Virgin Olive Oil Or Any Other Cooking Oil",
+    "target_id": 5802,
+    "target_name": "Extra Virgin Olive Oil Or Any Other Cooking Oil",
+    "action": "RENAME",
+    "affected_recipes": 1,
+    "affected_pantries": 0
+  },
+  {
+    "source_id": 5820,
+    "source_name": "Inch Cardamom Pod Seed",
+    "target_id": 1047,
+    "target_name": "Cardamom Pod Seed",
+    "action": "MERGE",
+    "affected_recipes": 1,
+    "affected_pantries": 0
+  },
+  {
+    "source_id": 5821,
+    "source_name": "4 5 Clove Garlic Finely Minced",
+    "target_id": 5821,
+    "target_name": "Garlic Finely Minced",
+    "action": "RENAME",
+    "affected_recipes": 1,
+    "affected_pantries": 0
+  },
+  {
+    "source_id": 5832,
+    "source_name": "4 5 Clove Garlic Chopped",
+    "target_id": 5832,
+    "target_name": "Garlic Chopped",
+    "action": "RENAME",
+    "affected_recipes": 1,
+    "affected_pantries": 0
+  },
+  {
+    "source_id": 5835,
+    "source_name": "3 4 Tablespoon Extra Virgin Olive Oil",
+    "target_id": 5037,
+    "target_name": "Extra Virgin Olive Oil",
+    "action": "MERGE",
+    "affected_recipes": 1,
+    "affected_pantries": 0
+  },
+  {
+    "source_id": 5836,
+    "source_name": "3 4 Clove Garlic Grated",
+    "target_id": 5836,
+    "target_name": "Garlic Grated",
+    "action": "RENAME",
+    "affected_recipes": 1,
+    "affected_pantries": 0
+  },
+  {
+    "source_id": 5848,
+    "source_name": "4 Clove Laung Powdered",
+    "target_id": 5848,
+    "target_name": "Laung Powdered",
+    "action": "RENAME",
+    "affected_recipes": 1,
+    "affected_pantries": 0
+  },
+  {
+    "source_id": 5863,
+    "source_name": "2 3 Clove Garlic Peeled",
+    "target_id": 5863,
+    "target_name": "Garlic Peeled",
+    "action": "RENAME",
+    "affected_recipes": 1,
+    "affected_pantries": 0
+  },
+  {
+    "source_id": 5869,
+    "source_name": "5 6 Tablespoon Butter",
+    "target_id": 22,
+    "target_name": "Butter",
+    "action": "MERGE",
+    "affected_recipes": 1,
+    "affected_pantries": 0
+  },
+  {
+    "source_id": 5870,
+    "source_name": "3 4 Tablespoon Caster Sugar",
+    "target_id": 1064,
+    "target_name": "Caster Sugar",
+    "action": "MERGE",
+    "affected_recipes": 1,
+    "affected_pantries": 0
+  },
+  {
+    "source_id": 5871,
+    "source_name": "2 3 Tablespoon Brown Sugar Demerara Sugar",
+    "target_id": 5871,
+    "target_name": "Brown Sugar Demerara Sugar",
+    "action": "RENAME",
+    "affected_recipes": 1,
+    "affected_pantries": 0
+  },
+  {
+    "source_id": 5872,
+    "source_name": "5 6 Tablespoon Icing Sugar",
+    "target_id": 1803,
+    "target_name": "Icing Sugar",
+    "action": "MERGE",
+    "affected_recipes": 1,
+    "affected_pantries": 0
+  },
+  {
+    "source_id": 5885,
+    "source_name": "4 5 Tablespoon Butter Melted",
+    "target_id": 5885,
+    "target_name": "Butter Melted",
+    "action": "RENAME",
+    "affected_recipes": 1,
+    "affected_pantries": 0
+  },
+  {
+    "source_id": 5919,
+    "source_name": "Inch Ratan Jot",
+    "target_id": 3275,
+    "target_name": "Ratan Jot",
+    "action": "MERGE",
+    "affected_recipes": 2,
+    "affected_pantries": 0
+  },
+  {
+    "source_id": 5944,
+    "source_name": "2 Clove Laung Finely Chopped",
+    "target_id": 5944,
+    "target_name": "Laung Finely Chopped",
+    "action": "RENAME",
+    "affected_recipes": 1,
+    "affected_pantries": 0
+  },
+  {
+    "source_id": 5953,
+    "source_name": "3 4 Tablespoon Red Chilli Sauce",
+    "target_id": 3306,
+    "target_name": "Red Chilli Sauce",
+    "action": "MERGE",
+    "affected_recipes": 1,
+    "affected_pantries": 0
+  },
+  {
+    "source_id": 5954,
+    "source_name": "Inch Lemongrass",
+    "target_id": 1982,
+    "target_name": "Lemongrass",
+    "action": "MERGE",
+    "affected_recipes": 1,
+    "affected_pantries": 0
+  },
+  {
+    "source_id": 5966,
+    "source_name": "Inch Turmeric",
+    "target_id": 3860,
+    "target_name": "Turmeric",
+    "action": "MERGE",
+    "affected_recipes": 1,
+    "affected_pantries": 0
+  },
+  {
+    "source_id": 5967,
+    "source_name": "2 3 Tablespoon Fresh Coconut Grated",
+    "target_id": 5967,
+    "target_name": "Fresh Coconut Grated",
+    "action": "RENAME",
+    "affected_recipes": 1,
+    "affected_pantries": 0
+  },
+  {
+    "source_id": 5971,
+    "source_name": "Inch Lentil",
+    "target_id": 5187,
+    "target_name": "Lentil",
+    "action": "MERGE",
+    "affected_recipes": 2,
+    "affected_pantries": 0
+  },
+  {
+    "source_id": 5977,
+    "source_name": "2 3 Cup Spinach Roughly Chopped",
+    "target_id": 5977,
+    "target_name": "Spinach Roughly Chopped",
+    "action": "RENAME",
+    "affected_recipes": 1,
+    "affected_pantries": 0
+  },
+  {
+    "source_id": 5981,
+    "source_name": "1 2 Tablespoon Chocolate Chip",
+    "target_id": 5142,
+    "target_name": "Chocolate Chip",
+    "action": "MERGE",
+    "affected_recipes": 1,
+    "affected_pantries": 0
+  },
+  {
+    "source_id": 5982,
+    "source_name": "3 Clove Laung Finely Chopped",
+    "target_id": 5982,
+    "target_name": "Laung Finely Chopped",
+    "action": "RENAME",
+    "affected_recipes": 1,
+    "affected_pantries": 0
+  },
+  {
+    "source_id": 5999,
+    "source_name": "3 4 Tablespoon Milk",
+    "target_id": 31,
+    "target_name": "Milk",
+    "action": "MERGE",
+    "affected_recipes": 1,
+    "affected_pantries": 0
+  },
+  {
+    "source_id": 6007,
+    "source_name": "10 12 Cup Water",
+    "target_id": 3915,
+    "target_name": "Water",
+    "action": "MERGE",
+    "affected_recipes": 1,
+    "affected_pantries": 0
+  },
+  {
+    "source_id": 6027,
+    "source_name": "3 4 Teaspoon Fresh Coconut Grated",
+    "target_id": 6027,
+    "target_name": "Fresh Coconut Grated",
+    "action": "RENAME",
+    "affected_recipes": 1,
+    "affected_pantries": 0
+  },
+  {
+    "source_id": 6033,
+    "source_name": "5 Clove Laung Roughly Pounded",
+    "target_id": 6033,
+    "target_name": "Laung Roughly Pounded",
+    "action": "RENAME",
+    "affected_recipes": 1,
+    "affected_pantries": 0
+  },
+  {
+    "source_id": 6036,
+    "source_name": "1 2 Cup Milk",
+    "target_id": 31,
+    "target_name": "Milk",
+    "action": "MERGE",
+    "affected_recipes": 1,
+    "affected_pantries": 0
+  },
+  {
+    "source_id": 6037,
+    "source_name": "2 3 Tablespoon Nolen Gur Syrup",
+    "target_id": 6037,
+    "target_name": "Nolen Gur Syrup",
+    "action": "RENAME",
+    "affected_recipes": 1,
+    "affected_pantries": 0
+  },
+  {
+    "source_id": 6039,
+    "source_name": "3 4 Drop Orange Essence",
+    "target_id": 6039,
+    "target_name": "Orange Essence",
+    "action": "RENAME",
+    "affected_recipes": 1,
+    "affected_pantries": 0
+  },
+  {
+    "source_id": 6042,
+    "source_name": "2 3 Teaspoon Horse Gram Dal Kollu Kulith",
+    "target_id": 6042,
+    "target_name": "Horse Gram Dal Kollu Kulith",
+    "action": "RENAME",
+    "affected_recipes": 1,
+    "affected_pantries": 0
+  },
+  {
+    "source_id": 6043,
+    "source_name": "4 5 Teaspoon Broken Wheat Dalia Godumai Rava",
+    "target_id": 6043,
+    "target_name": "Broken Wheat Dalia Godumai Rava",
+    "action": "RENAME",
+    "affected_recipes": 1,
+    "affected_pantries": 0
+  },
+  {
+    "source_id": 6044,
+    "source_name": "2 3 Teaspoon Coriander Dhania Seed",
+    "target_id": 6044,
+    "target_name": "Coriander Dhania Seed",
+    "action": "RENAME",
+    "affected_recipes": 1,
+    "affected_pantries": 0
+  },
+  {
+    "source_id": 6059,
+    "source_name": "2 Tablespoon Sesame Seed",
+    "target_id": 5034,
+    "target_name": "Sesame Seed",
+    "action": "MERGE",
+    "affected_recipes": 1,
+    "affected_pantries": 0
+  },
+  {
+    "source_id": 6068,
+    "source_name": "2 3 Cup Sunflower Oil For Frying",
+    "target_id": 6068,
+    "target_name": "Sunflower Oil For Frying",
+    "action": "RENAME",
+    "affected_recipes": 1,
+    "affected_pantries": 0
+  },
+  {
+    "source_id": 6071,
+    "source_name": "6 8 Tablespoon Water Ice Cold",
+    "target_id": 6071,
+    "target_name": "Water Ice Cold",
+    "action": "RENAME",
+    "affected_recipes": 1,
+    "affected_pantries": 0
+  },
+  {
+    "source_id": 6075,
+    "source_name": "1 2 Tablespoon Honey",
+    "target_id": 1778,
+    "target_name": "Honey",
+    "action": "MERGE",
+    "affected_recipes": 1,
+    "affected_pantries": 0
+  },
+  {
+    "source_id": 6080,
+    "source_name": "2 3 Tablespoon Water Chilled",
+    "target_id": 6080,
+    "target_name": "Water Chilled",
+    "action": "RENAME",
+    "affected_recipes": 1,
+    "affected_pantries": 0
+  },
+  {
+    "source_id": 6090,
+    "source_name": "1 2 Cup Hot Water",
+    "target_id": 5148,
+    "target_name": "Hot Water",
+    "action": "MERGE",
+    "affected_recipes": 1,
+    "affected_pantries": 0
+  },
+  {
+    "source_id": 6102,
+    "source_name": "2 3 Clove Garlic",
+    "target_id": 2,
+    "target_name": "Garlic",
+    "action": "MERGE",
+    "affected_recipes": 1,
+    "affected_pantries": 0
+  },
+  {
+    "source_id": 6108,
+    "source_name": "1 2 Tablespoon Sunflower Oil",
+    "target_id": 3728,
+    "target_name": "Sunflower Oil",
+    "action": "MERGE",
+    "affected_recipes": 1,
+    "affected_pantries": 0
+  },
+  {
+    "source_id": 6112,
+    "source_name": "1 2 Tablespoon Sunflower Seed Or Any Other Seed Of Choice",
+    "target_id": 6112,
+    "target_name": "Sunflower Seed Or Any Other Seed Of Choice",
+    "action": "RENAME",
+    "affected_recipes": 1,
+    "affected_pantries": 0
+  },
+  {
+    "source_id": 6119,
+    "source_name": "Inch Whole Turmeric",
+    "target_id": 3958,
+    "target_name": "Whole Turmeric",
+    "action": "MERGE",
+    "affected_recipes": 1,
+    "affected_pantries": 0
+  },
+  {
+    "source_id": 6129,
+    "source_name": "Inch Butter",
+    "target_id": 22,
+    "target_name": "Butter",
+    "action": "MERGE",
+    "affected_recipes": 1,
+    "affected_pantries": 0
+  },
+  {
+    "source_id": 6151,
+    "source_name": "3 Clove Laung Garlic",
+    "target_id": 6151,
+    "target_name": "Laung Garlic",
+    "action": "RENAME",
+    "affected_recipes": 1,
+    "affected_pantries": 0
+  },
+  {
+    "source_id": 6159,
+    "source_name": "1 2 Teaspoon Red Wine",
+    "target_id": 5492,
+    "target_name": "Red Wine",
+    "action": "MERGE",
+    "affected_recipes": 1,
+    "affected_pantries": 0
+  },
+  {
+    "source_id": 6174,
+    "source_name": "2 Clove Laung Garlic",
+    "target_id": 6174,
+    "target_name": "Laung Garlic",
+    "action": "RENAME",
+    "affected_recipes": 1,
+    "affected_pantries": 0
+  },
+  {
+    "source_id": 6202,
+    "source_name": "1 2 Clove Garlic Minced",
+    "target_id": 6202,
+    "target_name": "Garlic Minced",
+    "action": "RENAME",
+    "affected_recipes": 2,
+    "affected_pantries": 0
+  },
+  {
+    "source_id": 6213,
+    "source_name": "3 Clove Laung 3 Clove",
+    "target_id": 6213,
+    "target_name": "Laung 3 Clove",
+    "action": "RENAME",
+    "affected_recipes": 1,
+    "affected_pantries": 0
+  },
+  {
+    "source_id": 6216,
+    "source_name": "Inch Mace",
+    "target_id": 2037,
+    "target_name": "Mace",
+    "action": "MERGE",
+    "affected_recipes": 2,
+    "affected_pantries": 0
+  },
+  {
+    "source_id": 6238,
+    "source_name": "1 2 Teaspoon Mango Pickle Optional",
+    "target_id": 6238,
+    "target_name": "Mango Pickle Optional",
+    "action": "RENAME",
+    "affected_recipes": 1,
+    "affected_pantries": 0
+  },
+  {
+    "source_id": 6259,
+    "source_name": "2 3 Teaspoon Arhar Dal Split Toor Dal",
+    "target_id": 6259,
+    "target_name": "Arhar Dal Split Toor Dal",
+    "action": "RENAME",
+    "affected_recipes": 1,
+    "affected_pantries": 0
+  },
+  {
+    "source_id": 6277,
+    "source_name": "3 4 Cup Water",
+    "target_id": 3915,
+    "target_name": "Water",
+    "action": "MERGE",
+    "affected_recipes": 1,
+    "affected_pantries": 0
+  },
+  {
+    "source_id": 6282,
+    "source_name": "2 3 Tablespoon Vangi Bath Powder",
+    "target_id": 3879,
+    "target_name": "Vangi Bath Powder",
+    "action": "MERGE",
+    "affected_recipes": 1,
+    "affected_pantries": 0
+  },
+  {
+    "source_id": 6283,
+    "source_name": "2 3 Tablespoon Dry Coconut Kopra Grated",
+    "target_id": 6283,
+    "target_name": "Dry Coconut Kopra Grated",
+    "action": "RENAME",
+    "affected_recipes": 1,
+    "affected_pantries": 0
+  },
+  {
+    "source_id": 6290,
+    "source_name": "2 3 Teaspoon Chana Dal Bengal Gram Dal",
+    "target_id": 6290,
+    "target_name": "Chana Dal Bengal Gram Dal",
+    "action": "RENAME",
+    "affected_recipes": 1,
+    "affected_pantries": 0
+  },
+  {
+    "source_id": 6294,
+    "source_name": "3 4 Tablespoon Butter Softened",
+    "target_id": 6294,
+    "target_name": "Butter Softened",
+    "action": "RENAME",
+    "affected_recipes": 1,
+    "affected_pantries": 0
+  },
+  {
+    "source_id": 6300,
+    "source_name": "5 6 Clove Garlic Chopped Finely",
+    "target_id": 6300,
+    "target_name": "Garlic Chopped Finely",
+    "action": "RENAME",
+    "affected_recipes": 1,
+    "affected_pantries": 0
+  },
+  {
+    "source_id": 6322,
+    "source_name": "1 2 Tablespoon Ghee",
+    "target_id": 1566,
+    "target_name": "Ghee",
+    "action": "MERGE",
+    "affected_recipes": 1,
+    "affected_pantries": 0
+  },
+  {
+    "source_id": 6323,
+    "source_name": "Inch Asafoetida",
+    "target_id": 802,
+    "target_name": "Asafoetida",
+    "action": "MERGE",
+    "affected_recipes": 1,
+    "affected_pantries": 0
+  },
+  {
+    "source_id": 6324,
+    "source_name": "Inch Coal",
+    "target_id": 1231,
+    "target_name": "Coal",
+    "action": "MERGE",
+    "affected_recipes": 1,
+    "affected_pantries": 0
+  },
+  {
+    "source_id": 6327,
+    "source_name": "Inch Dark Chocolate",
+    "target_id": 1359,
+    "target_name": "Dark Chocolate",
+    "action": "MERGE",
+    "affected_recipes": 1,
+    "affected_pantries": 0
+  },
+  {
+    "source_id": 6347,
+    "source_name": "2 Clove Laung Pounded",
+    "target_id": 6347,
+    "target_name": "Laung Pounded",
+    "action": "RENAME",
+    "affected_recipes": 1,
+    "affected_pantries": 0
+  },
+  {
+    "source_id": 6354,
+    "source_name": "1 Teaspoon Instant Coffee Powder",
+    "target_id": 1814,
+    "target_name": "Instant Coffee Powder",
+    "action": "MERGE",
+    "affected_recipes": 1,
+    "affected_pantries": 0
+  },
+  {
+    "source_id": 6360,
+    "source_name": "3 4 Clove Garlic",
+    "target_id": 2,
+    "target_name": "Garlic",
+    "action": "MERGE",
+    "affected_recipes": 1,
+    "affected_pantries": 0
+  },
+  {
+    "source_id": 6372,
+    "source_name": "3 4 Tablespoon Lemon Juice",
+    "target_id": 1972,
+    "target_name": "Lemon Juice",
+    "action": "MERGE",
+    "affected_recipes": 1,
+    "affected_pantries": 0
+  },
+  {
+    "source_id": 6387,
+    "source_name": "2 3 Tablespoon Milk",
+    "target_id": 31,
+    "target_name": "Milk",
+    "action": "MERGE",
+    "affected_recipes": 1,
+    "affected_pantries": 0
+  },
+  {
+    "source_id": 6389,
+    "source_name": "2 3 Clove Garlic Pound",
+    "target_id": 6389,
+    "target_name": "Garlic Pound",
+    "action": "RENAME",
+    "affected_recipes": 1,
+    "affected_pantries": 0
+  },
+  {
+    "source_id": 6410,
+    "source_name": "2 3 Tablespoon Sugar Adjust",
+    "target_id": 6410,
+    "target_name": "Sugar Adjust",
+    "action": "RENAME",
+    "affected_recipes": 1,
+    "affected_pantries": 0
+  },
+  {
+    "source_id": 6414,
+    "source_name": "3 4 Clove Garlic Chopped",
+    "target_id": 6414,
+    "target_name": "Garlic Chopped",
+    "action": "RENAME",
+    "affected_recipes": 1,
+    "affected_pantries": 0
+  },
+  {
+    "source_id": 6415,
+    "source_name": "2 3 Tablespoon All Purpose Flour Maida",
+    "target_id": 6415,
+    "target_name": "All Purpose Flour Maida",
+    "action": "RENAME",
+    "affected_recipes": 1,
+    "affected_pantries": 0
+  },
+  {
+    "source_id": 6416,
+    "source_name": "9 10 Clove Laung",
+    "target_id": 6416,
+    "target_name": "Laung",
+    "action": "RENAME",
+    "affected_recipes": 1,
+    "affected_pantries": 0
+  },
+  {
+    "source_id": 6420,
+    "source_name": "2 3 Teaspoon Jaggery Grated",
+    "target_id": 6420,
+    "target_name": "Jaggery Grated",
+    "action": "RENAME",
+    "affected_recipes": 1,
+    "affected_pantries": 0
+  },
+  {
+    "source_id": 6428,
+    "source_name": "2 3 Tablespoon Del Monte Mint Mayo",
+    "target_id": 1394,
+    "target_name": "Del Monte Mint Mayo",
+    "action": "MERGE",
+    "affected_recipes": 1,
+    "affected_pantries": 0
+  },
+  {
+    "source_id": 6429,
+    "source_name": "2 3 Tablespoon Roasted Peanut Moongphali Crushed",
+    "target_id": 6429,
+    "target_name": "Roasted Peanut Moongphali Crushed",
+    "action": "RENAME",
+    "affected_recipes": 1,
+    "affected_pantries": 0
+  },
+  {
+    "source_id": 6432,
+    "source_name": "3 4 Clove Laung",
+    "target_id": 6432,
+    "target_name": "Laung",
+    "action": "RENAME",
+    "affected_recipes": 1,
+    "affected_pantries": 0
+  },
+  {
+    "source_id": 6433,
+    "source_name": "1 2 Teaspoon Extra Virgin Olive Oil",
+    "target_id": 5037,
+    "target_name": "Extra Virgin Olive Oil",
+    "action": "MERGE",
+    "affected_recipes": 1,
+    "affected_pantries": 0
+  },
+  {
+    "source_id": 6435,
+    "source_name": "4 5 Tablespoon Sunflower Oil For Shallow Frying",
+    "target_id": 6435,
+    "target_name": "Sunflower Oil For Shallow Frying",
+    "action": "RENAME",
+    "affected_recipes": 1,
+    "affected_pantries": 0
+  }
+]

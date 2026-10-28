@@ -1,0 +1,539 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>InChef - My Profile & Preferences</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet" />
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#134e4a',
+                        'primary-dark': '#0c3330',
+                        secondary: '#b45309',
+                        'surface-container-lowest': '#ffffff',
+                        'surface-container': '#f0fdf4',
+                        surface: '#fbfcf8',
+                        'on-surface': '#191c1b',
+                        'on-surface-variant': '#3f4946',
+                        outline: '#6f7976',
+                        'outline-variant': '#bfc9c5',
+                    },
+                    fontFamily: {
+                        sans: ['"Plus Jakarta Sans"', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+            display: inline-block;
+            vertical-align: middle;
+            line-height: 1;
+        }
+        .material-symbols-outlined.fill {
+            font-variation-settings: 'FILL' 1;
+        }
+        input[type="radio"]:checked + span,
+        input[type="radio"]:checked ~ span {
+            color: #134e4a;
+            font-weight: 700;
+        }
+        .pref-radio-label:has(input[type="radio"]:checked) {
+            border-color: #134e4a;
+            background-color: #dcf2e8;
+        }
+        .history-table th, .history-table td {
+            white-space: nowrap;
+            -webkit-font-smoothing: antialiased;
+        }
+    </style>
+</head>
+<body class="bg-surface text-on-surface font-sans min-h-screen flex flex-col selection:bg-primary selection:text-white">
+    <!-- Top Navigation Bar -->
+    <header id="global-header" data-active="profile"></header>
+
+    <!-- Main Container -->
+    <main class="flex-grow max-w-[1100px] mx-auto w-full px-4 sm:px-6 md:px-8 py-8 space-y-8">
+        <!-- Toast Notification -->
+        <div id="toastNotification" class="hidden p-4 rounded-xl bg-primary text-white flex items-center justify-between shadow-lg transition-all duration-300">
+            <div class="flex items-center gap-3">
+                <span class="material-symbols-outlined text-[#96d3c0]">check_circle</span>
+                <div>
+                    <p class="text-sm font-bold">Preferences saved successfully!</p>
+                    <p class="text-xs text-[#96d3c0]">Your recommendation engine now reflects your updated taste settings.</p>
+                </div>
+            </div>
+            <button class="p-1 rounded-lg hover:bg-white/10 text-white/80" onclick="document.getElementById('toastNotification').classList.add('hidden')">
+                <span class="material-symbols-outlined text-[18px]">close</span>
+            </button>
+        </div>
+
+        <!-- Header Profile Summary Card -->
+        <section class="bg-surface-container-lowest border border-primary/10 rounded-3xl p-6 md:p-8 shadow-xs">
+            <div class="flex flex-col md:flex-row items-center md:items-start justify-between gap-6">
+                <div class="flex flex-col md:flex-row items-center gap-6 text-center md:text-left">
+                    <!-- Avatar -->
+                    <div class="w-24 h-24 md:w-28 md:h-28 rounded-full bg-[#dcf2e8] text-primary flex items-center justify-center font-extrabold text-3xl shadow-sm border-2 border-white ring-4 ring-primary/10" id="avatarBox">
+                        U
+                    </div>
+                    <!-- Name & Info -->
+                    <div>
+                        <div class="flex flex-wrap items-center justify-center md:justify-start gap-2.5 mb-1.5">
+                            <h1 class="text-2xl md:text-3xl font-extrabold text-primary" id="userName">User</h1>
+                            <span class="px-2.5 py-0.5 rounded-full text-xs font-bold bg-secondary/10 text-secondary flex items-center gap-1">
+                                <span class="material-symbols-outlined text-[14px]">star</span> InChef Member
+                            </span>
+                        </div>
+                        <p class="text-sm font-medium text-on-surface-variant mb-2 flex items-center justify-center md:justify-start gap-1.5" id="userEmail">
+                            <span class="material-symbols-outlined text-[16px]">mail</span>
+                            user@example.com
+                        </p>
+                        <p class="text-xs text-outline flex items-center justify-center md:justify-start gap-1" id="memberSince">
+                            <span class="material-symbols-outlined text-[14px]">calendar_today</span>
+                            Account Active
+                        </p>
+                    </div>
+                </div>
+                <!-- Action Buttons -->
+                <div class="flex items-center gap-3">
+                    <button id="logout-btn" class="px-5 py-2.5 rounded-xl bg-red-50 hover:bg-red-100 text-red-700 text-xs font-bold flex items-center gap-1.5 transition-colors">
+                        <span class="material-symbols-outlined text-[16px]">logout</span>
+                        Logout
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Culinary & Food Preferences Card -->
+        <section class="bg-surface-container-lowest border border-primary/10 rounded-3xl p-6 md:p-8 shadow-xs space-y-6">
+            <div class="pb-4 border-b border-primary/10 flex items-center gap-3">
+                <div class="w-10 h-10 rounded-xl bg-[#dcf2e8] text-primary flex items-center justify-center">
+                    <span class="material-symbols-outlined text-[22px]">tune</span>
+                </div>
+                <div>
+                    <h2 class="text-lg md:text-xl font-bold text-on-surface">Food &amp; Taste Preferences</h2>
+                    <p class="text-xs text-on-surface-variant">Used automatically by the recommendation engine</p>
+                </div>
+            </div>
+
+            <form id="preferences-form" class="space-y-6">
+                <!-- 1. Dietary Type -->
+                <div>
+                    <label class="block text-xs font-bold text-on-surface uppercase tracking-wider mb-2">Dietary Type</label>
+                    <div class="grid grid-cols-2 sm:grid-cols-4 gap-2.5" id="diet-group">
+                        <label class="pref-radio-label flex items-center justify-center gap-2 p-3 rounded-xl border border-outline-variant/60 cursor-pointer text-xs font-bold hover:border-primary transition-all">
+                            <input type="radio" name="dietaryType" value="Vegetarian" class="text-primary focus:ring-primary">
+                            <span>Vegetarian</span>
+                        </label>
+                        <label class="pref-radio-label flex items-center justify-center gap-2 p-3 rounded-xl border border-outline-variant/60 cursor-pointer text-xs font-bold hover:border-primary transition-all">
+                            <input type="radio" name="dietaryType" value="Non-Vegetarian" class="text-primary focus:ring-primary">
+                            <span>Non-Vegetarian</span>
+                        </label>
+                        <label class="pref-radio-label flex items-center justify-center gap-2 p-3 rounded-xl border border-outline-variant/60 cursor-pointer text-xs font-bold hover:border-primary transition-all">
+                            <input type="radio" name="dietaryType" value="Vegan" class="text-primary focus:ring-primary">
+                            <span>Vegan</span>
+                        </label>
+                        <label class="pref-radio-label flex items-center justify-center gap-2 p-3 rounded-xl border border-outline-variant/60 cursor-pointer text-xs font-bold hover:border-primary transition-all">
+                            <input type="radio" name="dietaryType" value="Jain" class="text-primary focus:ring-primary">
+                            <span>Jain</span>
+                        </label>
+                    </div>
+                </div>
+
+                <!-- 2. Spice Level -->
+                <div>
+                    <label class="block text-xs font-bold text-on-surface uppercase tracking-wider mb-2">Preferred Spice Level</label>
+                    <div class="grid grid-cols-3 gap-2.5" id="spice-group">
+                        <label class="pref-radio-label flex items-center justify-center gap-2 p-3 rounded-xl border border-outline-variant/60 cursor-pointer text-xs font-bold hover:border-primary transition-all">
+                            <input type="radio" name="spiceLevel" value="Mild" class="text-primary focus:ring-primary">
+                            <span>Mild</span>
+                        </label>
+                        <label class="pref-radio-label flex items-center justify-center gap-2 p-3 rounded-xl border border-outline-variant/60 cursor-pointer text-xs font-bold hover:border-primary transition-all">
+                            <input type="radio" name="spiceLevel" value="Medium" class="text-primary focus:ring-primary">
+                            <span>Medium</span>
+                        </label>
+                        <label class="pref-radio-label flex items-center justify-center gap-2 p-3 rounded-xl border border-outline-variant/60 cursor-pointer text-xs font-bold hover:border-primary transition-all">
+                            <input type="radio" name="spiceLevel" value="Spicy" class="text-primary focus:ring-primary">
+                            <span>Spicy</span>
+                        </label>
+                    </div>
+                </div>
+
+                <!-- 3. Preferred Cuisines -->
+                <div>
+                    <label class="block text-xs font-bold text-on-surface uppercase tracking-wider mb-2">Preferred Regional Cuisines</label>
+                    <div class="grid grid-cols-2 sm:grid-cols-4 gap-2" id="cuisine-group">
+                        <label class="flex items-center gap-2 p-2.5 rounded-xl border border-outline-variant/60 text-xs font-semibold hover:border-primary cursor-pointer">
+                            <input type="checkbox" name="cuisine" value="North Indian" class="rounded text-primary focus:ring-primary">
+                            <span>North Indian</span>
+                        </label>
+                        <label class="flex items-center gap-2 p-2.5 rounded-xl border border-outline-variant/60 text-xs font-semibold hover:border-primary cursor-pointer">
+                            <input type="checkbox" name="cuisine" value="South Indian" class="rounded text-primary focus:ring-primary">
+                            <span>South Indian</span>
+                        </label>
+                        <label class="flex items-center gap-2 p-2.5 rounded-xl border border-outline-variant/60 text-xs font-semibold hover:border-primary cursor-pointer">
+                            <input type="checkbox" name="cuisine" value="Punjabi" class="rounded text-primary focus:ring-primary">
+                            <span>Punjabi</span>
+                        </label>
+                        <label class="flex items-center gap-2 p-2.5 rounded-xl border border-outline-variant/60 text-xs font-semibold hover:border-primary cursor-pointer">
+                            <input type="checkbox" name="cuisine" value="Mughlai" class="rounded text-primary focus:ring-primary">
+                            <span>Mughlai</span>
+                        </label>
+                        <label class="flex items-center gap-2 p-2.5 rounded-xl border border-outline-variant/60 text-xs font-semibold hover:border-primary cursor-pointer">
+                            <input type="checkbox" name="cuisine" value="Bengali" class="rounded text-primary focus:ring-primary">
+                            <span>Bengali</span>
+                        </label>
+                        <label class="flex items-center gap-2 p-2.5 rounded-xl border border-outline-variant/60 text-xs font-semibold hover:border-primary cursor-pointer">
+                            <input type="checkbox" name="cuisine" value="Gujarati" class="rounded text-primary focus:ring-primary">
+                            <span>Gujarati</span>
+                        </label>
+                        <label class="flex items-center gap-2 p-2.5 rounded-xl border border-outline-variant/60 text-xs font-semibold hover:border-primary cursor-pointer">
+                            <input type="checkbox" name="cuisine" value="Maharashtrian" class="rounded text-primary focus:ring-primary">
+                            <span>Maharashtrian</span>
+                        </label>
+                        <label class="flex items-center gap-2 p-2.5 rounded-xl border border-outline-variant/60 text-xs font-semibold hover:border-primary cursor-pointer">
+                            <input type="checkbox" name="cuisine" value="Hyderabadi" class="rounded text-primary focus:ring-primary">
+                            <span>Hyderabadi</span>
+                        </label>
+                    </div>
+                </div>
+
+                <!-- 4. Max Cooking Time -->
+                <div>
+                    <label class="block text-xs font-bold text-on-surface uppercase tracking-wider mb-1.5">Default Max Cooking Time (Minutes)</label>
+                    <input type="number" id="max-cook-time" min="10" max="180" step="5" placeholder="e.g. 45"
+                           class="w-full sm:w-60 px-4 py-2.5 rounded-xl border border-outline-variant/80 text-sm font-bold text-on-surface focus:outline-none focus:border-primary">
+                </div>
+
+                <!-- Submit Button -->
+                <div class="pt-4 flex items-center justify-end">
+                    <button type="submit" id="save-pref-btn" class="px-8 py-3.5 rounded-xl bg-primary hover:bg-primary-dark text-white font-bold text-sm shadow-md hover:shadow-lg transition-all flex items-center gap-2">
+                        <span class="material-symbols-outlined text-[18px]">check</span>
+                        <span>Save Preferences</span>
+                    </button>
+                </div>
+            </form>
+        </section>
+
+        <!-- Login History Card (Part B) -->
+        <section class="bg-surface-container-lowest border border-primary/10 rounded-3xl p-6 md:p-8 shadow-xs space-y-6">
+            <div class="pb-4 border-b border-primary/10 flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+                <div class="flex items-center gap-3">
+                    <div class="w-10 h-10 rounded-xl bg-[#dcf2e8] text-primary flex items-center justify-center">
+                        <span class="material-symbols-outlined text-[22px]">history</span>
+                    </div>
+                    <div>
+                        <h2 class="text-lg md:text-xl font-bold text-on-surface">Login History</h2>
+                        <p class="text-xs text-on-surface-variant">Recent security authentication events on your account</p>
+                    </div>
+                </div>
+                <div class="flex items-center gap-2">
+                    <span class="text-[11px] font-semibold text-outline bg-surface-container px-2.5 py-1 rounded-lg">Time: Local / UTC</span>
+                    <button id="refreshHistoryBtn" class="p-2 rounded-xl text-primary hover:bg-[#dcf2e8] transition-colors" title="Refresh Login History">
+                        <span class="material-symbols-outlined text-[18px]">refresh</span>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Login History Container: Loading / Empty / Error / Content states -->
+            <div id="loginHistoryContainer" class="min-h-[140px] flex items-center justify-center">
+                <div class="py-8 text-center text-on-surface-variant text-sm flex items-center justify-center gap-2">
+                    <span class="material-symbols-outlined animate-spin text-primary">progress_activity</span>
+                    <span>Loading login events...</span>
+                </div>
+            </div>
+
+            <!-- Pagination Bar -->
+            <div id="loginHistoryPagination" class="hidden flex items-center justify-between pt-4 border-t border-primary/10 text-xs">
+                <span id="loginHistoryPageInfo" class="text-on-surface-variant font-medium">Page 1</span>
+                <div class="flex items-center gap-2">
+                    <button id="historyPrevBtn" class="px-3.5 py-1.5 rounded-lg border border-outline-variant/60 hover:bg-surface-container text-on-surface font-semibold disabled:opacity-40 disabled:cursor-not-allowed transition-colors">Previous</button>
+                    <button id="historyNextBtn" class="px-3.5 py-1.5 rounded-lg border border-outline-variant/60 hover:bg-surface-container text-on-surface font-semibold disabled:opacity-40 disabled:cursor-not-allowed transition-colors">Next</button>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer id="global-footer"></footer>
+
+    <script src="/js/api.js"></script>
+    <script src="/js/header.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', async () => {
+            const userName = document.getElementById('userName');
+            const userEmail = document.getElementById('userEmail');
+            const avatarBox = document.getElementById('avatarBox');
+            const memberSince = document.getElementById('memberSince');
+            const logoutBtn = document.getElementById('logout-btn');
+            const form = document.getElementById('preferences-form');
+            const maxCookTimeInput = document.getElementById('max-cook-time');
+            const toast = document.getElementById('toastNotification');
+
+            // Login History elements
+            const loginHistoryContainer = document.getElementById('loginHistoryContainer');
+            const loginHistoryPagination = document.getElementById('loginHistoryPagination');
+            const loginHistoryPageInfo = document.getElementById('loginHistoryPageInfo');
+            const historyPrevBtn = document.getElementById('historyPrevBtn');
+            const historyNextBtn = document.getElementById('historyNextBtn');
+            const refreshHistoryBtn = document.getElementById('refreshHistoryBtn');
+
+            let currentUser = null;
+            let currentHistoryPage = 0;
+            const historyPageSize = 10;
+            let totalHistoryPages = 1;
+
+            async function loadUserData() {
+                try {
+                    const meRes = await InChefAPI.getMe();
+                    currentUser = meRes.data;
+                    InChefAPI.setCurrentUser(currentUser.id);
+                    localStorage.setItem('inchef_user', JSON.stringify(currentUser));
+                } catch (e) {
+                    currentUser = InChefAPI.getStoredUser();
+                    if (!currentUser) {
+                        window.location.href = `/auth.html?mode=login&returnUrl=/profile.html`;
+                        return;
+                    }
+                }
+
+                userName.textContent = currentUser.name || 'InChef Member';
+                userEmail.innerHTML = `<span class="material-symbols-outlined text-[16px]">mail</span> ${currentUser.email}`;
+                avatarBox.textContent = (currentUser.name || currentUser.email || 'U').charAt(0).toUpperCase();
+
+                // 1. Load preferences
+                try {
+                    const prefRes = await InChefAPI.getPreferences(currentUser.id);
+                    const prefs = prefRes.data || {};
+
+                    if (prefs.dietaryType) {
+                        const radio = form.querySelector(`input[name="dietaryType"][value="${prefs.dietaryType}"]`);
+                        if (radio) radio.checked = true;
+                    }
+                    const spice = prefs.preferredSpiceLevel || prefs.spiceLevel;
+                    if (spice) {
+                        const radio = Array.from(form.querySelectorAll('input[name="spiceLevel"]'))
+                            .find(r => r.value.toLowerCase() === spice.toLowerCase());
+                        if (radio) radio.checked = true;
+                    }
+                    if (prefs.maxCookingTime) {
+                        maxCookTimeInput.value = prefs.maxCookingTime;
+                    }
+
+                    // Reset all cuisine checkboxes before populating
+                    form.querySelectorAll('input[name="cuisine"]').forEach(cb => cb.checked = false);
+
+                    if (prefs.preferredCuisines) {
+                        const cuisines = Array.isArray(prefs.preferredCuisines)
+                            ? prefs.preferredCuisines
+                            : (typeof prefs.preferredCuisines === 'string'
+                                ? prefs.preferredCuisines.split(',').map(c => c.trim()).filter(Boolean)
+                                : []);
+                        cuisines.forEach(c => {
+                            const cb = form.querySelector(`input[name="cuisine"][value="${c}"]`);
+                            if (cb) cb.checked = true;
+                        });
+                    }
+                } catch (pe) {
+                    console.warn('Could not load user preferences', pe);
+                }
+
+                // 2. Load Login History
+                await loadLoginHistory(0);
+            }
+
+            // Save Preferences Form Handler
+            form.addEventListener('submit', async (e) => {
+                e.preventDefault();
+                if (!currentUser) return;
+
+                const selectedDiet = form.querySelector('input[name="dietaryType"]:checked')?.value || 'Vegetarian';
+                const selectedSpice = form.querySelector('input[name="spiceLevel"]:checked')?.value || 'Medium';
+
+                // Send preferredCuisines ALWAYS as an array of strings
+                // Single selection -> ["North Indian"]
+                // Multiple selections -> ["North Indian", "South Indian"]
+                // Empty selection -> []
+                const selectedCuisines = Array.from(form.querySelectorAll('input[name="cuisine"]:checked')).map(cb => cb.value);
+                const maxTime = maxCookTimeInput.value ? parseInt(maxCookTimeInput.value) : 45;
+
+                try {
+                    await InChefAPI.updatePreferences({
+                        dietaryType: selectedDiet,
+                        preferredSpiceLevel: selectedSpice,
+                        spiceLevel: selectedSpice,
+                        preferredCuisines: selectedCuisines,
+                        allergies: [],
+                        maxCookingTime: maxTime
+                    }, currentUser.id);
+
+                    toast.classList.remove('hidden');
+                    window.scrollTo({ top: 0, behavior: 'smooth' });
+                    setTimeout(() => toast.classList.add('hidden'), 4000);
+                } catch (err) {
+                    alert('Failed to save preferences: ' + err.message);
+                }
+            });
+
+            // Login History Loader with Loading, Empty, and Error States
+            async function loadLoginHistory(page = 0) {
+                loginHistoryContainer.innerHTML = `
+                    <div class="py-8 text-center text-on-surface-variant text-sm flex items-center justify-center gap-2">
+                        <span class="material-symbols-outlined animate-spin text-primary">progress_activity</span>
+                        <span>Loading login events...</span>
+                    </div>
+                `;
+
+                try {
+                    const res = await InChefAPI.getLoginHistory(page, historyPageSize, currentUser.id);
+                    const pageData = res.data;
+                    const events = pageData?.content || [];
+                    currentHistoryPage = pageData?.number || 0;
+                    totalHistoryPages = pageData?.totalPages || 1;
+
+                    if (!events || events.length === 0) {
+                        loginHistoryContainer.innerHTML = `
+                            <div class="py-8 text-center space-y-2">
+                                <div class="w-12 h-12 mx-auto rounded-full bg-surface-container flex items-center justify-center text-primary">
+                                    <span class="material-symbols-outlined text-[24px]">history_toggle_off</span>
+                                </div>
+                                <p class="text-sm font-bold text-on-surface">No Login Events Yet</p>
+                                <p class="text-xs text-on-surface-variant max-w-sm mx-auto">
+                                    Your login events and security activity will appear here after you authenticate.
+                                </p>
+                            </div>
+                        `;
+                        loginHistoryPagination.classList.add('hidden');
+                        return;
+                    }
+
+                    // Render Clean, Responsive Table
+                    let rowsHtml = events.map(ev => {
+                        let localTimeStr = 'Unknown';
+                        let utcTimeStr = 'Unknown';
+                        if (ev.loginAt) {
+                            const d = new Date(ev.loginAt);
+                            localTimeStr = d.toLocaleString(undefined, {
+                                year: 'numeric',
+                                month: 'short',
+                                day: 'numeric',
+                                hour: '2-digit',
+                                minute: '2-digit',
+                                second: '2-digit'
+                            });
+                            utcTimeStr = d.toISOString().replace('T', ' ').substring(0, 19) + ' UTC';
+                        }
+
+                        const method = (ev.authenticationMethod || 'PASSWORD').toUpperCase();
+                        let methodBadge = '';
+                        if (method === 'GOOGLE' || method === 'GOOGLE_OAUTH') {
+                            methodBadge = `
+                                <span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full text-xs font-semibold bg-blue-50 text-blue-700 border border-blue-200">
+                                    <span class="material-symbols-outlined text-[14px]">account_circle</span>
+                                    Google Sign-In
+                                </span>
+                            `;
+                        } else {
+                            methodBadge = `
+                                <span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full text-xs font-semibold bg-emerald-50 text-emerald-800 border border-emerald-200">
+                                    <span class="material-symbols-outlined text-[14px]">lock</span>
+                                    Password
+                                </span>
+                            `;
+                        }
+
+                        const isSuccess = (ev.status || 'SUCCESS').toUpperCase() === 'SUCCESS';
+                        const statusBadge = isSuccess
+                            ? `<span class="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full text-[11px] font-bold bg-green-100 text-green-800"><span class="w-1.5 h-1.5 rounded-full bg-green-600"></span>Success</span>`
+                            : `<span class="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full text-[11px] font-bold bg-red-100 text-red-800"><span class="w-1.5 h-1.5 rounded-full bg-red-600"></span>Failed</span>`;
+
+                        return `
+                            <tr class="border-b border-primary/5 hover:bg-surface-container/50 transition-colors">
+                                <td class="py-3.5 px-4 text-xs">
+                                    <div class="font-bold text-on-surface">${localTimeStr}</div>
+                                    <div class="text-[11px] text-outline font-mono">${utcTimeStr}</div>
+                                </td>
+                                <td class="py-3.5 px-4 text-xs font-medium">
+                                    ${methodBadge}
+                                </td>
+                                <td class="py-3.5 px-4 text-xs">
+                                    ${statusBadge}
+                                </td>
+                            </tr>
+                        `;
+                    }).join('');
+
+                    loginHistoryContainer.innerHTML = `
+                        <div class="w-full overflow-x-auto rounded-2xl border border-primary/10">
+                            <table class="w-full text-left border-collapse history-table">
+                                <thead>
+                                    <tr class="bg-surface-container/60 text-[11px] font-bold uppercase tracking-wider text-on-surface-variant border-b border-primary/10">
+                                        <th class="py-3 px-4">Date &amp; Time (Local / UTC)</th>
+                                        <th class="py-3 px-4">Authentication Method</th>
+                                        <th class="py-3 px-4">Status</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    ${rowsHtml}
+                                </tbody>
+                            </table>
+                        </div>
+                    `;
+
+                    // Update Pagination Controls
+                    if (totalHistoryPages > 1) {
+                        loginHistoryPagination.classList.remove('hidden');
+                        loginHistoryPageInfo.textContent = `Page ${currentHistoryPage + 1} of ${totalHistoryPages} (${pageData.totalElements} total)`;
+                        historyPrevBtn.disabled = currentHistoryPage <= 0;
+                        historyNextBtn.disabled = currentHistoryPage >= totalHistoryPages - 1;
+                    } else {
+                        loginHistoryPagination.classList.add('hidden');
+                    }
+                } catch (err) {
+                    console.error('Failed to load login history', err);
+                    loginHistoryContainer.innerHTML = `
+                        <div class="py-6 text-center space-y-3">
+                            <p class="text-xs text-red-600 font-semibold">Unable to load login history at this time.</p>
+                            <button id="retryHistoryBtn" class="px-4 py-1.5 rounded-lg bg-surface-container hover:bg-surface-container-high text-xs font-bold text-primary transition-colors">
+                                Retry
+                            </button>
+                        </div>
+                    `;
+                    document.getElementById('retryHistoryBtn')?.addEventListener('click', () => loadLoginHistory(currentHistoryPage));
+                    loginHistoryPagination.classList.add('hidden');
+                }
+            }
+
+            // History Pagination Buttons
+            historyPrevBtn?.addEventListener('click', () => {
+                if (currentHistoryPage > 0) {
+                    loadLoginHistory(currentHistoryPage - 1);
+                }
+            });
+
+            historyNextBtn?.addEventListener('click', () => {
+                if (currentHistoryPage < totalHistoryPages - 1) {
+                    loadLoginHistory(currentHistoryPage + 1);
+                }
+            });
+
+            refreshHistoryBtn?.addEventListener('click', () => {
+                loadLoginHistory(currentHistoryPage);
+            });
+
+            logoutBtn.addEventListener('click', () => {
+                InChefAPI.logout();
+            });
+
+            await loadUserData();
+        });
+    </script>
+</body>
+</html>

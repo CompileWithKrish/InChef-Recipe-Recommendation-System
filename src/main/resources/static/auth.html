@@ -1,0 +1,427 @@
+<!DOCTYPE html>
+<html class="light" lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <title>InChef - Login & Sign Up</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Caveat:wght@600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet">
+    <!-- Google Identity Services -->
+    <script src="https://accounts.google.com/gsi/client" async defer></script>
+    <script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#004538",
+                        "primary-dark": "#0f3d32",
+                        "primary-container": "#1f5d4e",
+                        "on-primary": "#ffffff",
+                        "secondary": "#954a00",
+                        "secondary-container": "#fe974a",
+                        "on-secondary": "#ffffff",
+                        "surface": "#fff8f4",
+                        "surface-container-lowest": "#ffffff",
+                        "surface-container-low": "#fbf2eb",
+                        "surface-container": "#f5ece6",
+                        "surface-container-high": "#efe7e0",
+                        "surface-variant": "#eae1da",
+                        "on-surface": "#1f1b17",
+                        "on-surface-variant": "#5a544e",
+                        "outline": "#707975",
+                        "outline-variant": "#bfc9c4",
+                    },
+                    fontFamily: {
+                        sans: ["Manrope", "sans-serif"],
+                        handwriting: ["Caveat", "cursive"],
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-surface text-on-surface font-sans min-h-screen flex flex-col selection:bg-primary selection:text-white">
+    <header id="global-header" data-active="auth"></header>
+
+    <main class="flex-grow flex items-center justify-center px-4 py-12 sm:px-6 lg:px-8">
+        <div class="w-full max-w-md space-y-6 bg-surface-container-lowest p-8 sm:p-10 rounded-3xl shadow-xl border border-primary/10">
+            <!-- Header Brand & Welcome -->
+            <div class="text-center">
+                <div class="inline-flex items-center justify-center w-14 h-14 rounded-2xl bg-primary/10 mb-3">
+                    <img src="/images/inchef_logo_v2.png" alt="InChef" class="w-10 h-10 object-contain rounded-full" onerror="this.onerror=null; this.src='/images/logo.png';">
+                </div>
+                <h1 class="text-2xl sm:text-3xl font-extrabold text-primary tracking-tight" id="auth-title">Welcome to InChef</h1>
+                <p class="mt-2 text-xs sm:text-sm text-on-surface-variant" id="auth-subtitle">
+                    Cook what you have, love what you eat.
+                </p>
+            </div>
+
+            <!-- Tab Switcher -->
+            <div class="flex p-1 bg-surface-container rounded-2xl">
+                <button id="tab-login" type="button" class="flex-1 py-2.5 text-xs sm:text-sm font-bold rounded-xl transition-all shadow-xs bg-white text-primary">
+                    Log In
+                </button>
+                <button id="tab-signup" type="button" class="flex-1 py-2.5 text-xs sm:text-sm font-bold rounded-xl transition-all text-on-surface-variant hover:text-primary">
+                    Sign Up
+                </button>
+            </div>
+
+            <!-- Alert Container -->
+            <div id="auth-alert" class="hidden p-3.5 rounded-xl text-xs sm:text-sm font-semibold transition-all"></div>
+
+            <!-- LOGIN FORM -->
+            <form id="login-form" class="space-y-4">
+                <div>
+                    <label for="login-email" class="block text-xs font-bold text-on-surface uppercase tracking-wider mb-1.5">Email Address</label>
+                    <div class="relative">
+                        <span class="material-symbols-outlined absolute left-3.5 top-1/2 -translate-y-1/2 text-outline text-[20px]">mail</span>
+                        <input id="login-email" name="email" type="email" autocomplete="email" required
+                               class="w-full pl-10 pr-4 py-3 bg-surface-container-low border border-outline-variant/80 rounded-xl text-sm font-medium text-on-surface placeholder:text-outline focus:outline-none focus:border-primary focus:ring-2 focus:ring-primary/20 transition-all"
+                               placeholder="you@example.com">
+                    </div>
+                </div>
+
+                <div>
+                    <div class="flex items-center justify-between mb-1.5">
+                        <label for="login-password" class="block text-xs font-bold text-on-surface uppercase tracking-wider">Password</label>
+                    </div>
+                    <div class="relative">
+                        <span class="material-symbols-outlined absolute left-3.5 top-1/2 -translate-y-1/2 text-outline text-[20px]">lock</span>
+                        <input id="login-password" name="password" type="password" autocomplete="current-password" required
+                               class="w-full pl-10 pr-10 py-3 bg-surface-container-low border border-outline-variant/80 rounded-xl text-sm font-medium text-on-surface placeholder:text-outline focus:outline-none focus:border-primary focus:ring-2 focus:ring-primary/20 transition-all"
+                               placeholder="••••••••">
+                        <button type="button" id="toggle-login-pass" class="absolute right-3.5 top-1/2 -translate-y-1/2 text-outline hover:text-on-surface">
+                            <span class="material-symbols-outlined text-[18px]">visibility</span>
+                        </button>
+                    </div>
+                </div>
+
+                <div class="pt-2">
+                    <button type="submit" id="login-submit"
+                            class="w-full py-3.5 px-4 bg-primary hover:bg-primary-dark text-white rounded-xl font-bold text-sm shadow-md hover:shadow-lg transition-all flex items-center justify-center gap-2">
+                        <span id="login-btn-text">Sign In</span>
+                        <span class="material-symbols-outlined text-[18px]">arrow_forward</span>
+                    </button>
+                </div>
+
+            </form>
+
+            <!-- SIGN UP FORM -->
+            <form id="signup-form" class="space-y-4 hidden">
+                <div>
+                    <label for="signup-name" class="block text-xs font-bold text-on-surface uppercase tracking-wider mb-1.5">Full Name</label>
+                    <div class="relative">
+                        <span class="material-symbols-outlined absolute left-3.5 top-1/2 -translate-y-1/2 text-outline text-[20px]">person</span>
+                        <input id="signup-name" name="name" type="text" autocomplete="name" required
+                               class="w-full pl-10 pr-4 py-3 bg-surface-container-low border border-outline-variant/80 rounded-xl text-sm font-medium text-on-surface placeholder:text-outline focus:outline-none focus:border-primary focus:ring-2 focus:ring-primary/20 transition-all"
+                               placeholder="e.g. Priya Sharma">
+                    </div>
+                </div>
+
+                <div>
+                    <label for="signup-email" class="block text-xs font-bold text-on-surface uppercase tracking-wider mb-1.5">Email Address</label>
+                    <div class="relative">
+                        <span class="material-symbols-outlined absolute left-3.5 top-1/2 -translate-y-1/2 text-outline text-[20px]">mail</span>
+                        <input id="signup-email" name="email" type="email" autocomplete="email" required
+                               class="w-full pl-10 pr-4 py-3 bg-surface-container-low border border-outline-variant/80 rounded-xl text-sm font-medium text-on-surface placeholder:text-outline focus:outline-none focus:border-primary focus:ring-2 focus:ring-primary/20 transition-all"
+                               placeholder="you@example.com">
+                    </div>
+                </div>
+
+                <div>
+                    <label for="signup-password" class="block text-xs font-bold text-on-surface uppercase tracking-wider mb-1.5">Password</label>
+                    <div class="relative">
+                        <span class="material-symbols-outlined absolute left-3.5 top-1/2 -translate-y-1/2 text-outline text-[20px]">lock</span>
+                        <input id="signup-password" name="password" type="password" autocomplete="new-password" required minlength="8"
+                               class="w-full pl-10 pr-10 py-3 bg-surface-container-low border border-outline-variant/80 rounded-xl text-sm font-medium text-on-surface placeholder:text-outline focus:outline-none focus:border-primary focus:ring-2 focus:ring-primary/20 transition-all"
+                               placeholder="Min 8 characters">
+                        <button type="button" id="toggle-signup-pass" class="absolute right-3.5 top-1/2 -translate-y-1/2 text-outline hover:text-on-surface">
+                            <span class="material-symbols-outlined text-[18px]">visibility</span>
+                        </button>
+                    </div>
+                    <span class="text-[11px] text-outline mt-1 block">Must contain at least 8 characters.</span>
+                </div>
+
+                <div>
+                    <label for="signup-diet" class="block text-xs font-bold text-on-surface uppercase tracking-wider mb-1.5">Dietary Preference</label>
+                    <select id="signup-diet" name="dietaryType"
+                            class="w-full px-4 py-3 bg-surface-container-low border border-outline-variant/80 rounded-xl text-sm font-semibold text-on-surface focus:outline-none focus:border-primary focus:ring-2 focus:ring-primary/20 transition-all">
+                        <option value="Vegetarian">Vegetarian</option>
+                        <option value="Non-Vegetarian">Non-Vegetarian</option>
+                        <option value="Vegan">Vegan</option>
+                        <option value="Eggetarian">Eggetarian</option>
+                        <option value="Jain">Jain</option>
+                    </select>
+                </div>
+
+                <div class="pt-2">
+                    <button type="submit" id="signup-submit"
+                            class="w-full py-3.5 px-4 bg-primary hover:bg-primary-dark text-white rounded-xl font-bold text-sm shadow-md hover:shadow-lg transition-all flex items-center justify-center gap-2">
+                        <span id="signup-btn-text">Create Account</span>
+                        <span class="material-symbols-outlined text-[18px]">check_circle</span>
+                    </button>
+                </div>
+            </form>
+
+            <!-- OR DIVIDER -->
+            <div class="relative flex py-2 items-center">
+                <div class="flex-grow border-t border-outline-variant/60"></div>
+                <span class="flex-shrink mx-4 text-xs font-bold uppercase tracking-wider text-outline">OR</span>
+                <div class="flex-grow border-t border-outline-variant/60"></div>
+            </div>
+
+            <!-- GOOGLE SIGN-IN SECTION -->
+            <div class="space-y-3">
+                <!-- Official Google Identity Services Button Container -->
+                <div id="google-btn-container" class="w-full flex justify-center min-h-[44px]"></div>
+
+                <!-- Custom InChef Styled Fallback Button -->
+                <button type="button" id="custom-google-btn" 
+                        class="w-full py-3 px-4 bg-white hover:bg-surface-container-low border border-outline-variant/80 rounded-xl font-bold text-sm text-on-surface flex items-center justify-center gap-3 transition-all shadow-xs hover:shadow">
+                    <svg class="w-5 h-5 flex-shrink-0" viewBox="0 0 24 24">
+                        <path fill="#4285F4" d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"/>
+                        <path fill="#34A853" d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"/>
+                        <path fill="#FBBC05" d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.06H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.94l2.85-2.22.81-.63z"/>
+                        <path fill="#EA4335" d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.06l3.66 2.84c.87-2.6 3.3-4.52 6.16-4.52z"/>
+                    </svg>
+                    <span>Continue with Google</span>
+                </button>
+
+                <div id="google-config-notice" class="hidden text-center text-xs text-amber-900 bg-amber-50 p-2.5 rounded-xl border border-amber-200"></div>
+            </div>
+        </div>
+    </main>
+
+    <footer id="global-footer"></footer>
+
+    <script src="/js/api.js"></script>
+    <script src="/js/header.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', async () => {
+            const urlParams = new URLSearchParams(window.location.search);
+            const initialMode = urlParams.get('mode') || 'login';
+            const returnUrl = urlParams.get('returnUrl') || '/index.html';
+
+            const tabLogin = document.getElementById('tab-login');
+            const tabSignup = document.getElementById('tab-signup');
+            const loginForm = document.getElementById('login-form');
+            const signupForm = document.getElementById('signup-form');
+            const authTitle = document.getElementById('auth-title');
+            const authSubtitle = document.getElementById('auth-subtitle');
+            const alertBox = document.getElementById('auth-alert');
+            const customGoogleBtn = document.getElementById('custom-google-btn');
+            const googleBtnContainer = document.getElementById('google-btn-container');
+            const googleNotice = document.getElementById('google-config-notice');
+
+            let configuredClientId = '';
+
+            function showAlert(msg, isError = true) {
+                alertBox.className = `p-3.5 rounded-xl text-xs sm:text-sm font-semibold transition-all ${
+                    isError ? 'bg-red-50 text-red-700 border border-red-200' : 'bg-emerald-50 text-emerald-800 border border-emerald-200'
+                }`;
+                alertBox.textContent = msg;
+                alertBox.classList.remove('hidden');
+            }
+
+            function hideAlert() {
+                alertBox.classList.add('hidden');
+            }
+
+            function setMode(mode) {
+                hideAlert();
+                if (mode === 'signup') {
+                    tabLogin.className = 'flex-1 py-2.5 text-xs sm:text-sm font-bold rounded-xl transition-all text-on-surface-variant hover:text-primary';
+                    tabSignup.className = 'flex-1 py-2.5 text-xs sm:text-sm font-bold rounded-xl transition-all shadow-xs bg-white text-primary';
+                    loginForm.classList.add('hidden');
+                    signupForm.classList.remove('hidden');
+                    authTitle.textContent = 'Create your account';
+                    authSubtitle.textContent = 'Join InChef to save favorites and unlock personalized recipes.';
+                } else {
+                    tabSignup.className = 'flex-1 py-2.5 text-xs sm:text-sm font-bold rounded-xl transition-all text-on-surface-variant hover:text-primary';
+                    tabLogin.className = 'flex-1 py-2.5 text-xs sm:text-sm font-bold rounded-xl transition-all shadow-xs bg-white text-primary';
+                    signupForm.classList.add('hidden');
+                    loginForm.classList.remove('hidden');
+                    authTitle.textContent = 'Welcome back';
+                    authSubtitle.textContent = 'Sign in to access your kitchen and saved recipes.';
+                }
+            }
+
+            tabLogin.addEventListener('click', () => setMode('login'));
+            tabSignup.addEventListener('click', () => setMode('signup'));
+
+            if (initialMode === 'signup') {
+                setMode('signup');
+            }
+
+
+            // Password toggles
+            const toggleLoginPass = document.getElementById('toggle-login-pass');
+            toggleLoginPass.addEventListener('click', () => {
+                const input = document.getElementById('login-password');
+                const isPass = input.type === 'password';
+                input.type = isPass ? 'text' : 'password';
+                toggleLoginPass.querySelector('span').textContent = isPass ? 'visibility_off' : 'visibility';
+            });
+
+            const toggleSignupPass = document.getElementById('toggle-signup-pass');
+            toggleSignupPass.addEventListener('click', () => {
+                const input = document.getElementById('signup-password');
+                const isPass = input.type === 'password';
+                input.type = isPass ? 'text' : 'password';
+                toggleSignupPass.querySelector('span').textContent = isPass ? 'visibility_off' : 'visibility';
+            });
+
+            // Regular Login submission
+            loginForm.addEventListener('submit', async (e) => {
+                e.preventDefault();
+                hideAlert();
+                const email = document.getElementById('login-email').value.trim();
+                const password = document.getElementById('login-password').value;
+                const submitBtn = document.getElementById('login-submit');
+                const btnText = document.getElementById('login-btn-text');
+
+                submitBtn.disabled = true;
+                btnText.textContent = 'Signing in...';
+
+                try {
+                    await InChefAPI.login(email, password);
+                    showAlert('Signed in successfully! Redirecting...', false);
+                    setTimeout(() => {
+                        window.location.href = returnUrl;
+                    }, 800);
+                } catch (err) {
+                    submitBtn.disabled = false;
+                    btnText.textContent = 'Sign In';
+                    showAlert(err.message || 'Login failed. Please check your credentials.');
+                }
+            });
+
+            // Regular Signup submission
+            signupForm.addEventListener('submit', async (e) => {
+                e.preventDefault();
+                hideAlert();
+                const name = document.getElementById('signup-name').value.trim();
+                const email = document.getElementById('signup-email').value.trim();
+                const password = document.getElementById('signup-password').value;
+                const dietaryType = document.getElementById('signup-diet').value;
+                const submitBtn = document.getElementById('signup-submit');
+                const btnText = document.getElementById('signup-btn-text');
+
+                submitBtn.disabled = true;
+                btnText.textContent = 'Creating account...';
+
+                try {
+                    await InChefAPI.register({ name, email, password, dietaryType });
+                    showAlert('Account created successfully! Redirecting...', false);
+                    setTimeout(() => {
+                        window.location.href = returnUrl;
+                    }, 900);
+                } catch (err) {
+                    submitBtn.disabled = false;
+                    btnText.textContent = 'Create Account';
+                    showAlert(err.message || 'Registration failed. Please try again.');
+                }
+            });
+
+            // -------------------------------------------------------------
+            // Google Identity Services (GSI) Integration
+            // -------------------------------------------------------------
+            async function handleGoogleCredentialResponse(response) {
+                if (!response || !response.credential) {
+                    showAlert('Google authentication was cancelled or returned no credential.');
+                    return;
+                }
+
+                hideAlert();
+                showAlert('Verifying Google credentials with InChef backend...', false);
+
+                try {
+                    await InChefAPI.loginWithGoogle(response.credential);
+                    showAlert('Signed in with Google! Redirecting...', false);
+                    setTimeout(() => {
+                        window.location.href = returnUrl;
+                    }, 800);
+                } catch (err) {
+                    showAlert(err.message || 'Google authentication failed.');
+                }
+            }
+
+            async function initGoogleOAuth() {
+                try {
+                    const cfg = await InChefAPI.getGoogleConfig();
+                    const conf = cfg.data || {};
+                    if (conf.configured && conf.clientId) {
+                        configuredClientId = conf.clientId;
+                        setupGsi(configuredClientId);
+                    } else {
+                        googleNotice.textContent = 'Google Sign-In is not configured. Set GOOGLE_CLIENT_ID environment variable or inchef.google.client-id property.';
+                        googleNotice.classList.remove('hidden');
+                    }
+                } catch (err) {
+                    console.warn('Failed to fetch Google configuration from server', err);
+                }
+            }
+
+            function setupGsi(clientId) {
+                let attempts = 0;
+                const interval = setInterval(() => {
+                    attempts++;
+                    if (window.google && window.google.accounts && window.google.accounts.id) {
+                        clearInterval(interval);
+                        try {
+                            window.google.accounts.id.initialize({
+                                client_id: clientId,
+                                callback: handleGoogleCredentialResponse,
+                                auto_select: false,
+                                cancel_on_tap_outside: true
+                            });
+
+                            // Render Google Official button
+                            window.google.accounts.id.renderButton(googleBtnContainer, {
+                                theme: 'outline',
+                                size: 'large',
+                                type: 'standard',
+                                shape: 'rectangular',
+                                text: 'continue_with',
+                                logo_alignment: 'left',
+                                width: googleBtnContainer.offsetWidth || 340
+                            });
+
+                            // Hide custom button once official button renders
+                            customGoogleBtn.classList.add('hidden');
+                        } catch (e) {
+                            console.error('Google accounts initialize failed:', e);
+                            googleNotice.textContent = 'Google Sign-In error: ' + e.message;
+                            googleNotice.classList.remove('hidden');
+                        }
+                    } else if (attempts > 30) {
+                        clearInterval(interval);
+                    }
+                }, 150);
+            }
+
+            // Custom Google Button click handler (triggers prompt if GSI button didn't render)
+            customGoogleBtn.addEventListener('click', () => {
+                if (!configuredClientId) {
+                    showAlert('Google Client ID is not configured on the backend.');
+                    return;
+                }
+                if (window.google && window.google.accounts && window.google.accounts.id) {
+                    window.google.accounts.id.prompt((notification) => {
+                        if (notification.isNotDisplayed() || notification.isSkippedMoment()) {
+                            showAlert('Google Sign-In prompt could not be displayed: ' + (notification.getNotDisplayedReason() || 'Check browser popup/origin settings.'));
+                        }
+                    });
+                } else {
+                    showAlert('Google Identity Services library is still loading. Please retry.');
+                }
+            });
+
+            // Initialize Google OAuth
+            await initGoogleOAuth();
+        });
+    </script>
+</body>
+</html>

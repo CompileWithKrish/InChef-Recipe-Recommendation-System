@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html class="light" lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="referrer" content="no-referrer">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <title>InChef - Favorite Recipes</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Caveat:wght@600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet">
+    <script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#004538",
+                        "primary-dark": "#0f3d32",
+                        "primary-container": "#1f5d4e",
+                        "on-primary": "#ffffff",
+                        "secondary": "#954a00",
+                        "secondary-container": "#fe974a",
+                        "on-secondary": "#ffffff",
+                        "surface": "#fff8f4",
+                        "surface-container-lowest": "#ffffff",
+                        "surface-container-low": "#fbf2eb",
+                        "surface-container": "#f5ece6",
+                        "surface-container-high": "#efe7e0",
+                        "surface-variant": "#eae1da",
+                        "on-surface": "#1f1b17",
+                        "on-surface-variant": "#5a544e",
+                        "outline": "#707975",
+                        "outline-variant": "#bfc9c4",
+                    },
+                    fontFamily: {
+                        sans: ["Manrope", "sans-serif"],
+                        handwriting: ["Caveat", "cursive"],
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        .material-symbols-outlined {
+            font-family: 'Material Symbols Outlined';
+            font-weight: normal;
+            font-style: normal;
+            font-size: 24px;
+            line-height: 1;
+            display: inline-block;
+            white-space: nowrap;
+            -webkit-font-smoothing: antialiased;
+        }
+    </style>
+</head>
+<body class="bg-surface text-on-surface font-sans min-h-screen flex flex-col selection:bg-primary selection:text-white">
+    <!-- Top Navigation Bar -->
+    <header id="global-header" data-active="favorites"></header>
+
+    <!-- Main Container -->
+    <main class="flex-grow w-full max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-12 py-8 space-y-8">
+        <!-- Compact Page Header -->
+        <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4 pb-6 border-b border-primary/10">
+            <div>
+                <div class="flex items-center gap-2.5 mb-1">
+                    <span class="w-8 h-8 rounded-lg bg-secondary/10 flex items-center justify-center text-secondary">
+                        <span class="material-symbols-outlined text-[20px]" style="font-variation-settings: 'FILL' 1;">favorite</span>
+                    </span>
+                    <h1 class="text-2xl sm:text-3xl font-extrabold text-primary tracking-tight">Your Favorite Recipes</h1>
+                </div>
+                <p class="text-on-surface-variant text-xs sm:text-sm">All the Indian dishes you love, saved in one convenient place.</p>
+            </div>
+            <!-- Quick Count Badge -->
+            <div class="flex items-center gap-2 self-start sm:self-center">
+                <span class="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full bg-[#e8f5ed] text-primary text-xs font-bold border border-primary/20">
+                    <span class="w-2 h-2 rounded-full bg-emerald-600 animate-pulse"></span>
+                    <span id="favorites-badge-count">0 Saved Recipes</span>
+                </span>
+            </div>
+        </div>
+
+        <!-- Favorites Toolbar: Search & Filters -->
+        <section class="bg-surface-container-lowest p-4 rounded-2xl border border-primary/10 shadow-xs flex flex-col md:flex-row gap-3 items-stretch md:items-center justify-between">
+            <!-- Search Input -->
+            <div class="relative flex-1 min-w-[260px]">
+                <span class="material-symbols-outlined absolute left-3.5 top-1/2 -translate-y-1/2 text-outline text-[20px] pointer-events-none">search</span>
+                <input id="fav-search-input" class="w-full pl-10 pr-9 py-2.5 bg-surface-container-low border border-outline-variant/60 rounded-xl text-xs sm:text-sm font-medium text-on-surface placeholder:text-outline focus:outline-none focus:border-primary transition-all" 
+                       placeholder="Filter your saved recipes (e.g. Biryani, Paneer, Dosa)..." type="text">
+                <button id="fav-clear-btn" class="hidden absolute right-3 top-1/2 -translate-y-1/2 text-outline hover:text-on-surface">
+                    <span class="material-symbols-outlined text-[18px]">cancel</span>
+                </button>
+            </div>
+
+            <!-- Filters -->
+            <div class="flex flex-wrap items-center gap-2.5">
+                <select id="fav-diet-select" class="px-3.5 py-2.5 bg-surface-container-low border border-outline-variant/60 rounded-xl text-xs sm:text-sm font-semibold text-on-surface focus:outline-none focus:border-primary">
+                    <option value="all">All Diets</option>
+                    <option value="Vegetarian">Vegetarian</option>
+                    <option value="Non-Vegetarian">Non-Vegetarian</option>
+                    <option value="Vegan">Vegan</option>
+                </select>
+
+                <select id="fav-sort-select" class="px-3.5 py-2.5 bg-surface-container-low border border-outline-variant/60 rounded-xl text-xs sm:text-sm font-semibold text-on-surface focus:outline-none focus:border-primary">
+                    <option value="recent">Recently Added</option>
+                    <option value="alpha">Name (A–Z)</option>
+                    <option value="time">Fastest Cook Time</option>
+                </select>
+            </div>
+        </section>
+
+        <!-- Recipes Grid -->
+        <section>
+            <div id="favorites-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <!-- Dynamically loaded -->
+            </div>
+
+            <!-- Empty State -->
+            <div id="favorites-empty" class="hidden text-center py-16 bg-surface-container-lowest rounded-3xl border border-primary/10 space-y-4">
+                <div class="w-16 h-16 rounded-full bg-surface-container flex items-center justify-center mx-auto text-secondary">
+                    <span class="material-symbols-outlined text-[36px]">favorite_border</span>
+                </div>
+                <h3 class="text-xl font-bold text-primary">No saved recipes yet</h3>
+                <p class="text-sm text-on-surface-variant max-w-sm mx-auto">
+                    Browse authentic Indian dishes and click the heart icon on any recipe to save it here.
+                </p>
+                <a href="/discover.html" class="inline-flex items-center gap-1.5 px-6 py-2.5 rounded-full bg-primary hover:bg-primary-dark text-white font-bold text-xs shadow-sm transition-all">
+                    <span>Explore Recipes</span>
+                    <span class="material-symbols-outlined text-[16px]">arrow_forward</span>
+                </a>
+            </div>
+        </section>
+    </main>
+
+    <footer id="global-footer"></footer>
+
+    <script src="/js/api.js"></script>
+    <script src="/js/header.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', async () => {
+            const grid = document.getElementById('favorites-grid');
+            const emptyState = document.getElementById('favorites-empty');
+            const badgeCount = document.getElementById('favorites-badge-count');
+            const searchInput = document.getElementById('fav-search-input');
+            const clearBtn = document.getElementById('fav-clear-btn');
+            const dietSelect = document.getElementById('fav-diet-select');
+            const sortSelect = document.getElementById('fav-sort-select');
+
+            let allFavorites = [];
+
+            async function loadFavorites() {
+                grid.innerHTML = '<div class="col-span-full text-center py-12 text-on-surface-variant">Loading your saved recipes...</div>';
+                emptyState.classList.add('hidden');
+
+                try {
+                    const res = await InChefAPI.getFavorites();
+                    const rawList = (res && res.data) ? res.data : (Array.isArray(res) ? res : (res && res.favorites ? res.favorites : []));
+                    allFavorites = rawList.map(item => {
+                        const r = item.recipe || item;
+                        const recipeId = item.recipeId || (item.recipe && item.recipe.id) || r.id;
+                        const favoriteId = item.favoriteId || item.id;
+                        return {
+                            favoriteId: favoriteId,
+                            recipeId: recipeId,
+                            id: recipeId,
+                            title: r.title || item.title || r.recipeName || item.recipeName || 'Untitled Recipe',
+                            translatedRecipeName: r.translatedRecipeName || item.translatedRecipeName || '',
+                            description: r.description || item.description || '',
+                            cuisine: r.cuisine || item.cuisine || 'Indian',
+                            course: r.course || item.course || (r.mealType ? String(r.mealType) : 'Dish'),
+                            mealType: r.mealType || item.mealType || 'Dish',
+                            dietaryType: r.dietaryType || item.dietaryType || 'VEGETARIAN',
+                            cookTimeMinutes: r.cookTimeMinutes || item.cookTimeMinutes || r.totalTimeMinutes || item.totalTimeMinutes || 30,
+                            totalTimeMinutes: r.totalTimeMinutes || item.totalTimeMinutes || r.cookTimeMinutes || item.cookTimeMinutes || 30,
+                            imageUrl: (r.imageUrl || item.imageUrl || r.image_url || item.image_url || '').trim(),
+                            savedAt: item.savedAt || r.savedAt || null
+                        };
+                    });
+                    renderFavorites();
+                } catch (err) {
+                    if (err.status === 401 || err.status === 403) {
+                        window.location.href = `/auth.html?mode=login&returnUrl=/favorites.html`;
+                        return;
+                    }
+                    grid.innerHTML = `<div class="col-span-full text-center py-8 text-red-600 font-semibold">Failed to load favorites: ${err.message}</div>`;
+                }
+            }
+
+            function escapeHtml(str) {
+                if (!str) return '';
+                return String(str).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;').replace(/'/g, '&#039;');
+            }
+
+            function renderFavorites() {
+                badgeCount.textContent = `${allFavorites.length} Saved Recipes`;
+
+                const q = searchInput.value.trim().toLowerCase();
+                const diet = dietSelect.value;
+                const sort = sortSelect.value;
+
+                let filtered = allFavorites.filter(r => {
+                    const title = (r.title || '').toLowerCase();
+                    const transTitle = (r.translatedRecipeName || '').toLowerCase();
+                    const cuisine = (r.cuisine || '').toLowerCase();
+                    const matchesSearch = !q || title.includes(q) || transTitle.includes(q) || cuisine.includes(q);
+                    
+                    const isVeg = (r.dietaryType || '').toLowerCase().includes('veg') && !(r.dietaryType || '').toLowerCase().includes('non');
+                    let matchesDiet = true;
+                    if (diet === 'Vegetarian') matchesDiet = isVeg;
+                    else if (diet === 'Non-Vegetarian') matchesDiet = !isVeg;
+                    else if (diet === 'Vegan') matchesDiet = (r.dietaryType || '').toLowerCase().includes('vegan');
+
+                    return matchesSearch && matchesDiet;
+                });
+
+                // Sorting
+                if (sort === 'alpha') {
+                    filtered.sort((a, b) => (a.title || '').localeCompare(b.title || ''));
+                } else if (sort === 'time') {
+                    filtered.sort((a, b) => (a.totalTimeMinutes || a.cookTimeMinutes || 30) - (b.totalTimeMinutes || b.cookTimeMinutes || 30));
+                }
+
+                if (filtered.length === 0) {
+                    grid.innerHTML = '';
+                    emptyState.classList.remove('hidden');
+                    return;
+                }
+
+                emptyState.classList.add('hidden');
+                const neutralPlaceholder = '/images/neutral_recipe_placeholder.svg';
+                grid.innerHTML = filtered.map(r => {
+                    const isVeg = (r.dietaryType || '').toLowerCase().includes('veg') && !(r.dietaryType || '').toLowerCase().includes('non');
+                    const dietBadge = isVeg 
+                        ? `<span class="inline-flex items-center gap-1 bg-white/95 backdrop-blur-xs px-2.5 py-1 rounded-full text-[11px] font-bold text-emerald-800 shadow-xs"><span class="w-2 h-2 rounded-full bg-emerald-600"></span> Veg</span>`
+                        : `<span class="inline-flex items-center gap-1 bg-white/95 backdrop-blur-xs px-2.5 py-1 rounded-full text-[11px] font-bold text-red-800 shadow-xs"><span class="w-2 h-2 rounded-full bg-red-600"></span> Non-Veg</span>`;
+
+                    const imgSrc = (r.imageUrl && r.imageUrl.trim() && !r.imageUrl.includes('null')) ? r.imageUrl.trim() : neutralPlaceholder;
+                    const safeTitle = escapeHtml(r.title);
+                    const safeDesc = escapeHtml(r.description || `Delicious authentic ${r.cuisine || 'Indian'} dish.`);
+
+                    return `
+                        <article class="bg-surface-container-lowest rounded-2xl border border-primary/10 overflow-hidden shadow-xs hover:shadow-md transition-all duration-200 flex flex-col group" id="fav-card-${r.recipeId}">
+                            <div class="relative w-full h-48 overflow-hidden bg-surface-container">
+                                <a href="/recipe_details.html?id=${r.recipeId}" class="block w-full h-full">
+                                    <img alt="${safeTitle}" loading="lazy" referrerpolicy="no-referrer" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" 
+                                         src="${imgSrc}" onerror="if (!this.dataset.proxyTried && ${r.recipeId}) { this.dataset.proxyTried='true'; this.src='/api/v1/recipes/${r.recipeId}/image/content'; } else { this.onerror=null; this.src='${neutralPlaceholder}'; }">
+                                </a>
+                                <div class="absolute top-3 left-3">
+                                    ${dietBadge}
+                                </div>
+                                <button class="fav-remove-btn absolute top-3 right-3 w-8 h-8 rounded-full bg-white/95 backdrop-blur-xs flex items-center justify-center text-secondary hover:scale-110 active:scale-95 transition-all shadow-xs" 
+                                        data-recipe-id="${r.recipeId}" data-favorite-id="${r.favoriteId}" title="Remove from favorites">
+                                    <span class="material-symbols-outlined text-[18px]" style="font-variation-settings: 'FILL' 1;">favorite</span>
+                                </button>
+                            </div>
+                            <div class="p-5 flex-grow flex flex-col">
+                                <div class="flex items-center justify-between text-xs text-on-surface-variant mb-1.5">
+                                    <span class="font-bold text-secondary uppercase tracking-wider text-[11px]">${escapeHtml(r.cuisine || 'Indian')} · ${escapeHtml(r.course || r.mealType || 'Dish')}</span>
+                                </div>
+                                <h3 class="font-bold text-base text-on-surface group-hover:text-primary transition-colors line-clamp-1 mb-2">
+                                    <a href="/recipe_details.html?id=${r.recipeId}">${safeTitle}</a>
+                                </h3>
+                                <p class="text-on-surface-variant text-xs line-clamp-2 mb-4 leading-relaxed">
+                                    ${safeDesc}
+                                </p>
+                                <div class="mt-auto pt-3 border-t border-primary/10 flex items-center justify-between text-xs">
+                                    <span class="flex items-center gap-1 font-semibold text-outline">
+                                        <span class="material-symbols-outlined text-[16px] text-primary">schedule</span>
+                                        ${r.totalTimeMinutes || r.cookTimeMinutes || 30} min
+                                    </span>
+                                    <a class="inline-flex items-center gap-1 font-bold text-primary hover:text-primary-dark transition-colors" href="/recipe_details.html?id=${r.recipeId}">
+                                        View Recipe <span class="material-symbols-outlined text-[15px]">arrow_forward</span>
+                                    </a>
+                                </div>
+                            </div>
+                        </article>
+                    `;
+                }).join('');
+
+                // Wire removal buttons
+                grid.querySelectorAll('.fav-remove-btn').forEach(btn => {
+                    btn.addEventListener('click', async (e) => {
+                        e.preventDefault();
+                        e.stopPropagation();
+                        const rId = btn.getAttribute('data-recipe-id');
+                        const cardEl = document.getElementById(`fav-card-${rId}`);
+
+                        // Optimistic feedback with safe rollback
+                        btn.disabled = true;
+                        if (cardEl) cardEl.style.opacity = '0.5';
+
+                        try {
+                            await InChefAPI.removeFavorite(rId);
+                            // Remove from local array on confirmed success
+                            allFavorites = allFavorites.filter(item => String(item.recipeId) !== String(rId));
+                            renderFavorites();
+                        } catch (err) {
+                            if (cardEl) cardEl.style.opacity = '1';
+                            btn.disabled = false;
+                            alert('Could not remove favorite: ' + (err.message || 'Server error'));
+                        }
+                    });
+                });
+            }
+
+            searchInput.addEventListener('input', () => {
+                clearBtn.classList.toggle('hidden', !searchInput.value);
+                renderFavorites();
+            });
+
+            clearBtn.addEventListener('click', () => {
+                searchInput.value = '';
+                clearBtn.classList.add('hidden');
+                renderFavorites();
+            });
+
+            dietSelect.addEventListener('change', renderFavorites);
+            sortSelect.addEventListener('change', renderFavorites);
+
+            await loadFavorites();
+        });
+    </script>
+</body>
+</html>

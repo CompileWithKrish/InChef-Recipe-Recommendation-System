@@ -1,0 +1,639 @@
+<!DOCTYPE html>
+<html class="light" lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="referrer" content="no-referrer">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <title>InChef - Recipe Details</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Caveat:wght@600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet">
+    <script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#004538",
+                        "primary-dark": "#0f3d32",
+                        "primary-container": "#1f5d4e",
+                        "on-primary": "#ffffff",
+                        "secondary": "#954a00",
+                        "secondary-container": "#fe974a",
+                        "on-secondary": "#ffffff",
+                        "surface": "#fff8f4",
+                        "surface-container-lowest": "#ffffff",
+                        "surface-container-low": "#fbf2eb",
+                        "surface-container": "#f5ece6",
+                        "surface-container-high": "#efe7e0",
+                        "surface-variant": "#eae1da",
+                        "on-surface": "#1f1b17",
+                        "on-surface-variant": "#5a544e",
+                        "outline": "#707975",
+                        "outline-variant": "#bfc9c4",
+                    },
+                    fontFamily: {
+                        sans: ["Manrope", "sans-serif"],
+                        handwriting: ["Caveat", "cursive"],
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        .material-symbols-outlined {
+            font-family: 'Material Symbols Outlined';
+            font-weight: normal;
+            font-style: normal;
+            font-size: 24px;
+            line-height: 1;
+            display: inline-block;
+            white-space: nowrap;
+            -webkit-font-smoothing: antialiased;
+        }
+    </style>
+</head>
+<body class="bg-surface text-on-surface font-sans min-h-screen flex flex-col selection:bg-primary selection:text-white">
+    <!-- Top Navigation Bar -->
+    <header id="global-header" data-active="details"></header>
+
+    <!-- Main Container -->
+    <main class="w-full max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-12 py-8 space-y-8">
+        <!-- Breadcrumb & Back Strip -->
+        <div class="flex flex-wrap items-center justify-between gap-3">
+            <div class="flex items-center space-x-2 text-xs sm:text-sm text-on-surface-variant font-medium">
+                <a class="hover:text-primary transition-colors" href="/index.html">Home</a>
+                <span class="text-outline-variant">/</span>
+                <a class="hover:text-primary transition-colors" href="/discover.html">Discover Recipes</a>
+                <span class="text-outline-variant">/</span>
+                <span class="text-primary font-bold" id="crumb-recipe-name">Recipe</span>
+            </div>
+            <a class="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full bg-primary/10 text-primary hover:bg-primary hover:text-white transition-all text-xs font-bold border border-primary/20" href="javascript:history.back()">
+                <span class="material-symbols-outlined text-[16px]">arrow_back</span>
+                <span>Go Back</span>
+            </a>
+        </div>
+
+        <!-- SECTION 1: Recipe Hero Section -->
+        <section class="bg-surface-container-lowest border border-primary/10 rounded-3xl p-6 md:p-8 lg:p-10 shadow-sm">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
+                <!-- Hero Left Column -->
+                <div class="lg:col-span-7 flex flex-col justify-center space-y-4">
+                    <!-- Badges -->
+                    <div class="flex flex-wrap items-center gap-2" id="hero-badges">
+                        <span id="diet-badge" class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-bold uppercase tracking-wider">
+                            Vegetarian
+                        </span>
+                        <span id="cuisine-badge" class="inline-flex items-center gap-1 px-3 py-1 rounded-full bg-surface-container text-on-surface font-semibold text-xs border border-surface-variant">
+                            North Indian
+                        </span>
+                        <span id="meal-type-badge" class="inline-flex items-center px-3 py-1 rounded-full bg-surface-container text-on-surface font-semibold text-xs border border-surface-variant">
+                            Main Course
+                        </span>
+                    </div>
+
+                    <!-- Recipe Title -->
+                    <h1 id="recipe-title" class="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-on-surface tracking-tight leading-tight">
+                        Loading recipe...
+                    </h1>
+
+                    <!-- Recipe Description -->
+                    <p id="recipe-description" class="text-on-surface-variant text-sm sm:text-base leading-relaxed">
+                        Authentic traditional recipe from the Indian culinary collection.
+                    </p>
+
+                    <!-- Timing & Servings Info Strip -->
+                    <div class="grid grid-cols-2 sm:grid-cols-4 gap-3 p-4 bg-surface-container-low rounded-2xl border border-outline-variant/60">
+                        <div class="flex items-center space-x-3">
+                            <div class="w-10 h-10 rounded-xl bg-white flex items-center justify-center text-primary shadow-xs">
+                                <span class="material-symbols-outlined text-[20px]">timer</span>
+                            </div>
+                            <div>
+                                <div class="text-[11px] font-bold text-on-surface-variant uppercase tracking-wider">Prep Time</div>
+                                <div class="text-sm font-extrabold text-on-surface" id="prep-time">15 mins</div>
+                            </div>
+                        </div>
+                        <div class="flex items-center space-x-3">
+                            <div class="w-10 h-10 rounded-xl bg-white flex items-center justify-center text-primary shadow-xs">
+                                <span class="material-symbols-outlined text-[20px]">skillet</span>
+                            </div>
+                            <div>
+                                <div class="text-[11px] font-bold text-on-surface-variant uppercase tracking-wider">Cook Time</div>
+                                <div class="text-sm font-extrabold text-on-surface" id="cook-time">30 mins</div>
+                            </div>
+                        </div>
+                        <div class="flex items-center space-x-3">
+                            <div class="w-10 h-10 rounded-xl bg-white flex items-center justify-center text-primary shadow-xs">
+                                <span class="material-symbols-outlined text-[20px]">schedule</span>
+                            </div>
+                            <div>
+                                <div class="text-[11px] font-bold text-on-surface-variant uppercase tracking-wider">Total Time</div>
+                                <div class="text-sm font-extrabold text-on-surface" id="total-time">45 mins</div>
+                            </div>
+                        </div>
+                        <div class="flex items-center space-x-3">
+                            <div class="w-10 h-10 rounded-xl bg-white flex items-center justify-center text-secondary shadow-xs">
+                                <span class="material-symbols-outlined text-[20px]">group</span>
+                            </div>
+                            <div>
+                                <div class="text-[11px] font-bold text-on-surface-variant uppercase tracking-wider">Servings</div>
+                                <div class="text-sm font-extrabold text-on-surface" id="servings">4</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Action CTAs -->
+                    <div class="flex flex-wrap items-center gap-3 pt-2">
+                        <a href="#cooking-instructions" class="inline-flex items-center justify-center gap-2 px-7 py-3.5 rounded-xl bg-primary hover:bg-primary-dark text-white font-bold text-sm shadow-md hover:shadow-lg transition-all">
+                            <span class="material-symbols-outlined text-[20px]">restaurant</span>
+                            <span>Start Cooking</span>
+                        </a>
+                        <button id="favorite-detail-btn" class="inline-flex items-center justify-center gap-2 px-5 py-3.5 rounded-xl border border-outline-variant bg-white hover:bg-surface-container text-on-surface font-bold text-sm transition-all shadow-xs">
+                            <span class="material-symbols-outlined text-[20px] text-secondary" id="favorite-detail-icon">favorite</span>
+                            <span id="favorite-detail-text">Save to Favorites</span>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Hero Right Column (Food Photo) -->
+                <div class="lg:col-span-5 relative group">
+                    <div class="relative w-full aspect-[4/3] rounded-2xl overflow-hidden shadow-lg border border-primary/10 bg-surface-container">
+                        <img id="recipe-hero-img" alt="Recipe Dish" loading="lazy" referrerpolicy="no-referrer" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" 
+                             src="/images/neutral_recipe_placeholder.svg">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-black/10 pointer-events-none"></div>
+                        <div class="absolute bottom-4 left-4 right-4 z-10 flex items-center justify-between text-white text-xs">
+                            <span class="bg-black/60 px-2.5 py-1 rounded-lg backdrop-blur-sm" id="img-caption">Indian Authentic Recipe</span>
+                            <span id="calories-pill" class="bg-primary/90 px-2.5 py-1 rounded-lg backdrop-blur-sm font-bold"></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION 2: Two-Column Main Content Body (Ingredients & Instructions) -->
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-10 items-start">
+            <!-- LEFT COLUMN: Ingredients -->
+            <div class="lg:col-span-5 flex flex-col space-y-6">
+                <div class="bg-surface-container-lowest border border-primary/10 rounded-3xl p-6 md:p-7 shadow-xs">
+                    <div class="flex items-center justify-between mb-4 pb-3 border-b border-primary/10">
+                        <div>
+                            <h2 class="text-xl sm:text-2xl font-extrabold text-on-surface">Ingredients</h2>
+                            <p class="text-xs text-on-surface-variant font-medium mt-0.5" id="ing-count-subtitle">Required for this recipe</p>
+                        </div>
+                    </div>
+                    <!-- Ingredients Checklist -->
+                    <ul class="space-y-2.5" id="ingredients-list">
+                        <!-- Loaded dynamically -->
+                    </ul>
+                </div>
+            </div>
+
+            <!-- RIGHT COLUMN: Step-by-Step Instructions with Completion Tracking -->
+            <div class="lg:col-span-7 flex flex-col space-y-6" id="cooking-instructions">
+                <div class="bg-surface-container-lowest border border-primary/10 rounded-3xl p-6 md:p-8 shadow-xs">
+                    <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4 mb-5 pb-4 border-b border-primary/10">
+                        <div>
+                            <div class="flex items-center gap-2">
+                                <h2 class="text-xl sm:text-2xl font-extrabold text-on-surface">Cooking Instructions</h2>
+                                <span class="bg-[#dcf2e8] text-primary text-[11px] font-bold px-2.5 py-0.5 rounded-full flex items-center gap-1">
+                                    <span class="material-symbols-outlined text-[14px]">checklist</span> Step Tracker
+                                </span>
+                            </div>
+                            <p class="text-xs sm:text-sm text-on-surface-variant mt-1">Check off steps as you cook to track your live progress</p>
+                        </div>
+                        <!-- Quick Actions -->
+                        <div class="flex items-center gap-2 self-start sm:self-auto">
+                            <button id="mark-all-done-btn" type="button" class="text-xs font-bold px-3 py-1.5 rounded-full bg-primary/10 hover:bg-primary/20 text-primary transition-all flex items-center gap-1">
+                                <span class="material-symbols-outlined text-[15px]">done_all</span> Mark All Done
+                            </button>
+                            <button id="reset-progress-btn" type="button" class="text-xs font-bold px-3 py-1.5 rounded-full bg-surface-container hover:bg-surface-container-high text-on-surface-variant transition-all flex items-center gap-1">
+                                <span class="material-symbols-outlined text-[15px]">restart_alt</span> Reset
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Live Progress Bar -->
+                    <div class="mb-6 p-4 rounded-2xl bg-surface-container-low border border-primary/10">
+                        <div class="flex items-center justify-between text-xs font-bold text-on-surface mb-2">
+                            <span class="flex items-center gap-1.5 text-primary">
+                                <span class="material-symbols-outlined text-[16px]">timer</span>
+                                Cooking Progress
+                            </span>
+                            <span id="progress-percentage-text" class="text-primary font-extrabold text-sm">0% Completed</span>
+                        </div>
+                        <div class="w-full h-3 bg-white rounded-full overflow-hidden border border-primary/15 shadow-inner">
+                            <div id="progress-bar-fill" class="h-full bg-gradient-to-r from-primary to-emerald-600 rounded-full transition-all duration-300 shadow-sm" style="width: 0%;"></div>
+                        </div>
+                        <div class="flex items-center justify-between text-[11px] text-on-surface-variant mt-2 font-medium">
+                            <span id="progress-steps-count">0 of 0 steps completed</span>
+                            <span id="progress-status-hint">Click any step or checkbox to mark it done</span>
+                        </div>
+                    </div>
+
+                    <!-- Completion Celebration Banner (Hidden by default) -->
+                    <div id="completion-celebration-banner" class="hidden mb-6 p-5 rounded-2xl bg-[#dcf2e8] border border-primary/20 text-[#004538] flex flex-col sm:flex-row items-center justify-between gap-4 shadow-sm animate-fade-in">
+                        <div class="flex items-center gap-3">
+                            <span class="w-11 h-11 rounded-full bg-primary text-white flex items-center justify-center flex-shrink-0 text-xl font-bold shadow-xs">🎉</span>
+                            <div>
+                                <h4 class="font-extrabold text-base leading-tight">Dish Completed! Great Job!</h4>
+                                <p class="text-xs text-[#0f3d32] mt-0.5">You've finished all cooking steps for this authentic dish. Enjoy your meal!</p>
+                            </div>
+                        </div>
+                        <div class="flex items-center gap-2 flex-shrink-0">
+                            <button id="cook-again-btn" type="button" class="text-xs font-bold px-4 py-2 rounded-full bg-white text-primary border border-primary/20 hover:bg-surface transition-all shadow-xs flex items-center gap-1">
+                                <span class="material-symbols-outlined text-[15px]">replay</span> Cook Again
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Steps Checklist Container -->
+                    <div class="space-y-3.5" id="instructions-container">
+                        <!-- Loaded dynamically -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer id="global-footer"></footer>
+
+    <script src="/js/api.js"></script>
+    <script src="/js/header.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', async () => {
+            const urlParams = new URLSearchParams(window.location.search);
+            const recipeId = urlParams.get('id') || 1;
+
+            const crumbRecipeName = document.getElementById('crumb-recipe-name');
+            const recipeTitle = document.getElementById('recipe-title');
+            const recipeDescription = document.getElementById('recipe-description');
+            const prepTime = document.getElementById('prep-time');
+            const cookTime = document.getElementById('cook-time');
+            const totalTime = document.getElementById('total-time');
+            const servings = document.getElementById('servings');
+            const dietBadge = document.getElementById('diet-badge');
+            const cuisineBadge = document.getElementById('cuisine-badge');
+            const mealTypeBadge = document.getElementById('meal-type-badge');
+            const heroImg = document.getElementById('recipe-hero-img');
+            const ingList = document.getElementById('ingredients-list');
+            const ingCountSubtitle = document.getElementById('ing-count-subtitle');
+            const instructionsContainer = document.getElementById('instructions-container');
+            const favBtn = document.getElementById('favorite-detail-btn');
+            const favIcon = document.getElementById('favorite-detail-icon');
+            const favText = document.getElementById('favorite-detail-text');
+            const caloriesPill = document.getElementById('calories-pill');
+
+            // Progress tracking elements
+            const markAllDoneBtn = document.getElementById('mark-all-done-btn');
+            const resetProgressBtn = document.getElementById('reset-progress-btn');
+            const cookAgainBtn = document.getElementById('cook-again-btn');
+            const progressBarFill = document.getElementById('progress-bar-fill');
+            const progressPercentageText = document.getElementById('progress-percentage-text');
+            const progressStepsCount = document.getElementById('progress-steps-count');
+            const progressStatusHint = document.getElementById('progress-status-hint');
+            const celebrationBanner = document.getElementById('completion-celebration-banner');
+            const stepTrackerBadge = document.getElementById('step-tracker-badge');
+
+            let currentRecipe = null;
+            let parsedSteps = [];
+            let completedStepsSet = new Set();
+
+            async function loadRecipe() {
+                try {
+                    const res = await InChefAPI.getRecipe(recipeId);
+                    currentRecipe = res.data;
+                    await initInstructionsAndProgress();
+                    renderRecipe();
+                } catch (err) {
+                    recipeTitle.textContent = 'Recipe not found';
+                    recipeDescription.textContent = 'Could not locate recipe details. ' + err.message;
+                }
+            }
+
+            async function initInstructionsAndProgress() {
+                // Determine steps
+                if (currentRecipe.instructionSteps && Array.isArray(currentRecipe.instructionSteps) && currentRecipe.instructionSteps.length > 0) {
+                    parsedSteps = currentRecipe.instructionSteps;
+                } else if (currentRecipe.instructions) {
+                    parsedSteps = currentRecipe.instructions
+                        .split(/\r?\n|\.\s+(?=[A-Z0-9])/)
+                        .map(s => s.trim())
+                        .filter(Boolean);
+                } else {
+                    parsedSteps = [];
+                }
+
+                completedStepsSet.clear();
+
+                // 1. Try local storage first for instant feedback
+                const localKey = 'inchef_cooking_progress_' + recipeId;
+                try {
+                    const savedLocal = localStorage.getItem(localKey);
+                    if (savedLocal) {
+                        const parsed = JSON.parse(savedLocal);
+                        if (Array.isArray(parsed)) {
+                            parsed.forEach(i => {
+                                if (i >= 0 && i < parsedSteps.length) completedStepsSet.add(i);
+                            });
+                        }
+                    }
+                } catch (e) {
+                    console.debug('No local progress available');
+                }
+
+                // 2. Fetch authenticated backend progress if available
+                if (InChefAPI.isAuthenticated && InChefAPI.isAuthenticated()) {
+                    try {
+                        const progRes = await InChefAPI.getCookingProgress(recipeId, parsedSteps.length);
+                        if (progRes && progRes.data && Array.isArray(progRes.data.completedStepIndices)) {
+                            completedStepsSet.clear();
+                            progRes.data.completedStepIndices.forEach(i => {
+                                if (i >= 0 && i < parsedSteps.length) completedStepsSet.add(i);
+                            });
+                            // Sync to localStorage
+                            localStorage.setItem(localKey, JSON.stringify(Array.from(completedStepsSet)));
+                        }
+                    } catch (e) {
+                        console.debug('Backend cooking progress fetch skipped/failed', e);
+                    }
+                }
+            }
+
+            function updateProgressUI() {
+                const total = parsedSteps.length;
+                const completedCount = completedStepsSet.size;
+                const pct = total > 0 ? Math.round((completedCount / total) * 100) : 0;
+
+                progressBarFill.style.width = `${pct}%`;
+                progressPercentageText.textContent = `${pct}% Completed`;
+                progressStepsCount.textContent = `${completedCount} of ${total} steps completed`;
+                if (stepTrackerBadge) {
+                    stepTrackerBadge.textContent = `${completedCount}/${total} Done`;
+                }
+
+                if (completedCount === total && total > 0) {
+                    celebrationBanner.classList.remove('hidden');
+                    progressStatusHint.textContent = '🎉 All steps completed! Bon appétit!';
+                } else {
+                    celebrationBanner.classList.add('hidden');
+                    if (completedCount === 0) {
+                        progressStatusHint.textContent = 'Click any step or checkbox to mark it done';
+                    } else {
+                        const remaining = total - completedCount;
+                        progressStatusHint.textContent = `${remaining} step${remaining > 1 ? 's' : ''} remaining`;
+                    }
+                }
+            }
+
+            async function saveProgress() {
+                const localKey = 'inchef_cooking_progress_' + recipeId;
+                const indicesArray = Array.from(completedStepsSet).sort((a, b) => a - b);
+                try {
+                    localStorage.setItem(localKey, JSON.stringify(indicesArray));
+                } catch (e) {}
+
+                if (InChefAPI.isAuthenticated && InChefAPI.isAuthenticated()) {
+                    try {
+                        await InChefAPI.updateCookingProgress(recipeId, indicesArray, parsedSteps.length);
+                    } catch (err) {
+                        console.debug('Failed to sync progress to server:', err);
+                    }
+                }
+            }
+
+            function toggleStep(idx) {
+                if (completedStepsSet.has(idx)) {
+                    completedStepsSet.delete(idx);
+                } else {
+                    completedStepsSet.add(idx);
+                }
+                updateStepCardDOM(idx);
+                updateProgressUI();
+                saveProgress();
+            }
+
+            function updateStepCardDOM(idx) {
+                const card = document.querySelector(`.step-card[data-step="${idx}"]`);
+                if (!card) return;
+                const isDone = completedStepsSet.has(idx);
+                const checkbox = card.querySelector('.step-checkbox');
+                const badge = card.querySelector('.step-num');
+                const text = card.querySelector('.step-text');
+
+                if (checkbox) checkbox.checked = isDone;
+
+                if (isDone) {
+                    card.className = 'step-card group flex items-start gap-3 sm:gap-4 p-4 rounded-2xl border transition-all cursor-pointer select-none bg-[#dcf2e8]/40 border-primary/40 shadow-xs';
+                    if (badge) {
+                        badge.className = 'step-num w-8 h-8 rounded-full bg-primary text-white text-xs flex items-center justify-center shrink-0 shadow-xs transition-colors';
+                        badge.innerHTML = '<span class="material-symbols-outlined text-[16px] font-bold">check</span>';
+                    }
+                    if (text) {
+                        text.className = 'step-text text-sm sm:text-base leading-relaxed transition-colors text-on-surface/60 line-through';
+                    }
+                } else {
+                    card.className = 'step-card group flex items-start gap-3 sm:gap-4 p-4 rounded-2xl border transition-all cursor-pointer select-none bg-surface-container-low/70 border-primary/10 hover:border-primary/30 hover:bg-surface-container-low';
+                    if (badge) {
+                        badge.className = 'step-num w-8 h-8 rounded-full bg-surface-container-high text-on-surface font-extrabold text-xs flex items-center justify-center shrink-0 shadow-xs transition-colors';
+                        badge.textContent = idx + 1;
+                    }
+                    if (text) {
+                        text.className = 'step-text text-sm sm:text-base leading-relaxed transition-colors text-on-surface font-medium';
+                    }
+                }
+            }
+
+            function renderRecipe() {
+                if (!currentRecipe) return;
+                const r = currentRecipe;
+
+                crumbRecipeName.textContent = r.title;
+                recipeTitle.textContent = r.title;
+                recipeDescription.textContent = r.description || `${r.title} is an authentic ${r.cuisine || 'Indian'} preparation created with aromatic spices and traditional ingredients.`;
+                prepTime.textContent = `${r.prepTimeMinutes || 15} mins`;
+                cookTime.textContent = `${r.cookTimeMinutes || 30} mins`;
+                totalTime.textContent = `${r.totalTimeMinutes || ((r.prepTimeMinutes || 15) + (r.cookTimeMinutes || 30))} mins`;
+                servings.textContent = r.servings || 4;
+
+                const isVeg = (r.dietaryType || '').toLowerCase().includes('veg') && !(r.dietaryType || '').toLowerCase().includes('non');
+                if (isVeg) {
+                    dietBadge.className = 'inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-[#E8F5E9] text-[#1B5E20] font-bold text-xs uppercase tracking-wider border border-[#81C784]/40';
+                    dietBadge.innerHTML = '<span class="w-2 h-2 rounded-full bg-[#2E7D32]"></span> Vegetarian';
+                } else {
+                    dietBadge.className = 'inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-[#FFEBEE] text-[#C62828] font-bold text-xs uppercase tracking-wider border border-[#EF9A9A]/40';
+                    dietBadge.innerHTML = '<span class="w-2 h-2 rounded-full bg-[#C62828]"></span> Non-Vegetarian';
+                }
+
+                cuisineBadge.textContent = r.cuisine || 'Indian';
+                mealTypeBadge.textContent = r.mealType || 'Main Course';
+
+                const neutralPlaceholder = '/images/neutral_recipe_placeholder.svg';
+                heroImg.alt = r.title || 'Recipe Dish';
+                heroImg.src = (r.imageUrl && r.imageUrl.trim()) ? r.imageUrl.trim() : neutralPlaceholder;
+                heroImg.onerror = () => { 
+                    if (!heroImg.dataset.proxyTried && r.id) {
+                        heroImg.dataset.proxyTried = 'true';
+                        heroImg.src = `/api/v1/recipes/${r.id}/image/content`;
+                    } else {
+                        heroImg.onerror = null; 
+                        heroImg.src = neutralPlaceholder; 
+                    }
+                };
+
+                if (r.calories) {
+                    caloriesPill.textContent = `${r.calories} kcal`;
+                    caloriesPill.classList.remove('hidden');
+                } else {
+                    caloriesPill.classList.add('hidden');
+                }
+
+                // Favorite button status
+                updateFavButton(r.isFavorite);
+
+                // Render Ingredients
+                const rawIngs = r.ingredients || [];
+                ingCountSubtitle.textContent = `${rawIngs.length} Total Ingredients`;
+                if (rawIngs.length > 0) {
+                    ingList.innerHTML = rawIngs.map(it => {
+                        return `
+                            <li class="flex items-center justify-between p-3 rounded-xl border border-primary/10 hover:bg-surface-container-low transition-colors">
+                                <label class="flex items-center space-x-3 cursor-pointer flex-grow">
+                                    <input type="checkbox" checked class="rounded text-primary focus:ring-primary border-outline-variant w-4 h-4 accent-[#004538]">
+                                    <div>
+                                        <span class="text-sm font-bold text-on-surface">${it.quantity ? `${it.quantity} ${it.unit || ''}` : ''} ${it.ingredientName || it.name}</span>
+                                        ${it.notes ? `<span class="text-xs text-on-surface-variant block">${it.notes}</span>` : ''}
+                                    </div>
+                                </label>
+                                <span class="text-[11px] font-bold text-primary bg-[#dcf2e8] px-2.5 py-0.5 rounded-full ml-2 whitespace-nowrap">
+                                    ${it.category || 'Ingredient'}
+                                </span>
+                            </li>
+                        `;
+                    }).join('');
+                } else if (r.ingredientText) {
+                    const lines = r.ingredientText.split('\n').filter(Boolean);
+                    ingList.innerHTML = lines.map(line => `
+                        <li class="flex items-center justify-between p-3 rounded-xl border border-primary/10 hover:bg-surface-container-low transition-colors">
+                            <span class="text-sm font-semibold text-on-surface">${line}</span>
+                        </li>
+                    `).join('');
+                } else {
+                    ingList.innerHTML = '<li class="p-3 text-sm text-outline">Ingredients listed in instructions.</li>';
+                }
+
+                // Render Interactive Instructions
+                if (parsedSteps.length > 0) {
+                    instructionsContainer.innerHTML = parsedSteps.map((st, idx) => {
+                        const isDone = completedStepsSet.has(idx);
+                        return `
+                            <div data-step="${idx}" class="step-card group flex items-start gap-3 sm:gap-4 p-4 rounded-2xl border transition-all cursor-pointer select-none ${isDone ? 'bg-[#dcf2e8]/40 border-primary/40 shadow-xs' : 'bg-surface-container-low/70 border-primary/10 hover:border-primary/30 hover:bg-surface-container-low'}">
+                                <div class="step-checkbox-wrapper flex items-center justify-center pt-0.5" onclick="event.stopPropagation()">
+                                    <input type="checkbox" data-step-index="${idx}" ${isDone ? 'checked' : ''} class="step-checkbox w-5 h-5 rounded text-primary focus:ring-primary border-outline-variant cursor-pointer accent-[#004538]">
+                                </div>
+                                <div class="step-num w-8 h-8 rounded-full ${isDone ? 'bg-primary text-white' : 'bg-surface-container-high text-on-surface font-extrabold'} text-xs flex items-center justify-center shrink-0 shadow-xs transition-colors">
+                                    ${isDone ? '<span class="material-symbols-outlined text-[16px] font-bold">check</span>' : idx + 1}
+                                </div>
+                                <div class="flex-grow pt-0.5">
+                                    <p class="step-text text-sm sm:text-base leading-relaxed transition-colors ${isDone ? 'text-on-surface/60 line-through' : 'text-on-surface font-medium'}">
+                                        ${st}
+                                    </p>
+                                </div>
+                            </div>
+                        `;
+                    }).join('');
+
+                    // Attach event listeners to each card and checkbox
+                    instructionsContainer.querySelectorAll('.step-card').forEach(card => {
+                        const idx = parseInt(card.getAttribute('data-step'), 10);
+                        card.addEventListener('click', (e) => {
+                            toggleStep(idx);
+                        });
+                        const cb = card.querySelector('.step-checkbox');
+                        if (cb) {
+                            cb.addEventListener('change', (e) => {
+                                toggleStep(idx);
+                            });
+                        }
+                    });
+                } else {
+                    instructionsContainer.innerHTML = '<p class="text-sm text-outline p-4 bg-surface-container-low rounded-2xl border border-primary/10">Instructions not provided for this item.</p>';
+                }
+
+                updateProgressUI();
+            }
+
+            // Mark All Done button handler
+            if (markAllDoneBtn) {
+                markAllDoneBtn.addEventListener('click', () => {
+                    if (!parsedSteps.length) return;
+                    for (let i = 0; i < parsedSteps.length; i++) {
+                        completedStepsSet.add(i);
+                        updateStepCardDOM(i);
+                    }
+                    updateProgressUI();
+                    saveProgress();
+                });
+            }
+
+            // Reset progress button handler
+            async function handleReset() {
+                if (!parsedSteps.length) return;
+                completedStepsSet.clear();
+                for (let i = 0; i < parsedSteps.length; i++) {
+                    updateStepCardDOM(i);
+                }
+                updateProgressUI();
+                const localKey = 'inchef_cooking_progress_' + recipeId;
+                try {
+                    localStorage.removeItem(localKey);
+                } catch (e) {}
+
+                if (InChefAPI.isAuthenticated && InChefAPI.isAuthenticated()) {
+                    try {
+                        await InChefAPI.resetCookingProgress(recipeId);
+                    } catch (err) {
+                        console.debug('Failed to reset on server:', err);
+                    }
+                }
+            }
+
+            if (resetProgressBtn) {
+                resetProgressBtn.addEventListener('click', handleReset);
+            }
+
+            if (cookAgainBtn) {
+                cookAgainBtn.addEventListener('click', handleReset);
+            }
+
+            function updateFavButton(isFav) {
+                if (isFav) {
+                    favIcon.style.fontVariationSettings = "'FILL' 1";
+                    favText.textContent = 'Saved in Favorites';
+                    favBtn.className = 'inline-flex items-center justify-center gap-2 px-5 py-3.5 rounded-xl border border-secondary/40 bg-secondary/10 text-secondary font-bold text-sm transition-all shadow-xs';
+                } else {
+                    favIcon.style.fontVariationSettings = "'FILL' 0";
+                    favText.textContent = 'Save to Favorites';
+                    favBtn.className = 'inline-flex items-center justify-center gap-2 px-5 py-3.5 rounded-xl border border-outline-variant bg-white hover:bg-surface-container text-on-surface font-bold text-sm transition-all shadow-xs';
+                }
+            }
+
+            favBtn.addEventListener('click', async () => {
+                if (!currentRecipe) return;
+                try {
+                    const newFavState = await InChefAPI.toggleFavorite(currentRecipe.id);
+                    currentRecipe.isFavorite = newFavState;
+                    updateFavButton(newFavState);
+                } catch (err) {
+                    if (err.status === 401 || err.status === 403) {
+                        window.location.href = `/auth.html?mode=login&returnUrl=${encodeURIComponent(window.location.href)}`;
+                    } else {
+                        alert('Could not update favorite: ' + err.message);
+                    }
+                }
+            });
+
+            await loadRecipe();
+        });
+    </script>
+</body>
+</html>

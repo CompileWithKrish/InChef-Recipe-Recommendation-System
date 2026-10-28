@@ -1,0 +1,106 @@
+{
+  "alias_resolutions": [
+    {
+      "alias": "dhania",
+      "canonical": "Coriander",
+      "passed": true,
+      "top_match": "Punjabi Chole Masala - Easy Chana Masala R",
+      "matched_ingredients": [
+        "Coriander"
+      ]
+    },
+    {
+      "alias": "hari mirch",
+      "canonical": "Green Chilli",
+      "passed": true,
+      "top_match": "Kashmiri Style Haak T Thool Recipe - Greens Cooked With Eggs",
+      "matched_ingredients": [
+        "Green",
+        "Green Chilli"
+      ]
+    },
+    {
+      "alias": "dahi",
+      "canonical": "Yogurt",
+      "passed": true,
+      "top_match": "Instant Palkova Recipe (Milk Based Sweet Recipe)",
+      "matched_ingredients": [
+        "Yogurt"
+      ]
+    },
+    {
+      "alias": "scallion",
+      "canonical": "Green Onion",
+      "passed": true,
+      "top_match": "Spring Roll Wrapper Cups",
+      "matched_ingredients": [
+        "Spring  Onion"
+      ]
+    },
+    {
+      "alias": "spring onion",
+      "canonical": "Green Onion",
+      "passed": true,
+      "top_match": "Spring Roll Wrapper Cups",
+      "matched_ingredients": [
+        "Spring  Onion"
+      ]
+    }
+  ],
+  "negative_substring_tests": [
+    {
+      "input": "pea",
+      "forbidden": "peanut",
+      "no_false_match": true,
+      "passed": true
+    },
+    {
+      "input": "egg",
+      "forbidden": "eggplant",
+      "no_false_match": true,
+      "passed": true
+    },
+    {
+      "input": "rice",
+      "forbidden": "rice flour",
+      "no_false_match": true,
+      "passed": true
+    },
+    {
+      "input": "corn",
+      "forbidden": "peppercorn",
+      "no_false_match": true,
+      "passed": true
+    }
+  ],
+  "plural_tests": [
+    {
+      "singular": "onion",
+      "plural": "onions",
+      "count_singular": 5,
+      "count_plural": 5,
+      "passed": true
+    },
+    {
+      "singular": "tomato",
+      "plural": "tomatoes",
+      "count_singular": 5,
+      "count_plural": 5,
+      "passed": true
+    },
+    {
+      "singular": "potato",
+      "plural": "potatoes",
+      "count_singular": 5,
+      "count_plural": 5,
+      "passed": true
+    },
+    {
+      "singular": "chilli",
+      "plural": "chillies",
+      "count_singular": 5,
+      "count_plural": 5,
+      "passed": true
+    }
+  ]
+}

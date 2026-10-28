@@ -1,0 +1,713 @@
+<!DOCTYPE html>
+<html class="light" lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="referrer" content="no-referrer">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <title>InChef - Indian Recipe Recommendations by Ingredients</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Caveat:wght@600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet">
+    <script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#004538",
+                        "primary-dark": "#0f3d32",
+                        "primary-container": "#1f5d4e",
+                        "on-primary": "#ffffff",
+                        "secondary": "#954a00",
+                        "secondary-container": "#fe974a",
+                        "on-secondary": "#ffffff",
+                        "surface": "#fff8f4",
+                        "surface-container-lowest": "#ffffff",
+                        "surface-container-low": "#fbf2eb",
+                        "surface-container": "#f5ece6",
+                        "surface-container-high": "#efe7e0",
+                        "surface-variant": "#eae1da",
+                        "on-surface": "#1f1b17",
+                        "on-surface-variant": "#5a544e",
+                        "outline": "#707975",
+                        "outline-variant": "#bfc9c4",
+                    },
+                    fontFamily: {
+                        sans: ["Manrope", "sans-serif"],
+                        handwriting: ["Caveat", "cursive"],
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        .material-symbols-outlined {
+            font-family: 'Material Symbols Outlined';
+            font-weight: normal;
+            font-style: normal;
+            font-size: 24px;
+            line-height: 1;
+            display: inline-block;
+            white-space: nowrap;
+            -webkit-font-smoothing: antialiased;
+        }
+    </style>
+</head>
+<body class="bg-surface text-on-surface font-sans min-h-screen flex flex-col selection:bg-primary selection:text-white">
+    <!-- Top Navigation Bar -->
+    <header id="global-header" data-active="recommendations"></header>
+
+    <!-- Main Container -->
+    <main class="flex-grow w-full max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-12 py-8 space-y-8">
+        <!-- Header Banner -->
+        <section class="flex flex-col md:flex-row md:items-end justify-between gap-4">
+            <div>
+                <div class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-primary/10 text-primary font-bold text-xs tracking-wider uppercase mb-2">
+                    <span class="material-symbols-outlined text-[16px]" style="font-variation-settings: 'FILL' 1;">auto_awesome</span>
+                    INDIAN CULINARY MATCH ENGINE
+                </div>
+                <h1 class="font-extrabold text-3xl md:text-4xl text-on-surface tracking-tight leading-tight">
+                    Cook What You Have
+                </h1>
+                <p class="text-on-surface-variant text-sm md:text-base mt-1">
+                    Tell us what ingredients you have, and we'll calculate genuine Indian recipe matches from your pantry.
+                </p>
+            </div>
+            <a class="inline-flex items-center gap-1.5 text-primary hover:text-primary-dark font-bold text-xs sm:text-sm transition-colors bg-surface-container px-4 py-2.5 rounded-xl border border-primary/10 self-start md:self-end" href="/my_kitchen.html">
+                <span class="material-symbols-outlined text-[18px]">kitchen</span>
+                <span>Manage <strong>My Kitchen</strong> Pantry</span>
+                <span class="material-symbols-outlined text-[16px]">arrow_forward</span>
+            </a>
+        </section>
+
+        <!-- Ingredient Input Section -->
+        <section class="bg-surface-container-lowest border border-primary/10 rounded-2xl p-6 md:p-8 shadow-sm flex flex-col gap-6">
+            <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2">
+                <div>
+                    <h2 class="font-bold text-xl md:text-2xl text-on-surface flex items-center gap-2">
+                        <span class="material-symbols-outlined text-primary text-[26px]">kitchen</span>
+                        What ingredients do you have?
+                    </h2>
+                    <p class="text-on-surface-variant text-xs sm:text-sm mt-0.5">
+                        Add items you currently have at home or load your pantry.
+                    </p>
+                </div>
+                <div class="flex items-center gap-2">
+                    <button id="load-pantry-btn" class="px-3 py-1.5 rounded-full text-xs font-bold bg-[#e8f5ed] text-primary border border-primary/20 hover:bg-primary hover:text-white transition-all flex items-center gap-1">
+                        <span class="material-symbols-outlined text-[15px]">inventory_2</span>
+                        Load My Kitchen Pantry
+                    </button>
+                </div>
+            </div>
+
+            <!-- Search Input Row with Autocomplete -->
+            <div class="flex flex-col sm:flex-row items-stretch gap-3">
+                <div class="relative flex-grow flex items-center">
+                    <span class="material-symbols-outlined absolute left-4 text-outline text-[22px] pointer-events-none z-10">search</span>
+                    <input id="ingredient-input" autocomplete="off" class="w-full pl-12 pr-10 py-3.5 rounded-xl border border-outline-variant bg-surface hover:border-primary focus:border-primary focus:ring-2 focus:ring-primary/20 text-on-surface text-sm placeholder:text-outline transition-all outline-none" 
+                           placeholder="Type an ingredient, e.g. Tomato, Onion, Basmati Rice, Chicken, Paneer..." type="text">
+                    <button id="clear-search-btn" class="absolute right-3.5 text-outline hover:text-on-surface transition-colors p-1 z-10" title="Clear input">
+                        <span class="material-symbols-outlined text-[18px]">close</span>
+                    </button>
+
+                    <!-- Autocomplete Dropdown Menu -->
+                    <div id="ingredient-autocomplete-dropdown" class="hidden absolute top-full left-0 right-0 mt-2 bg-surface rounded-xl shadow-xl border border-outline-variant/80 z-50 max-h-72 overflow-y-auto divide-y divide-outline-variant/30 backdrop-blur-md">
+                        <ul id="ingredient-suggestions-list" class="py-1"></ul>
+                    </div>
+                </div>
+                <button id="add-ingredient-btn" class="px-6 py-3.5 bg-primary hover:bg-primary-dark text-white font-bold text-sm rounded-xl transition-all shadow-xs flex items-center justify-center gap-2 flex-shrink-0">
+                    <span class="material-symbols-outlined text-[18px]">add</span>
+                    Add Ingredient
+                </button>
+            </div>
+
+            <!-- Quick Suggestions -->
+            <div class="flex flex-col gap-2">
+                <span class="text-xs font-bold text-on-surface-variant uppercase tracking-wider">Popular Indian Kitchen Staples:</span>
+                <div class="flex flex-wrap gap-2" id="quick-suggestions-container">
+                    <button class="quick-chip px-3 py-1.5 bg-surface-container hover:bg-surface-variant rounded-full text-xs font-medium text-on-surface transition-all border border-outline-variant/60 flex items-center gap-1" data-name="Onion">
+                        <span class="text-primary font-bold">+</span> Onion (Pyaz)
+                    </button>
+                    <button class="quick-chip px-3 py-1.5 bg-surface-container hover:bg-surface-variant rounded-full text-xs font-medium text-on-surface transition-all border border-outline-variant/60 flex items-center gap-1" data-name="Tomato">
+                        <span class="text-primary font-bold">+</span> Tomato (Tamatar)
+                    </button>
+                    <button class="quick-chip px-3 py-1.5 bg-surface-container hover:bg-surface-variant rounded-full text-xs font-medium text-on-surface transition-all border border-outline-variant/60 flex items-center gap-1" data-name="Garlic">
+                        <span class="text-primary font-bold">+</span> Garlic (Lahsun)
+                    </button>
+                    <button class="quick-chip px-3 py-1.5 bg-surface-container hover:bg-surface-variant rounded-full text-xs font-medium text-on-surface transition-all border border-outline-variant/60 flex items-center gap-1" data-name="Ginger">
+                        <span class="text-primary font-bold">+</span> Ginger (Adrak)
+                    </button>
+                    <button class="quick-chip px-3 py-1.5 bg-surface-container hover:bg-surface-variant rounded-full text-xs font-medium text-on-surface transition-all border border-outline-variant/60 flex items-center gap-1" data-name="Green Chilli">
+                        <span class="text-primary font-bold">+</span> Green Chilli (Hari Mirch)
+                    </button>
+                    <button class="quick-chip px-3 py-1.5 bg-surface-container hover:bg-surface-variant rounded-full text-xs font-medium text-on-surface transition-all border border-outline-variant/60 flex items-center gap-1" data-name="Cumin Seeds">
+                        <span class="text-primary font-bold">+</span> Cumin Seeds (Jeera)
+                    </button>
+                    <button class="quick-chip px-3 py-1.5 bg-surface-container hover:bg-surface-variant rounded-full text-xs font-medium text-on-surface transition-all border border-outline-variant/60 flex items-center gap-1" data-name="Turmeric">
+                        <span class="text-primary font-bold">+</span> Turmeric (Haldi)
+                    </button>
+                    <button class="quick-chip px-3 py-1.5 bg-surface-container hover:bg-surface-variant rounded-full text-xs font-medium text-on-surface transition-all border border-outline-variant/60 flex items-center gap-1" data-name="Paneer">
+                        <span class="text-primary font-bold">+</span> Paneer
+                    </button>
+                    <button class="quick-chip px-3 py-1.5 bg-surface-container hover:bg-surface-variant rounded-full text-xs font-medium text-on-surface transition-all border border-outline-variant/60 flex items-center gap-1" data-name="Chicken">
+                        <span class="text-primary font-bold">+</span> Chicken
+                    </button>
+                </div>
+            </div>
+
+            <!-- Selected Ingredients Box -->
+            <div class="pt-4 border-t border-surface-variant/80">
+                <div class="flex items-center justify-between mb-3">
+                    <div class="flex items-center gap-2">
+                        <span class="font-bold text-sm text-on-surface">Selected Ingredients</span>
+                        <span class="px-2.5 py-0.5 rounded-full bg-primary text-white text-xs font-bold" id="selected-count-badge">0</span>
+                    </div>
+                    <button id="clear-all-chips-btn" class="text-red-700 hover:underline text-xs font-bold flex items-center gap-1">
+                        <span class="material-symbols-outlined text-[16px]">delete_sweep</span>
+                        Clear All
+                    </button>
+                </div>
+                <!-- Removable Chips Container -->
+                <div id="chips-container" class="flex flex-wrap gap-2 min-h-[48px] p-3 rounded-xl bg-surface-container/60 border border-outline-variant/50 items-center">
+                    <span id="chips-empty-hint" class="text-xs text-outline italic">No ingredients added yet. Pick from above or type ingredients.</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- Refine Results Filters -->
+        <section class="bg-surface-container-lowest border border-primary/10 rounded-2xl p-6 shadow-xs space-y-4">
+            <h3 class="font-bold text-sm sm:text-base text-on-surface flex items-center gap-2">
+                <span class="material-symbols-outlined text-primary text-[20px]">tune</span>
+                Preferences &amp; Constraints
+            </h3>
+            <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4">
+                <div>
+                    <label class="block text-xs font-bold text-on-surface-variant uppercase tracking-wider mb-1.5">Dietary Preference</label>
+                    <select id="pref-diet" class="w-full px-3.5 py-2.5 rounded-xl bg-surface-container-low border border-outline-variant text-xs sm:text-sm font-semibold text-on-surface focus:outline-none focus:border-primary">
+                        <option value="">Any Diet</option>
+                        <option value="Vegetarian">Vegetarian</option>
+                        <option value="Non-Vegetarian">Non-Vegetarian</option>
+                        <option value="Vegan">Vegan</option>
+                    </select>
+                </div>
+                <div>
+                    <label class="block text-xs font-bold text-on-surface-variant uppercase tracking-wider mb-1.5">Course / Meal</label>
+                    <select id="pref-meal-type" class="w-full px-3.5 py-2.5 rounded-xl bg-surface-container-low border border-outline-variant text-xs sm:text-sm font-semibold text-on-surface focus:outline-none focus:border-primary">
+                        <option value="">All Courses</option>
+                        <option value="BREAKFAST">Breakfast</option>
+                        <option value="LUNCH">Lunch</option>
+                        <option value="DINNER">Dinner</option>
+                        <option value="SNACK">Snack</option>
+                        <option value="DESSERT">Dessert</option>
+                        <option value="BEVERAGE">Beverage</option>
+                    </select>
+                </div>
+                <div>
+                    <label class="block text-xs font-bold text-on-surface-variant uppercase tracking-wider mb-1.5">Cuisine Region</label>
+                    <select id="pref-cuisine" class="w-full px-3.5 py-2.5 rounded-xl bg-surface-container-low border border-outline-variant text-xs sm:text-sm font-semibold text-on-surface focus:outline-none focus:border-primary">
+                        <option value="">All Cuisines</option>
+                        <option value="North Indian">North Indian</option>
+                        <option value="South Indian">South Indian</option>
+                        <option value="Mughlai">Mughlai</option>
+                        <option value="Punjabi">Punjabi</option>
+                        <option value="Bengali">Bengali</option>
+                        <option value="Gujarati">Gujarati</option>
+                    </select>
+                </div>
+                <div>
+                    <label class="block text-xs font-bold text-on-surface-variant uppercase tracking-wider mb-1.5">Max Cooking Time</label>
+                    <select id="pref-time" class="w-full px-3.5 py-2.5 rounded-xl bg-surface-container-low border border-outline-variant text-xs sm:text-sm font-semibold text-on-surface focus:outline-none focus:border-primary">
+                        <option value="">No Limit</option>
+                        <option value="15">≤ 15 mins</option>
+                        <option value="30">≤ 30 mins</option>
+                        <option value="45">≤ 45 mins</option>
+                        <option value="60">≤ 60 mins</option>
+                    </select>
+                </div>
+            </div>
+        </section>
+
+        <!-- Main Action CTA -->
+        <section class="flex flex-col items-center text-center gap-3 py-2">
+            <button id="find-recipes-cta" class="w-full sm:w-auto px-10 py-4 bg-primary hover:bg-primary-dark text-white font-extrabold text-base md:text-lg rounded-full shadow-md hover:shadow-lg transition-all flex items-center justify-center gap-3">
+                <span id="find-cta-text">Find Matching Recipes</span>
+                <span class="material-symbols-outlined text-[22px]">arrow_forward</span>
+            </button>
+            <p class="text-xs text-on-surface-variant max-w-lg">
+                Calculates highest overlap against Indian recipe index. Highlights matching and missing ingredients.
+            </p>
+        </section>
+
+        <!-- Results Section -->
+        <section id="results-section" class="space-y-6 pt-4">
+            <div class="flex flex-col sm:flex-row sm:items-end justify-between gap-4 border-b border-primary/10 pb-4">
+                <div>
+                    <h2 class="text-2xl sm:text-3xl font-extrabold text-primary tracking-tight">Recipes You Can Make</h2>
+                    <p id="results-subtext" class="text-xs sm:text-sm text-on-surface-variant mt-1">
+                        Select ingredients above and click "Find Matching Recipes".
+                    </p>
+                </div>
+                <div id="results-count-badge" class="hidden text-xs font-bold bg-[#e8f5ed] text-primary px-3 py-1.5 rounded-full border border-primary/20 self-start sm:self-auto">
+                    Matches Found
+                </div>
+            </div>
+
+            <!-- Results Grid -->
+            <div id="recommendations-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <!-- Dynamically filled -->
+            </div>
+
+            <!-- Empty / Placeholder State -->
+            <div id="rec-empty-state" class="text-center py-12 bg-surface-container-lowest rounded-3xl border border-primary/10 space-y-3">
+                <div class="w-14 h-14 rounded-full bg-surface-container flex items-center justify-center mx-auto text-primary">
+                    <span class="material-symbols-outlined text-[32px]">skillet</span>
+                </div>
+                <h3 class="text-lg font-bold text-primary">Ready to recommend dishes</h3>
+                <p class="text-xs text-on-surface-variant max-w-sm mx-auto">
+                    Add ingredients you have in your fridge or pantry, then hit Find Matching Recipes.
+                </p>
+            </div>
+        </section>
+    </main>
+
+    <footer id="global-footer"></footer>
+
+    <script src="/js/api.js"></script>
+    <script src="/js/header.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', async () => {
+            const ingredientInput = document.getElementById('ingredient-input');
+            const clearSearchBtn = document.getElementById('clear-search-btn');
+            const addIngredientBtn = document.getElementById('add-ingredient-btn');
+            const chipsContainer = document.getElementById('chips-container');
+            const chipsEmptyHint = document.getElementById('chips-empty-hint');
+            const selectedCountBadge = document.getElementById('selected-count-badge');
+            const clearAllChipsBtn = document.getElementById('clear-all-chips-btn');
+            const loadPantryBtn = document.getElementById('load-pantry-btn');
+            const findRecipesCta = document.getElementById('find-recipes-cta');
+            const findCtaText = document.getElementById('find-cta-text');
+            const prefDiet = document.getElementById('pref-diet');
+            const prefMealType = document.getElementById('pref-meal-type');
+            const prefCuisine = document.getElementById('pref-cuisine');
+            const prefTime = document.getElementById('pref-time');
+            const recGrid = document.getElementById('recommendations-grid');
+            const recEmptyState = document.getElementById('rec-empty-state');
+            const resultsSubtext = document.getElementById('results-subtext');
+            const resultsCountBadge = document.getElementById('results-count-badge');
+
+            const selectedIngredients = new Set();
+
+            function updateChipsUI() {
+                // Clear existing chips
+                chipsContainer.querySelectorAll('.chip-item').forEach(el => el.remove());
+
+                if (selectedIngredients.size === 0) {
+                    chipsEmptyHint.classList.remove('hidden');
+                } else {
+                    chipsEmptyHint.classList.add('hidden');
+                    selectedIngredients.forEach(ing => {
+                        const chip = document.createElement('span');
+                        chip.className = 'chip-item inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-white border border-primary/20 text-xs font-semibold text-primary shadow-2xs';
+                        chip.innerHTML = `
+                            <span>${ing}</span>
+                            <button type="button" class="hover:text-red-700 text-outline transition-colors flex items-center" data-val="${ing}">
+                                <span class="material-symbols-outlined text-[15px]">close</span>
+                            </button>
+                        `;
+                        chip.querySelector('button').addEventListener('click', () => {
+                            selectedIngredients.delete(ing);
+                            updateChipsUI();
+                        });
+                        chipsContainer.appendChild(chip);
+                    });
+                }
+                selectedCountBadge.textContent = selectedIngredients.size;
+            }
+
+            const dropdown = document.getElementById('ingredient-autocomplete-dropdown');
+            const suggestionsList = document.getElementById('ingredient-suggestions-list');
+            let debounceTimer = null;
+            let currentFocusIndex = -1;
+            let currentSuggestions = [];
+
+            function hideAutocomplete() {
+                if (dropdown) dropdown.classList.add('hidden');
+                currentFocusIndex = -1;
+                currentSuggestions = [];
+            }
+
+            function highlightMatch(text, query) {
+                if (!query) return text;
+                const idx = text.toLowerCase().indexOf(query.toLowerCase());
+                if (idx === -1) return text;
+                const before = text.substring(0, idx);
+                const match = text.substring(idx, idx + query.length);
+                const after = text.substring(idx + query.length);
+                return `${before}<span class="text-primary font-bold underline decoration-primary/40">${match}</span>${after}`;
+            }
+
+            function renderSuggestions(items, query) {
+                currentSuggestions = items;
+                currentFocusIndex = -1;
+                if (!items || items.length === 0) {
+                    suggestionsList.innerHTML = `
+                        <li class="px-4 py-3 text-xs text-outline text-center">
+                            No matching ingredient in catalog. Press <b>Enter</b> or click <b>Add</b> to add as custom item.
+                        </li>
+                    `;
+                    dropdown.classList.remove('hidden');
+                    return;
+                }
+
+                suggestionsList.innerHTML = items.map((it, idx) => {
+                    const initials = (it.name || '').substring(0, 2).toUpperCase();
+                    const highlighted = highlightMatch(it.name, query);
+                    const category = it.category || 'General';
+                    return `
+                        <li class="suggestion-item flex items-center justify-between px-4 py-2.5 hover:bg-primary/5 transition-colors cursor-pointer group" data-index="${idx}" data-name="${it.name}">
+                            <div class="flex items-center gap-3 min-w-0">
+                                <div class="w-7 h-7 rounded-lg bg-primary/10 flex items-center justify-center text-primary font-bold text-xs flex-shrink-0">
+                                    ${initials}
+                                </div>
+                                <div class="truncate">
+                                    <div class="text-sm font-semibold text-on-surface group-hover:text-primary transition-colors truncate">${highlighted}</div>
+                                    <div class="text-[11px] text-outline">${category}</div>
+                                </div>
+                            </div>
+                            <span class="flex items-center gap-1 text-xs font-bold text-primary bg-primary/10 group-hover:bg-primary group-hover:text-white px-2.5 py-1 rounded-full transition-all flex-shrink-0 ml-2">
+                                <span class="material-symbols-outlined text-[14px]">add</span>
+                                Add
+                            </span>
+                        </li>
+                    `;
+                }).join('');
+
+                dropdown.classList.remove('hidden');
+
+                // Attach click handlers to suggestions
+                suggestionsList.querySelectorAll('.suggestion-item').forEach(el => {
+                    el.addEventListener('click', () => {
+                        const ingName = el.getAttribute('data-name');
+                        addIngredient(ingName);
+                        hideAutocomplete();
+                        ingredientInput.focus();
+                    });
+                });
+            }
+
+            function updateActiveSuggestion() {
+                const items = suggestionsList.querySelectorAll('.suggestion-item');
+                items.forEach((item, idx) => {
+                    if (idx === currentFocusIndex) {
+                        item.classList.add('bg-primary/10');
+                        item.scrollIntoView({ block: 'nearest' });
+                    } else {
+                        item.classList.remove('bg-primary/10');
+                    }
+                });
+            }
+
+            function addIngredient(name) {
+                const trimmed = name.trim();
+                if (trimmed) {
+                    selectedIngredients.add(trimmed);
+                    updateChipsUI();
+                    ingredientInput.value = '';
+                }
+            }
+
+            // Input listener with debounce for autocomplete suggestions
+            ingredientInput.addEventListener('input', () => {
+                clearTimeout(debounceTimer);
+                const query = ingredientInput.value.trim();
+                if (query.length < 1) {
+                    hideAutocomplete();
+                    return;
+                }
+                debounceTimer = setTimeout(async () => {
+                    try {
+                        const res = await InChefAPI.autocompleteIngredients(query, 8);
+                        if (res && res.data) {
+                            renderSuggestions(res.data, query);
+                        }
+                    } catch (e) {
+                        console.error('Autocomplete fetch error:', e);
+                        hideAutocomplete();
+                    }
+                }, 150);
+            });
+
+            // Keyboard navigation (arrows, enter, escape)
+            ingredientInput.addEventListener('keydown', (e) => {
+                const items = suggestionsList.querySelectorAll('.suggestion-item');
+                if (!dropdown.classList.contains('hidden') && items.length > 0) {
+                    if (e.key === 'ArrowDown') {
+                        e.preventDefault();
+                        currentFocusIndex = (currentFocusIndex + 1) % items.length;
+                        updateActiveSuggestion();
+                        return;
+                    } else if (e.key === 'ArrowUp') {
+                        e.preventDefault();
+                        currentFocusIndex = (currentFocusIndex - 1 + items.length) % items.length;
+                        updateActiveSuggestion();
+                        return;
+                    } else if (e.key === 'Enter') {
+                        e.preventDefault();
+                        if (currentFocusIndex >= 0 && currentFocusIndex < items.length) {
+                            const selectedName = items[currentFocusIndex].getAttribute('data-name');
+                            addIngredient(selectedName);
+                            hideAutocomplete();
+                            return;
+                        }
+                    } else if (e.key === 'Escape') {
+                        hideAutocomplete();
+                        return;
+                    }
+                }
+                if (e.key === 'Enter') {
+                    e.preventDefault();
+                    addIngredient(ingredientInput.value);
+                    hideAutocomplete();
+                }
+            });
+
+            // Close dropdown when clicking outside
+            document.addEventListener('click', (e) => {
+                if (!ingredientInput.contains(e.target) && !dropdown.contains(e.target)) {
+                    hideAutocomplete();
+                }
+            });
+
+            addIngredientBtn.addEventListener('click', () => {
+                addIngredient(ingredientInput.value);
+                hideAutocomplete();
+            });
+
+            clearSearchBtn.addEventListener('click', () => {
+                ingredientInput.value = '';
+                hideAutocomplete();
+            });
+
+            clearAllChipsBtn.addEventListener('click', () => {
+                selectedIngredients.clear();
+                updateChipsUI();
+                hideAutocomplete();
+            });
+
+            // Quick suggestion chips
+            document.querySelectorAll('.quick-chip').forEach(btn => {
+                btn.addEventListener('click', () => {
+                    const ing = btn.getAttribute('data-name');
+                    addIngredient(ing);
+                    hideAutocomplete();
+                });
+            });
+
+            // Load from user pantry
+            loadPantryBtn.addEventListener('click', async () => {
+                loadPantryBtn.disabled = true;
+                loadPantryBtn.innerHTML = '<span class="material-symbols-outlined text-[15px] animate-spin">refresh</span> Loading...';
+                try {
+                    const res = await InChefAPI.getPantry();
+                    const items = (res && res.data) ? res.data : [];
+                    if (items.length > 0) {
+                        items.forEach(it => {
+                            if (it.ingredientName) selectedIngredients.add(it.ingredientName);
+                        });
+                        updateChipsUI();
+                    } else {
+                        alert('Your kitchen pantry is currently empty. Add ingredients to My Kitchen first!');
+                    }
+                } catch (e) {
+                    console.warn('Could not load pantry:', e);
+                } finally {
+                    loadPantryBtn.disabled = false;
+                    loadPantryBtn.innerHTML = '<span class="material-symbols-outlined text-[15px]">inventory_2</span> Load My Kitchen Pantry';
+                }
+            });
+
+            // Auto-load URL params if passed e.g. ?ingredients=Chicken,Onion
+            const urlParams = new URLSearchParams(window.location.search);
+            const initialIngs = urlParams.get('ingredients');
+            if (initialIngs) {
+                initialIngs.split(',').forEach(i => {
+                    if (i.trim()) selectedIngredients.add(i.trim());
+                });
+                updateChipsUI();
+                setTimeout(() => findRecommendations(), 300);
+            } else {
+                // Default start with 3 common ingredients to show immediate value
+                ['Onion', 'Tomato', 'Paneer'].forEach(i => selectedIngredients.add(i));
+                updateChipsUI();
+            }
+
+            // Find Matching Recipes CTA
+            findRecipesCta.addEventListener('click', () => {
+                findRecommendations();
+            });
+
+            async function findRecommendations() {
+                const ingsList = Array.from(selectedIngredients);
+                if (ingsList.length === 0) {
+                    alert('Please add at least one ingredient to get recommendations.');
+                    return;
+                }
+
+                findRecipesCta.disabled = true;
+                findCtaText.textContent = 'Matching Ingredients...';
+                recGrid.innerHTML = '<div class="col-span-full text-center py-12 text-on-surface-variant">Analyzing ingredient overlap against Indian recipe collection...</div>';
+                recEmptyState.classList.add('hidden');
+
+                try {
+                    const res = await InChefAPI.recommendByIngredients(ingsList, {
+                        dietaryType: prefDiet.value || null,
+                        mealType: (prefMealType && prefMealType.value) ? prefMealType.value : null,
+                        cuisine: prefCuisine.value || null,
+                        maxCookingTime: prefTime.value ? parseInt(prefTime.value) : null,
+                        usePantry: true,
+                        limit: 12
+                    });
+
+                    const recipes = (res && res.data) ? res.data : [];
+                    resultsSubtext.textContent = `Based on your ${ingsList.length} selected ingredients (${ingsList.join(', ')}).`;
+                    resultsCountBadge.textContent = `${recipes.length} Matches Found`;
+                    resultsCountBadge.classList.remove('hidden');
+
+                    if (recipes.length === 0) {
+                        recGrid.innerHTML = '';
+                        recEmptyState.classList.remove('hidden');
+                        recEmptyState.querySelector('h3').textContent = 'No matching recipes found';
+                        recEmptyState.querySelector('p').textContent = 'Try adding more common ingredients like spices, aromatics, or pantry staples.';
+                        return;
+                    }
+
+                    renderCards(recipes);
+                } catch (err) {
+                    console.error('Recommendation failed:', err);
+                    recGrid.innerHTML = `<div class="col-span-full text-center py-8 text-red-600 font-semibold">Recommendation error: ${err.message}</div>`;
+                } finally {
+                    findRecipesCta.disabled = false;
+                    findCtaText.textContent = 'Find Matching Recipes';
+                }
+            }
+
+            function renderCards(recipes) {
+                recGrid.innerHTML = recipes.map(r => {
+                    const recipe = r.recipe || r;
+                    const matchScore = Math.round(
+                        r.ingredientMatchPercentage != null
+                            ? r.ingredientMatchPercentage
+                            : (r.matchScore != null
+                                ? r.matchScore
+                                : (r.matchPercentage != null ? r.matchPercentage : 75))
+                    );
+                    const neutralPlaceholder = '/images/neutral_recipe_placeholder.svg';
+                    const imgSrc = (recipe.imageUrl && recipe.imageUrl.trim()) ? recipe.imageUrl.trim() : neutralPlaceholder;
+                    const safeTitle = (recipe.title || 'Untitled Recipe').replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;').replace(/'/g, '&#039;');
+                    const matchedList = r.matchedIngredients || [];
+                    const missingList = r.missingIngredients || [];
+                    const isFav = recipe.isFavorite || r.isFavorite || false;
+
+                    return `
+                        <article class="bg-surface-container-lowest border border-primary/10 rounded-2xl overflow-hidden shadow-xs hover:shadow-md transition-all duration-300 flex flex-col group">
+                            <div class="h-48 w-full relative overflow-hidden bg-surface-container">
+                                <a href="/recipe_details.html?id=${recipe.id}" class="block w-full h-full">
+                                    <img alt="${safeTitle}" loading="lazy" referrerpolicy="no-referrer" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" 
+                                         src="${imgSrc}" onerror="if (!this.dataset.proxyTried && ${recipe.id}) { this.dataset.proxyTried='true'; this.src='/api/v1/recipes/${recipe.id}/image/content'; } else { this.onerror=null; this.src='${neutralPlaceholder}'; }">
+                                </a>
+                                <div class="absolute top-3 left-3 bg-primary text-white text-xs font-bold px-3 py-1 rounded-full flex items-center gap-1 shadow-md">
+                                    <span class="material-symbols-outlined text-[15px]" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+                                    ${matchScore}% Match
+                                </div>
+                                <button type="button" class="favorite-toggle-btn absolute top-3 right-3 w-8 h-8 bg-white/90 backdrop-blur-xs rounded-full flex items-center justify-center text-secondary hover:scale-110 transition-transform shadow-xs"
+                                        data-recipe-id="${recipe.id}" data-is-fav="${isFav ? 'true' : 'false'}">
+                                    <span class="material-symbols-outlined text-[18px]" style="font-variation-settings: 'FILL' ${isFav ? 1 : 0};">favorite</span>
+                                </button>
+                            </div>
+                            <div class="p-5 flex flex-col flex-grow gap-3">
+                                <div>
+                                    <div class="text-[11px] font-semibold text-secondary uppercase tracking-wider mb-1">${recipe.cuisine || 'Indian'} · ${recipe.mealType || 'Dish'}</div>
+                                    <h3 class="text-base font-bold text-on-surface hover:text-primary transition-colors line-clamp-1">
+                                        <a href="/recipe_details.html?id=${recipe.id}">${recipe.title || 'Untitled Recipe'}</a>
+                                    </h3>
+                                    <div class="flex items-center gap-3 text-xs text-on-surface-variant mt-1">
+                                        <span class="flex items-center gap-1"><span class="material-symbols-outlined text-[15px]">schedule</span> ${recipe.cookTimeMinutes || recipe.totalTimeMinutes || 30} mins</span>
+                                        <span class="flex items-center gap-1"><span class="material-symbols-outlined text-[15px]">${isVeg ? 'eco' : 'set_meal'}</span> ${recipe.dietaryType || 'Authentic'}</span>
+                                    </div>
+                                </div>
+
+                                <!-- Ingredient breakdown -->
+                                <div class="space-y-1.5 pt-2 border-t border-outline-variant/30 text-xs">
+                                    ${matchedList.length > 0 ? `
+                                        <div>
+                                            <span class="font-bold text-emerald-800">You have:</span>
+                                            <span class="text-on-surface-variant">${matchedList.slice(0, 4).join(', ')}${matchedList.length > 4 ? ` +${matchedList.length - 4}` : ''}</span>
+                                        </div>
+                                    ` : ''}
+                                    ${missingList.length > 0 ? `
+                                        <div>
+                                            <span class="font-bold text-amber-900">Missing:</span>
+                                            <span class="text-on-surface-variant">${missingList.slice(0, 3).join(', ')}${missingList.length > 3 ? ` +${missingList.length - 3}` : ''}</span>
+                                        </div>
+                                    ` : `
+                                        <div class="text-emerald-700 font-bold flex items-center gap-1">
+                                            <span class="material-symbols-outlined text-[15px]">task_alt</span> You have all key ingredients!
+                                        </div>
+                                    `}
+                                </div>
+
+                                <a href="/recipe_details.html?id=${recipe.id}" class="mt-auto w-full py-2.5 rounded-full bg-primary hover:bg-primary-dark text-white font-bold text-xs transition-colors flex items-center justify-center gap-1.5 shadow-xs">
+                                    <span>Cook This Recipe</span>
+                                    <span class="material-symbols-outlined text-[15px]">arrow_forward</span>
+                                </a>
+                            </div>
+                        </article>
+                    `;
+                }).join('');
+
+                // Wire favorite buttons
+                document.querySelectorAll('.favorite-toggle-btn').forEach(btn => {
+                    btn.addEventListener('click', async (e) => {
+                        e.preventDefault();
+                        e.stopPropagation();
+                        const rId = btn.getAttribute('data-recipe-id');
+                        try {
+                            const newFav = await InChefAPI.toggleFavorite(rId);
+                            btn.setAttribute('data-is-fav', newFav ? 'true' : 'false');
+                            const icon = btn.querySelector('.material-symbols-outlined');
+                            icon.style.fontVariationSettings = `'FILL' ${newFav ? 1 : 0}`;
+                        } catch (err) {
+                            if (err.status === 401 || err.status === 403) {
+                                window.location.href = `/auth.html?mode=login&returnUrl=${encodeURIComponent(window.location.href)}`;
+                            }
+                        }
+                    });
+                });
+            }
+
+            async function loadDynamicCuisines() {
+                try {
+                    const res = await InChefAPI.getCuisines();
+                    if (res && res.data && res.data.length > 0) {
+                        const currentVal = prefCuisine.value;
+                        prefCuisine.innerHTML = '<option value="">All Cuisines</option>';
+                        res.data.forEach(c => {
+                            const opt = document.createElement('option');
+                            opt.value = c;
+                            opt.textContent = c;
+                            prefCuisine.appendChild(opt);
+                        });
+                        if (currentVal) {
+                            prefCuisine.value = currentVal;
+                        }
+                    }
+                } catch (err) {
+                    console.warn('Could not load dynamic cuisines:', err);
+                }
+            }
+
+            loadDynamicCuisines();
+        });
+    </script>
+</body>
+</html>
